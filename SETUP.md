@@ -131,3 +131,7 @@ Every day at 06:20 IST, `.github/workflows/daily-blog.yml` runs Claude with the 
 5. **Test now.** Go to **Actions → Daily blog post → Run workflow**.
 
 Cost: about $0.30–1 a run, so roughly ₹800–2,500 a month on top of the weekly agent. The spend limit on the API key caps it.
+
+## 13. Weekly keyword refresh (no extra setup)
+
+Every Thursday, `.github/workflows/weekly-keywords.yml` researches the week's searches and proposes small updates to the 50 target keywords as a pull request labelled `keywords`. It uses the same `ANTHROPIC_API_KEY` as steps 11 and 12. Until that key is added, it files the research as an issue instead. Connecting Search Console (step 11.5) lets it use the site's real search queries. To run it now, go to **Actions → Weekly keyword refresh → Run workflow**.

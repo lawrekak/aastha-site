@@ -1,3 +1,4 @@
+import path from "path";
 // Pulls Google Search Console data for the site and writes gsc-report.md.
 // Needs a service account that has been added as a user on the Search Console property:
 //   env GSC_SERVICE_ACCOUNT_JSON = the full JSON key of the service account
@@ -53,6 +54,9 @@ try {
   const [total] = await query([], 1);
   const queries = await query(["query"]);
   const pages = await query(["page"], 25);
+  // Query-by-page rows for the weekly keyword refresh (scripts/keyword-research.mjs)
+  const qp = await query(["query", "page"], 250).catch(() => []);
+  fs.writeFileSync(path.join(path.dirname(out), "gsc-queries.json"), JSON.stringify(qp.map((r) => ({ query: r.keys[0], page: r.keys[1], clicks: r.clicks, impressions: r.impressions, position: r.position })), null, 1));
   const t = total || { clicks: 0, impressions: 0, ctr: 0, position: 0 };
   fs.writeFileSync(out, `# Search Console — last ${days} days (${ymd(start)} to ${ymd(end)})\n\nProperty: ${property}\n\n**Totals:** ${t.clicks} clicks · ${t.impressions} impressions · ${fmt(t.ctr * 100, 1)}% CTR · average position ${fmt(t.position, 1)}\n\n## Top queries\n\n${table(queries, "Query")}\n\n## Top pages\n\n${table(pages, "Page")}\n`);
   console.log(`Wrote ${out}`);

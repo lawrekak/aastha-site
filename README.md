@@ -61,6 +61,7 @@ To add a guide: add an entry to `content/insights.json`, bump `contentUpdated` i
 - `content/keywords.json` holds the top 50 searches for her practice areas, from Google India autocomplete, with "best", "fees" and similar phrases removed for Rule 36. Each keyword is mapped to one page and marked `local` (someone looking for a lawyer) or `info` (someone asking how the law works).
 - The build adds each page's keywords to its structured data (`WebPage` and `Service` `keywords`) and lists the local searches in `llms.txt`. The page titles, descriptions and Hindi one-liners use the main phrases naturally. There is no visible keyword list and no meta keywords tag, since Google ignores that tag and Bing treats stuffing as spam.
 - The daily blog answers the `info` keywords over time. The validator checks the file has 50 unique, compliant keywords that each point to a real page.
+- **Weekly refresh** (`.github/workflows/weekly-keywords.yml`, Thursdays 06:10 IST). `scripts/keyword-research.mjs` pulls Google India autocomplete for every seed in English and Hindi, plus Search Console queries, and filters them for Rule 36. Claude then uses the `keyword-refresh` skill to swap at most 5 keywords and 2 titles, only on evidence, and opens a pull request. Without the API key, the research is filed as a GitHub issue instead.
 
 **Listings and citations** (added 27 September 2026)
 - `content/citations.json` records every listing; live URLs become `sameAs` in the structured data. `listings/KIT.md` has factual, ready-to-paste text for each platform.

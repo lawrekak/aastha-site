@@ -253,5 +253,88 @@
       "page": "/guides/uttarakhand-high-court-nainital/",
       "intent": "info"
     }
-  ]
+  ],
+  "seeds": {
+    "/": [
+      "lawyer in haldwani",
+      "advocate haldwani",
+      "haldwani vakil",
+      "nainital high court advocate",
+      "uttarakhand high court lawyer",
+      "advocate nainital",
+      "lawyer in nainital",
+      "lawyer in kathgodam",
+      "lawyer in lalkuan",
+      "हल्द्वानी वकील"
+    ],
+    "/practice-areas/matrimonial-and-family-disputes/": [
+      "divorce lawyer haldwani",
+      "family lawyer haldwani",
+      "family court haldwani",
+      "divorce lawyer nainital",
+      "mutual divorce",
+      "maintenance case",
+      "domestic violence case",
+      "child custody",
+      "talaq ke liye",
+      "तलाक वकील",
+      "तलाक के लिए",
+      "भरण पोषण"
+    ],
+    "/practice-areas/district-court-civil-criminal-litigation/": [
+      "cheque bounce case",
+      "cheque bounce lawyer",
+      "138 ni act",
+      "criminal lawyer haldwani",
+      "civil lawyer haldwani",
+      "bail lawyer haldwani",
+      "anticipatory bail",
+      "recovery suit",
+      "district court nainital",
+      "चेक बाउंस"
+    ],
+    "/practice-areas/service-and-education-law/": [
+      "service matter lawyer",
+      "service law uttarakhand",
+      "teacher salary case uttarakhand",
+      "uttarakhand service rules",
+      "7th pay arrears case"
+    ],
+    "/practice-areas/writ-petitions-public-authorities/": [
+      "writ petition uttarakhand high court",
+      "writ petition high court",
+      "article 226",
+      "nainital high court case"
+    ],
+    "/practice-areas/criminal-appeals-white-collar-defence/": [
+      "criminal appeal high court",
+      "quashing petition",
+      "prevention of corruption act",
+      "criminal revision"
+    ],
+    "/practice-areas/property-and-land/": [
+      "property lawyer haldwani",
+      "land dispute lawyer",
+      "dakhil kharij uttarakhand",
+      "khatauni uttarakhand",
+      "nazul land haldwani",
+      "दाखिल खारिज"
+    ],
+    "/practice-areas/insolvency-ibc/": [
+      "nclat appeal",
+      "insolvency lawyer",
+      "ibc appeal",
+      "operational creditor"
+    ],
+    "/practice-areas/tribunal-matters/": [
+      "cat case",
+      "central administrative tribunal",
+      "cat lawyer"
+    ],
+    "/guides/uttarakhand-high-court-nainital/": [
+      "uttarakhand high court case status",
+      "nainital high court cause list"
+    ]
+  },
+  "history": []
 }

@@ -1,8 +1,12 @@
 .blog-pr.md
+.kw-pr.md
 audit-report.md
 citations-report.md
 dist/
+gsc-queries.json
 gsc-report.md
+keyword-candidates.json
+keyword-report.md
 monthly.md
 node_modules/
 preview/

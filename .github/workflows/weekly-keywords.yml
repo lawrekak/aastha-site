@@ -1,0 +1,95 @@
+name: Weekly keyword refresh (opens a pull request for review)
+
+# Every Thursday at 06:10 IST: collect Google India autocomplete suggestions for each practice
+# area (English and Hindi) and Search Console queries, filter them for Rule 36, and let Claude
+# (skill: .claude/skills/keyword-refresh) make small, evidence-based updates to the 50 target
+# keywords in content/keywords.json. Everything arrives as a pull request.
+#
+# Without the ANTHROPIC_API_KEY secret, the job still runs the research and files the report as
+# a GitHub issue, so no week is lost.
+
+on:
+  schedule:
+    - cron: "40 0 * * 4"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: weekly-keywords
+  cancel-in-progress: false
+
+jobs:
+  keywords:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Search Console queries (optional)
+        continue-on-error: true
+        env:
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+        run: node scripts/gsc-report.mjs 28
+
+      - name: Keyword research
+        run: node scripts/keyword-research.mjs
+
+      - name: Is the Claude key set?
+        id: key
+        env:
+          K: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: echo "present=$([ -n "$K" ] && echo yes || echo no)" >> "$GITHUB_OUTPUT"
+
+      - name: Claude reviews the keywords
+        if: steps.key.outputs.present == 'yes'
+        uses: anthropics/claude-code-action@v1
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          claude_args: |
+            --model claude-sonnet-5
+            --max-turns 30
+            --allowedTools "Skill,Read,Write,Edit,Glob,Grep,Bash(node:*),Bash(date:*),Bash(cat:*),Bash(ls:*)"
+          prompt: |
+            Use the keyword-refresh skill (.claude/skills/keyword-refresh/SKILL.md) and follow it exactly.
+            Today is the date shown by `TZ=Asia/Kolkata date +%F`.
+
+      - name: Open the pull request
+        if: steps.key.outputs.present == 'yes'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if git diff --quiet -- content; then echo "No changes."; exit 0; fi
+          node build.mjs && node scripts/validate.mjs
+          DAY=$(TZ=Asia/Kolkata date +%F)
+          BRANCH="keywords/$DAY"
+          git config user.name "keyword-agent"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add content
+          git commit -m "Weekly keyword refresh $DAY"
+          git push origin "$BRANCH"
+          { [ -f .kw-pr.md ] && cat .kw-pr.md; echo; cat keyword-report.md; } > pr.md
+          gh label create keywords --color 7C3AED --force || true
+          gh pr create --base main --head "$BRANCH" --label keywords --title "Weekly keyword refresh $DAY" --body-file pr.md
+
+      - name: File the report as an issue (no Claude key yet)
+        if: steps.key.outputs.present != 'yes'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          { echo "Weekly keyword research. Add the ANTHROPIC_API_KEY secret to have Claude apply updates as a pull request."; echo; cat keyword-report.md; } > issue.md
+          gh label create keywords --color 7C3AED --force || true
+          gh issue create --title "Keyword research $(TZ=Asia/Kolkata date +%F)" --body-file issue.md --label keywords
