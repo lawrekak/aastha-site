@@ -1,0 +1,12 @@
+[
+  {"platform": "LinkedIn", "type": "profile", "status": "live", "url": "https://www.linkedin.com/in/aastha-vishwakarma-5b145016b/", "notes": "Add the website and the enrolment number to the profile."},
+  {"platform": "Google Business Profile", "type": "map", "status": "to-claim", "url": "", "notes": "Claim the office listing. See listings/KIT.md, section 1."},
+  {"platform": "Bing Places", "type": "map", "status": "planned", "url": "", "notes": "Import from Google Business Profile once it is verified."},
+  {"platform": "Apple Business Connect (Apple Maps)", "type": "map", "status": "planned", "url": "", "notes": "Free. Shows the office on iPhones and in Siri."},
+  {"platform": "Bar Council of Uttarakhand enrolment record", "type": "official", "status": "check", "url": "", "notes": "Check that the current address and phone are on record."},
+  {"platform": "Bar Association, Haldwani / Nainital", "type": "official", "status": "check", "url": "", "notes": "Membership directory or roll, if the association publishes one."},
+  {"platform": "Campus Law Centre / Faculty of Law, DU alumni network", "type": "professional", "status": "planned", "url": "", "notes": "Alumni profile with a website link, if the network offers one."},
+  {"platform": "Justdial", "type": "portal", "status": "decide", "url": "", "notes": "BCI cease-and-desist notice (July 2024) against advocate listings. Aastha to decide whether to ask Justdial to remove the listing. Do not update or promote it."},
+  {"platform": "Sulekha / Quikr / Grotal", "type": "portal", "status": "avoid", "url": "", "notes": "Named in the BCI cease-and-desist notices of July 2024."},
+  {"platform": "Paid lawyer lead portals (LawRato and similar)", "type": "portal", "status": "avoid", "url": "", "notes": "Paid lead generation and ratings are solicitation risks under Rule 36."}
+]

@@ -57,6 +57,10 @@ The site is a factual professional-information website. The build's validator (`
 
 Never modify `.github/`, `wrangler.jsonc`, `src/worker/`, `workers/`, `scripts/validate.mjs` or this file.
 
+## Listings and links
+
+In every run, use the **advocate-citations** skill (`.claude/skills/advocate-citations/SKILL.md`) and add its findings to the pull request. It audits and suggests only.
+
 ## Current focus (from 26 September 2026): family law searches in Haldwani and Nainital
 
 People search for phrases like "matrimonial lawyer Haldwani", "divorce lawyer Nainital", "family court Haldwani", "तलाक़ वकील हल्द्वानी" and "best matrimonial lawyer in Haldwani". The site must never use "best" or any comparative wording. It can only be the clearest factual answer for these searches.

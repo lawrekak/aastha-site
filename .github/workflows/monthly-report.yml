@@ -30,6 +30,10 @@ jobs:
         env:
           PSI_KEY: ${{ secrets.PSI_KEY }}
         run: node scripts/audit-live.mjs
+      - name: Listings check
+        continue-on-error: true
+        run: node scripts/citations-audit.mjs
+
       - name: File the report
         env:
           GH_TOKEN: ${{ github.token }}
@@ -40,6 +44,8 @@ jobs:
             cat gsc-report.md
             echo
             cat audit-report.md
+            echo
+            cat citations-report.md 2>/dev/null || true
             echo
             echo "The Claude review email (search and AI visibility, Google Business Profile post) arrives separately on the 1st."
           } > monthly.md

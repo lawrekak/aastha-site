@@ -11,6 +11,7 @@ const read = (f) => JSON.parse(fs.readFileSync(path.join(ROOT, "content", f), "u
 const BLOG_DIR = path.join(ROOT, "content", "blog");
 // Blog posts: one JSON file per post in content/blog/, newest first. Written by the daily blog agent.
 const POSTS = (fs.existsSync(BLOG_DIR) ? fs.readdirSync(BLOG_DIR) : []).filter((f) => f.endsWith(".json")).map((f) => ({ file: f, ...JSON.parse(fs.readFileSync(path.join(BLOG_DIR, f), "utf8")) })).sort((a, b) => b.published.localeCompare(a.published) || a.slug.localeCompare(b.slug));
+const CITES = fs.existsSync(path.join(ROOT, "content", "citations.json")) ? JSON.parse(fs.readFileSync(path.join(ROOT, "content", "citations.json"), "utf8")) : [];
 const S = read("site.json"), AREAS = read("areas.json"),
   FAQ = read("faq.json"), INSIGHTS = read("insights.json"), GUIDE = read("guide.json"), HI = read("hi.json");
 const PREVIEW = process.argv.includes("--preview");
@@ -20,6 +21,8 @@ const ver = (f) => crypto.createHash("sha1").update(fs.readFileSync(path.join(RO
 const V_CSS = ver("site.css"), V_JS = ver("site.js");
 const UPDATED = S.contentUpdated || "2026-09-26";
 const BASE = S.url.replace(/\/$/, "");
+// sameAs: every live profile in content/citations.json plus any in site.json
+const SAME_AS = [...new Set([...S.sameAs, ...CITES.filter((c) => c.status === "live" && c.url).map((c) => c.url)])];
 const U = (p) => BASE + p;
 
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -51,7 +54,7 @@ const personNode = {
   "@type": "Person", "@id": ID.person, name: S.name, alternateName: HI.name, jobTitle: "Advocate", url: U("/about/"), image: U("/assets/og.png"),
   worksFor: { "@id": ID.firm }, telephone: S.phone, ...(S.email ? { email: S.email } : {}), address: postal, knowsLanguage: ["hi", "en"],
   knowsAbout: AREAS.map((a) => a.t).concat(["Divorce and matrimonial law", "Maintenance", "Child custody and guardianship", "Domestic violence law", "Article 226 writ petitions", "Prevention of Corruption Act", "Insolvency and Bankruptcy Code", "High Court of Uttarakhand practice"]),
-  ...(S.sameAs.length ? { sameAs: S.sameAs } : {}),
+  ...(SAME_AS.length ? { sameAs: SAME_AS } : {}),
   ...(S.qualifications.length ? { hasCredential: S.qualifications.map((q) => ({ "@type": "EducationalOccupationalCredential", name: q, credentialCategory: "degree" })), alumniOf: { "@type": "CollegeOrUniversity", name: "Campus Law Centre, Faculty of Law, University of Delhi", parentOrganization: { "@type": "CollegeOrUniversity", name: "University of Delhi" } } } : {}),
   ...(S.enrolment.barCouncil ? { memberOf: { "@type": "Organization", name: S.enrolment.barCouncil, url: "https://www.barcouncilofuttarakhand.org/" }, identifier: { "@type": "PropertyValue", propertyID: "Bar Council enrolment number", value: S.enrolment.number }, hasOccupation: { "@type": "Occupation", name: "Advocate", occupationalCategory: "23-1011" } } : {})
 };

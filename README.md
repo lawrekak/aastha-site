@@ -57,6 +57,11 @@ SETUP.md     the account steps only a person can do
 To add a guide: add an entry to `content/insights.json`, bump `contentUpdated` in `site.json`, and push. The sitemap, llms.txt, structured data and IndexNow ping all update on their own.
 
 
+**Listings and citations** (added 27 September 2026)
+- `content/citations.json` records every listing; live URLs become `sameAs` in the structured data. `listings/KIT.md` has factual, ready-to-paste text for each platform.
+- `scripts/citations-audit.mjs` runs in the monthly report and checks that name, phone and website match on each live listing.
+- No Justdial, Sulekha or lead portals, no comment or automated links. `CITATIONS.md` explains why.
+
 **Daily blog** (added 26 September 2026)
 - `/blog/` lists short posts (12 per page, newest first), with `/blog/feed.xml` (RSS), `BlogPosting` structured data, related posts on each practice-area page, and the latest posts in `llms.txt`.
 - One JSON file per post in `content/blog/` (`YYYY-MM-DD-slug.json`). The validator checks the shape, 200–600 words, 3–4 key points, at least one https source, no contact details and the Rule 36 wording.
