@@ -35,7 +35,7 @@
 | Listing | Status |
 |---|---|
 | LinkedIn | Live. Update the headline, About and website (see KIT section 4). |
-| Google Business Profile | Live and verified (27 Sep 2026). Still to do: add the phone number, check the categories, add services and an exterior photo. |
+| Google Business Profile | Live and verified. Categories set 27 Sep 2026 (Law firm, Lawyer, Divorce lawyer, Family Lawyer); phone present. Still to do: services list, exterior photo, decide on the WhatsApp chat link. |
 | Bing Places | Ready: import from Google Business Profile |
 | Apple Business Connect | To create (KIT section 3) |
 | Bar Council / Bar Association records | Check |
