@@ -334,3 +334,5 @@ nav.main a.lang{border:1px solid var(--line);margin-left:6px}
 .grid3 > :last-child:nth-child(3n+1){grid-column:1/-1}
 @media (max-width:900px){.grid3 > :last-child:nth-child(3n+1){grid-column:auto}.grid3 > :last-child:nth-child(odd){grid-column:1/-1}}
 @media (max-width:600px){.grid3 > :last-child{grid-column:auto!important}}
+.grid3 > :nth-last-child(1):nth-child(3n+2){grid-column:span 2}
+@media (max-width:900px){.grid3 > :nth-last-child(1):nth-child(3n+2){grid-column:auto}}

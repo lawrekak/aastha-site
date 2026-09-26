@@ -9,7 +9,7 @@
    "Disputes under school education statutes"
   ],
   "slug": "service-and-education-law",
-  "icon": "users",
+  "icon": "school",
   "seoTitle": "Service and Education Law Advocate, Nainital High Court",
   "desc": "Service and education law matters for teachers, school staff and public employees before the Uttarakhand and Delhi High Courts: arrears, leave and contempt.",
   "hi": "सेवा एवं शिक्षा कानून",
@@ -44,6 +44,29 @@
    "In a cheque bounce case, the payee must send a written demand notice within 30 days of learning that the cheque was dishonoured. The drawer then has 15 days to pay, and if payment is not made, a complaint must be filed within the following month. Missing these time limits can defeat the complaint. Many such cases, and civil disputes generally, can also be resolved through court-annexed mediation and settlement."
   ],
   "docs": "the cheque and the bank's return memo, the demand notice and postal receipts, any agreement, invoices or ledger showing the debt, and for other matters the plaint, complaint or last court order"
+ },
+ {
+  "t": "Matrimonial and family disputes",
+  "d": "Divorce and matrimonial petitions, maintenance, domestic violence, custody and guardianship, and other family law proceedings.",
+  "i": [
+   "Divorce and matrimonial petitions under the Hindu Marriage Act, 1955",
+   "Maintenance proceedings",
+   "Domestic violence matters under the Protection of Women from Domestic Violence Act, 2005",
+   "Custody and guardianship matters",
+   "Proceedings under the Hindu Adoptions and Maintenance Act, 1956",
+   "Restitution of conjugal rights",
+   "Other related family law proceedings"
+  ],
+  "slug": "matrimonial-and-family-disputes",
+  "icon": "users",
+  "seoTitle": "Divorce, Maintenance and Family Law: Haldwani, Delhi",
+  "desc": "Divorce and matrimonial petitions under the Hindu Marriage Act, maintenance, domestic violence, custody and guardianship, HAMA and restitution matters.",
+  "hi": "वैवाहिक एवं पारिवारिक विवाद",
+  "body": [
+   "Matrimonial and family disputes, including divorce and matrimonial petitions under the Hindu Marriage Act, 1955 (HMA), maintenance proceedings, domestic violence matters under the Protection of Women from Domestic Violence Act, 2005, custody and guardianship matters, proceedings under the Hindu Adoptions and Maintenance Act, 1956 (HAMA), restitution of conjugal rights, and other related family law proceedings.",
+   "Under the HMA, divorce may be sought on the grounds in section 13, or by mutual consent under section 13B, where the court may waive the six-month waiting period in suitable cases. Maintenance can be claimed under the HMA, under section 18 of HAMA, or under section 144 of the Bharatiya Nagarik Suraksha Sanhita (formerly section 125 of the CrPC). Applications under the Domestic Violence Act are filed before the Magistrate, and custody of children is decided on the child's welfare under the HMA and the Guardians and Wards Act, 1890. In the districts of Nainital and Delhi, most of these matters are heard by the Family Courts."
+  ],
+  "docs": "the marriage certificate or proof of marriage, any earlier petitions, orders or complaints, and, for maintenance, documents showing the income and expenses of both parties and the needs of any children"
  },
  {
   "t": "Constitutional and writ litigation",

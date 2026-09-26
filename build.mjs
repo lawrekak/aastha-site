@@ -210,13 +210,13 @@ const add = (p) => pages.push({ lang: "en", ...p });
 // Home
 add({
   path: "/", title: "Aastha Vishwakarma, Advocate | Nainital High Court, Haldwani", ogTitle: "Aastha Vishwakarma, Advocate",
-  desc: "Advocate at the Uttarakhand and Delhi High Courts and District Courts. Service law, cheque bounce, recovery, civil and criminal cases. Office in Haldwani.",
+  desc: "Advocate at the Uttarakhand and Delhi High Courts and District Courts. Service law, cheque bounce, family and matrimonial, civil and criminal cases. Haldwani.",
   alt: { en: "/", hi: "/hi/" }, priority: "1.0", changefreq: "weekly",
   body: `<section class="hero" aria-labelledby="h1">
   <div class="stack" style="gap:20px">
     <span class="eyebrow">Advocate · <span class="deva" lang="hi" style="letter-spacing:0;text-transform:none;font-size:.95rem">अधिवक्ता</span></span>
     <h1 id="h1">${esc(S.tagline)}</h1>
-    <p class="lede">Practice in service and education law, civil and criminal litigation in the district courts including cheque bounce and recovery matters, writ petitions against public authorities, criminal appeals and property matters.</p>
+    <p class="lede">Practice in service and education law, civil and criminal litigation in the district courts including cheque bounce and recovery matters, matrimonial and family disputes, writ petitions against public authorities, criminal appeals and property matters.</p>
     <p class="deva muted" lang="hi">${esc(HI.home.lede)}</p>
     <div class="row-wrap"><a class="btn btn-primary" href="/practice-areas/">Areas of practice</a><a class="btn btn-outline" href="/contact/">${ico("pin")}Office and contact details</a></div>
     <div class="facts">
@@ -259,7 +259,7 @@ add({
 // Practice areas
 add({
   path: "/practice-areas/", title: "Practice Areas | Aastha Vishwakarma, Advocate, Haldwani", pageType: "CollectionPage",
-  desc: "Service law, cheque bounce and recovery, civil and criminal litigation, writs, criminal appeals, property, IBC and tribunal matters in Delhi and Uttarakhand.",
+  desc: "Service law, cheque bounce, recovery, family and matrimonial, civil and criminal litigation, writs, property, IBC and tribunal matters in Delhi and Uttarakhand.",
   crumbs: [["Practice areas", "/practice-areas/"]], priority: "0.9",
   body: `<span class="eyebrow">Areas of practice</span><h1 style="margin:10px 0 12px">Practice areas</h1>
 <p class="muted" style="margin-bottom:28px">Listed as permitted under Rule 36 of the Bar Council of India Rules: factual areas of practice, without claims of specialisation.</p>
