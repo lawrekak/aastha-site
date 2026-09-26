@@ -1,0 +1,47 @@
+name: Monthly SEO report
+
+# 1st of every month, 09:30 IST: Search Console totals, queries and pages for the previous
+# 28 days, plus the live-site audit, filed as one GitHub issue. Optional secret:
+# GSC_SERVICE_ACCOUNT_JSON (without it the report notes that Search Console is not connected).
+
+on:
+  schedule:
+    - cron: "0 4 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Search Console data
+        env:
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+        run: node scripts/gsc-report.mjs 28
+      - name: Live site audit
+        continue-on-error: true
+        env:
+          PSI_KEY: ${{ secrets.PSI_KEY }}
+        run: node scripts/audit-live.mjs
+      - name: File the report
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          {
+            echo "Monthly report for https://advaasthavishwakarma.in"
+            echo
+            cat gsc-report.md
+            echo
+            cat audit-report.md
+            echo
+            echo "The Claude review email (search and AI visibility, Google Business Profile post) arrives separately on the 1st."
+          } > monthly.md
+          gh label create report --color 475569 --force || true
+          gh issue create --title "Monthly SEO report $(date +%Y-%m)" --body-file monthly.md --label report

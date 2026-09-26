@@ -68,11 +68,25 @@ for (const f of html) {
   const bad = text.match(BANNED); if (bad) err(rel, `Rule 36 wording check: "${bad[0]}" — rephrase factually`);
   const caseRef = text.match(/reported judgments?|counsel team|appeared for|case (study|studies)/i);
   if (caseRef) err(rel, `Rule 36 check: "${caseRef[0]}" — the site must not publicise her cases`);
-  const solicit = text.match(/request a consultation|book (a|now|your|with)|free (consultation|first|meeting)|first meeting|no fee|affordable|get your case|why choose|hire us|consultation fee/i);
+  const solicit = text.match(/request a consultation|book (a|now|your|with)|free (consultation|first|meeting)|first meeting|no fee|affordable|get your case|why choose|hire us|consultation fee|contact us today|call us now|trusted (advocate|lawyer)/i);
   if (solicit) err(rel, `Rule 36 check: "${solicit[0]}" — no consultation offers, fees or calls to action`);
   if (/href="\/(fees|consultation)\//.test(h)) err(rel, "links to a removed fees or consultation page");
 }
 
+
+// Guides written by the weekly agent must have the expected shape
+const ins = JSON.parse(fs.readFileSync(path.join(path.dirname(new URL(import.meta.url).pathname), "../content/insights.json"), "utf8"));
+const slugs = new Set();
+ins.forEach((a, n) => {
+  const w = `content/insights.json[${n}]`;
+  for (const k of ["t", "d", "p", "slug", "areas", "published", "desc"]) if (a[k] === undefined || a[k] === "") err(w, `missing "${k}"`);
+  if (a.slug && !/^[a-z0-9]+(-[a-z0-9]+)*$/.test(a.slug)) err(w, "slug must be lowercase-hyphenated");
+  if (slugs.has(a.slug)) err(w, `duplicate slug ${a.slug}`); slugs.add(a.slug);
+  if (!Array.isArray(a.p) || a.p.length < 2) err(w, "needs at least 2 paragraphs");
+  if (a.published && !/^\d{4}-\d{2}-\d{2}$/.test(a.published)) err(w, "published must be YYYY-MM-DD");
+  if (a.hi && (!a.hi.t || !Array.isArray(a.hi.p) || !a.hi.p.length)) err(w, "hi needs t and p");
+  if (Array.isArray(a.areas) && a.areas.some((x) => !Number.isInteger(x) || x < 0 || x > 7)) err(w, "areas must be practice-area index numbers 0–7");
+});
 // sitemap covers every indexable page and nothing else
 const sm = fs.readFileSync(path.join(DIST, "sitemap.xml"), "utf8");
 const locs = [...sm.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);

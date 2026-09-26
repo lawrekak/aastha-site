@@ -94,3 +94,25 @@ Never paste passwords or API keys into the chat. Enter them only in the dashboar
 ---
 
 Everything Claude does between your steps, such as filling in site.json, switching features on, pushing code, running checks and testing the live site, is listed in `README.md`. The offline tests for both Workers run with `node workers/test.mjs`.
+
+---
+
+## 11. Weekly SEO agent (about 10 minutes, once)
+
+Every Tuesday at 10:15 IST, Claude audits the site with the open-source **claude-seo** plugin (AgriciDaniel/claude-seo, MIT licence) and reads Search Console. It makes safe technical fixes and drafts one educational guide in English and Hindi, then opens a **pull request**. Nothing is published until Aastha reviews and merges it; merging deploys through Cloudflare.
+
+1. **Anthropic API key.** At console.anthropic.com, create a key named `aastha-seo-agent` and set a monthly spend limit (for example $10). In GitHub, go to `lawrekak/aastha-site` → **Settings → Secrets and variables → Actions → New repository secret**, name it `ANTHROPIC_API_KEY` and paste the key.
+2. **Let Actions open pull requests.** Go to **Settings → Actions → General → Workflow permissions**, select **Read and write permissions**, and tick **Allow GitHub Actions to create and approve pull requests**.
+3. **Protect `main` (recommended).** Go to **Settings → Branches → Add rule** for `main` and turn on **Require a pull request before merging**. The agent can then never change the live site without a human merge.
+4. **Articles on or off.** Articles are on by default. If Aastha doesn't want to review a weekly draft yet, add a repository **variable** (not a secret) named `DRAFT_ARTICLES` with the value `false`. The agent then only makes technical fixes and reports.
+5. **Search Console data (optional, recommended):**
+   1. In Google Cloud Console, create a project, enable the **Google Search Console API**, then create a **service account** and a JSON key for it.
+   2. In Search Console, go to **Settings → Users and permissions → Add user**, enter the service account's email and choose **Restricted** access.
+   3. In GitHub, add the whole JSON file's contents as the secret `GSC_SERVICE_ACCOUNT_JSON`.
+6. **Test run.** Go to **Actions → Weekly SEO agent → Run workflow**. A pull request labelled `seo` should appear within about 20 minutes.
+
+**Monthly report:** on the 1st of each month, **Monthly SEO report** files a GitHub issue with Search Console totals, top queries and pages, and the live-site audit.
+
+**Listings:** see `CITATIONS.md`. Listings and citations are done by hand; there is no automated link building.
+
+**Cost:** one agent run typically uses a few hundred thousand tokens of Claude Sonnet, roughly $1–3 (about ₹100–300) a week, so ₹400–1,200 a month. The spend limit caps it.

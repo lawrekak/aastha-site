@@ -296,6 +296,7 @@ INSIGHTS.forEach((a) => {
     body: `<div class="article-grid"><article class="stack prose"><span class="eyebrow">Guide · ${esc(a.d)}</span><h1>${esc(a.t)}</h1>
 <p class="muted">By <a href="/about/">${esc(S.name)}, Advocate</a> · <time datetime="${a.published}">${fmtDate(a.published)}</time></p>
 ${a.p.map((x) => `<p>${esc(x)}</p>`).join("")}
+${a.hi ? `<section lang="hi" class="stack deva-body" style="gap:12px;margin-top:12px;padding-top:18px;border-top:1px solid var(--line-soft)"><h2 class="h3 deva">${esc(a.hi.t)}</h2>${a.hi.p.map((x) => `<p>${esc(x)}</p>`).join("")}</section>` : ""}
 ${notice("General information only, not legal advice.")}
 </article><aside class="stack side-col">${officeCard()}</aside></div>`
   });

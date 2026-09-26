@@ -1,0 +1,73 @@
+name: Weekly SEO agent (opens a pull request for review)
+
+# Every Tuesday 10:15 IST, Claude audits the live site with the claude-seo plugin, reads
+# Search Console data, makes safe technical fixes and (optionally) drafts one educational
+# guide. It never publishes: everything arrives as a pull request that Aastha reviews and
+# merges. Merging deploys through Cloudflare.
+#
+# Needs repository secret ANTHROPIC_API_KEY. Optional: GSC_SERVICE_ACCOUNT_JSON.
+# Repository variable DRAFT_ARTICLES = "false" limits the agent to technical fixes and a report.
+
+on:
+  schedule:
+    - cron: "45 4 * * 2"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: seo-agent
+  cancel-in-progress: false
+
+jobs:
+  seo-agent:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build and check the current site
+        run: node build.mjs && node scripts/validate.mjs
+
+      - name: Search Console data (last 28 days)
+        env:
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+        run: node scripts/gsc-report.mjs 28
+
+      - name: Live site audit
+        continue-on-error: true
+        run: node scripts/audit-live.mjs
+
+      - name: Claude SEO agent
+        uses: anthropics/claude-code-action@v1
+        env:
+          DRAFT_ARTICLES: ${{ vars.DRAFT_ARTICLES || 'true' }}
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          plugin_marketplaces: |
+            https://github.com/AgriciDaniel/claude-seo.git
+          plugins: |
+            claude-seo@agricidaniel-claude-seo
+          claude_args: |
+            --model claude-sonnet-5
+            --max-turns 80
+            --allowedTools "Read,Write,Edit,Glob,Grep,WebFetch,WebSearch,Bash(node:*),Bash(npm:*),Bash(python3:*),Bash(pip:*),Bash(git:*),Bash(gh pr create:*),Bash(gh pr list:*),Bash(gh label create:*),Bash(date:*),Bash(cat:*),Bash(ls:*)"
+          prompt: |
+            REPO: ${{ github.repository }}
+            Follow the instructions in .github/seo-agent.md exactly.
+            DRAFT_ARTICLES is "${{ vars.DRAFT_ARTICLES || 'true' }}".
+            Today is the run date shown by `date +%F`.
