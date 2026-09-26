@@ -283,7 +283,6 @@ AREAS.forEach((a, i) => {
 <p class="lede">${esc(a.d)}</p>
 ${a.body.map((x) => `<p>${esc(x)}</p>`).join("")}
 <h2 class="h3">Typical matters</h2><ul>${a.i.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>
-<h2 class="h3">Documents usually relevant</h2><p>Matters of this kind usually involve ${esc(a.docs)}.</p>
 ${a.faq ? `<h2 class="h3">Common questions</h2><dl class="stack" style="gap:14px">${a.faq.map(([q, x]) => `<div><dt><b>${esc(q)}</b></dt><dd style="margin:4px 0 0">${esc(x)}</dd></div>`).join("")}</dl>` : ""}
 ${a.hiBody ? `<section lang="hi" class="stack deva-body" style="gap:12px;margin-top:12px;padding-top:18px;border-top:1px solid var(--line-soft)"><h2 class="h3 deva">${esc(a.hiBody.t)}</h2>${a.hiBody.p.map((x) => `<p>${esc(x)}</p>`).join("")}</section>` : ""}
 ${notice("General information only, not legal advice. Every matter depends on its own facts and documents.")}
