@@ -1,0 +1,78 @@
+name: Daily blog post (opens a pull request for review)
+
+# Every day at 06:20 IST, Claude picks a current legal topic people in Uttarakhand are
+# searching for, writes one short post (English and Hindi) following the skill in
+# .claude/skills/daily-law-blog/SKILL.md, checks it with the site validator, and opens a
+# pull request. Nothing is published until Aastha merges it; merging deploys via Cloudflare.
+#
+# Needs repository secret ANTHROPIC_API_KEY, and Settings -> Actions -> General ->
+# "Allow GitHub Actions to create and approve pull requests".
+# Repository variable BLOG_PAUSED = "true" skips the daily run.
+
+on:
+  schedule:
+    - cron: "50 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: daily-blog
+  cancel-in-progress: false
+
+jobs:
+  blog:
+    if: ${{ vars.BLOG_PAUSED != 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Search Console queries (optional)
+        continue-on-error: true
+        env:
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+        run: node scripts/gsc-report.mjs 28
+
+      - name: Claude writes today's post
+        uses: anthropics/claude-code-action@v1
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          claude_args: |
+            --model claude-sonnet-5
+            --max-turns 40
+            --allowedTools "Skill,Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node:*),Bash(date:*),Bash(ls:*),Bash(cat:*),Bash(gh pr list:*)"
+          prompt: |
+            Use the daily-law-blog skill (.claude/skills/daily-law-blog/SKILL.md) and follow it exactly.
+            Write today's post for ${{ github.repository }}. Today is the date shown by `date +%F` (use IST: TZ=Asia/Kolkata).
+
+      - name: Check and open the pull request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          NEW=$(git status --porcelain content/blog | awk '{print $2}' | grep '\.json$' || true)
+          if [ -z "$NEW" ]; then echo "No post written today."; exit 0; fi
+          node build.mjs && node scripts/validate.mjs
+          DAY=$(TZ=Asia/Kolkata date +%F)
+          TITLE=$(node -e "console.log(require('./$(echo "$NEW" | head -1)').title)")
+          BRANCH="blog/$DAY"
+          git config user.name "blog-agent"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add content/blog
+          git commit -m "Blog: $TITLE"
+          git push origin "$BRANCH"
+          [ -f .blog-pr.md ] || echo "Merge to publish. Close without merging to drop it." > .blog-pr.md
+          gh label create blog --color 0F766E --force || true
+          gh pr create --base main --head "$BRANCH" --label blog --title "Blog $DAY: $TITLE" --body-file .blog-pr.md

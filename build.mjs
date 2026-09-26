@@ -8,6 +8,9 @@ import crypto from "crypto";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const read = (f) => JSON.parse(fs.readFileSync(path.join(ROOT, "content", f), "utf8"));
+const BLOG_DIR = path.join(ROOT, "content", "blog");
+// Blog posts: one JSON file per post in content/blog/, newest first. Written by the daily blog agent.
+const POSTS = (fs.existsSync(BLOG_DIR) ? fs.readdirSync(BLOG_DIR) : []).filter((f) => f.endsWith(".json")).map((f) => ({ file: f, ...JSON.parse(fs.readFileSync(path.join(BLOG_DIR, f), "utf8")) })).sort((a, b) => b.published.localeCompare(a.published) || a.slug.localeCompare(b.slug));
 const S = read("site.json"), AREAS = read("areas.json"),
   FAQ = read("faq.json"), INSIGHTS = read("insights.json"), GUIDE = read("guide.json"), HI = read("hi.json");
 const PREVIEW = process.argv.includes("--preview");
@@ -27,6 +30,9 @@ const NEWTAB = `<span class="sr"> (opens in a new tab)</span>`;
 const ext = (url, label, cls = "") => `<a href="${esc(url)}" target="_blank" rel="noopener"${cls ? ` class="${cls}"` : ""}>${label}${ico("ext")}${NEWTAB}</a>`;
 const areaUrl = (a) => `/practice-areas/${a.slug}/`;
 const insightUrl = (a) => `/guides/${a.slug}/`;
+const postUrl = (a) => `/blog/${a.slug}/`;
+const words = (t) => String(t).split(/\s+/).filter(Boolean).length;
+const postWords = (a) => words([a.why, ...a.keyPoints, ...a.sections.flatMap((x) => [x.h, ...x.p]), ...(a.whatToDo || [])].join(" "));
 const GUIDE_URL = `/guides/${GUIDE.slug}/`;
 const fit = (t, ...suffixes) => { for (const x of suffixes) if ([...(t + x)].length <= 60) return t + x; return t; };
 const fmtDate = (iso) => new Date(iso + "T00:00:00").toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" });
@@ -70,8 +76,8 @@ function graph(p) {
 }
 
 /* ---------------- Layout ---------------- */
-const NAV_EN = [["/about/", "About"], ["/practice-areas/", "Practice"], ["/guides/", "Guides"], ["/faq/", "FAQ"], ["/contact/", "Contact"]];
-const NAV_HI = [["/about/", HI.nav.about], ["/practice-areas/", HI.nav.practice], ["/guides/", HI.nav.judgments], ["/hi/faq/", HI.nav.faq], ["/hi/contact/", HI.nav.contact]];
+const NAV_EN = [["/about/", "About"], ["/practice-areas/", "Practice"], ["/guides/", "Guides"], ["/blog/", "Blog"], ["/faq/", "FAQ"], ["/contact/", "Contact"]];
+const NAV_HI = [["/about/", HI.nav.about], ["/practice-areas/", HI.nav.practice], ["/guides/", HI.nav.judgments], ["/blog/", "ब्लॉग"], ["/hi/faq/", HI.nav.faq], ["/hi/contact/", HI.nav.contact]];
 const current = (p, href) => (href !== "/" && p.path.startsWith(href)) || p.path === href;
 
 function header(p) {
@@ -163,6 +169,7 @@ ${alts.map(([l, h]) => `<link rel="alternate" hreflang="${l}" href="${U(h)}">`).
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM summary">
+<link rel="alternate" type="application/rss+xml" href="/blog/feed.xml" title="${esc(S.name)}, Advocate — Blog">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Lato:wght@400;700&family=IBM+Plex+Mono:wght@400;500&family=Tiro+Devanagari+Hindi&display=swap">
@@ -199,6 +206,8 @@ const officeCard = (hi = false) => `<div class="card office">
 
 const areaCard = (a) => `<a class="card area-card" href="${areaUrl(a)}"><span class="ic">${ico(a.icon, "i")}</span><h3>${esc(a.t)}</h3><p class="muted" style="font-size:.94rem">${esc(a.d)}</p><span class="link" style="margin-top:auto">Read more ${ico("arrow")}</span></a>`;
 const ctaBand = `<div class="card cta-band"><div class="stack" style="gap:6px"><h2 class="h3">Office contact details</h2><p class="muted">Office contact details are provided for persons seeking information about the Advocate.</p></div><div class="row-wrap"><a class="btn btn-outline" href="/contact/">${ico("pin")}Office and contact details</a></div></div>`;
+const relatedPosts = (i) => { const r = POSTS.filter((x) => x.area === i).slice(0, 4); return r.length ? `<div class="card" style="padding:18px"><h2 class="foot-h">Recent blog posts</h2><ul class="plain">${r.map((x) => `<li><a href="${postUrl(x)}">${esc(x.title)}</a></li>`).join("")}</ul></div>` : ""; };
+const postCard = (a) => `<a class="card j-card" href="${postUrl(a)}"><span class="cite">${fmtDate(a.published)} · ${esc(AREAS[a.area].t)}</span><h2 class="h3">${esc(a.title)}</h2><p class="muted" style="font-size:.92rem">${esc(a.desc)}</p><span class="meta">${Math.max(1, Math.round(postWords(a) / 200))} min read</span></a>`;
 const notice = (t) => `<div class="notice">${ico("shield", "i")}<span>${t}</span></div>`;
 const faqItems = (items) => items.map(([q, a]) => `<details><summary>${esc(q)}${ico("right", "i")}</summary><p>${esc(a)}</p></details>`).join("");
 const faqLd = (items, url) => ({ "@type": "FAQPage", "@id": U(url) + "#faq", mainEntityOfPage: { "@id": U(url) + "#webpage" }, mainEntity: items.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) });
@@ -278,7 +287,7 @@ ${a.body.map((x) => `<p>${esc(x)}</p>`).join("")}
 ${a.faq ? `<h2 class="h3">Common questions</h2><dl class="stack" style="gap:14px">${a.faq.map(([q, x]) => `<div><dt><b>${esc(q)}</b></dt><dd style="margin:4px 0 0">${esc(x)}</dd></div>`).join("")}</dl>` : ""}
 ${a.hiBody ? `<section lang="hi" class="stack deva-body" style="gap:12px;margin-top:12px;padding-top:18px;border-top:1px solid var(--line-soft)"><h2 class="h3 deva">${esc(a.hiBody.t)}</h2>${a.hiBody.p.map((x) => `<p>${esc(x)}</p>`).join("")}</section>` : ""}
 ${notice("General information only, not legal advice. Every matter depends on its own facts and documents.")}
-</article><aside class="stack side-col">${officeCard()}<div class="card" style="padding:18px"><h2 class="foot-h">Other practice areas</h2><ul class="plain">${AREAS.filter((x) => x !== a).map((x) => `<li><a href="${areaUrl(x)}">${esc(x.t)}</a></li>`).join("")}</ul></div></aside></div>
+</article><aside class="stack side-col">${officeCard()}${relatedPosts(i)}<div class="card" style="padding:18px"><h2 class="foot-h">Other practice areas</h2><ul class="plain">${AREAS.filter((x) => x !== a).map((x) => `<li><a href="${areaUrl(x)}">${esc(x.t)}</a></li>`).join("")}</ul></div></aside></div>
 <div class="block">${ctaBand}</div>`
   });
 });
@@ -314,6 +323,40 @@ ${GUIDE.sections.map((s, i) => `<h2 class="h3" id="s${i + 1}">${esc(s.h)}</h2>${
 ${notice(esc(GUIDE.note))}
 </article><aside class="stack side-col">${officeCard()}</aside></div>
 <div class="block">${ctaBand}</div>`
+});
+
+// Blog: short daily posts on current legal questions, 12 per listing page
+const PER_PAGE = 12, BLOG_PAGES = Math.max(1, Math.ceil(POSTS.length / PER_PAGE));
+for (let n = 1; n <= BLOG_PAGES; n++) {
+  const list = POSTS.slice((n - 1) * PER_PAGE, n * PER_PAGE), url = n === 1 ? "/blog/" : `/blog/page/${n}/`;
+  add({
+    path: url, pageType: "CollectionPage", priority: n === 1 ? "0.8" : "0.4", changefreq: "daily", updated: POSTS[0]?.published,
+    title: n === 1 ? "Legal Blog: Uttarakhand and Nainital | Aastha Vishwakarma" : `Legal Blog, Page ${n} | Aastha Vishwakarma, Advocate`,
+    desc: n === 1 ? "Short, plain-language posts on legal questions people in Haldwani, Nainital and Uttarakhand are asking: family, property, service, cheque bounce and court procedure." : `Older posts from the legal blog of Aastha Vishwakarma, Advocate, Haldwani (page ${n} of ${BLOG_PAGES}).`,
+    crumbs: n === 1 ? [["Blog", "/blog/"]] : [["Blog", "/blog/"], [`Page ${n}`, url]],
+    body: `<span class="eyebrow">Blog</span><h1 style="margin:10px 0 12px">${n === 1 ? "Legal blog" : `Legal blog: page ${n}`}</h1>
+<p class="muted" style="margin-bottom:24px;max-width:62ch">Short posts on legal questions in the news and in everyday life in Uttarakhand, in plain language. Each takes about two minutes to read. General information only, not legal advice.</p>
+${list.length ? `<div class="grid3">${list.map(postCard).join("")}</div>` : `<div class="card" style="padding:22px"><p>The first posts will appear here soon. Meanwhile, see the <a href="/guides/">guides</a>.</p></div>`}
+${BLOG_PAGES > 1 ? `<nav class="row-wrap" aria-label="Blog pages" style="margin-top:24px">${n > 1 ? `<a class="btn btn-outline" href="${n === 2 ? "/blog/" : `/blog/page/${n - 1}/`}">Newer posts</a>` : ""}${n < BLOG_PAGES ? `<a class="btn btn-outline" href="/blog/page/${n + 1}/">Older posts</a>` : ""}</nav>` : ""}`
+  });
+}
+POSTS.forEach((a) => {
+  const url = postUrl(a), area = AREAS[a.area];
+  add({
+    path: url, title: fit(a.title, " | Aastha Vishwakarma", " | Blog"), ogTitle: a.title, ogType: "article", desc: a.desc, priority: "0.6", updated: a.updated || a.published,
+    crumbs: [["Blog", "/blog/"], [a.title, url]],
+    extraLd: [{ "@type": "BlogPosting", "@id": U(url) + "#article", headline: a.title, description: a.desc, datePublished: a.published, dateModified: a.updated || a.published, author: { "@id": ID.person }, publisher: { "@id": ID.firm }, mainEntityOfPage: { "@id": U(url) + "#webpage" }, image: U(S.ogImage), inLanguage: "en-IN", articleSection: area.t, wordCount: postWords(a), keywords: (a.keywords || []).join(", "), isPartOf: { "@type": "Blog", "@id": U("/blog/") + "#blog", name: `${S.name}, Advocate — Blog` }, citation: (a.sources || []).map((x) => x.url) }],
+    body: `<div class="article-grid"><article class="stack prose"><span class="eyebrow">Blog · <a href="${areaUrl(area)}">${esc(area.t)}</a></span><h1>${esc(a.title)}</h1>
+<p class="muted">By <a href="/about/">${esc(S.name)}, Advocate</a> · <time datetime="${a.published}">${fmtDate(a.published)}</time> · ${Math.max(1, Math.round(postWords(a) / 200))} min read</p>
+<p class="lede">${esc(a.why)}</p>
+<div class="keypoints"><b>Key points</b><ul>${a.keyPoints.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>
+${a.sections.map((x) => `<h2 class="h3">${esc(x.h)}</h2>${x.p.map((y) => `<p>${esc(y)}</p>`).join("")}`).join("")}
+${a.whatToDo?.length ? `<h2 class="h3">What you can do</h2><ol>${a.whatToDo.map((x) => `<li>${esc(x)}</li>`).join("")}</ol>` : ""}
+${a.hi ? `<section lang="hi" class="stack deva-body" style="gap:12px;margin-top:12px;padding-top:18px;border-top:1px solid var(--line-soft)"><h2 class="h3 deva">${esc(a.hi.title)}</h2><ul>${a.hi.keyPoints.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>${(a.hi.p || []).map((x) => `<p>${esc(x)}</p>`).join("")}</section>` : ""}
+${a.sources?.length ? `<h2 class="h3">Sources</h2><ul>${a.sources.map((x) => `<li>${ext(x.url, esc(x.title))}</li>`).join("")}</ul>` : ""}
+${notice("General information only, not legal advice. The law and its interpretation can change, and every matter depends on its own facts.")}
+</article><aside class="stack side-col"><div class="card" style="padding:18px"><h2 class="foot-h">Related practice area</h2><p><a href="${areaUrl(area)}">${esc(area.t)}</a></p></div>${POSTS.filter((x) => x !== a).slice(0, 5).length ? `<div class="card" style="padding:18px"><h2 class="foot-h">More posts</h2><ul class="plain">${POSTS.filter((x) => x !== a).slice(0, 5).map((x) => `<li><a href="${postUrl(x)}">${esc(x.title)}</a></li>`).join("")}</ul></div>` : ""}${officeCard()}</aside></div>`
+  });
 });
 
 // Contact
@@ -449,7 +492,7 @@ ${AREAS.map((a) => `- [${a.t}](${U(areaUrl(a))}): ${a.desc}`).join("\n")}
 - [${GUIDE.title}](${U(GUIDE_URL)}): ${GUIDE.desc}
 ${INSIGHTS.map((a) => `- [${a.t}](${U(insightUrl(a))}): ${a.desc}`).join("\n")}
 
-## Contact
+${POSTS.length ? `## Recent blog posts\n${POSTS.slice(0, 15).map((a) => `- [${a.title}](${U(postUrl(a))}): ${a.desc}`).join("\n")}\n\n` : ""}## Contact
 - [Office and directions](${U("/contact/")}): ${fullAddress}; ${S.phoneDisplay}
 - [FAQ](${U("/faq/")})
 
@@ -460,6 +503,16 @@ ${INSIGHTS.map((a) => `- [${a.t}](${U(insightUrl(a))}): ${a.desc}`).join("\n")}
 `);
 const strip = (h) => h.replace(/<script[\s\S]*?<\/script>/g, "").replace(/<svg[\s\S]*?<\/svg>/g, "").replace(/<(br|\/p|\/li|\/h\d|\/dt|\/dd|\/tr|\/summary|\/details)[^>]*>/g, "\n").replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/\(opens in a new tab\)/g, "").replace(/[ \t]+/g, " ").replace(/\n\s*\n+/g, "\n\n").trim();
 write("llms-full.txt", `# ${S.name}, Advocate — full site text\nSource: ${BASE}\nUpdated: ${UPDATED}\n\n` + indexable.filter((p) => p.lang === "en").map((p) => `---\nURL: ${U(p.path)}\nTitle: ${p.title}\n\n${strip(p.body)}`).join("\n\n") + "\n");
+
+// RSS feed for the blog
+const xml = (t) => String(t).replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+write("blog/feed.xml", `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>
+<title>${xml(S.name)}, Advocate — Blog</title><link>${U("/blog/")}</link><description>Plain-language posts on legal questions in Uttarakhand.</description><language>en-IN</language>
+<atom:link href="${U("/blog/feed.xml")}" rel="self" type="application/rss+xml"/>
+${POSTS.slice(0, 30).map((a) => `<item><title>${xml(a.title)}</title><link>${U(postUrl(a))}</link><guid>${U(postUrl(a))}</guid><pubDate>${new Date(a.published + "T06:00:00+05:30").toUTCString()}</pubDate><description>${xml(a.desc)}</description></item>`).join("\n")}
+</channel></rss>
+`);
 
 // Custom domain for GitHub Pages
 if (process.env.WRITE_CNAME) write("CNAME", new URL(BASE).host + "\n");

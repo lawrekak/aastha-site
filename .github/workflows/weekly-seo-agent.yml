@@ -6,7 +6,7 @@ name: Weekly SEO agent (opens a pull request for review)
 # merges. Merging deploys through Cloudflare.
 #
 # Needs repository secret ANTHROPIC_API_KEY. Optional: GSC_SERVICE_ACCOUNT_JSON.
-# Repository variable DRAFT_ARTICLES = "false" limits the agent to technical fixes and a report.
+# Repository variable DRAFT_ARTICLES = "true" also drafts one long guide; by default (false) the agent makes technical fixes and a report only, since short posts now come from the daily blog agent.
 
 on:
   schedule:
@@ -54,7 +54,7 @@ jobs:
       - name: Claude SEO agent
         uses: anthropics/claude-code-action@v1
         env:
-          DRAFT_ARTICLES: ${{ vars.DRAFT_ARTICLES || 'true' }}
+          DRAFT_ARTICLES: ${{ vars.DRAFT_ARTICLES || 'false' }}
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -69,5 +69,5 @@ jobs:
           prompt: |
             REPO: ${{ github.repository }}
             Follow the instructions in .github/seo-agent.md exactly.
-            DRAFT_ARTICLES is "${{ vars.DRAFT_ARTICLES || 'true' }}".
+            DRAFT_ARTICLES is "${{ vars.DRAFT_ARTICLES || 'false' }}".
             Today is the run date shown by `date +%F`.

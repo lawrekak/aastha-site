@@ -1,6 +1,7 @@
-dist/
-preview/
+.blog-pr.md
 audit-report.md
-node_modules/
+dist/
 gsc-report.md
 monthly.md
+node_modules/
+preview/

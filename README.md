@@ -57,6 +57,11 @@ SETUP.md     the account steps only a person can do
 To add a guide: add an entry to `content/insights.json`, bump `contentUpdated` in `site.json`, and push. The sitemap, llms.txt, structured data and IndexNow ping all update on their own.
 
 
+**Daily blog** (added 26 September 2026)
+- `/blog/` lists short posts (12 per page, newest first), with `/blog/feed.xml` (RSS), `BlogPosting` structured data, related posts on each practice-area page, and the latest posts in `llms.txt`.
+- One JSON file per post in `content/blog/` (`YYYY-MM-DD-slug.json`). The validator checks the shape, 200–600 words, 3–4 key points, at least one https source, no contact details and the Rule 36 wording.
+- `.github/workflows/daily-blog.yml` runs the `daily-law-blog` skill (`.claude/skills/daily-law-blog/SKILL.md`) at 06:20 IST and opens a pull request. Nothing is published until it is merged.
+
 **Weekly SEO agent and monthly report** (added 26 September 2026)
 - `.github/workflows/weekly-seo-agent.yml` runs every Tuesday at 10:15 IST. Claude uses the claude-seo plugin, Search Console data (`scripts/gsc-report.mjs`) and the live audit to make safe technical fixes and draft one English and Hindi guide, then opens a pull request for Aastha to review. Its standing instructions, including the Rule 36 limits, are in `.github/seo-agent.md`. Set the repository variable `DRAFT_ARTICLES=false` for technical fixes and reports only.
 - `.github/workflows/monthly-report.yml` runs on the 1st of each month and files a GitHub issue with Search Console totals, queries and pages, plus the audit.

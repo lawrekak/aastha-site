@@ -8,7 +8,7 @@ const site = JSON.parse(fs.readFileSync(path.join(path.dirname(new URL(import.me
 const BASE = site.url.replace(/\/$/, "");
 const errors = [], warnings = [];
 const err = (f, m) => errors.push(`${f}: ${m}`), warn = (f, m) => warnings.push(`${f}: ${m}`);
-const BANNED = /\b(best|top[- ]rated|no\.?\s?1|number one|expert|specialist|guaranteed?|100% success|success rate|won\b|winning)\b/i;
+const BANNED = /\b(best|top[- ]rated|no\.?\s?1|number one|expert|specialist|guaranteed?|100% success|success rate|won(?![’'])|winning)\b/i;
 
 const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]);
 const files = walk(DIST);
@@ -87,6 +87,36 @@ ins.forEach((a, n) => {
   if (a.hi && (!a.hi.t || !Array.isArray(a.hi.p) || !a.hi.p.length)) err(w, "hi needs t and p");
   if (Array.isArray(a.areas) && a.areas.some((x) => !Number.isInteger(x) || x < 0 || x > 7)) err(w, "areas must be practice-area index numbers 0–7");
 });
+// Blog posts (content/blog/*.json), written daily by the blog agent: shape, length and wording
+const BLOG = path.join(path.dirname(new URL(import.meta.url).pathname), "../content/blog");
+const areasN = JSON.parse(fs.readFileSync(path.join(BLOG, "../areas.json"), "utf8")).length;
+const bslugs = new Set();
+const wc = (t) => String(t).split(/\s+/).filter(Boolean).length;
+for (const f of (fs.existsSync(BLOG) ? fs.readdirSync(BLOG) : []).filter((x) => x.endsWith(".json"))) {
+  const w = `content/blog/${f}`; let a;
+  try { a = JSON.parse(fs.readFileSync(path.join(BLOG, f), "utf8")); } catch (e) { err(w, "is not valid JSON: " + e.message); continue; }
+  for (const k of ["title", "slug", "published", "area", "desc", "why", "keyPoints", "sections", "sources"]) if (a[k] === undefined || a[k] === "") err(w, `missing "${k}"`);
+  if (a.slug && !/^[a-z0-9]+(-[a-z0-9]+)*$/.test(a.slug)) err(w, "slug must be lowercase-hyphenated");
+  if (a.published && !/^\d{4}-\d{2}-\d{2}$/.test(a.published)) err(w, "published must be YYYY-MM-DD");
+  if (a.published && !f.startsWith(a.published + "-")) err(w, "file name must start with the published date");
+  if (bslugs.has(a.slug)) err(w, `duplicate slug ${a.slug}`); bslugs.add(a.slug);
+  if (!Number.isInteger(a.area) || a.area < 0 || a.area >= areasN) err(w, `area must be a practice-area index 0–${areasN - 1}`);
+  if (a.title && [...a.title].length > 70) err(w, "title longer than 70 characters");
+  if (a.desc && ([...a.desc].length < 70 || [...a.desc].length > 160)) err(w, "desc must be 70–160 characters");
+  if (!Array.isArray(a.keyPoints) || a.keyPoints.length < 3 || a.keyPoints.length > 4) err(w, "needs 3–4 key points");
+  else a.keyPoints.forEach((k, i) => { if (wc(k) > 30) err(w, `key point ${i + 1} is over 30 words`); });
+  if (!Array.isArray(a.sections) || !a.sections.length || a.sections.some((x) => !x.h || !Array.isArray(x.p) || !x.p.length)) err(w, "sections must be [{h, p: [...]}]");
+  else {
+    const total = wc([a.why, ...a.keyPoints, ...a.sections.flatMap((x) => [x.h, ...x.p]), ...(a.whatToDo || [])].join(" "));
+    if (total < 200 || total > 600) err(w, `${total} words: keep posts between 200 and 600 words`);
+    a.sections.flatMap((x) => x.p).forEach((para) => { if (wc(para) > 90) warn(w, "a paragraph is over 90 words; split it"); });
+  }
+  if (!Array.isArray(a.sources) || !a.sources.length || a.sources.some((x) => !x.title || !/^https:\/\//.test(x.url || ""))) err(w, "needs at least one source with title and https url");
+  if (a.hi && (!a.hi.title || !Array.isArray(a.hi.keyPoints) || !a.hi.keyPoints.length)) err(w, "hi needs title and keyPoints");
+  const txt = JSON.stringify(a);
+  if (/\+91|880202|aastha\.vishi|tel:|mailto:|whatsapp/i.test(txt)) err(w, "posts must not carry contact details or a call to action");
+}
+
 // sitemap covers every indexable page and nothing else
 const sm = fs.readFileSync(path.join(DIST, "sitemap.xml"), "utf8");
 const locs = [...sm.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);

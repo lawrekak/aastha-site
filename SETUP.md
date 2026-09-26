@@ -116,3 +116,18 @@ Every Tuesday at 10:15 IST, Claude audits the site with the open-source **claude
 **Listings:** see `CITATIONS.md`. Listings and citations are done by hand; there is no automated link building.
 
 **Cost:** one agent run typically uses a few hundred thousand tokens of Claude Sonnet, roughly $1–3 (about ₹100–300) a week, so ₹400–1,200 a month. The spend limit caps it.
+
+## 12. Daily blog (uses the same API key as step 11)
+
+Every day at 06:20 IST, `.github/workflows/daily-blog.yml` runs Claude with the **daily-law-blog** skill (`.claude/skills/daily-law-blog/SKILL.md`). Claude picks a current legal topic people in Uttarakhand are searching for, writes a two-minute post in English with a Hindi summary, checks it against the Rule 36 validator and opens a pull request labelled `blog`.
+
+1. Complete steps 11.1 and 11.2 (the `ANTHROPIC_API_KEY` secret and letting Actions open pull requests).
+2. **Review each morning.** GitHub emails the repository owner when a pull request opens. Open it, read the post and the "For Aastha to check" list, then:
+   - **Merge** to publish. Cloudflare deploys in about a minute.
+   - **Close** it to drop the post.
+   - To fix a word, edit the file in the pull request (the pencil icon), then merge.
+3. **Let Aastha review directly (recommended).** Give her a free GitHub account and add her under **Settings → Collaborators**. She can then review and merge from the GitHub mobile app.
+4. **Pause.** Add the repository variable `BLOG_PAUSED` = `true` to stop the daily run, for example during court vacations.
+5. **Test now.** Go to **Actions → Daily blog post → Run workflow**.
+
+Cost: about $0.30–1 a run, so roughly ₹800–2,500 a month on top of the weekly agent. The spend limit on the API key caps it.
