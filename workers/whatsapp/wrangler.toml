@@ -1,0 +1,21 @@
+name = "aastha-whatsapp"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+
+routes = [
+  { pattern = "advaasthavishwakarma.in/webhooks/cal", zone_name = "advaasthavishwakarma.in" }
+]
+
+[triggers]
+crons = ["0 * * * *"]   # hourly: reminders for meetings starting in 23–24 hours
+
+[vars]
+WA_PHONE_ID = "0"                     # Meta > WhatsApp Manager > API setup > Phone number ID
+TEMPLATE_CONFIRM = "booking_confirmation"
+TEMPLATE_REMIND = "appointment_reminder"
+TEMPLATE_LANG = "en"
+
+# Secrets:
+#   npx wrangler secret put CAL_WEBHOOK_SECRET   (same text you type in Cal.com > Settings > Webhooks)
+#   npx wrangler secret put CAL_API_KEY
+#   npx wrangler secret put WA_TOKEN             (permanent system-user token from Meta Business Settings)

@@ -1,0 +1,32 @@
+name: Weekly live SEO audit
+
+on:
+  schedule:
+    - cron: "30 3 * * 1"   # Mondays 09:00 IST
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Audit live pages, crawler files and PageSpeed scores
+        id: audit
+        continue-on-error: true
+        env:
+          PSI_KEY: ${{ secrets.PSI_KEY }}
+        run: node scripts/audit-live.mjs
+      - name: Open an issue when something needs attention
+        if: steps.audit.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TITLE="SEO audit $(date +%F) - items need attention"
+          gh issue create --title "$TITLE" --body-file audit-report.md --label seo || gh issue create --title "$TITLE" --body-file audit-report.md

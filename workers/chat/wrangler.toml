@@ -1,0 +1,17 @@
+name = "aastha-chat"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+
+# Runs on the site's own domain, so the browser needs no cross-site permission.
+routes = [
+  { pattern = "advaasthavishwakarma.in/api/chat", zone_name = "advaasthavishwakarma.in" }
+]
+
+[vars]
+ALLOWED_ORIGIN = "https://advaasthavishwakarma.in"
+CAL_EVENT_TYPE_ID = "0"          # Cal.com > Event types > First meeting > the number in the page URL
+MODEL = "claude-haiku-4-5-20251001"
+
+# Secrets — set once, never commit:
+#   npx wrangler secret put ANTHROPIC_API_KEY
+#   npx wrangler secret put CAL_API_KEY

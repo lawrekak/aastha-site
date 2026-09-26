@@ -1,0 +1,81 @@
+{
+  "url": "https://advaasthavishwakarma.in",
+  "lang": "en-IN",
+  "name": "Aastha Vishwakarma",
+  "title": "Advocate",
+  "firm": "Vishwakarma, Kumar & Jain Law Offices",
+  "tagline": "Advocate appearing before the High Court of Uttarakhand at Nainital, the Delhi High Court and tribunals.",
+  "summary": "Aastha Vishwakarma is an advocate appearing before the High Court of Uttarakhand at Nainital, the Delhi High Court, the NCLAT and the Central Administrative Tribunal, with an office in Haldwani. Her practice covers service and education law, writ petitions against public authorities, criminal appeals and white-collar defence, property and land, insolvency and tribunal matters. She has been in practice since 2019.",
+  "phone": "+91-8802029468",
+  "phoneDisplay": "+91 88020 29468",
+  "email": "",
+  "address": {
+    "street": "B-8, Vaishali Colony, Bhotia Parao",
+    "locality": "Haldwani",
+    "district": "Nainital",
+    "region": "Uttarakhand",
+    "postalCode": "263139",
+    "country": "IN"
+  },
+  "geo": null,
+  "_geo_note": "Add {\"lat\":..,\"lng\":..} from the Google Business Profile pin to enable geo coordinates in structured data.",
+  "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Vishwakarma%2C%20Kumar%20%26%20Jain%20Law%20Offices%2C%20B-8%20Vaishali%20Colony%2C%20Bhotia%20Parao%2C%20Haldwani",
+  "hours": {
+    "days": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "09:00",
+    "closes": "17:00",
+    "display": "9:00 AM – 5:00 PM, Monday to Sunday"
+  },
+  "forums": [
+    "High Court of Uttarakhand, Nainital",
+    "Delhi High Court",
+    "National Company Law Appellate Tribunal (NCLAT)",
+    "Central Administrative Tribunal",
+    "Supreme Court of India"
+  ],
+  "practiceSince": "2019",
+  "languages": [
+    "Hindi",
+    "English"
+  ],
+  "areaServed": [
+    "Haldwani",
+    "Nainital",
+    "Kathgodam",
+    "Lalkuan",
+    "Ramnagar",
+    "Rudrapur",
+    "Kashipur",
+    "Almora",
+    "Pithoragarh",
+    "Bageshwar",
+    "Champawat",
+    "Uttarakhand",
+    "New Delhi"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/aastha-vishwakarma-5b145016b/"
+  ],
+  "enrolment": {
+    "barCouncil": "",
+    "number": "",
+    "year": ""
+  },
+  "qualifications": [],
+  "indexNowKey": "dd98bb178cc3a4532f887485f8dd1409",
+  "ogImage": "/assets/og.png",
+  "calLink": "",
+  "_calLink_note": "Cal.com username/event slug, e.g. \"aastha-vishwakarma/first-meeting\". When set, the consultation page shows live availability from her Apple Calendar.",
+  "formEndpoint": "",
+  "chatEndpoint": "",
+  "_chatEndpoint_note": "URL of the chat Worker, e.g. https://chat.<domain>/api/chat. When set, the assistant button appears on every page.",
+  "contentUpdated": "2026-09-26"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "uttarakhand-high-court-nainital",
+  "title": "Taking a matter to the High Court of Uttarakhand at Nainital",
+  "seoTitle": "Uttarakhand High Court, Nainital: A Practical Guide",
+  "desc": "How matters reach the High Court of Uttarakhand at Nainital, how to check case status and cause lists online, and what to bring to a first meeting with an advocate.",
+  "published": "2026-09-26",
+  "sections": [
+    { "h": "Where the court sits", "p": ["The High Court of Uttarakhand sits at Nainital. It hears matters arising anywhere in the state, from all thirteen districts. For clients in Haldwani, Kathgodam, Lalkuan and Rudrapur, a first meeting can take place at the Haldwani office or by video call before any visit to Nainital is needed."] },
+    { "h": "Kinds of matters the High Court hears", "p": ["The High Court hears writ petitions under Article 226 of the Constitution against the State and public authorities, including service matters of state employees. It also hears civil and criminal appeals and revisions, bail applications, and petitions to quash criminal proceedings under section 528 of the Bharatiya Nagarik Suraksha Sanhita (formerly section 482 of the CrPC)."] },
+    { "h": "Checking case status, cause lists and orders", "p": ["Case status can be searched on the eCourts High Court services portal by case number, party name or advocate name. The daily cause list, which shows which matters are listed before which bench, is published on the High Court's own website. Orders and judgments can be read on both."],
+      "links": [["High Court of Uttarakhand — official website", "https://highcourtofuttarakhand.gov.in/"], ["High Court of Uttarakhand — cause list", "https://highcourtofuttarakhand.gov.in/cause-list/"], ["eCourts High Court services — case status (Uttarakhand)", "https://hcservices.ecourts.gov.in/ecourtindiaHC/index_highcourt.php?state_cd=15&dist_cd=1&stateNm=Uttarakhand"]] },
+    { "h": "What to bring to a first meeting", "p": ["Bring the order or notice you want to challenge, any earlier court orders, and correspondence with the other side or the authority. If a case is already filed, bring its number and a copy of the last order. For service matters, add the appointment letter and salary or pension records; for property matters, the title documents and revenue records."] },
+    { "h": "How long it takes", "p": ["Timelines depend on the kind of matter and the court's list. Urgent matters, such as bail or a threatened demolition, can be mentioned for early listing. Most writ petitions are first heard on admission, when the court decides whether to issue notice to the other side."] }
+  ],
+  "note": "General information only, not legal advice. Procedures change; check the court's website for current practice."
+}

@@ -1,0 +1,12 @@
+// Cloudflare Worker that serves the static site built into dist/.
+// Build command (Cloudflare dashboard): node build.mjs && node scripts/validate.mjs
+// Deploy command: npx wrangler deploy
+{
+  "name": "aastha-site",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  }
+}

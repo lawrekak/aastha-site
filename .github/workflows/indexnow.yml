@@ -1,0 +1,16 @@
+name: Notify search engines (manual)
+
+# Cloudflare Crawler Hints pings IndexNow automatically when pages change.
+# Run this by hand after a large content update if you want to be sure.
+on:
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node build.mjs && node scripts/indexnow.mjs

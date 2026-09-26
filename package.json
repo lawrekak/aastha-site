@@ -1,0 +1,14 @@
+{
+  "name": "aastha-vishwakarma-site",
+  "private": true,
+  "type": "module",
+  "description": "Website of Aastha Vishwakarma, Advocate — static build with SEO and AI-search layer",
+  "scripts": {
+    "build": "node build.mjs",
+    "preview": "node build.mjs --preview",
+    "check": "node build.mjs && node scripts/validate.mjs",
+    "indexnow": "node scripts/indexnow.mjs",
+    "audit": "node scripts/audit-live.mjs"
+  },
+  "engines": { "node": ">=18" }
+}
