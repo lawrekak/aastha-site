@@ -88,10 +88,9 @@ function header(p) {
   const langLink = hi ? `<a class="lang" href="${other}" hreflang="en" lang="en">English</a>` : `<a class="lang deva" href="${other}" hreflang="hi" lang="hi">हिन्दी</a>`;
   return `<a class="skip" href="#main">${hi ? "मुख्य सामग्री पर जाएँ" : "Skip to content"}</a>
 <header class="top"><div class="wrap">
-  <a class="brand" href="${hi ? "/hi/" : "/"}" aria-label="${esc(S.name)}, Advocate — ${hi ? "मुख्य पृष्ठ" : "home"}"><span class="mono-mark" aria-hidden="true">AV</span><span><b>${hi ? HI.name : esc(S.name)}</b><span class="sub">${hi ? "अधिवक्ता · उत्तराखंड उच्च न्यायालय · दिल्ली उच्च न्यायालय" : "Advocate · High Court of Uttarakhand · Delhi High Court"}</span></span></a>
+  <a class="brand" href="${hi ? "/hi/" : "/"}" aria-label="${esc(S.name)}, Advocate — ${hi ? "मुख्य पृष्ठ" : "home"}"><span class="mono-mark" aria-hidden="true">AV</span><span><b>${hi ? HI.name : esc(S.name)}</b><span class="sub">${hi ? "अधिवक्ता, हल्द्वानी" : "Advocate, Haldwani"}</span></span></a>
   <nav class="main" aria-label="${hi ? "मुख्य" : "Main"}">${links}${langLink}</nav>
   <div class="row-wrap" style="gap:8px">
-    <a href="${hi ? "/hi/contact/" : "/contact/"}" class="btn btn-primary cta-desk">${ico("pin")}${hi ? HI.nav.contact : "Contact details"}</a>
     <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="sheet" aria-label="${hi ? "मेन्यू खोलें" : "Open menu"}">${ico("menu", "i")}</button>
   </div>
 </div></header>
@@ -153,7 +152,7 @@ function layout(p) {
 ${alts.map(([l, h]) => `<link rel="alternate" hreflang="${l}" href="${U(h)}">`).join("\n")}
 <meta name="robots" content="${p.noindex ? "noindex, follow" : "index, follow, max-snippet:-1, max-image-preview:large"}">
 <meta name="author" content="${esc(S.name)}">
-<meta name="theme-color" content="#1E3A8A">
+<meta name="theme-color" content="#1F4D3F">
 <meta name="geo.region" content="IN-UT">
 <meta name="geo.placename" content="Haldwani">
 <meta property="og:type" content="${p.ogType || "website"}">
@@ -173,7 +172,7 @@ ${alts.map(([l, h]) => `<link rel="alternate" hreflang="${l}" href="${U(h)}">`).
 <link rel="alternate" type="application/rss+xml" href="/blog/feed.xml" title="${esc(S.name)}, Advocate — Blog">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Lato:wght@400;700&family=IBM+Plex+Mono:wght@400;500&family=Tiro+Devanagari+Hindi&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Hanken+Grotesk:wght@400;500;700&family=Tiro+Devanagari+Hindi&display=swap">
 <link rel="stylesheet" href="/assets/site.css?v=${V_CSS}">
 <script type="application/ld+json">${graph(p)}</script>
 <script src="/assets/site.js?v=${V_JS}" defer></script>
@@ -213,6 +212,60 @@ const notice = (t) => `<div class="notice">${ico("shield", "i")}<span>${t}</span
 const faqItems = (items) => items.map(([q, a]) => `<details><summary>${esc(q)}${ico("right", "i")}</summary><p>${esc(a)}</p></details>`).join("");
 const faqLd = (items, url) => ({ "@type": "FAQPage", "@id": U(url) + "#faq", mainEntityOfPage: { "@id": U(url) + "#webpage" }, mainEntity: items.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) });
 
+
+/* ---------------- Home ---------------- */
+// Fine-line Kumaon ridgeline (Naina Peak above the lake) — the page's one decorative element.
+const ridge = `<svg class="ridge" viewBox="0 0 1200 140" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+<path class="r3" d="M0 92 C60 84 110 60 170 58 S260 88 320 76 S420 22 480 20 S560 64 620 60 S700 34 760 38 S860 80 930 70 S1040 30 1100 36 S1170 60 1200 58"/>
+<path class="r2" d="M0 110 C70 104 130 84 200 86 S300 104 370 94 S470 62 540 66 S640 96 710 90 S820 70 890 76 S1000 100 1070 92 S1160 80 1200 84"/>
+<path class="r1" d="M0 126 C90 120 170 108 250 112 S390 124 470 116 S600 102 680 108 S820 124 900 118 S1060 106 1200 112"/>
+<path class="lake" d="M500 134 C580 129 660 129 740 134"/>
+</svg>`;
+const credRows = (hi) => [
+  [hi ? "नामांकन" : "Enrolment", hi ? `बार काउंसिल ऑफ़ उत्तराखंड, ${S.enrolment.number}` : `${S.enrolment.barCouncil}, ${S.enrolment.number}`],
+  [hi ? "अभ्यास" : "In practice", hi ? `${S.practiceSince} से` : `Since ${S.practiceSince}`],
+  ...(S.qualifications.length ? [[hi ? "योग्यता" : "Qualification", hi ? "एलएल.बी., कैंपस लॉ सेंटर, दिल्ली विश्वविद्यालय" : "LL.B., Campus Law Centre, University of Delhi"]] : []),
+  [hi ? "भाषाएँ" : "Languages", hi ? "हिंदी, अंग्रेज़ी" : "Hindi and English"],
+  [hi ? "कार्यालय" : "Office", hi ? "भोटिया पड़ाव, हल्द्वानी" : "Bhotia Parao, Haldwani"]
+];
+function homeBody(hi) {
+  const L = hi ? "hi" : "en";
+  const courts = hi ? HI.home.forums : S.forums;
+  const areaRow = (a) => `<li><a href="${areaUrl(a)}"><span class="ix-t${hi ? " deva" : ""}">${esc(hi ? a.hi : a.t)}</span><span class="ix-d"${hi ? ' lang="en"' : ""}>${esc(hi ? a.t : a.d)}</span>${ico("arrow", "i ix-a")}</a></li>`;
+  const posts = POSTS.slice(0, 3);
+  return `<section class="h-hero" aria-labelledby="h1"${hi ? ' lang="hi"' : ""}>
+  <div class="h-intro">
+    <p class="h-kicker${hi ? " deva" : ""}">${hi ? "अधिवक्ता, हल्द्वानी" : `Advocate, Haldwani <span class="deva" lang="hi">· अधिवक्ता</span>`}</p>
+    <h1 id="h1" class="h-name${hi ? " deva" : ""}">${hi ? HI.name : esc(S.name)}<span class="h-role">${hi ? "उत्तराखंड उच्च न्यायालय, नैनीताल एवं दिल्ली उच्च न्यायालय में अधिवक्ता" : "Advocate at the High Court of Uttarakhand, Nainital and the Delhi High Court"}</span></h1>
+    <p class="h-lede${hi ? " deva" : ""}">${hi ? esc(HI.home.lede) : "Practice in service and education law, district court litigation including cheque bounce and recovery, matrimonial and family disputes, writ petitions against public authorities, criminal appeals, property, insolvency and tribunal matters."}</p>
+    ${hi ? "" : `<p class="h-hi deva" lang="hi">सेवा कानून, चेक बाउंस, तलाक़ व भरण-पोषण, रिट याचिकाएँ, आपराधिक अपील एवं संपत्ति संबंधी मामले। <a href="/hi/">हिन्दी में पढ़ें</a></p>`}
+    <div class="row-wrap"><a class="btn btn-primary" href="/practice-areas/">${hi ? HI.nav.practice : "Areas of practice"}</a><a class="btn btn-quiet" href="${hi ? "/hi/contact/" : "/contact/"}">${ico("pin")}${hi ? esc(HI.home.cta) : "Office and contact details"}</a></div>
+  </div>
+  <dl class="h-cred${hi ? " deva-body" : ""}">${credRows(hi).map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
+</section>
+${ridge}
+<section class="h-sec h-courts" aria-labelledby="h-courts"${hi ? ' lang="hi"' : ""}>
+  <h2 id="h-courts"${hi ? ' class="deva"' : ""}>${hi ? esc(HI.home.forumsH) : "Courts and tribunals"}</h2>
+  <ul class="courts${hi ? " deva-body" : ""}">${courts.map((f) => `<li>${esc(f)}</li>`).join("")}</ul>
+</section>
+<section class="h-sec" aria-labelledby="h-areas"${hi ? ' lang="hi"' : ""}>
+  <div class="sec-head"><h2 id="h-areas"${hi ? ' class="deva"' : ""}>${hi ? esc(HI.home.areasH) : "Areas of practice"}</h2><a class="link" href="/practice-areas/">${hi ? "सभी क्षेत्र" : "All practice areas"}</a></div>
+  <ul class="index">${AREAS.map(areaRow).join("")}</ul>
+</section>
+<section class="h-office" aria-labelledby="h-office"${hi ? ' lang="hi"' : ""}>
+  <div class="h-office-in">
+    <div><h2 id="h-office"${hi ? ' class="deva"' : ""}>${hi ? HI.firm : esc(S.firm)}</h2><address${hi ? ' class="deva"' : ""}>${hi ? HI.address : esc(fullAddress)}</address></div>
+    <dl><div><dt>${hi ? "समय" : "Hours"}</dt><dd${hi ? ' class="deva"' : ""}>${hi ? HI.hours : "9:00 AM – 5:00 PM, every day"}</dd></div><div><dt>${hi ? "फ़ोन" : "Phone"}</dt><dd><a href="${TEL}">${esc(S.phoneDisplay)}</a></dd></div>${S.email ? `<div><dt>${hi ? "ईमेल" : "Email"}</dt><dd><a href="mailto:${esc(S.email)}">${esc(S.email)}</a></dd></div>` : ""}</dl>
+    <div class="row-wrap">${ext(S.mapsUrl, hi ? HI.contact.directions : "Get directions", "btn btn-on-dark")}</div>
+  </div>
+</section>
+<section class="h-sec" aria-labelledby="h-read">
+  <div class="sec-head"><h2 id="h-read">${hi ? "पढ़ें" : "Read"}</h2><a class="link" href="/blog/">${hi ? "सभी ब्लॉग पोस्ट" : "All blog posts"}</a></div>
+  <div class="reads">${posts.map((a) => `<a class="read" href="${postUrl(a)}"><span class="read-k">${fmtDate(a.published)}</span><h3>${esc(a.title)}</h3><p>${esc(a.desc)}</p></a>`).join("")}<a class="read read-guide" href="${GUIDE_URL}"><span class="read-k">${hi ? "मार्गदर्शिका" : "Guide"}</span><h3>${esc(GUIDE.title)}</h3><p>${esc(GUIDE.desc)}</p></a></div>
+</section>
+${hi ? `<p class="h-sec"><a class="link" href="/">${esc(HI.home.enLink)}</a></p>` : `<section class="h-sec" aria-labelledby="h-faqs"><div class="sec-head"><h2 id="h-faqs">Common questions</h2><a class="link" href="/faq/">All questions</a></div><div class="faq-list">${faqItems(FAQ.slice(0, 3))}</div></section>`}`;
+}
+
 /* ---------------- Pages ---------------- */
 const pages = [];
 const add = (p) => pages.push({ lang: "en", ...p });
@@ -222,25 +275,7 @@ add({
   path: "/", title: "Aastha Vishwakarma, Advocate | Nainital High Court, Haldwani", ogTitle: "Aastha Vishwakarma, Advocate",
   desc: "Advocate at the Uttarakhand and Delhi High Courts and District Courts. Service law, cheque bounce, family and matrimonial, civil and criminal cases. Haldwani.",
   alt: { en: "/", hi: "/hi/" }, priority: "1.0", changefreq: "weekly",
-  body: `<section class="hero" aria-labelledby="h1">
-  <div class="stack" style="gap:20px">
-    <span class="eyebrow">Advocate · <span class="deva" lang="hi" style="letter-spacing:0;text-transform:none;font-size:.95rem">अधिवक्ता</span></span>
-    <h1 id="h1">${esc(S.tagline)}</h1>
-    <p class="lede">Practice in service and education law, civil and criminal litigation in the district courts including cheque bounce and recovery matters, matrimonial and family disputes, writ petitions against public authorities, criminal appeals and property matters.</p>
-    <p class="deva muted" lang="hi">${esc(HI.home.lede)}</p>
-    <div class="row-wrap"><a class="btn btn-primary" href="/practice-areas/">Areas of practice</a><a class="btn btn-outline" href="/contact/">${ico("pin")}Office and contact details</a></div>
-    <div class="facts">
-      <div class="fact">${ico("court", "i")}<div><b>High Courts and District Courts</b>Delhi and Uttarakhand, plus NCLAT, CAT, SC</div></div>
-      <div class="fact">${ico("brief", "i")}<div><b>Since ${S.practiceSince}</b>In practice</div></div>
-      <div class="fact">${ico("lang", "i")}<div><b>Hindi and English</b>Languages</div></div>
-    </div>
-  </div>
-  ${officeCard()}
-</section>
-<section class="forums" aria-label="Forums appeared before"><span class="lbl">Appears before</span>${S.forums.map((f) => `<span class="f">${ico("court", "i")}${esc(f.replace(" (NCLAT)", ""))}</span>`).join("")}</section>
-<section class="block" aria-labelledby="h-areas"><div class="sec-head"><div class="stack"><span class="eyebrow">Areas of practice</span><h2 id="h-areas">Matters handled</h2></div><a class="link" href="/practice-areas/">All practice areas ${ico("arrow")}</a></div><div class="grid3">${AREAS.map(areaCard).join("")}</div></section>
-<section class="block" aria-labelledby="h-guide"><div class="card guide-band"><div class="stack"><span class="eyebrow">Guide</span><h2 id="h-guide">${esc(GUIDE.title)}</h2><p class="muted">${esc(GUIDE.desc)}</p></div><a class="btn btn-outline" href="${GUIDE_URL}">Read the guide ${ico("arrow")}</a></div></section>
-<section class="block" aria-labelledby="h-faqs"><div class="sec-head"><div class="stack"><span class="eyebrow">Questions</span><h2 id="h-faqs">Common questions</h2></div><a class="link" href="/faq/">All questions ${ico("arrow")}</a></div><div style="max-width:820px">${faqItems(FAQ.slice(0, 3))}</div></section>`,
+  body: homeBody(false),
   extraLd: [faqLd(FAQ.slice(0, 3), "/")]
 });
 
@@ -398,11 +433,7 @@ add({
 const hiOffice = officeCard(true);
 pages.push({
   lang: "hi", path: "/hi/", title: HI.home.seoTitle, desc: HI.home.desc, alt: { en: "/", hi: "/hi/" }, priority: "0.9",
-  body: `<section class="hero" lang="hi"><div class="stack deva-body" style="gap:18px"><span class="eyebrow">अधिवक्ता</span><h1 class="deva">${esc(HI.home.h1)}</h1><p class="lede">${esc(HI.home.lede)}</p>
-<div class="row-wrap"><a class="btn btn-outline" href="/hi/contact/">${ico("pin")}${esc(HI.home.cta)}</a></div></div>${hiOffice}</section>
-<section class="forums" lang="hi"><span class="lbl">${esc(HI.home.forumsH)}</span>${HI.home.forums.map((f) => `<span class="f deva">${ico("court", "i")}${esc(f)}</span>`).join("")}</section>
-<section class="block" lang="hi"><h2 class="deva" style="margin-bottom:18px">${esc(HI.home.areasH)}</h2><div class="grid3">${AREAS.map((a) => `<a class="card area-card" href="${areaUrl(a)}"><span class="ic">${ico(a.icon, "i")}</span><h3 class="deva">${esc(a.hi)}</h3><p class="muted" lang="en" style="font-size:.9rem">${esc(a.t)}</p></a>`).join("")}</div>
-<p style="margin-top:22px"><a class="link" href="/">${esc(HI.home.enLink)} ${ico("arrow")}</a></p></section>`
+  body: homeBody(true)
 });
 pages.push({
   lang: "hi", path: "/hi/faq/", title: HI.faq.seoTitle, desc: HI.faq.desc, alt: { en: "/faq/", hi: "/hi/faq/" }, aboutId: ID.firm,
@@ -519,6 +550,6 @@ if (process.env.WRITE_CNAME) write("CNAME", new URL(BASE).host + "\n");
 // IndexNow key file
 write(`${S.indexNowKey}.txt`, S.indexNowKey);
 // Manifest
-write("site.webmanifest", JSON.stringify({ name: `${S.name}, Advocate`, short_name: "Aastha V.", start_url: "/", display: "standalone", background_color: "#F8FAFC", theme_color: "#1E3A8A", icons: [{ src: "/assets/icon-192.png", sizes: "192x192", type: "image/png" }, { src: "/assets/icon-512.png", sizes: "512x512", type: "image/png" }] }, null, 1));
+write("site.webmanifest", JSON.stringify({ name: `${S.name}, Advocate`, short_name: "Aastha V.", start_url: "/", display: "standalone", background_color: "#FAFAF7", theme_color: "#1F4D3F", icons: [{ src: "/assets/icon-192.png", sizes: "192x192", type: "image/png" }, { src: "/assets/icon-512.png", sizes: "512x512", type: "image/png" }] }, null, 1));
 
 console.log(`Built ${pages.length} pages + 404 into ${path.relative(ROOT, OUT)}/ (${PREVIEW ? "preview" : "production"})`);
