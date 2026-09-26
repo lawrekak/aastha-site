@@ -44,7 +44,7 @@ const firmNode = {
 const personNode = {
   "@type": "Person", "@id": ID.person, name: S.name, alternateName: HI.name, jobTitle: "Advocate", url: U("/about/"), image: U("/assets/og.png"),
   worksFor: { "@id": ID.firm }, telephone: S.phone, ...(S.email ? { email: S.email } : {}), address: postal, knowsLanguage: ["hi", "en"],
-  knowsAbout: AREAS.map((a) => a.t).concat(["Article 226 writ petitions", "Prevention of Corruption Act", "Insolvency and Bankruptcy Code", "High Court of Uttarakhand practice"]),
+  knowsAbout: AREAS.map((a) => a.t).concat(["Divorce and matrimonial law", "Maintenance", "Child custody and guardianship", "Domestic violence law", "Article 226 writ petitions", "Prevention of Corruption Act", "Insolvency and Bankruptcy Code", "High Court of Uttarakhand practice"]),
   ...(S.sameAs.length ? { sameAs: S.sameAs } : {}),
   ...(S.qualifications.length ? { hasCredential: S.qualifications.map((q) => ({ "@type": "EducationalOccupationalCredential", name: q, credentialCategory: "degree" })), alumniOf: { "@type": "CollegeOrUniversity", name: "Campus Law Centre, Faculty of Law, University of Delhi", parentOrganization: { "@type": "CollegeOrUniversity", name: "University of Delhi" } } } : {}),
   ...(S.enrolment.barCouncil ? { memberOf: { "@type": "Organization", name: S.enrolment.barCouncil, url: "https://www.barcouncilofuttarakhand.org/" }, identifier: { "@type": "PropertyValue", propertyID: "Bar Council enrolment number", value: S.enrolment.number }, hasOccupation: { "@type": "Occupation", name: "Advocate", occupationalCategory: "23-1011" } } : {})
@@ -268,13 +268,15 @@ add({
 AREAS.forEach((a, i) => {
   add({
     path: areaUrl(a), title: a.seoTitle, desc: a.desc, crumbs: [["Practice areas", "/practice-areas/"], [a.t, areaUrl(a)]], priority: "0.8",
-    extraLd: [{ "@type": "Service", "@id": U(areaUrl(a)) + "#service", name: a.t, serviceType: a.t, description: a.desc, provider: { "@id": ID.person }, areaServed: S.areaServed.map((n) => ({ "@type": "Place", name: n })), url: U(areaUrl(a)) }],
+    extraLd: [{ "@type": "Service", "@id": U(areaUrl(a)) + "#service", name: a.t, serviceType: a.t, description: a.desc, provider: { "@id": ID.person }, areaServed: S.areaServed.map((n) => ({ "@type": "Place", name: n })), url: U(areaUrl(a)) }].concat(a.faq ? [faqLd(a.faq, areaUrl(a))] : []),
     body: `<div class="article-grid"><article class="stack prose">
 <span class="eyebrow">Practice area</span><h1>${esc(a.t)}</h1>
 <p class="lede">${esc(a.d)}</p>
 ${a.body.map((x) => `<p>${esc(x)}</p>`).join("")}
 <h2 class="h3">Typical matters</h2><ul>${a.i.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>
 <h2 class="h3">Documents usually relevant</h2><p>Matters of this kind usually involve ${esc(a.docs)}.</p>
+${a.faq ? `<h2 class="h3">Common questions</h2><dl class="stack" style="gap:14px">${a.faq.map(([q, x]) => `<div><dt><b>${esc(q)}</b></dt><dd style="margin:4px 0 0">${esc(x)}</dd></div>`).join("")}</dl>` : ""}
+${a.hiBody ? `<section lang="hi" class="stack deva-body" style="gap:12px;margin-top:12px;padding-top:18px;border-top:1px solid var(--line-soft)"><h2 class="h3 deva">${esc(a.hiBody.t)}</h2>${a.hiBody.p.map((x) => `<p>${esc(x)}</p>`).join("")}</section>` : ""}
 ${notice("General information only, not legal advice. Every matter depends on its own facts and documents.")}
 </article><aside class="stack side-col">${officeCard()}<div class="card" style="padding:18px"><h2 class="foot-h">Other practice areas</h2><ul class="plain">${AREAS.filter((x) => x !== a).map((x) => `<li><a href="${areaUrl(x)}">${esc(x.t)}</a></li>`).join("")}</ul></div></aside></div>
 <div class="block">${ctaBand}</div>`

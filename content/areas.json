@@ -1,167 +1,198 @@
 [
- {
-  "t": "Education and service law",
-  "d": "Matters for teachers and staff of recognised private schools and for public employees.",
-  "i": [
-   "Pay-commission arrears (6th and 7th CPC)",
-   "Child care leave and other service benefits",
-   "Contempt petitions to enforce court orders",
-   "Disputes under school education statutes"
-  ],
-  "slug": "service-and-education-law",
-  "icon": "school",
-  "seoTitle": "Service and Education Law Advocate, Nainital High Court",
-  "desc": "Service and education law matters for teachers, school staff and public employees before the Uttarakhand and Delhi High Courts: arrears, leave and contempt.",
-  "hi": "सेवा एवं शिक्षा कानून",
-  "body": [
-   "Service law covers disputes between employees and their employers where the employer is the State, a public body, or an institution bound by statute, such as a recognised school. Common matters include withheld pay-commission arrears, denial of leave or benefits, disciplinary action, and orders on transfer, promotion or retirement dues.",
-   "In Uttarakhand, service matters of state employees and staff of aided and recognised institutions are usually filed as writ petitions before the High Court at Nainital, often after a representation to the employer has gone unanswered. Where a court order has already been passed and is not being followed, a contempt petition is the usual next step."
-  ],
-  "docs": "the appointment letter, the order or refusal being challenged, any representation made to the employer and its reply, and salary or pension records if money is due"
- },
- {
-  "t": "District Court practice",
-  "d": "Civil and criminal litigation before the District Courts of Delhi and Nainital, including Section 138 NI Act and recovery matters.",
-  "i": [
-   "Section 138 Negotiable Instruments Act: cheque bounce complaints, defence and appeals",
-   "Recovery suits and money recovery proceedings",
-   "Civil suits and commercial disputes",
-   "Criminal complaints and defence",
-   "Bail and anticipatory bail",
-   "Appeals and revisions",
-   "Execution proceedings",
-   "Property and contractual disputes",
-   "Mediation and settlement proceedings",
-   "Other civil and criminal litigation before the District Courts"
-  ],
-  "slug": "district-court-civil-criminal-litigation",
-  "icon": "rupee",
-  "seoTitle": "District Court Practice: Delhi and Nainital, Section 138",
-  "desc": "Civil and criminal litigation before the District Courts of Delhi and Nainital, including Section 138 NI Act matters, recovery proceedings and property disputes.",
-  "hi": "ज़िला न्यायालय में वकालत",
-  "body": [
-   "Civil and criminal litigation before the District Courts of Delhi and Nainital, including matters under Section 138 of the Negotiable Instruments Act, recovery proceedings, property disputes and other civil and criminal matters.",
-   "In a cheque bounce case, the payee must send a written demand notice within 30 days of learning that the cheque was dishonoured. The drawer then has 15 days to pay, and if payment is not made, a complaint must be filed within the following month. Missing these time limits can defeat the complaint. Many such cases, and civil disputes generally, can also be resolved through court-annexed mediation and settlement."
-  ],
-  "docs": "the cheque and the bank's return memo, the demand notice and postal receipts, any agreement, invoices or ledger showing the debt, and for other matters the plaint, complaint or last court order"
- },
- {
-  "t": "Matrimonial and family disputes",
-  "d": "Divorce and matrimonial petitions, maintenance, domestic violence, custody and guardianship, and other family law proceedings.",
-  "i": [
-   "Divorce and matrimonial petitions under the Hindu Marriage Act, 1955",
-   "Maintenance proceedings",
-   "Domestic violence matters under the Protection of Women from Domestic Violence Act, 2005",
-   "Custody and guardianship matters",
-   "Proceedings under the Hindu Adoptions and Maintenance Act, 1956",
-   "Restitution of conjugal rights",
-   "Other related family law proceedings"
-  ],
-  "slug": "matrimonial-and-family-disputes",
-  "icon": "users",
-  "seoTitle": "Divorce, Maintenance and Family Law: Haldwani, Delhi",
-  "desc": "Divorce and matrimonial petitions under the Hindu Marriage Act, maintenance, domestic violence, custody and guardianship, HAMA and restitution matters.",
-  "hi": "वैवाहिक एवं पारिवारिक विवाद",
-  "body": [
-   "Matrimonial and family disputes, including divorce and matrimonial petitions under the Hindu Marriage Act, 1955 (HMA), maintenance proceedings, domestic violence matters under the Protection of Women from Domestic Violence Act, 2005, custody and guardianship matters, proceedings under the Hindu Adoptions and Maintenance Act, 1956 (HAMA), restitution of conjugal rights, and other related family law proceedings.",
-   "Under the HMA, divorce may be sought on the grounds in section 13, or by mutual consent under section 13B, where the court may waive the six-month waiting period in suitable cases. Maintenance can be claimed under the HMA, under section 18 of HAMA, or under section 144 of the Bharatiya Nagarik Suraksha Sanhita (formerly section 125 of the CrPC). Applications under the Domestic Violence Act are filed before the Magistrate, and custody of children is decided on the child's welfare under the HMA and the Guardians and Wards Act, 1890. In the districts of Nainital and Delhi, most of these matters are heard by the Family Courts."
-  ],
-  "docs": "the marriage certificate or proof of marriage, any earlier petitions, orders or complaints, and, for maintenance, documents showing the income and expenses of both parties and the needs of any children"
- },
- {
-  "t": "Constitutional and writ litigation",
-  "d": "Petitions under Article 226 challenging action by the State and public authorities.",
-  "i": [
-   "Demolition or dispossession without notice",
-   "Rehabilitation of relocated families",
-   "Violations of natural justice",
-   "Orders of development and civic authorities"
-  ],
-  "slug": "writ-petitions-public-authorities",
-  "icon": "court",
-  "seoTitle": "Writ Petitions Against Public Authorities, Uttarakhand HC",
-  "desc": "Article 226 writ petitions before the High Court of Uttarakhand at Nainital and the Delhi High Court: demolition, dispossession, natural justice and rehabilitation.",
-  "hi": "संवैधानिक एवं रिट याचिकाएँ",
-  "body": [
-   "Under Article 226 of the Constitution, a High Court can direct the State and public authorities to act within the law. Writ petitions are used when an authority acts without notice, without jurisdiction or in breach of natural justice, or fails to act where the law requires it to.",
-   "A writ petition is usually filed after the authority has been asked to act, or has acted, and the grievance is set out with the documents that show it. The High Court first hears the petition on admission and may issue notice to the authority or pass interim orders, for example to stop a demolition until objections are decided."
-  ],
-  "docs": "the notice or order under challenge, proof of possession or title, correspondence with the authority, and photographs or records of the property where relevant"
- },
- {
-  "t": "Criminal appeals and white-collar defence",
-  "d": "Appellate and revisional work in criminal matters.",
-  "i": [
-   "Appeals against conviction under the Prevention of Corruption Act",
-   "Cases investigated by the CBI",
-   "Quashing of proceedings (s.482 CrPC / s.528 BNSS)",
-   "Criminal revisions"
-  ],
-  "slug": "criminal-appeals-white-collar-defence",
-  "icon": "shield",
-  "seoTitle": "Criminal Appeals and PC Act Defence, Nainital High Court",
-  "desc": "Criminal appeals, revisions and quashing petitions, including Prevention of Corruption Act cases investigated by the CBI, before the Uttarakhand and Delhi HCs.",
-  "hi": "आपराधिक अपील एवं व्हाइट-कॉलर बचाव",
-  "body": [
-   "Appellate criminal work means reviewing the trial record for errors of law and fact: whether the evidence proves each ingredient of the offence, whether the witnesses are consistent, and whether the procedure was followed. The High Court can also quash proceedings that should not continue, under section 528 of the Bharatiya Nagarik Suraksha Sanhita (formerly section 482 of the CrPC).",
-   "Cases under the Prevention of Corruption Act, often investigated by the CBI or a state vigilance department, turn on specific proof such as demand and acceptance. An appeal against conviction is usually filed with an application to suspend the sentence while the appeal is pending."
-  ],
-  "docs": "the FIR, the charge-sheet, the trial court judgment and order on sentence, and any bail orders"
- },
- {
-  "t": "Property and land",
-  "d": "Possession and land-status disputes, including with government bodies.",
-  "i": [
-   "Protection of settled possession",
-   "Challenges to dispossession",
-   "Land-status disputes with development authorities",
-   "Title based on registered documents"
-  ],
-  "slug": "property-and-land",
-  "icon": "home",
-  "seoTitle": "Property and Land Dispute Advocate, Haldwani and Nainital",
-  "desc": "Possession, dispossession and land-status disputes, including disputes with development authorities, before the High Court. Office in Vaishali Colony, Haldwani.",
-  "hi": "संपत्ति एवं भूमि",
-  "body": [
-   "Property disputes with a public body often turn on two questions: whether the land is what the authority says it is, and whether the occupant is in settled possession. Where an authority moves to demolish or dispossess, the law generally requires notice and an opportunity to object.",
-   "In the Kumaon region, disputes often involve revenue records such as the khatauni, mutation entries, and the status of land recorded as government or nazul land. Where a public authority is involved, the remedy may lie in a writ petition before the High Court rather than a civil suit."
-  ],
-  "docs": "the sale deed or other title documents, mutation and revenue records (khatauni), electricity and tax records showing possession, and any notice received"
- },
- {
-  "t": "Insolvency (IBC)",
-  "d": "Appeals before the National Company Law Appellate Tribunal.",
-  "i": [
-   "Operational-creditor appeals",
-   "Challenges to resolution plans"
-  ],
-  "slug": "insolvency-ibc",
-  "icon": "brief",
-  "seoTitle": "Insolvency and Bankruptcy Code Appeals Before the NCLAT",
-  "desc": "Appeals under the Insolvency and Bankruptcy Code before the National Company Law Appellate Tribunal, including challenges to resolution plans.",
-  "hi": "दिवाला एवं शोधन अक्षमता (आईबीसी)",
-  "body": [
-   "Under the Insolvency and Bankruptcy Code, orders of the National Company Law Tribunal can be appealed to the National Company Law Appellate Tribunal. Operational and financial creditors, resolution applicants and others affected may appeal within the time limits set by the Code.",
-   "An appeal to the NCLAT must generally be filed within 30 days of the order, extendable by a further 15 days for sufficient cause. Operational creditors, such as suppliers and service providers, may also need to file claims with the resolution professional in time."
-  ],
-  "docs": "the order under appeal, the claim filed with the resolution professional, and invoices and correspondence with the corporate debtor"
- },
- {
-  "t": "Tribunal practice",
-  "d": "Matters before specialised tribunals.",
-  "i": [
-   "Central Administrative Tribunal",
-   "Service disputes of central government employees"
-  ],
-  "slug": "tribunal-matters",
-  "icon": "doc",
-  "seoTitle": "Central Administrative Tribunal Matters and Service Disputes",
-  "desc": "Service disputes of central government employees before the Central Administrative Tribunal, and related writ petitions before the High Court.",
-  "hi": "अधिकरण (ट्रिब्यूनल) मामले",
-  "body": [
-   "Service disputes of central government employees, such as pay, promotion, seniority, disciplinary action and retirement benefits, are generally heard first by the Central Administrative Tribunal, with a further remedy before the High Court.",
-   "Before approaching the Tribunal, the employee is generally expected to have used the departmental remedies available, such as a representation or an appeal to the competent authority. The Tribunal's order can then be challenged before the High Court."
-  ],
-  "docs": "the service book extract, the order under challenge, and representations made and replies received"
- }
+  {
+    "t": "Education and service law",
+    "d": "Matters for teachers and staff of recognised private schools and for public employees.",
+    "i": [
+      "Pay-commission arrears (6th and 7th CPC)",
+      "Child care leave and other service benefits",
+      "Contempt petitions to enforce court orders",
+      "Disputes under school education statutes"
+    ],
+    "slug": "service-and-education-law",
+    "icon": "school",
+    "seoTitle": "Service and Education Law Advocate, Nainital High Court",
+    "desc": "Service and education law matters for teachers, school staff and public employees before the Uttarakhand and Delhi High Courts: arrears, leave and contempt.",
+    "hi": "सेवा एवं शिक्षा कानून",
+    "body": [
+      "Service law covers disputes between employees and their employers where the employer is the State, a public body, or an institution bound by statute, such as a recognised school. Common matters include withheld pay-commission arrears, denial of leave or benefits, disciplinary action, and orders on transfer, promotion or retirement dues.",
+      "In Uttarakhand, service matters of state employees and staff of aided and recognised institutions are usually filed as writ petitions before the High Court at Nainital, often after a representation to the employer has gone unanswered. Where a court order has already been passed and is not being followed, a contempt petition is the usual next step."
+    ],
+    "docs": "the appointment letter, the order or refusal being challenged, any representation made to the employer and its reply, and salary or pension records if money is due"
+  },
+  {
+    "t": "District Court practice",
+    "d": "Civil and criminal litigation before the District Courts of Delhi and Nainital, including Section 138 NI Act and recovery matters.",
+    "i": [
+      "Section 138 Negotiable Instruments Act: cheque bounce complaints, defence and appeals",
+      "Recovery suits and money recovery proceedings",
+      "Civil suits and commercial disputes",
+      "Criminal complaints and defence",
+      "Bail and anticipatory bail",
+      "Appeals and revisions",
+      "Execution proceedings",
+      "Property and contractual disputes",
+      "Mediation and settlement proceedings",
+      "Other civil and criminal litigation before the District Courts"
+    ],
+    "slug": "district-court-civil-criminal-litigation",
+    "icon": "rupee",
+    "seoTitle": "District Court Practice: Delhi and Nainital, Section 138",
+    "desc": "Civil and criminal litigation before the District Courts of Delhi and Nainital, including Section 138 NI Act matters, recovery proceedings and property disputes.",
+    "hi": "ज़िला न्यायालय में वकालत",
+    "body": [
+      "Civil and criminal litigation before the District Courts of Delhi and Nainital, including matters under Section 138 of the Negotiable Instruments Act, recovery proceedings, property disputes and other civil and criminal matters.",
+      "In a cheque bounce case, the payee must send a written demand notice within 30 days of learning that the cheque was dishonoured. The drawer then has 15 days to pay, and if payment is not made, a complaint must be filed within the following month. Missing these time limits can defeat the complaint. Many such cases, and civil disputes generally, can also be resolved through court-annexed mediation and settlement."
+    ],
+    "docs": "the cheque and the bank's return memo, the demand notice and postal receipts, any agreement, invoices or ledger showing the debt, and for other matters the plaint, complaint or last court order"
+  },
+  {
+    "t": "Matrimonial and family disputes",
+    "d": "Divorce and matrimonial petitions, maintenance, domestic violence, custody and guardianship, and other family law proceedings.",
+    "i": [
+      "Divorce and matrimonial petitions under the Hindu Marriage Act, 1955",
+      "Maintenance proceedings",
+      "Domestic violence matters under the Protection of Women from Domestic Violence Act, 2005",
+      "Custody and guardianship matters",
+      "Proceedings under the Hindu Adoptions and Maintenance Act, 1956",
+      "Restitution of conjugal rights",
+      "Other related family law proceedings"
+    ],
+    "slug": "matrimonial-and-family-disputes",
+    "icon": "users",
+    "seoTitle": "Matrimonial & Family Law Advocate in Haldwani, Nainital",
+    "desc": "Aastha Vishwakarma, advocate in Haldwani: divorce, maintenance, domestic violence and custody matters before the Family Court, Haldwani and the Nainital courts.",
+    "hi": "वैवाहिक एवं पारिवारिक विवाद",
+    "body": [
+      "Matrimonial and family disputes, including divorce and matrimonial petitions under the Hindu Marriage Act, 1955 (HMA), maintenance proceedings, domestic violence matters under the Protection of Women from Domestic Violence Act, 2005, custody and guardianship matters, proceedings under the Hindu Adoptions and Maintenance Act, 1956 (HAMA), restitution of conjugal rights, and other related family law proceedings.",
+      "Under the HMA, divorce may be sought on the grounds in section 13, or by mutual consent under section 13B, where the court may waive the six-month waiting period in suitable cases. Maintenance can be claimed under the HMA, under section 18 of HAMA, or under section 144 of the Bharatiya Nagarik Suraksha Sanhita (formerly section 125 of the CrPC). Applications under the Domestic Violence Act are filed before the Magistrate, and custody of children is decided on the child's welfare under the HMA and the Guardians and Wards Act, 1890. In Nainital district, divorce, maintenance and custody matters are heard by the Family Court at Haldwani, and in Delhi by the Family Courts of each district.",
+      "A petition under the Hindu Marriage Act may be filed where the marriage was solemnised, where the respondent lives, where the couple last lived together, or, when the wife files it, where she lives (section 19). A child's custody or guardianship is decided by the court where the child ordinarily lives (section 9 of the Guardians and Wards Act). The office at Bhotia Parao, Haldwani is close to the Haldwani courts, and matters that go on appeal are heard by the High Court of Uttarakhand at Nainital."
+    ],
+    "docs": "the marriage certificate or proof of marriage, any earlier petitions, orders or complaints, and, for maintenance, documents showing the income and expenses of both parties and the needs of any children",
+    "faq": [
+      [
+        "Where is a divorce petition filed in Haldwani?",
+        "For Nainital district, petitions under the Hindu Marriage Act, 1955 are heard by the Family Court at Haldwani. Under section 19 of the Act, a petition may be filed where the marriage was solemnised, where the respondent lives, where the couple last lived together, or, if the wife is the petitioner, where she lives."
+      ],
+      [
+        "How does divorce by mutual consent work?",
+        "Under section 13B of the Hindu Marriage Act, both spouses file a joint petition after living separately for at least one year. The second motion is made after six months and within eighteen months of filing, and the court may waive the six-month period in suitable cases."
+      ],
+      [
+        "Which laws allow a claim for maintenance?",
+        "Maintenance may be claimed under sections 24 and 25 of the Hindu Marriage Act, section 18 of the Hindu Adoptions and Maintenance Act, 1956, or section 144 of the Bharatiya Nagarik Suraksha Sanhita, 2023 (formerly section 125 of the CrPC). Where a Family Court exists, claims under section 144 are heard by it."
+      ],
+      [
+        "Where are domestic violence applications filed?",
+        "Applications under the Protection of Women from Domestic Violence Act, 2005 are filed before the Judicial Magistrate where the aggrieved woman lives or works, where the respondent lives, or where the cause of action arose (section 27)."
+      ],
+      [
+        "Does an appeal from the Family Court go to the High Court?",
+        "Yes. An appeal from a judgment or order of the Family Court at Haldwani lies to the High Court of Uttarakhand at Nainital under section 19 of the Family Courts Act, 1984, generally within 30 days."
+      ]
+    ],
+    "hiBody": {
+      "t": "वैवाहिक एवं पारिवारिक विवाद: हल्द्वानी व नैनीताल",
+      "p": [
+        "अधिवक्ता आस्था विश्वकर्मा हल्द्वानी (भोटिया पड़ाव) स्थित कार्यालय से तलाक़, भरण-पोषण, घरेलू हिंसा, बच्चों की अभिरक्षा व संरक्षकता तथा अन्य पारिवारिक मामलों में पैरवी करती हैं।",
+        "हिंदू विवाह अधिनियम, 1955 की धारा 13 के आधारों पर या धारा 13बी के अंतर्गत आपसी सहमति से तलाक़ की याचिका दायर की जा सकती है। भरण-पोषण हिंदू विवाह अधिनियम, हिंदू दत्तक एवं भरण-पोषण अधिनियम की धारा 18 या भारतीय नागरिक सुरक्षा संहिता की धारा 144 (पूर्व में सीआरपीसी की धारा 125) के अंतर्गत माँगा जा सकता है।",
+        "नैनीताल ज़िले में तलाक़, भरण-पोषण और अभिरक्षा के मामले हल्द्वानी स्थित परिवार न्यायालय में सुने जाते हैं। घरेलू हिंसा अधिनियम, 2005 के आवेदन मजिस्ट्रेट के समक्ष दायर होते हैं, और परिवार न्यायालय के निर्णय के विरुद्ध अपील नैनीताल स्थित उत्तराखंड उच्च न्यायालय में होती है।"
+      ]
+    }
+  },
+  {
+    "t": "Constitutional and writ litigation",
+    "d": "Petitions under Article 226 challenging action by the State and public authorities.",
+    "i": [
+      "Demolition or dispossession without notice",
+      "Rehabilitation of relocated families",
+      "Violations of natural justice",
+      "Orders of development and civic authorities"
+    ],
+    "slug": "writ-petitions-public-authorities",
+    "icon": "court",
+    "seoTitle": "Writ Petitions Against Public Authorities, Uttarakhand HC",
+    "desc": "Article 226 writ petitions before the High Court of Uttarakhand at Nainital and the Delhi High Court: demolition, dispossession, natural justice and rehabilitation.",
+    "hi": "संवैधानिक एवं रिट याचिकाएँ",
+    "body": [
+      "Under Article 226 of the Constitution, a High Court can direct the State and public authorities to act within the law. Writ petitions are used when an authority acts without notice, without jurisdiction or in breach of natural justice, or fails to act where the law requires it to.",
+      "A writ petition is usually filed after the authority has been asked to act, or has acted, and the grievance is set out with the documents that show it. The High Court first hears the petition on admission and may issue notice to the authority or pass interim orders, for example to stop a demolition until objections are decided."
+    ],
+    "docs": "the notice or order under challenge, proof of possession or title, correspondence with the authority, and photographs or records of the property where relevant"
+  },
+  {
+    "t": "Criminal appeals and white-collar defence",
+    "d": "Appellate and revisional work in criminal matters.",
+    "i": [
+      "Appeals against conviction under the Prevention of Corruption Act",
+      "Cases investigated by the CBI",
+      "Quashing of proceedings (s.482 CrPC / s.528 BNSS)",
+      "Criminal revisions"
+    ],
+    "slug": "criminal-appeals-white-collar-defence",
+    "icon": "shield",
+    "seoTitle": "Criminal Appeals and PC Act Defence, Nainital High Court",
+    "desc": "Criminal appeals, revisions and quashing petitions, including Prevention of Corruption Act cases investigated by the CBI, before the Uttarakhand and Delhi HCs.",
+    "hi": "आपराधिक अपील एवं व्हाइट-कॉलर बचाव",
+    "body": [
+      "Appellate criminal work means reviewing the trial record for errors of law and fact: whether the evidence proves each ingredient of the offence, whether the witnesses are consistent, and whether the procedure was followed. The High Court can also quash proceedings that should not continue, under section 528 of the Bharatiya Nagarik Suraksha Sanhita (formerly section 482 of the CrPC).",
+      "Cases under the Prevention of Corruption Act, often investigated by the CBI or a state vigilance department, turn on specific proof such as demand and acceptance. An appeal against conviction is usually filed with an application to suspend the sentence while the appeal is pending."
+    ],
+    "docs": "the FIR, the charge-sheet, the trial court judgment and order on sentence, and any bail orders"
+  },
+  {
+    "t": "Property and land",
+    "d": "Possession and land-status disputes, including with government bodies.",
+    "i": [
+      "Protection of settled possession",
+      "Challenges to dispossession",
+      "Land-status disputes with development authorities",
+      "Title based on registered documents"
+    ],
+    "slug": "property-and-land",
+    "icon": "home",
+    "seoTitle": "Property and Land Dispute Advocate, Haldwani and Nainital",
+    "desc": "Possession, dispossession and land-status disputes, including disputes with development authorities, before the High Court. Office in Vaishali Colony, Haldwani.",
+    "hi": "संपत्ति एवं भूमि",
+    "body": [
+      "Property disputes with a public body often turn on two questions: whether the land is what the authority says it is, and whether the occupant is in settled possession. Where an authority moves to demolish or dispossess, the law generally requires notice and an opportunity to object.",
+      "In the Kumaon region, disputes often involve revenue records such as the khatauni, mutation entries, and the status of land recorded as government or nazul land. Where a public authority is involved, the remedy may lie in a writ petition before the High Court rather than a civil suit."
+    ],
+    "docs": "the sale deed or other title documents, mutation and revenue records (khatauni), electricity and tax records showing possession, and any notice received"
+  },
+  {
+    "t": "Insolvency (IBC)",
+    "d": "Appeals before the National Company Law Appellate Tribunal.",
+    "i": [
+      "Operational-creditor appeals",
+      "Challenges to resolution plans"
+    ],
+    "slug": "insolvency-ibc",
+    "icon": "brief",
+    "seoTitle": "Insolvency and Bankruptcy Code Appeals Before the NCLAT",
+    "desc": "Appeals under the Insolvency and Bankruptcy Code before the National Company Law Appellate Tribunal, including challenges to resolution plans.",
+    "hi": "दिवाला एवं शोधन अक्षमता (आईबीसी)",
+    "body": [
+      "Under the Insolvency and Bankruptcy Code, orders of the National Company Law Tribunal can be appealed to the National Company Law Appellate Tribunal. Operational and financial creditors, resolution applicants and others affected may appeal within the time limits set by the Code.",
+      "An appeal to the NCLAT must generally be filed within 30 days of the order, extendable by a further 15 days for sufficient cause. Operational creditors, such as suppliers and service providers, may also need to file claims with the resolution professional in time."
+    ],
+    "docs": "the order under appeal, the claim filed with the resolution professional, and invoices and correspondence with the corporate debtor"
+  },
+  {
+    "t": "Tribunal practice",
+    "d": "Matters before specialised tribunals.",
+    "i": [
+      "Central Administrative Tribunal",
+      "Service disputes of central government employees"
+    ],
+    "slug": "tribunal-matters",
+    "icon": "doc",
+    "seoTitle": "Central Administrative Tribunal Matters and Service Disputes",
+    "desc": "Service disputes of central government employees before the Central Administrative Tribunal, and related writ petitions before the High Court.",
+    "hi": "अधिकरण (ट्रिब्यूनल) मामले",
+    "body": [
+      "Service disputes of central government employees, such as pay, promotion, seniority, disciplinary action and retirement benefits, are generally heard first by the Central Administrative Tribunal, with a further remedy before the High Court.",
+      "Before approaching the Tribunal, the employee is generally expected to have used the departmental remedies available, such as a representation or an appeal to the competent authority. The Tribunal's order can then be challenged before the High Court."
+    ],
+    "docs": "the service book extract, the order under challenge, and representations made and replies received"
+  }
 ]

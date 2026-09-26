@@ -13,7 +13,8 @@ Website:  https://advaasthavishwakarma.in
 
 | Listing | What to do | Status |
 |---|---|---|
-| Google Business Profile | Claim "Vishwakarma, Kumar & Jain Law Offices", add the website, phone, email, category "Lawyer" and hours. Do not ask clients for reviews. | ☐ |
+| Google Business Profile | Claim "Vishwakarma, Kumar & Jain Law Offices", add the website, phone, email and hours. Primary category **Lawyer**. Add the additional categories **Divorce lawyer** and **Family law attorney** (and **Criminal justice attorney** or **Civil law attorney** if they fit). Under Services, list the practice areas by name, including "Divorce and matrimonial petitions", "Maintenance", "Domestic violence matters" and "Child custody and guardianship". Set the website to `https://advaasthavishwakarma.in/`. Use a factual description with no "best", "expert" or offers. Do not ask clients for reviews. | ☐ |
+| Google Business Profile: map pin | Check that the pin is on B-8, Vaishali Colony, Bhotia Parao. Send Claude the pin's latitude and longitude (right-click the pin in Google Maps) so they can be added to the site's structured data. | ☐ |
 | Bing Places | Import from the Google Business Profile | ☐ |
 | Bar Council of Uttarakhand / Bar Association | Check the enrolment record shows the current address and phone | ☐ |
 | Justdial | Update the existing Vaishali Colony listing so it matches exactly | ☐ |

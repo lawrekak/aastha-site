@@ -56,3 +56,18 @@ The site is a factual professional-information website. The build's validator (`
    - A final line: "Nothing is published until this pull request is merged."
 
 Never modify `.github/`, `wrangler.jsonc`, `src/worker/`, `workers/`, `scripts/validate.mjs` or this file.
+
+## Current focus (from 26 September 2026): family law searches in Haldwani and Nainital
+
+People search for phrases like "matrimonial lawyer Haldwani", "divorce lawyer Nainital", "family court Haldwani", "तलाक़ वकील हल्द्वानी" and "best matrimonial lawyer in Haldwani". The site must never use "best" or any comparative wording. It can only be the clearest factual answer for these searches.
+
+- **Track.** In the pull request, list the Search Console impressions and average position for any query containing divorce, matrimonial, family, maintenance, custody, talaq, तलाक़ or भरण-पोषण, together with the page Google shows for it (normally `/practice-areas/matrimonial-and-family-disputes/`).
+- **Local and maps review.** Run the claude-seo local and maps review for "family lawyer Haldwani" and "divorce lawyer Nainital". Report any Google Business Profile or directory gaps as human tasks: categories, the website link, name, address and phone consistency, and the map pin. Do not ask for reviews.
+- **Guides.** When DRAFT_ARTICLES is "true", prefer family-law topics until four exist, one per run, each with a faithful Hindi version and areas `[2]`. Suggested topics:
+  - divorce by mutual consent, step by step (HMA section 13B)
+  - maintenance under section 144 BNSS compared with the HMA and HAMA
+  - the Domestic Violence Act: which orders a Magistrate can pass
+  - child custody under the Guardians and Wards Act
+
+  Name the Family Court at Haldwani and the High Court of Uttarakhand at Nainital only where it is factually relevant.
+- **AI search.** Check that `llms.txt` and the family page state plainly that she handles matrimonial and family matters in Haldwani and Nainital. If Perplexity or ChatGPT describe her practice incorrectly, report it.
