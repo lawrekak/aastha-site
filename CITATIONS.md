@@ -35,8 +35,8 @@
 | Listing | Status |
 |---|---|
 | LinkedIn | Live. Update the headline, About and website (see KIT section 4). |
-| Google Business Profile | To claim (KIT section 1) |
-| Bing Places | After Google Business Profile |
+| Google Business Profile | Live and verified (27 Sep 2026). Still to do: add the phone number, check the categories, add services and an exterior photo. |
+| Bing Places | Ready: import from Google Business Profile |
 | Apple Business Connect | To create (KIT section 3) |
 | Bar Council / Bar Association records | Check |
 | Alumni network | Optional |

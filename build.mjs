@@ -22,7 +22,7 @@ const V_CSS = ver("site.css"), V_JS = ver("site.js");
 const UPDATED = S.contentUpdated || "2026-09-26";
 const BASE = S.url.replace(/\/$/, "");
 // sameAs: every live profile in content/citations.json plus any in site.json
-const SAME_AS = [...new Set([...S.sameAs, ...CITES.filter((c) => c.status === "live" && c.url).map((c) => c.url)])];
+const SAME_AS = [...new Set([...S.sameAs, ...CITES.filter((c) => c.status === "live" && c.url && c.sameAs !== false).map((c) => c.url)])];
 const U = (p) => BASE + p;
 
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
