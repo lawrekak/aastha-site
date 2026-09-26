@@ -47,6 +47,8 @@ Never paste passwords or API keys into the chat. Enter them only in the dashboar
 4. Update Justdial, Sulekha and LawRato so they show exactly the same name, address and phone, with the website link.
 5. **→ send:** "search done". Claude records an AI-visibility baseline.
 
+> **Paused on Rule 36 advice (26 September 2026).** A review of the site under Rule 36 advised against online booking, free-consultation offers, fees and promotional calls to action. Steps 7–10 below (Cal.com booking, the booking chatbot, WhatsApp confirmations and payments) are therefore on hold, and the website carries only factual professional information and office contact details. The Worker code stays in `workers/` in case the advice changes; nothing in it is deployed.
+
 ## 7. Booking synced to Apple Calendar — Cal.com (free)
 1. On Aastha's Apple ID (two-factor on), go to appleid.apple.com, then **Sign-In and Security**, then **App-Specific Passwords**, and create one named `Cal.com`.
 2. At cal.com, sign up with the office email. Open **Apps**, choose **Apple Calendar**, and enter the Apple ID and that app-specific password. Select her calendar to check for clashes and to receive new bookings.

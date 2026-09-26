@@ -42,6 +42,8 @@ SETUP.md     the account steps only a person can do
 - The same name, address and phone appear everywhere, matching the Google Business Profile
 
 **Bar Council Rule 36 guardrails**
+- The site is a factual professional-information website: name, enrolment, courts, areas of practice, office contact details and general guides. There is no fees page, no consultation offer, no booking and no promotional call to action (per the Rule 36 review of 26 September 2026).
+- The build also fails on "request a consultation", "book now", "free consultation", "first meeting", "no fee", "affordable", "why choose" or "hire us", or on any link to the removed /fees/ or /consultation/ pages.
 - A disclaimer interstitial on first visit (the content stays in the HTML for crawlers)
 - The build fails if copy says "best", "top-rated", "expert", "specialist", "guaranteed", "success rate" or "won"
 - No reported judgments, past cases, testimonials, win claims or paid-ad copy; the build also fails on "reported judgment", "counsel team", "appeared for" or "case study"

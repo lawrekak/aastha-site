@@ -20,8 +20,8 @@
   "docs": "the appointment letter, the order or refusal being challenged, any representation made to the employer and its reply, and salary or pension records if money is due"
  },
  {
-  "t": "District court civil and criminal litigation",
-  "d": "Civil and criminal cases before the District Courts of Delhi and Nainital, including cheque bounce and recovery matters.",
+  "t": "District Court practice",
+  "d": "Civil and criminal litigation before the District Courts of Delhi and Nainital, including Section 138 NI Act and recovery matters.",
   "i": [
    "Section 138 Negotiable Instruments Act: cheque bounce complaints, defence and appeals",
    "Recovery suits and money recovery proceedings",
@@ -36,12 +36,12 @@
   ],
   "slug": "district-court-civil-criminal-litigation",
   "icon": "rupee",
-  "seoTitle": "Cheque Bounce, Recovery and Civil Cases: Delhi, Nainital",
-  "desc": "Cheque bounce (Section 138 NI Act), recovery suits, civil and commercial disputes, bail, criminal defence, appeals and execution before District Courts.",
-  "hi": "ज़िला न्यायालय — दीवानी एवं फ़ौजदारी मुक़दमे",
+  "seoTitle": "District Court Practice: Delhi and Nainital, Section 138",
+  "desc": "Civil and criminal litigation before the District Courts of Delhi and Nainital, including Section 138 NI Act matters, recovery proceedings and property disputes.",
+  "hi": "ज़िला न्यायालय में वकालत",
   "body": [
-   "Clients are represented in a wide range of civil and criminal litigation before the District Courts of Delhi and Nainital. This covers cheque dishonour complaints under Section 138 of the Negotiable Instruments Act, recovery suits and money recovery proceedings, civil and commercial disputes, criminal complaints and defence, bail and anticipatory bail, appeals and revisions, and execution of decrees.",
-   "In a cheque bounce case, the payee must send a written demand notice within 30 days of learning that the cheque was dishonoured. The drawer then has 15 days to pay, and if payment is not made, a complaint must be filed within the following month. Missing these time limits can defeat the complaint, so early advice helps. Many such cases, and civil disputes generally, can also be resolved through court-annexed mediation and settlement."
+   "Civil and criminal litigation before the District Courts of Delhi and Nainital, including matters under Section 138 of the Negotiable Instruments Act, recovery proceedings, property disputes and other civil and criminal matters.",
+   "In a cheque bounce case, the payee must send a written demand notice within 30 days of learning that the cheque was dishonoured. The drawer then has 15 days to pay, and if payment is not made, a complaint must be filed within the following month. Missing these time limits can defeat the complaint. Many such cases, and civil disputes generally, can also be resolved through court-annexed mediation and settlement."
   ],
   "docs": "the cheque and the bank's return memo, the demand notice and postal receipts, any agreement, invoices or ledger showing the debt, and for other matters the plaint, complaint or last court order"
  },

@@ -74,10 +74,5 @@
   "qualifications": [],
   "indexNowKey": "dd98bb178cc3a4532f887485f8dd1409",
   "ogImage": "/assets/og.png",
-  "calLink": "",
-  "_calLink_note": "Cal.com username/event slug, e.g. \"aastha-vishwakarma/first-meeting\". When set, the consultation page shows live availability from her Apple Calendar.",
-  "formEndpoint": "",
-  "chatEndpoint": "",
-  "_chatEndpoint_note": "URL of the chat Worker, e.g. https://chat.<domain>/api/chat. When set, the assistant button appears on every page.",
   "contentUpdated": "2026-09-26"
 }

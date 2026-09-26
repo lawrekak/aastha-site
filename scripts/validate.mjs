@@ -68,6 +68,9 @@ for (const f of html) {
   const bad = text.match(BANNED); if (bad) err(rel, `Rule 36 wording check: "${bad[0]}" — rephrase factually`);
   const caseRef = text.match(/reported judgments?|counsel team|appeared for|case (study|studies)/i);
   if (caseRef) err(rel, `Rule 36 check: "${caseRef[0]}" — the site must not publicise her cases`);
+  const solicit = text.match(/request a consultation|book (a|now|your|with)|free (consultation|first|meeting)|first meeting|no fee|affordable|get your case|why choose|hire us|consultation fee/i);
+  if (solicit) err(rel, `Rule 36 check: "${solicit[0]}" — no consultation offers, fees or calls to action`);
+  if (/href="\/(fees|consultation)\//.test(h)) err(rel, "links to a removed fees or consultation page");
 }
 
 // sitemap covers every indexable page and nothing else
