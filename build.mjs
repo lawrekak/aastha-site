@@ -43,7 +43,7 @@ const firmNode = {
 };
 const personNode = {
   "@type": "Person", "@id": ID.person, name: S.name, alternateName: HI.name, jobTitle: "Advocate", url: U("/about/"), image: U("/assets/og.png"),
-  worksFor: { "@id": ID.firm }, telephone: S.phone, address: postal, knowsLanguage: ["hi", "en"],
+  worksFor: { "@id": ID.firm }, telephone: S.phone, ...(S.email ? { email: S.email } : {}), address: postal, knowsLanguage: ["hi", "en"],
   knowsAbout: AREAS.map((a) => a.t).concat(["Article 226 writ petitions", "Prevention of Corruption Act", "Insolvency and Bankruptcy Code", "High Court of Uttarakhand practice"]),
   ...(S.sameAs.length ? { sameAs: S.sameAs } : {}),
   ...(S.qualifications.length ? { hasCredential: S.qualifications.map((q) => ({ "@type": "EducationalOccupationalCredential", name: q })) } : {}),
@@ -101,6 +101,7 @@ function footer(p) {
       <div class="brand"><span class="mono-mark" aria-hidden="true">AV</span><span><b>${hi ? HI.name : esc(S.name)}</b><span class="sub">${hi ? "अधिवक्ता" : "Advocate"}</span></span></div>
       <address style="font-style:normal">${hi ? HI.firm : esc(S.firm)}<br>${hi ? HI.address : esc(fullAddress)}</address>
       <p>${hi ? "फ़ोन" : "Phone"}: <a href="${TEL}" class="mono" style="display:inline;min-height:0;color:var(--ink)">${esc(S.phoneDisplay)}</a></p>
+      ${S.email ? `<p>${hi ? "ईमेल" : "Email"}: <a href="mailto:${esc(S.email)}" style="display:inline;min-height:0;color:var(--ink)">${esc(S.email)}</a></p>` : ""}
       <p>${hi ? HI.hours : esc(S.hours.display)} · ${ext(S.mapsUrl, hi ? "रास्ता" : "Directions")}</p>
       <p class="muted" style="font-size:.82rem">${enrol}</p>
     </div>
@@ -189,6 +190,7 @@ const officeCard = (hi = false) => `<div class="card office">
   <h2 class="h3">${hi ? HI.firm : esc(S.firm)}</h2>
   <address style="font-style:normal">${hi ? HI.address : esc(S.address.street) + "<br>" + esc(`${S.address.locality}, ${S.address.region} ${S.address.postalCode}`)}</address>
   <table class="hours"><caption class="sr">${hi ? "समय" : "Office hours"}</caption><tr><th scope="row">${hi ? "प्रतिदिन" : "Monday – Sunday"}</th><td>${hi ? "सुबह 9 – शाम 5" : "9:00 AM – 5:00 PM"}</td></tr><tr><th scope="row">${hi ? "राजपत्रित अवकाश" : "Gazetted holidays"}</th><td class="muted">${hi ? "समय भिन्न हो सकता है" : "Hours may differ"}</td></tr></table>
+  ${S.email ? `<p style="display:flex;gap:10px;align-items:center">${ico("msg", "i")}<span>${hi ? "ईमेल" : "Email"}: <a href="mailto:${esc(S.email)}" style="overflow-wrap:anywhere">${esc(S.email)}</a></span></p>` : ""}
   <div class="row-wrap">
     <a class="btn btn-primary" href="${TEL}">${ico("phone")}${esc(S.phoneDisplay)}</a>
     ${ext(S.mapsUrl, hi ? HI.contact.directions : "Get directions", "btn btn-outline")}
@@ -320,7 +322,6 @@ add({
 <div class="cols2">${officeCard()}
 <div class="stack"><div class="card" style="padding:22px"><p>Office contact details are provided for persons seeking information about the Advocate.</p></div>
 <div class="card" style="padding:22px"><h2 class="h3" style="margin-bottom:8px">Professional information</h2><dl class="facts-dl"><dt>Enrolment</dt><dd>${S.enrolment.barCouncil ? `${esc(S.enrolment.barCouncil)}, enrolment no. <span class="mono">${esc(S.enrolment.number)}</span>` : "To be added"}</dd><dt>Courts</dt><dd>${S.forums.map(esc).join(" · ")}</dd></dl></div>
-<div class="card" style="padding:22px"><h2 class="h3" style="margin-bottom:8px">Email</h2><p class="muted">${S.email ? `<a href="mailto:${esc(S.email)}">${esc(S.email)}</a>` : "To be added."}</p></div>
 ${notice("Please do not send confidential documents or case papers through this website or by email.")}</div></div>`
 });
 
@@ -419,6 +420,7 @@ const facts = [
   `Name: ${S.name}, Advocate (${HI.name})`,
   `Office: ${S.firm}, ${fullAddress}, India`,
   `Phone: ${S.phoneDisplay}`,
+  ...(S.email ? [`Email: ${S.email}`] : []),
   `Office hours: ${S.hours.display} (IST)`,
   `Appears before: ${S.forums.join("; ")}`,
   `Practice areas: ${AREAS.map((a) => a.t).join("; ")}`,
