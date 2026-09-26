@@ -10,12 +10,13 @@
     ],
     "slug": "service-and-education-law",
     "icon": "school",
-    "seoTitle": "Service and Education Law Advocate, Nainital High Court",
-    "desc": "Service and education law matters for teachers, school staff and public employees before the Uttarakhand and Delhi High Courts: arrears, leave and contempt.",
+    "seoTitle": "Service Matter Advocate, Uttarakhand High Court, Nainital",
+    "desc": "Service matters of teachers, school staff and public employees before the Uttarakhand High Court at Nainital and the Delhi High Court: arrears, leave, contempt.",
     "hi": "सेवा एवं शिक्षा कानून",
     "body": [
       "Service law covers disputes between employees and their employers where the employer is the State, a public body, or an institution bound by statute, such as a recognised school. Common matters include withheld pay-commission arrears, denial of leave or benefits, disciplinary action, and orders on transfer, promotion or retirement dues."
-    ]
+    ],
+    "hiDesc": "शिक्षकों, विद्यालय कर्मचारियों और सरकारी कर्मचारियों के सेवा मामले: वेतन आयोग बकाया, अवकाश लाभ और अवमानना याचिकाएँ, उत्तराखंड उच्च न्यायालय, नैनीताल में।"
   },
   {
     "t": "District Court practice",
@@ -34,12 +35,13 @@
     ],
     "slug": "district-court-civil-criminal-litigation",
     "icon": "rupee",
-    "seoTitle": "District Court Practice: Delhi and Nainital, Section 138",
-    "desc": "Civil and criminal litigation before the District Courts of Delhi and Nainital, including Section 138 NI Act matters, recovery proceedings and property disputes.",
+    "seoTitle": "Cheque Bounce, Civil and Criminal Lawyer in Haldwani",
+    "desc": "Cheque bounce (Section 138 NI Act), recovery suits, civil and criminal cases, bail and anticipatory bail before the District Courts of Nainital and Delhi.",
     "hi": "ज़िला न्यायालय में वकालत",
     "body": [
       "Civil and criminal litigation before the District Courts of Delhi and Nainital, including matters under Section 138 of the Negotiable Instruments Act, recovery proceedings, property disputes and other civil and criminal matters."
-    ]
+    ],
+    "hiDesc": "चेक बाउंस (धारा 138 एनआई एक्ट), वसूली वाद, दीवानी एवं फ़ौजदारी मुक़दमे, ज़मानत व अग्रिम ज़मानत: नैनीताल व दिल्ली के ज़िला न्यायालयों में। कार्यालय हल्द्वानी में।"
   },
   {
     "t": "Matrimonial and family disputes",
@@ -55,7 +57,7 @@
     ],
     "slug": "matrimonial-and-family-disputes",
     "icon": "users",
-    "seoTitle": "Matrimonial & Family Law Advocate in Haldwani, Nainital",
+    "seoTitle": "Divorce and Family Lawyer in Haldwani, Nainital",
     "desc": "Aastha Vishwakarma, advocate in Haldwani: divorce, maintenance, domestic violence and custody matters before the Family Court, Haldwani and the Nainital courts.",
     "hi": "वैवाहिक एवं पारिवारिक विवाद",
     "body": [
@@ -79,12 +81,13 @@
     ],
     "slug": "writ-petitions-public-authorities",
     "icon": "court",
-    "seoTitle": "Writ Petitions Against Public Authorities, Uttarakhand HC",
+    "seoTitle": "Writ Petition Advocate, Uttarakhand High Court, Nainital",
     "desc": "Article 226 writ petitions before the High Court of Uttarakhand at Nainital and the Delhi High Court: demolition, dispossession, natural justice and rehabilitation.",
     "hi": "संवैधानिक एवं रिट याचिकाएँ",
     "body": [
       "Under Article 226 of the Constitution, a High Court can direct the State and public authorities to act within the law. Writ petitions are used when an authority acts without notice, without jurisdiction or in breach of natural justice, or fails to act where the law requires it to."
-    ]
+    ],
+    "hiDesc": "संविधान के अनुच्छेद 226 के अंतर्गत राज्य एवं सरकारी प्राधिकरणों के विरुद्ध रिट याचिकाएँ, उत्तराखंड उच्च न्यायालय, नैनीताल और दिल्ली उच्च न्यायालय में।"
   },
   {
     "t": "Criminal appeals and white-collar defence",
@@ -97,10 +100,11 @@
     ],
     "slug": "criminal-appeals-white-collar-defence",
     "icon": "shield",
-    "seoTitle": "Criminal Appeals and PC Act Defence, Nainital High Court",
+    "seoTitle": "Criminal Appeals and Quashing, Uttarakhand High Court",
     "desc": "Criminal appeals, revisions and quashing petitions, including Prevention of Corruption Act cases investigated by the CBI, before the Uttarakhand and Delhi HCs.",
     "hi": "आपराधिक अपील एवं व्हाइट-कॉलर बचाव",
-    "body": []
+    "body": [],
+    "hiDesc": "आपराधिक अपील, पुनरीक्षण और कार्यवाही रद्द करने की याचिकाएँ, जिनमें भ्रष्टाचार निवारण अधिनियम के मामले शामिल हैं, उत्तराखंड व दिल्ली उच्च न्यायालय में।"
   },
   {
     "t": "Property and land",
@@ -113,12 +117,13 @@
     ],
     "slug": "property-and-land",
     "icon": "home",
-    "seoTitle": "Property and Land Dispute Advocate, Haldwani and Nainital",
+    "seoTitle": "Property and Land Dispute Lawyer in Haldwani, Nainital",
     "desc": "Possession, dispossession and land-status disputes, including disputes with development authorities, before the High Court. Office in Vaishali Colony, Haldwani.",
     "hi": "संपत्ति एवं भूमि",
     "body": [
       "Property disputes with a public body often turn on two questions: whether the land is what the authority says it is, and whether the occupant is in settled possession. Where an authority moves to demolish or dispossess, the law generally requires notice and an opportunity to object."
-    ]
+    ],
+    "hiDesc": "कब्ज़े, बेदख़ली और भूमि की स्थिति से जुड़े विवाद, विकास प्राधिकरणों के विरुद्ध मामले सहित। कार्यालय वैशाली कॉलोनी, हल्द्वानी में।"
   },
   {
     "t": "Insolvency (IBC)",
@@ -129,12 +134,13 @@
     ],
     "slug": "insolvency-ibc",
     "icon": "brief",
-    "seoTitle": "Insolvency and Bankruptcy Code Appeals Before the NCLAT",
+    "seoTitle": "NCLAT Appeals and Insolvency (IBC) Lawyer",
     "desc": "Appeals under the Insolvency and Bankruptcy Code before the National Company Law Appellate Tribunal, including challenges to resolution plans.",
     "hi": "दिवाला एवं शोधन अक्षमता (आईबीसी)",
     "body": [
       "Under the Insolvency and Bankruptcy Code, orders of the National Company Law Tribunal can be appealed to the National Company Law Appellate Tribunal. Operational and financial creditors, resolution applicants and others affected may appeal within the time limits set by the Code."
-    ]
+    ],
+    "hiDesc": "दिवाला एवं शोधन अक्षमता संहिता के अंतर्गत राष्ट्रीय कंपनी विधि अपीलीय अधिकरण (एनसीएलएटी) में अपील।"
   },
   {
     "t": "Tribunal practice",
@@ -145,11 +151,12 @@
     ],
     "slug": "tribunal-matters",
     "icon": "doc",
-    "seoTitle": "Central Administrative Tribunal Matters and Service Disputes",
+    "seoTitle": "Central Administrative Tribunal (CAT) Advocate",
     "desc": "Service disputes of central government employees before the Central Administrative Tribunal, and related writ petitions before the High Court.",
     "hi": "अधिकरण (ट्रिब्यूनल) मामले",
     "body": [
       "Service disputes of central government employees, such as pay, promotion, seniority, disciplinary action and retirement benefits, are generally heard first by the Central Administrative Tribunal, with a further remedy before the High Court."
-    ]
+    ],
+    "hiDesc": "केंद्र सरकार के कर्मचारियों के सेवा विवाद, केंद्रीय प्रशासनिक अधिकरण (कैट) में, और उनसे जुड़ी उच्च न्यायालय रिट याचिकाएँ।"
   }
 ]

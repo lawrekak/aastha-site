@@ -117,6 +117,20 @@ for (const f of (fs.existsSync(BLOG) ? fs.readdirSync(BLOG) : []).filter((x) => 
   if (/\+91|880202|aastha\.vishi|tel:|mailto:|whatsapp/i.test(txt)) err(w, "posts must not carry contact details or a call to action");
 }
 
+// Target keywords: 50, unique, Rule 36-safe, each mapped to a real page
+const KWF = path.join(path.dirname(new URL(import.meta.url).pathname), "../content/keywords.json");
+if (fs.existsSync(KWF)) {
+  const kws = JSON.parse(fs.readFileSync(KWF, "utf8")).keywords;
+  if (kws.length !== 50) warn("content/keywords.json", `${kws.length} keywords (target 50)`);
+  const seen = new Set();
+  for (const x of kws) {
+    if (seen.has(x.k)) err("content/keywords.json", `duplicate keyword "${x.k}"`); seen.add(x.k);
+    if (/\b(best|top|fees?|free|cheap|affordable|expert|specialist|no\.?\s?1)\b/i.test(x.k)) err("content/keywords.json", `"${x.k}" breaks the Rule 36 wording rules`);
+    if (!exists(x.page)) err("content/keywords.json", `"${x.k}" points to missing page ${x.page}`);
+    if (!["local", "info"].includes(x.intent)) err("content/keywords.json", `"${x.k}" needs intent local or info`);
+  }
+}
+
 // sitemap covers every indexable page and nothing else
 const sm = fs.readFileSync(path.join(DIST, "sitemap.xml"), "utf8");
 const locs = [...sm.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);

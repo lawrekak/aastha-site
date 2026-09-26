@@ -53,7 +53,8 @@ Get the facts right:
    - 5 property and land
    - 6 insolvency (IBC)
    - 7 tribunals (CAT, NCLAT)
-4. If nothing new fits, write an evergreen explainer that people search for, linked to something seasonal or current. Examples:
+4. **Target keywords.** `content/keywords.json` lists the 50 searches the site targets. The entries with `"intent": "info"` are questions people ask, such as "cheque bounce case time limit", "mutual divorce process", "138 ni act kya hai", "dakhil kharij uttarakhand" and "cat case status". On days without strong news, answer one of them that no post covers yet. Use the phrase naturally in the title or the first heading, and put the Hindi or Hinglish form in `keywords` and the Hindi title. Never stuff keywords, and never use one that says "best", "fees" or similar.
+5. If nothing new fits, write an evergreen explainer that people search for, linked to something seasonal or current. Examples:
    - how long you have to file a cheque-bounce complaint;
    - mutation (dakhil-kharij) of land in Kumaon;
    - interim maintenance;
