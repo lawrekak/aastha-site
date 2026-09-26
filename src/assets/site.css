@@ -330,3 +330,7 @@ nav.main a.lang{border:1px solid var(--line);margin-left:6px}
 .deva-body,.deva-body p,[lang="hi"] summary{font-family:var(--deva)}
 [lang="hi"] h1,[lang="hi"] h2,[lang="hi"] h3{font-family:var(--deva);font-weight:400;line-height:1.35}
 @media (max-width:900px){.article-grid{grid-template-columns:1fr}.side-col{position:static}.facts-dl{grid-template-columns:1fr;gap:2px}.facts-dl dd{margin-bottom:10px}}
+
+.grid3 > :last-child:nth-child(3n+1){grid-column:1/-1}
+@media (max-width:900px){.grid3 > :last-child:nth-child(3n+1){grid-column:auto}.grid3 > :last-child:nth-child(odd){grid-column:1/-1}}
+@media (max-width:600px){.grid3 > :last-child{grid-column:auto!important}}

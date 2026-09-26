@@ -210,17 +210,17 @@ const add = (p) => pages.push({ lang: "en", ...p });
 // Home
 add({
   path: "/", title: "Aastha Vishwakarma, Advocate | Nainital High Court, Haldwani", ogTitle: "Aastha Vishwakarma, Advocate",
-  desc: "Advocate at the High Court of Uttarakhand, Nainital and the Delhi High Court. Service and education law, writs, criminal appeals. Office in Haldwani.",
+  desc: "Advocate at the Uttarakhand and Delhi High Courts and District Courts. Service law, cheque bounce, recovery, civil and criminal cases. Office in Haldwani.",
   alt: { en: "/", hi: "/hi/" }, priority: "1.0", changefreq: "weekly",
   body: `<section class="hero" aria-labelledby="h1">
   <div class="stack" style="gap:20px">
     <span class="eyebrow">Advocate · <span class="deva" lang="hi" style="letter-spacing:0;text-transform:none;font-size:.95rem">अधिवक्ता</span></span>
     <h1 id="h1">${esc(S.tagline)}</h1>
-    <p class="lede">Practice in service and education law, writ petitions against public authorities, criminal appeals and property matters. Consultations at the Haldwani office, by video call or by phone.</p>
+    <p class="lede">Practice in service and education law, civil and criminal litigation in the district courts including cheque bounce and recovery matters, writ petitions against public authorities, criminal appeals and property matters. Consultations at the Haldwani office, by video call or by phone.</p>
     <p class="deva muted" lang="hi">${esc(HI.home.lede)}</p>
     <div class="row-wrap"><a class="btn btn-accent" href="/consultation/">${ico("cal")}Request a consultation</a><a class="btn btn-outline" href="${TEL}">${ico("phone")}${esc(S.phoneDisplay)}</a></div>
     <div class="facts">
-      <div class="fact">${ico("court", "i")}<div><b>5 courts and tribunals</b>High Courts, NCLAT, CAT, SC</div></div>
+      <div class="fact">${ico("court", "i")}<div><b>High Courts and District Courts</b>Delhi and Uttarakhand, plus NCLAT, CAT, SC</div></div>
       <div class="fact">${ico("brief", "i")}<div><b>Since ${S.practiceSince}</b>In practice</div></div>
       <div class="fact">${ico("lang", "i")}<div><b>Hindi and English</b>Consultations and documents</div></div>
     </div>
@@ -239,7 +239,7 @@ add({
 // About
 add({
   path: "/about/", title: "About Aastha Vishwakarma, Advocate | Haldwani, Nainital", pageType: "AboutPage",
-  desc: "Aastha Vishwakarma appears before the High Court of Uttarakhand, the Delhi High Court, NCLAT, CAT and the Supreme Court. In practice since 2019.",
+  desc: "Aastha Vishwakarma appears before the Uttarakhand and Delhi High Courts, the District Courts of Delhi and Nainital, NCLAT, CAT and the Supreme Court.",
   crumbs: [["About", "/about/"]], priority: "0.8",
   body: `<span class="eyebrow">About</span><h1 style="margin:10px 0 20px">${esc(S.name)}, Advocate</h1>
 <div class="cols2"><div class="stack">
@@ -261,7 +261,7 @@ add({
 // Practice areas
 add({
   path: "/practice-areas/", title: "Practice Areas | Aastha Vishwakarma, Advocate, Haldwani", pageType: "CollectionPage",
-  desc: "Service and education law, writ petitions, criminal appeals, property and land, insolvency and tribunal matters before the Uttarakhand and Delhi High Courts.",
+  desc: "Service law, cheque bounce and recovery, civil and criminal litigation, writs, criminal appeals, property, IBC and tribunal matters in Delhi and Uttarakhand.",
   crumbs: [["Practice areas", "/practice-areas/"]], priority: "0.9",
   body: `<span class="eyebrow">Areas of practice</span><h1 style="margin:10px 0 12px">Practice areas</h1>
 <p class="muted" style="margin-bottom:28px">Listed as permitted under Rule 36 of the Bar Council of India Rules: factual areas of practice, without claims of specialisation.</p>
