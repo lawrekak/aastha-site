@@ -46,7 +46,7 @@ const personNode = {
   worksFor: { "@id": ID.firm }, telephone: S.phone, ...(S.email ? { email: S.email } : {}), address: postal, knowsLanguage: ["hi", "en"],
   knowsAbout: AREAS.map((a) => a.t).concat(["Article 226 writ petitions", "Prevention of Corruption Act", "Insolvency and Bankruptcy Code", "High Court of Uttarakhand practice"]),
   ...(S.sameAs.length ? { sameAs: S.sameAs } : {}),
-  ...(S.qualifications.length ? { hasCredential: S.qualifications.map((q) => ({ "@type": "EducationalOccupationalCredential", name: q })) } : {}),
+  ...(S.qualifications.length ? { hasCredential: S.qualifications.map((q) => ({ "@type": "EducationalOccupationalCredential", name: q, credentialCategory: "degree" })), alumniOf: { "@type": "CollegeOrUniversity", name: "Campus Law Centre, Faculty of Law, University of Delhi", parentOrganization: { "@type": "CollegeOrUniversity", name: "University of Delhi" } } } : {}),
   ...(S.enrolment.barCouncil ? { memberOf: { "@type": "Organization", name: S.enrolment.barCouncil, url: "https://www.barcouncilofuttarakhand.org/" }, identifier: { "@type": "PropertyValue", propertyID: "Bar Council enrolment number", value: S.enrolment.number }, hasOccupation: { "@type": "Occupation", name: "Advocate", occupationalCategory: "23-1011" } } : {})
 };
 const siteNode = { "@type": "WebSite", "@id": ID.site, url: U("/"), name: `${S.name}, Advocate`, inLanguage: ["en-IN", "hi-IN"], publisher: { "@id": ID.firm } };
@@ -321,7 +321,7 @@ add({
   body: `<span class="eyebrow">Contact</span><h1 style="margin:10px 0 22px">Office and contact details</h1>
 <div class="cols2">${officeCard()}
 <div class="stack"><div class="card" style="padding:22px"><p>Office contact details are provided for persons seeking information about the Advocate.</p></div>
-<div class="card" style="padding:22px"><h2 class="h3" style="margin-bottom:8px">Professional information</h2><dl class="facts-dl"><dt>Enrolment</dt><dd>${S.enrolment.barCouncil ? `${esc(S.enrolment.barCouncil)}, enrolment no. <span class="mono">${esc(S.enrolment.number)}</span>` : "To be added"}</dd><dt>Courts</dt><dd>${S.forums.map(esc).join(" · ")}</dd></dl></div>
+<div class="card" style="padding:22px"><h2 class="h3" style="margin-bottom:8px">Professional information</h2><dl class="facts-dl"><dt>Enrolment</dt><dd>${S.enrolment.barCouncil ? `${esc(S.enrolment.barCouncil)}, enrolment no. <span class="mono">${esc(S.enrolment.number)}</span>` : "To be added"}</dd>${S.qualifications.length ? `<dt>Qualifications</dt><dd>${S.qualifications.map(esc).join("; ")}</dd>` : ""}<dt>Courts</dt><dd>${S.forums.map(esc).join(" · ")}</dd></dl></div>
 ${notice("Please do not send confidential documents or case papers through this website or by email.")}</div></div>`
 });
 
@@ -421,6 +421,7 @@ const facts = [
   `Office: ${S.firm}, ${fullAddress}, India`,
   `Phone: ${S.phoneDisplay}`,
   ...(S.email ? [`Email: ${S.email}`] : []),
+  ...(S.qualifications.length ? [`Qualifications: ${S.qualifications.join('; ')}`] : []),
   `Office hours: ${S.hours.display} (IST)`,
   `Appears before: ${S.forums.join("; ")}`,
   `Practice areas: ${AREAS.map((a) => a.t).join("; ")}`,
