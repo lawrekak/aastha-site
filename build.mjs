@@ -48,7 +48,7 @@ const personNode = {
   knowsAbout: AREAS.map((a) => a.t).concat(["Article 226 writ petitions", "Prevention of Corruption Act", "Insolvency and Bankruptcy Code", "High Court of Uttarakhand practice"]),
   ...(S.sameAs.length ? { sameAs: S.sameAs } : {}),
   ...(S.qualifications.length ? { hasCredential: S.qualifications.map((q) => ({ "@type": "EducationalOccupationalCredential", name: q })) } : {}),
-  ...(S.enrolment.barCouncil ? { memberOf: { "@type": "Organization", name: S.enrolment.barCouncil } } : {})
+  ...(S.enrolment.barCouncil ? { memberOf: { "@type": "Organization", name: S.enrolment.barCouncil, url: "https://www.barcouncilofuttarakhand.org/" }, identifier: { "@type": "PropertyValue", propertyID: "Bar Council enrolment number", value: S.enrolment.number }, hasOccupation: { "@type": "Occupation", name: "Advocate", occupationalCategory: "23-1011" } } : {})
 };
 const siteNode = { "@type": "WebSite", "@id": ID.site, url: U("/"), name: `${S.name}, Advocate`, inLanguage: ["en-IN", "hi-IN"], publisher: { "@id": ID.firm } };
 
@@ -95,7 +95,7 @@ function header(p) {
 
 function footer(p) {
   const hi = p.lang === "hi";
-  const enrol = S.enrolment.barCouncil ? `${esc(S.enrolment.barCouncil)} · Enrolment no. ${esc(S.enrolment.number)}` : `Enrolment details to be added`;
+  const enrol = S.enrolment.barCouncil ? (hi ? `बार काउंसिल ऑफ़ उत्तराखंड · नामांकन सं. <span class="mono">${esc(S.enrolment.number)}</span>` : `${esc(S.enrolment.barCouncil)} · Enrolment no. <span class="mono">${esc(S.enrolment.number)}</span>`) : `Enrolment details to be added`;
   return `<footer><div class="wrap">
   <div class="foot">
     <div class="stack" style="gap:10px">
@@ -252,7 +252,7 @@ add({
 <dt>Office</dt><dd>${esc(S.firm)}, ${esc(fullAddress)}</dd>
 <dt>Phone</dt><dd><a href="${TEL}" class="mono">${esc(S.phoneDisplay)}</a></dd>
 <dt>Qualifications</dt><dd>${S.qualifications.length ? S.qualifications.map(esc).join("; ") : '<span class="tag sample">to be added</span>'}</dd>
-<dt>Enrolment</dt><dd>${S.enrolment.barCouncil ? esc(`${S.enrolment.barCouncil}, ${S.enrolment.number} (${S.enrolment.year})`) : '<span class="tag sample">to be added</span>'}</dd>
+<dt>Enrolment</dt><dd>${S.enrolment.barCouncil ? `${esc(S.enrolment.barCouncil)}, enrolment no. <span class="mono">${esc(S.enrolment.number)}</span> (${esc(S.enrolment.year)})` : '<span class="tag sample">to be added</span>'}</dd>
 <dt>Languages</dt><dd>${S.languages.join(", ")}</dd>
 </dl></div>
 <div class="block">${ctaBand}</div>`
@@ -473,6 +473,7 @@ const facts = [
   `Practice areas: ${AREAS.map((a) => a.t).join("; ")}`,
   `Languages: ${S.languages.join(", ")}`,
   `In practice since: ${S.practiceSince}`,
+  ...(S.enrolment.barCouncil ? [`Enrolment: ${S.enrolment.barCouncil}, enrolment no. ${S.enrolment.number}`] : []),
   `First consultation: up to 30 minutes, no fee; at the Haldwani office, by video call or by phone`,
   `Areas served: ${S.areaServed.join(", ")}`
 ];
