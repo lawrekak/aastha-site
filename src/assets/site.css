@@ -240,7 +240,7 @@ details p{padding-bottom:18px;color:var(--muted)}
 .arch path{stroke:var(--muted);fill:none;stroke-width:1.2}
 
 footer{background:var(--surface);border-top:1px solid var(--line-soft);padding-block:40px 110px;font-size:.88rem;color:var(--muted)}
-.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px}
 .foot h4{margin:0 0 10px;font:700 .75rem var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
 .foot ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
 .foot a{color:var(--muted);text-decoration:none;display:inline-flex;min-height:32px;align-items:center}

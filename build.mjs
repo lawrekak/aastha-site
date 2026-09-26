@@ -111,7 +111,8 @@ function footer(p) {
       <p>${hi ? HI.hours : esc(S.hours.display)} · ${ext(S.mapsUrl, hi ? "रास्ता" : "Directions")}</p>
       <p class="muted" style="font-size:.82rem">${enrol}</p>
     </div>
-    <div><h2 class="foot-h">${hi ? "पृष्ठ" : "Pages"}</h2><ul>${[["/about/", "About"], ["/practice-areas/", "Practice areas"], ["/guides/", "Guides"], [GUIDE_URL, "Uttarakhand High Court guide"], ["/faq/", "FAQ"]].map(([h, l]) => `<li><a href="${h}">${l}</a></li>`).join("")}</ul></div>
+    <div><h2 class="foot-h">${hi ? "पृष्ठ" : "Pages"}</h2><ul>${[["/about/", "About"], ["/practice-areas/", "Practice areas"], ["/guides/", "Guides"], [GUIDE_URL, "Uttarakhand High Court guide"], ["/blog/", hi ? "ब्लॉग" : "Blog"], ["/faq/", "FAQ"]].map(([h, l]) => `<li><a href="${h}">${l}</a></li>`).join("")}</ul></div>
+    <div><h2 class="foot-h">${hi ? "ब्लॉग" : "Blog"}</h2><ul>${POSTS.slice(0, 3).map((x) => `<li><a href="${postUrl(x)}">${esc(x.title)}</a></li>`).join("")}<li><a href="/blog/">${hi ? "सभी पोस्ट" : "All blog posts"}</a></li></ul></div>
     <div><h2 class="foot-h">${hi ? "संपर्क" : "Contact"}</h2><ul>${[["/contact/", "Office and contact details"], ["/hi/", "हिन्दी"], ["/disclaimer/", "Disclaimer"], ["/privacy/", "Privacy notice"]].map(([h, l]) => `<li><a href="${h}">${l}</a></li>`).join("")}</ul></div>
   </div>
   <p class="fine">${hi ? HI.footerNote : "As per the rules of the Bar Council of India, this website does not advertise or solicit work. The information here is provided at the visitor's request and is not legal advice. Contacting the office does not create an advocate–client relationship. The information on this website is true and accurate to the best of my knowledge."}</p>
