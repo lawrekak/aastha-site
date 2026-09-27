@@ -1,0 +1,60 @@
+{
+  "title": "Cheque bounce case: how long do you have to file it?",
+  "slug": "cheque-bounce-case-time-limit",
+  "published": "2026-09-27",
+  "area": 1,
+  "desc": "A section 138 cheque bounce case has strict deadlines for notice and complaint. Miss one, and courts in Haldwani or Nainital can throw the case out.",
+  "keywords": ["cheque bounce case time limit", "cheque bounce case procedure", "138 ni act kya hai", "cheque bounce case in hindi", "chek bounce case Haldwani"],
+  "why": "Cheque bounce complaints are one of the most common cases filed at the District Court in Haldwani and Nainital, and courts regularly dismiss them for being filed late or too early.",
+  "keyPoints": [
+    "A bounced cheque must first be presented to the bank within three months of its date.",
+    "The payee must send a written demand notice within 30 days of learning the cheque bounced.",
+    "The drawer gets 15 days from receiving that notice to pay; only after that can a complaint be filed.",
+    "The complaint itself must reach the court within one month of the 15-day period ending."
+  ],
+  "sections": [
+    {
+      "h": "What is a section 138 cheque bounce case?",
+      "p": [
+        "Section 138 of the Negotiable Instruments Act, 1881 makes it an offence when a cheque given to settle a debt is returned unpaid by the bank, for example due to insufficient funds.",
+        "The law does not punish every bounced cheque automatically. The payee (the person who received the cheque) must first give the drawer (the person who signed it) a chance to pay before any court case can start."
+      ]
+    },
+    {
+      "h": "What are the deadlines to keep in mind?",
+      "p": [
+        "Step one: present the cheque at the bank within three months of the date written on it, or before it expires, whichever is earlier.",
+        "Step two: once the bank returns it unpaid, send a written notice demanding payment within 30 days of getting the bank's memo. Registered post or speed post is safest, since you may need to prove it was sent and received.",
+        "Step three: the drawer has 15 days from receiving that notice to pay. If nothing is paid, section 142 of the Act says the complaint must be filed in court within one month after those 15 days end.",
+        "A complaint filed even one day before the 15 days are over is not valid in law, as the Supreme Court has held (Gajanand Burange v. Laxmi Chand Goyal, 2022). Filing too late is just as fatal, though a court can excuse a late complaint if there is a genuine, well-explained reason for the delay."
+      ]
+    },
+    {
+      "h": "Which court hears the case?",
+      "p": [
+        "The complaint is filed and tried by a Judicial Magistrate, ordinarily where the payee's bank account (into which the cheque was to be collected) is situated. In Haldwani and Nainital, most such complaints are filed at the respective District Court.",
+        "The procedure for taking cognizance and trial now follows the Bharatiya Nagarik Suraksha Sanhita, 2023 (BNSS), which replaced the Code of Criminal Procedure, 1973 (CrPC), though the offence itself remains under the Negotiable Instruments Act."
+      ]
+    }
+  ],
+  "whatToDo": [
+    "Keep the original cheque, the bank's return memo, and proof of postage and delivery of your notice — all four dates matter.",
+    "Calendar the 30-day notice deadline and the 15-day payment window the moment the cheque bounces.",
+    "If you missed a deadline, take legal advice on your own facts before filing, since a defective complaint can be dismissed outright.",
+    "If you are the drawer and have received a notice, remember payment within 15 days ends the matter before any complaint is even filed."
+  ],
+  "hi": {
+    "title": "चेक बाउंस केस दायर करने की समय सीमा क्या है?",
+    "keyPoints": [
+      "चेक बैंक में उसकी तारीख से तीन महीने के भीतर लगाना जरूरी है।",
+      "चेक बाउंस होने पर 30 दिन के भीतर लिखित नोटिस भेजना होता है।",
+      "नोटिस मिलने के बाद आरोपी के पास भुगतान के लिए 15 दिन होते हैं, उसके बाद ही शिकायत दायर की जा सकती है।",
+      "15 दिन पूरे होने के एक महीने के भीतर अदालत में शिकायत दर्ज करानी होती है।"
+    ]
+  },
+  "sources": [
+    {"title": "Negotiable Instruments Act, 1881 — Section 138 (Indian Kanoon)", "url": "https://indiankanoon.org/doc/1330045/"},
+    {"title": "Negotiable Instruments Act, 1881 — Section 142 (Indian Kanoon)", "url": "https://indiankanoon.org/doc/595945/"},
+    {"title": "Gajanand Burange v. Laxmi Chand Goyal, 2022 — Supreme Court on premature complaints (LiveLaw)", "url": "https://www.livelaw.in/top-stories/supreme-court-cheque-bounce-complaint-15-days-expiry-gajanand-burange-vs-laxmi-chand-goyal-2022-livelaw-sc-682-206845"}
+  ]
+}
