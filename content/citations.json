@@ -15,6 +15,13 @@
     "sameAs": false
   },
   {
+    "platform": "Google Business Profile (Aastha, practitioner)",
+    "type": "map",
+    "status": "processing",
+    "url": "",
+    "notes": "Created 27 Sep 2026 as 'Aastha Vishwakarma, Advocate' (primary category Divorce lawyer), same office as the firm listing; Google verification processing (up to 5 days). Done: address, pin, phone, website, description, hours (daily 9-5), 7 divorce/family services (pending review). Chat left empty. To do after verification: add categories Family Lawyer and Lawyer; custom services (divorce by mutual consent, maintenance proceedings, DV Act matters); a professional photo; add its URL here and set status live."
+  },
+  {
     "platform": "Bing Places",
     "type": "map",
     "status": "planned",

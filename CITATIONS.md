@@ -36,6 +36,7 @@
 |---|---|
 | LinkedIn | Live. Update the headline, About and website (see KIT section 4). |
 | Google Business Profile | Live and verified. Categories set 27 Sep 2026 (Law firm, Lawyer, Divorce lawyer, Family Lawyer); phone present. Services added 27 Sep 2026 (pending Google review). Still to do: exterior photo, decide on the WhatsApp chat link, review the older generic services. |
+| Google Business Profile: Aastha (practitioner listing) | Created 27 Sep 2026; verification processing. After it goes live: add Family Lawyer and Lawyer categories, the custom services and her photo. |
 | Bing Places | Ready: import from Google Business Profile |
 | Apple Business Connect | To create (KIT section 3) |
 | Bar Council / Bar Association records | Check |
