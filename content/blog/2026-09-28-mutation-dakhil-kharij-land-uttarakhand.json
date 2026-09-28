@@ -1,0 +1,59 @@
+{
+  "title": "Dakhil kharij: how to mutate land records in Uttarakhand",
+  "slug": "mutation-dakhil-kharij-land-uttarakhand",
+  "published": "2026-09-28",
+  "area": 5,
+  "desc": "Mutation (dakhil kharij) updates the khatauni after a land sale or inheritance in Uttarakhand. Here is who must report it, and by when.",
+  "keywords": ["dakhil kharij uttarakhand", "khatauni uttarakhand", "mutation land uttarakhand", "जमीन का दाखिल खारिज", "bhulekh uttarakhand mutation"],
+  "why": "Buying, inheriting or gifting land in Haldwani or Nainital is only half the job; the revenue record (khatauni) must also show the new owner's name, and people often miss this step or the deadline to report it.",
+  "keyPoints": [
+    "Mutation (dakhil kharij) updates the khatauni to show who now holds the land, after a sale, gift or inheritance.",
+    "The person who gets possession must report it to the Tehsildar within three months.",
+    "Reporting late does not cancel your title, but the law allows a fine of up to five times the mutation fee.",
+    "Mutation status can be tracked online on the Devbhoomi (Bhulekh) Uttarakhand portal."
+  ],
+  "sections": [
+    {
+      "h": "What is dakhil kharij and why does it matter?",
+      "p": [
+        "Khatauni is the revenue record that lists who holds which plot of land. Dakhil kharij, or mutation, is the process of correcting that record after ownership changes hands, whether by sale deed, gift, or inheritance.",
+        "Mutation does not by itself create or transfer ownership; a registered sale deed or a valid inheritance already does that. But an outdated khatauni causes real problems later: banks may refuse a loan against the land, and property tax or compensation notices can still go to the old owner's name."
+      ]
+    },
+    {
+      "h": "Who must report it, and by when?",
+      "p": [
+        "Under section 34 of the U.P. Land Revenue Act, 1901, as it applies in Uttarakhand, every person who obtains possession of land by succession or transfer must report it to the Tehsildar of the tehsil where the land lies.",
+        "This report must be made within three months. Section 34 allows a fine of up to five times the mutation fee for failing to report in time, so it is worth doing promptly even though the fee itself is small.",
+        "On receiving the report, the Tehsildar (or a Kanungo, for uncontested successions) inquires into the claim and, if satisfied, directs the annual registers to be amended."
+      ]
+    },
+    {
+      "h": "How is it done in practice?",
+      "p": [
+        "An application for mutation, with the sale deed, death certificate, or succession papers attached, is filed at the tehsil concerned, or through the Devbhoomi (Bhulekh) Uttarakhand portal where online filing is available.",
+        "A patwari verifies possession on the ground, and neighbours or other heirs may be given a chance to object before the tehsildar or Naib Tehsildar passes an order. Once ordered, the change reflects in the online khatauni."
+      ]
+    }
+  ],
+  "whatToDo": [
+    "Keep the registered sale deed, or death certificate and succession documents, ready before applying.",
+    "File the mutation report within three months of taking possession, at the tehsil or through the Bhulekh Uttarakhand portal.",
+    "Check the mutation status online afterwards, and download the updated khatauni once it is approved.",
+    "If an objection is raised by another claimant, take legal advice on your own facts before the tehsildar decides the case."
+  ],
+  "hi": {
+    "title": "उत्तराखंड में जमीन का दाखिल खारिज (म्यूटेशन) कैसे कराएं?",
+    "keyPoints": [
+      "दाखिल खारिज से खतौनी में जमीन के नए मालिक का नाम दर्ज होता है, बिक्री, दान या विरासत में मिलने पर।",
+      "कब्जा मिलने के तीन महीने के भीतर तहसीलदार को इसकी सूचना देनी होती है।",
+      "देर से सूचना देने पर मालिकाना हक खत्म नहीं होता, पर जुर्माना लग सकता है।",
+      "म्यूटेशन की स्थिति देवभूमि (भूलेख) उत्तराखंड पोर्टल पर ऑनलाइन देखी जा सकती है।"
+    ]
+  },
+  "sources": [
+    {"title": "The U.P. Land Revenue Act, 1901, Section 34 (Indian Kanoon)", "url": "https://indiankanoon.org/doc/25265205/"},
+    {"title": "The Uttarakhand (U.P. Land Revenue Act, 1901) — adaptation for Uttarakhand (India Code)", "url": "https://www.indiacode.nic.in/bitstream/123456789/20016/1/land_revenue_act_engl_22_(1).pdf"},
+    {"title": "Bhulekh (Devbhoomi) Uttarakhand — land records portal", "url": "https://bhulekh.uk.gov.in/"}
+  ]
+}
