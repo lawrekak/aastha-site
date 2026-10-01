@@ -1,0 +1,65 @@
+{
+  "title": "How to check your CAT case status online",
+  "slug": "cat-case-status-uttarakhand",
+  "published": "2026-10-01",
+  "area": 7,
+  "desc": "Central government employees in Uttarakhand can track their CAT case status, hearing dates and orders online, without visiting Delhi.",
+  "keywords": ["cat case status", "central administrative tribunal advocate", "cat case kaise dekhe", "CAT Nainital circuit bench", "service matter case status"],
+  "why": "Uttarakhand has no permanent CAT bench, so central government employees and pensioners here often lose track of a case heard in Delhi or at an occasional Nainital circuit sitting; the status can be checked online instead of travelling.",
+  "keyPoints": [
+    "The Central Administrative Tribunal (CAT) handles service disputes of central government employees, under Article 323A of the Constitution.",
+    "Uttarakhand cases are normally heard by the CAT Principal Bench, New Delhi; a circuit bench sits at Nainital from time to time for local cases.",
+    "Case status, hearing dates and orders can be checked online by case number, diary number or party name.",
+    "An application to CAT must normally be filed within one year of the final departmental order, or one year after a departmental appeal goes unanswered for six months."
+  ],
+  "sections": [
+    {
+      "h": "What is CAT and who can approach it?",
+      "p": [
+        "The Central Administrative Tribunal was set up under the Administrative Tribunals Act, 1985, to decide service disputes of central government employees, such as promotion, seniority, disciplinary action, pension and recruitment.",
+        "It does not hear disputes of state government employees, who instead go to the Uttarakhand High Court or a state tribunal where one exists.",
+        "A central government employee in Uttarakhand, such as railway, central PSU or central civil service staff, can file an Original Application (OA) before CAT once departmental remedies are exhausted."
+      ]
+    },
+    {
+      "h": "Where is my Uttarakhand case heard?",
+      "p": [
+        "CAT has no permanent bench in Uttarakhand. Cases from the state are ordinarily listed before the Principal Bench at New Delhi.",
+        "From time to time, CAT has held a circuit bench at Nainital, using members of the Delhi Principal Bench, specifically to clear pending Uttarakhand cases without employees having to travel to Delhi.",
+        "Whether a case is heard at Delhi or during a Nainital circuit sitting depends on the cause list issued for that period, so it is worth checking both."
+      ]
+    },
+    {
+      "h": "How do I check my case status online?",
+      "p": [
+        "CAT's e-filing portal allows a search by case number (OA, MA, TA or RA) and year, by diary number, or by the name of a party or advocate; the correct bench must be selected first for the case to show up.",
+        "This lets you see the next hearing date and recent orders without a personal visit, and is useful before every hearing to confirm the case has not been adjourned or re-listed.",
+        "Certified copies of orders and e-filing of fresh applications are also available through the same portal, with a separate process for inspection of case files."
+      ]
+    }
+  ],
+  "whatToDo": [
+    "Before filing at CAT, send a representation or appeal to your department first; CAT can refuse an application if departmental remedies were not tried.",
+    "Note the date of the final departmental order; an OA is normally barred if filed more than one year after it, or more than one year after a departmental appeal has gone unanswered for six months, though delay can be condoned for sufficient cause.",
+    "Keep your OA number, diary number and the bench (Delhi or the Nainital circuit sitting) noted together, since the status search needs the right bench selected.",
+    "Check the case status portal a few days before any expected hearing, and again after it, to confirm the next date and read the order passed."
+  ],
+  "hi": {
+    "title": "अपने CAT केस की स्थिति ऑनलाइन कैसे देखें",
+    "keyPoints": [
+      "केंद्रीय प्रशासनिक अधिकरण (CAT) केंद्र सरकार के कर्मचारियों के सेवा संबंधी विवाद सुनता है, यह संविधान के अनुच्छेद 323A के तहत बना है।",
+      "उत्तराखंड के मामले सामान्यतः CAT की नई दिल्ली प्रधान पीठ में सुने जाते हैं; समय-समय पर नैनीताल में सर्किट बेंच भी लगती है।",
+      "केस नंबर, डायरी नंबर या पक्षकार के नाम से ऑनलाइन केस स्टेटस, सुनवाई की तारीख और आदेश देखे जा सकते हैं।",
+      "CAT में आवेदन सामान्यतः अंतिम विभागीय आदेश के एक वर्ष के भीतर, या विभागीय अपील पर छह महीने तक जवाब न मिलने पर उसके एक वर्ष के भीतर दाखिल करना होता है।"
+    ],
+    "p": [
+      "उत्तराखंड में CAT की स्थायी पीठ नहीं है, इसलिए यहां के केंद्र सरकार के कर्मचारियों को अक्सर दिल्ली में हुई सुनवाई की जानकारी नहीं मिल पाती। यह जानकारी अब यात्रा किए बिना ऑनलाइन पोर्टल से देखी जा सकती है।"
+    ]
+  },
+  "sources": [
+    {"title": "The Administrative Tribunals Act, 1985 (India Code)", "url": "https://www.indiacode.nic.in/handle/123456789/1358"},
+    {"title": "Section 21, Administrative Tribunals Act, 1985 — limitation", "url": "https://indiankanoon.org/doc/1291350/"},
+    {"title": "CAT e-Filing portal — case status and bench calendar", "url": "https://efiling.cgat.gov.in/ecat/case_status.php"},
+    {"title": "CAT circuit bench to sit at Nainital for Uttarakhand cases — ETV Bharat", "url": "https://www.etvbharat.com/hi/!state/circuit-bench-of-central-administrative-tribunal-will-be-held-in-nainital-uttarakhand-news-uts25051503396"}
+  ]
+}
