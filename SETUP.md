@@ -138,6 +138,13 @@ Every Thursday, `.github/workflows/weekly-keywords.yml` researches the week's se
 
 ## 14. Google Analytics and the daily report
 
+**Status (2 Oct 2026): live.**
+- Analytics account "Aastha Vishwakarma, Advocate" (410488037), owned by kakerwalharsh@gmail.com; property `advaasthavishwakarma.in` (557105503); web stream measurement ID `G-ENFEMQXGRX`.
+- India time zone, INR; data sharing options all off; Google signals off; data retention 2 months.
+- Service account `aastha-seo-reader@aastha-seo.iam.gserviceaccount.com` is a Viewer, with the Google Analytics Data API enabled in Cloud project `aastha-seo`.
+- Reports post to issue #14.
+- To give Aastha access: in GA4, go to Admin → Account access management → add her Google account as Administrator.
+
 The site has Google Analytics 4 built in, but it stays off until a measurement ID is added. Once switched on, the tag loads only after a visitor selects "I agree" on the Bar Council disclaimer. Advertising features and Google signals are off. The disclaimer and the privacy notice tell visitors this. Selections of the phone number, email address, map link and WhatsApp are counted as events (`contact_phone`, `contact_email`, `contact_map`, `contact_whatsapp`).
 
 1. **[Owner] Create the property.** At analytics.google.com, signed in with the Google account that should own the data:
