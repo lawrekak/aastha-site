@@ -135,3 +135,32 @@ Cost: about $0.30–1 a run, so roughly ₹800–2,500 a month on top of the wee
 ## 13. Weekly keyword refresh (no extra setup)
 
 Every Thursday, `.github/workflows/weekly-keywords.yml` researches the week's searches and proposes small updates to the 50 target keywords as a pull request labelled `keywords`. It uses the same `ANTHROPIC_API_KEY` as steps 11 and 12. Until that key is added, it files the research as an issue instead. Connecting Search Console (step 11.5) lets it use the site's real search queries. To run it now, go to **Actions → Weekly keyword refresh → Run workflow**.
+
+## 14. Google Analytics and the daily report
+
+The site has Google Analytics 4 built in, but it stays off until a measurement ID is added. Once switched on, the tag loads only after a visitor selects "I agree" on the Bar Council disclaimer. Advertising features and Google signals are off. The disclaimer and the privacy notice tell visitors this. Selections of the phone number, email address, map link and WhatsApp are counted as events (`contact_phone`, `contact_email`, `contact_map`, `contact_whatsapp`).
+
+1. **[Owner] Create the property.** At analytics.google.com, signed in with the Google account that should own the data:
+   - Admin → Create → Property. Name it "advaasthavishwakarma.in", time zone India, currency INR.
+   - Then add a **Web** data stream for `https://advaasthavishwakarma.in`.
+   - Leave Enhanced measurement on.
+2. **[Owner] Change two settings in Admin:**
+   - Data collection and modification → Data retention → set **2 months**.
+   - Data collection → leave **Google signals off**.
+3. **Send Claude two values:**
+   - the **Measurement ID** (G-…), from the data stream;
+   - the numeric **Property ID**, from Admin → Property details.
+
+   Both go into `content/site.json` as `ga4` and `ga4PropertyId`. Neither is a secret: the measurement ID is public in every page.
+4. **[Owner] Give the report read access:**
+   - In Google Cloud Console, use the same project as the Search Console service account (step 11.5) and enable **Google Analytics Data API**.
+   - In GA4 → Admin → Property access management, add the service account's email as **Viewer**.
+   - If the `GSC_SERVICE_ACCOUNT_JSON` secret already exists, nothing else is needed. Otherwise add the JSON key as the secret `GA4_SERVICE_ACCOUNT_JSON`.
+5. **Daily report.** `.github/workflows/daily-analytics.yml` runs every day at 09:45 IST. It adds a comment to the issue **Daily Google Analytics report** (label `analytics`), covering:
+   - yesterday against the day before and the same day last week;
+   - the last 7 days against the previous 7;
+   - channels and sources, landing pages, top pages, contact selections, cities, devices;
+   - the most-read blog posts.
+
+   To get these by email, **Watch** the repository ("All activity" or "Participating and @mentions" plus subscribing to the issue). To test it, go to Actions → Daily Google Analytics report → Run workflow. It uses no Claude, so it costs nothing.
+

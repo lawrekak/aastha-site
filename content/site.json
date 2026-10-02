@@ -76,5 +76,8 @@
   ],
   "indexNowKey": "dd98bb178cc3a4532f887485f8dd1409",
   "ogImage": "/assets/og.png",
-  "contentUpdated": "2026-09-26"
+  "contentUpdated": "2026-09-26",
+  "ga4": "",
+  "ga4PropertyId": "",
+  "_ga4_note": "ga4 = GA4 measurement ID (G-XXXXXXXXXX); the tag loads only after the visitor accepts the disclaimer. ga4PropertyId = the numeric GA4 property ID used by the daily report (scripts/ga4-report.mjs). Leave both empty to switch analytics off."
 }

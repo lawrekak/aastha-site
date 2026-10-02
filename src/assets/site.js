@@ -30,9 +30,36 @@
     $("#agree").addEventListener("click", function () {
       gate.hidden = true; document.body.style.overflow = "";
       try { sessionStorage.setItem("av-agree", "1"); } catch (e) {}
+      loadGA();
       $("#main").focus();
     });
   }
+
+  /* Google Analytics 4. Loaded only after the visitor accepts the disclaimer (the disclaimer and
+     the privacy notice say so). Advertising features and Google signals are off. The measurement
+     ID comes from content/site.json (ga4) via the data-ga attribute; empty = no analytics. */
+  function loadGA() {
+    var id = document.documentElement.getAttribute("data-ga");
+    if (!id || window.gtag) return;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", id, { allow_google_signals: false, allow_ad_personalization_signals: false, cookie_expires: 34128000 });
+    var s = document.createElement("script");
+    s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(id);
+    document.head.appendChild(s);
+  }
+  if (agreed || !gate) loadGA();
+  /* Count selections of the phone number, email address, map link and WhatsApp as GA4 events. */
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a[href]");
+    if (!a || !window.gtag) return;
+    var h = a.getAttribute("href") || "";
+    var n = /^tel:/.test(h) ? "contact_phone" : /^mailto:/.test(h) ? "contact_email"
+      : /google\.[a-z.]+\/maps|maps\.app\.goo\.gl|maps\.google\./.test(h) ? "contact_map"
+      : /wa\.me|whatsapp\.com/.test(h) ? "contact_whatsapp" : "";
+    if (n) window.gtag("event", n, { page_path: location.pathname });
+  }, true);
 
   /* Consultation request form */
   var form = $("#consult-form");

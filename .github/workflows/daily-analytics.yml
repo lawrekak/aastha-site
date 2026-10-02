@@ -1,0 +1,59 @@
+name: Daily Google Analytics report
+
+# Every day at 09:45 IST: yesterday's and the last 7 days' Google Analytics figures for
+# https://advaasthavishwakarma.in, posted as a new comment on one ongoing GitHub issue
+# ("Daily Google Analytics report", label: analytics). GitHub emails each comment to people
+# watching the repository. Plain script, no Claude: it costs nothing and is not affected by
+# the Anthropic spend limit.
+#
+# Needs: content/site.json ga4PropertyId, and the secret GA4_SERVICE_ACCOUNT_JSON (or the
+# existing GSC_SERVICE_ACCOUNT_JSON) for a service account added as Viewer on the GA4 property.
+# Until both exist the job does nothing and succeeds.
+
+on:
+  schedule:
+    - cron: "15 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: daily-analytics
+  cancel-in-progress: false
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build the report
+        id: ga
+        env:
+          GA4_SERVICE_ACCOUNT_JSON: ${{ secrets.GA4_SERVICE_ACCOUNT_JSON }}
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+        run: node scripts/ga4-report.mjs
+
+      - name: Post to the daily analytics issue
+        if: steps.ga.outputs.configured == 'yes'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create analytics --color 0E7490 --description "Daily Google Analytics report" --force >/dev/null || true
+          N=$(gh issue list --label analytics --state open --limit 1 --json number --jq '.[0].number // empty')
+          if [ -z "$N" ]; then
+            N=$(gh issue create --label analytics --title "Daily Google Analytics report" \
+              --body "A new comment with yesterday's Google Analytics figures is added here every morning at 09:45 IST. Close this issue to start a fresh one; the next run opens it automatically." \
+              | grep -o '[0-9]*$')
+          fi
+          gh issue comment "$N" --body-file ga4-report.md
+
+      - name: Add the report to the run summary
+        if: always()
+        run: cat ga4-report.md >> "$GITHUB_STEP_SUMMARY" || true
