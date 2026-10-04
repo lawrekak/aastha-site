@@ -1,0 +1,51 @@
+{
+  "title": "NCLAT appeal: how many days do you have?",
+  "slug": "nclat-appeal-time-limit-ibc",
+  "published": "2026-10-04",
+  "area": 6,
+  "desc": "An NCLAT appeal against an NCLT order must be filed within 45 days under the IBC, a limit the Supreme Court has only softened for a tribunal portal failure.",
+  "keywords": ["nclat appeal time limit", "ibc appeal limitation", "section 61 ibc", "nclat appeal kitne din", "insolvency appeal deadline"],
+  "why": "In September 2026 the Supreme Court restored an NCLAT appeal filed one day late, because the tribunal's own e-filing portal had failed, a reminder of how strict this deadline usually is.",
+  "keyPoints": [
+    "An appeal to the NCLAT against an NCLT order must be filed within 30 days under section 61(2) of the IBC.",
+    "The NCLAT can condone a further delay of only 15 days, for sufficient cause, making 45 days the outer limit.",
+    "The Supreme Court has repeatedly held this 45-day limit cannot be stretched further, even by a few days.",
+    "In September 2026, the Supreme Court made a narrow exception where the delay was caused by the NCLAT's own e-filing portal failing."
+  ],
+  "sections": [
+    {
+      "h": "How many days do you have to appeal to the NCLAT?",
+      "p": [
+        "Under section 61(2) of the Insolvency and Bankruptcy Code, 2016, an appeal against an order of the National Company Law Tribunal (NCLT) must be filed before the National Company Law Appellate Tribunal (NCLAT) within 30 days of the order. The NCLAT can allow a further 15 days if there was sufficient cause for the delay, but no more. The Supreme Court has repeatedly held that 45 days is the absolute outer limit, and the NCLAT has no power to condone delay beyond it.",
+        "This is far stricter than the usual civil appeal timelines many people expect, so missing it by even a few days can end the appeal before it is heard on merits."
+      ]
+    },
+    {
+      "h": "What did the Supreme Court recently decide?",
+      "p": [
+        "In Regional Provident Fund Commissioner-II v. Ms. Mamta Binani (2026), the appellant tried to e-file an appeal on the last day of the condonable period, but the NCLAT's own online filing portal had a technical failure. The appeal was finally e-filed one day later, and the NCLAT dismissed it as time-barred.",
+        "The Supreme Court restored the appeal, holding that a litigant should not suffer for a fault in the tribunal's own system (the principle of actus curiae neminem gravabit: an act of the court should harm no one). It directed the NCLAT to treat the first genuine filing attempt as the date of filing. This is a narrow exception for proven system failure, not a general relaxation of the 45-day rule."
+      ]
+    }
+  ],
+  "whatToDo": [
+    "Calendar the 30-day deadline from the date the NCLT order is pronounced, not from when a certified copy is received.",
+    "File well before the deadline; do not wait for the last day of the 15-day condonable window.",
+    "If the e-filing portal fails on a deadline day, take a screenshot or error message with a timestamp, and keep a record of every attempt.",
+    "Take legal advice on your own facts if an order has already gone against you, since the time already used cannot be recovered."
+  ],
+  "hi": {
+    "title": "NCLAT में अपील: कितने दिन के भीतर करनी होती है?",
+    "keyPoints": [
+      "IBC की धारा 61(2) के तहत NCLT के आदेश के खिलाफ NCLAT में अपील 30 दिन के भीतर करनी होती है।",
+      "पर्याप्त कारण होने पर NCLAT केवल 15 दिन की और छूट दे सकता है, यानी अधिकतम 45 दिन।",
+      "सुप्रीम कोर्ट बार-बार कह चुका है कि यह 45 दिन की सीमा और नहीं बढ़ाई जा सकती।",
+      "सितंबर 2026 में सुप्रीम कोर्ट ने एक अपवाद बनाया, जब देरी की वजह NCLAT के अपने ई-फाइलिंग पोर्टल की खराबी थी।"
+    ]
+  },
+  "sources": [
+    {"title": "Insolvency and Bankruptcy Code, 2016, Section 61 (India Code)", "url": "https://www.indiacode.nic.in/handle/123456789/2154"},
+    {"title": "LiveLaw: Litigant Mustn't Suffer When Delay Is Due To E-Filing Technical Glitch — Supreme Court Restores NCLAT Appeal", "url": "https://www.livelaw.in/top-stories/litigant-mustnt-suffer-when-delay-is-due-to-e-filing-technical-glitch-supreme-court-restores-nclat-appeal-550414"},
+    {"title": "Verdictum: Regional Provident Fund Commissioner-II v. Ms. Mamta Binani, 2026 INSC 1003", "url": "https://www.verdictum.in/supreme-court/regional-provident-fund-commissioner-ii-v-ms-mamta-binani-2026-insc-1003-e-filing-nclat-1622164"}
+  ]
+}
