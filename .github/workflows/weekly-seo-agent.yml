@@ -39,6 +39,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: GEO audit scripts (geo-seo-claude, vendored in .claude/skills/geo)
+        run: python3 -m pip install -q -r .claude/skills/geo/requirements.txt
+
       - name: Build and check the current site
         run: node build.mjs && node scripts/validate.mjs
 
@@ -64,8 +67,8 @@ jobs:
             claude-seo@agricidaniel-claude-seo
           claude_args: |
             --model claude-sonnet-5
-            --max-turns 80
-            --allowedTools "Read,Write,Edit,Glob,Grep,WebFetch,WebSearch,Bash(node:*),Bash(npm:*),Bash(python3:*),Bash(pip:*),Bash(git:*),Bash(gh pr create:*),Bash(gh pr list:*),Bash(gh label create:*),Bash(date:*),Bash(cat:*),Bash(ls:*)"
+            --max-turns 100
+            --allowedTools "Skill,Task,Read,Write,Edit,Glob,Grep,WebFetch,WebSearch,Bash(node:*),Bash(npm:*),Bash(python3:*),Bash(pip:*),Bash(git:*),Bash(gh pr create:*),Bash(gh pr list:*),Bash(gh label create:*),Bash(date:*),Bash(cat:*),Bash(ls:*)"
           prompt: |
             REPO: ${{ github.repository }}
             Follow the instructions in .github/seo-agent.md exactly.

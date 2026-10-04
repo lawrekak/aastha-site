@@ -171,3 +171,15 @@ The site has Google Analytics 4 built in, but it stays off until a measurement I
 
    To get these by email, **Watch** the repository ("All activity" or "Participating and @mentions" plus subscribing to the issue). To test it, go to Actions → Daily Google Analytics report → Run workflow. It uses no Claude, so it costs nothing.
 
+## 15. GEO (AI-search) audits: geo-seo-claude
+
+Selected skills from [zubair-trabzada/geo-seo-claude](https://github.com/zubair-trabzada/geo-seo-claude) (MIT; commit ea29bd2) are copied into this repository. Being copied rather than installed, they don't change unless someone deliberately re-copies them.
+- `.claude/skills/geo` (with the Python scripts), plus `geo-audit`, `geo-citability`, `geo-crawlers`, `geo-llmstxt`, `geo-schema`, `geo-technical`, `geo-content`, `geo-platform-optimizer`, `geo-compare` and `geo-brand-mentions`;
+- five subagents in `.claude/agents/`.
+
+**`.claude/skills/geo/RULE36.md` overrides them.** It sets out Rule 36 and makes brand mentions audit-only: no reviews, outreach, forum posts or calls to action. The agency sales tools (prospect, proposal, PDF, CRM, white-label) and the self-updater were left out.
+
+**When it runs:** on the first Tuesday of each month, the weekly SEO agent also runs a full GEO audit. It saves `reports/geo/YYYY-MM.md`, compares it with the previous month, and includes safe fixes in its pull request. The baseline is `reports/geo/2026-10-04-baseline.md`.
+
+**To run it by hand in Claude Code**, use the `geo-audit` skill on https://advaasthavishwakarma.in.
+

@@ -57,8 +57,14 @@ const personNode = {
   worksFor: { "@id": ID.firm }, telephone: S.phone, ...(S.email ? { email: S.email } : {}), address: postal, knowsLanguage: ["hi", "en"],
   knowsAbout: AREAS.map((a) => a.t).concat(["Divorce and matrimonial law", "Maintenance", "Child custody and guardianship", "Domestic violence law", "Article 226 writ petitions", "Prevention of Corruption Act", "Insolvency and Bankruptcy Code", "High Court of Uttarakhand practice"]),
   ...(SAME_AS.length ? { sameAs: SAME_AS } : {}),
-  ...(S.qualifications.length ? { hasCredential: S.qualifications.map((q) => ({ "@type": "EducationalOccupationalCredential", name: q, credentialCategory: "degree" })), alumniOf: { "@type": "CollegeOrUniversity", name: "Campus Law Centre, Faculty of Law, University of Delhi", parentOrganization: { "@type": "CollegeOrUniversity", name: "University of Delhi" } } } : {}),
-  ...(S.enrolment.barCouncil ? { memberOf: { "@type": "Organization", name: S.enrolment.barCouncil, url: "https://www.barcouncilofuttarakhand.org/" }, identifier: { "@type": "PropertyValue", propertyID: "Bar Council enrolment number", value: S.enrolment.number }, hasOccupation: { "@type": "Occupation", name: "Advocate", occupationalCategory: "23-1011" } } : {})
+  // Credentials: degree(s) and the Bar Council enrolment (a licence), for AI and search entity understanding.
+  ...((S.qualifications.length || S.enrolment.barCouncil) ? { hasCredential: [
+    ...S.qualifications.map((q) => ({ "@type": "EducationalOccupationalCredential", name: q, credentialCategory: "degree" })),
+    ...(S.enrolment.barCouncil ? [{ "@type": "EducationalOccupationalCredential", name: `Enrolment as an advocate, ${S.enrolment.barCouncil} (no. ${S.enrolment.number})`, credentialCategory: "licence", identifier: S.enrolment.number, dateCreated: S.enrolment.year, recognizedBy: { "@type": "Organization", name: S.enrolment.barCouncil, url: "https://www.barcouncilofuttarakhand.org/" } }] : [])
+  ] } : {}),
+  ...(S.qualifications.length ? { alumniOf: { "@type": "CollegeOrUniversity", name: "Campus Law Centre, Faculty of Law, University of Delhi", parentOrganization: { "@type": "CollegeOrUniversity", name: "University of Delhi" } } } : {}),
+  // Occupation code: ISCO-08 2611 (Lawyers), the international classification used in India (NCO-2015), not the US SOC code.
+  ...(S.enrolment.barCouncil ? { memberOf: { "@type": "Organization", name: S.enrolment.barCouncil, url: "https://www.barcouncilofuttarakhand.org/" }, identifier: { "@type": "PropertyValue", propertyID: "Bar Council enrolment number", value: S.enrolment.number }, hasOccupation: { "@type": "Occupation", name: "Advocate", occupationalCategory: { "@type": "CategoryCode", codeValue: "2611", name: "Lawyers", inCodeSet: "ISCO-08" }, occupationLocation: { "@type": "State", name: "Uttarakhand" } } } : {})
 };
 const siteNode = { "@type": "WebSite", "@id": ID.site, url: U("/"), name: `${S.name}, Advocate`, inLanguage: ["en-IN", "hi-IN"], publisher: { "@id": ID.firm } };
 

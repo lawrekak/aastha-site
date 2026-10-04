@@ -23,6 +23,12 @@ The site is a factual professional-information website. The build's validator (`
 ## Steps
 
 1. **Audit.** Using the claude-seo skills, run a technical, schema, local and GEO (AI-search) review of https://advaasthavishwakarma.in: the sitemap, a sample of pages, the structured data, hreflang and `llms.txt`. Also read `gsc-report.md` and `audit-report.md`. Local-SEO findings that need a human go in the pull request. These include the Google Business Profile, directory consistency and review requests, and she must not solicit reviews.
+1b. **Monthly GEO audit (first run of each month only: `date +%d` is 07 or less).**
+   - Run a full GEO (AI-search) audit of https://advaasthavishwakarma.in with the vendored geo-seo-claude skills: the `geo-audit` skill and its `geo-*` subagents in `.claude/agents/`.
+   - **Read `.claude/skills/geo/RULE36.md` first. It overrides the GEO skills.** Brand-mention scans are audit-only. Never suggest reviews, outreach, forum posts or calls to action. Never re-add explanatory text to practice-area pages.
+   - Save the report as `reports/geo/YYYY-MM.md`, with the composite GEO score, the five category scores and the prioritised actions.
+   - If an earlier `reports/geo/*.md` exists, use the `geo-compare` skill to add a "Change since last month" section.
+   - Fix only the safe technical items, as in step 2. Put the rest in the pull request under "GEO findings (for a person)".
 2. **Technical fixes.** Make only safe, clearly beneficial changes: titles or descriptions that are too long or duplicated, missing or invalid structured data, broken links, accessibility or performance issues, and hreflang or sitemap problems. Change content JSON or `build.mjs`, never the files in `dist/`. Keep each change small and explain it in the pull request.
 3. **Article (only if DRAFT_ARTICLES is "true").** Check the titles already in `content/insights.json` and `content/guide.json` and choose a topic not yet covered, rotating across the practice areas:
    - service and education law

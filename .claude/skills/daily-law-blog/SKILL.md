@@ -90,6 +90,12 @@ Style:
 - 2–3 sections. Headings are questions a person would type into Google.
 - Short sentences, mostly under 20 words, at about a Class 8 reading level. Explain any legal term in brackets the first time, e.g. "maintenance (monthly support)".
 - Start with the answer, not the background. Numbers and deadlines beat adjectives.
+- **Answer-first passage (so AI search can quote it).** The first paragraph of the first section must answer that section's question on its own, in 40–80 words. AI assistants quote passages like this word for word. It must:
+  - repeat the subject by name, with no "it" or "this" that depends on earlier text;
+  - name the law and section, the court or authority, and the place (Uttarakhand, Haldwani, Nainital);
+  - include at least one concrete number: a deadline, an amount, a year or a section.
+
+  Example: "A cheque bounce complaint under section 138 of the Negotiable Instruments Act must be filed within one month after the 15-day notice period ends. In Haldwani it goes to the Judicial Magistrate's court. If the complaint is late, the court can condone the delay only for a sufficient reason."
 - Name local institutions only where they are factually relevant: the Family Court at Haldwani, the District Court at Nainital, the High Court of Uttarakhand at Nainital.
 - The Hindi must be natural, simple Hindi (Devanagari), faithful to the English, not word-for-word.
 - Give 1–4 sources, official ones first. They are shown on the page.
