@@ -1,0 +1,51 @@
+{
+  "title": "Case Quashed? You Can Ask to Mask Your Name Online",
+  "slug": "quashed-case-mask-name-ecourts",
+  "published": "2026-10-05",
+  "area": 4,
+  "desc": "The Uttarakhand High Court ordered a cleared person's name masked on e-Courts records, showing how to ask for this after your case is quashed.",
+  "keywords": ["quashing petition in high court", "FIR quashed name removed online", "e-Courts record privacy", "criminal case record hatana", "आपराधिक मामला रद्द नाम हटाना"],
+  "why": "The Uttarakhand High Court recently directed the e-Courts registry to mask a cleared person's name from public digital records, a remedy few people realise exists.",
+  "keyPoints": [
+    "Quashing a case does not automatically remove your name from the e-Courts website.",
+    "In September 2026, the Uttarakhand High Court ordered a person's name masked after his case was quashed in 2024.",
+    "The court relied on the right to privacy, not a specific statute, to order masking.",
+    "You must separately ask the court or registry; it does not happen on its own."
+  ],
+  "sections": [
+    {
+      "h": "What did the Uttarakhand High Court order?",
+      "p": [
+        "In September 2026, the Uttarakhand High Court directed the e-Courts registry at Udham Singh Nagar to mask a software professional's name from the public digital record of a criminal case that had already been quashed in 2024. Justice Alok Mahra held that keeping the name online caused disproportionate harm to his privacy and ordered it replaced with a neutral label such as 'ABC'.",
+        "The case itself had been quashed years earlier after a compounding application, meaning the dispute between the parties was settled and the court closed the proceedings. But the petitioner's name kept showing up as an accused on the e-Courts portal, which he said was hurting his career prospects.",
+        "He filed a fresh writ petition asking the court to direct masking of his name and other identifying details, rather than complete removal of the record."
+      ]
+    },
+    {
+      "h": "Does quashing a case erase it from the internet?",
+      "p": [
+        "No. When a High Court quashes an FIR or case using its inherent powers under section 528 of the Bharatiya Nagarik Suraksha Sanhita (BNSS, earlier section 482 of the CrPC), it ends the criminal proceedings. It does not, by itself, remove the record from the e-Courts website or from search engines.",
+        "Courts have started treating this as a separate issue under the right to privacy in Article 21 of the Constitution, sometimes called the 'right to be forgotten'. Each request is still decided on its own facts, weighing the person's privacy against any genuine public interest in keeping the record visible."
+      ]
+    }
+  ],
+  "whatToDo": [
+    "Keep a certified copy of the order quashing or disposing of your case.",
+    "File a written request or petition asking the court registry to mask your name on the e-Courts portal, giving reasons such as impact on employment.",
+    "Ask for masking of identifying details, not necessarily deletion of the whole record, since courts have been more willing to grant this.",
+    "Take legal advice on your own facts, since outcomes depend on the nature of the case and how it ended."
+  ],
+  "hi": {
+    "title": "केस रद्द होने के बाद नाम हटाने के लिए क्या करें?",
+    "keyPoints": [
+      "केस रद्द (quash) होने से नाम अपने आप ई-कोर्ट्स वेबसाइट से नहीं हटता।",
+      "सितंबर 2026 में उत्तराखंड हाईकोर्ट ने 2024 में रद्द हो चुके एक मामले में व्यक्ति का नाम छिपाने (मास्किंग) का आदेश दिया।",
+      "कोर्ट ने निजता के अधिकार के आधार पर यह आदेश दिया, किसी खास कानून के तहत नहीं।",
+      "इसके लिए अलग से कोर्ट या रजिस्ट्री में आवेदन देना पड़ता है।"
+    ]
+  },
+  "sources": [
+    {"title": "LiveLaw: Uttarakhand High Court Orders Registry To Mask Tech Professional's Name From Digital Records After Criminal Case Was Quashed", "url": "https://www.livelaw.in/high-court/uttarakhand-high-court/uttarakhand-high-court-orders-ecourts-registry-mask-tech-professional-name-digital-records-552928"},
+    {"title": "Indian Kanoon: Case record, Uttarakhand High Court, 17 September 2026", "url": "https://indiankanoon.org/doc/155490589/"}
+  ]
+}
