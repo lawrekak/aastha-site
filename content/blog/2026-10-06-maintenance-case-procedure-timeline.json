@@ -1,0 +1,51 @@
+{
+  "title": "How Long Does a Maintenance Case Take Now?",
+  "slug": "maintenance-case-procedure-timeline",
+  "published": "2026-10-06",
+  "area": 2,
+  "desc": "Under section 144 BNSS, an interim maintenance application should be decided within 60 days of notice, after both sides swear an asset affidavit.",
+  "keywords": ["maintenance case procedure", "भरण पोषण का केस", "section 144 bnss", "interim maintenance time limit", "maintenance case Haldwani", "affidavit of assets maintenance"],
+  "why": "Maintenance claims filed today run under section 144 of the Bharatiya Nagarik Suraksha Sanhita, 2023 (BNSS), and courts across Uttarakhand are still applying its 60-day timeline and mandatory asset disclosure, so readers often ask how the process actually works and how long it takes.",
+  "keyPoints": [
+    "An application for interim maintenance under section 144 BNSS should, as far as possible, be decided within 60 days from the date notice is served on the other side.",
+    "Before fixing any amount, both sides must file a sworn affidavit of income, assets and liabilities, mandatory nationwide since a 2020 Supreme Court ruling.",
+    "A wife (including a non-remarried divorced wife), a minor or disabled child, and parents unable to support themselves can all claim maintenance.",
+    "The 60-day target is not an absolute deadline; courts can take longer, but it shows the law's intent to prevent long delays."
+  ],
+  "sections": [
+    {
+      "h": "How long does a maintenance case take to decide?",
+      "p": [
+        "An application for interim maintenance (support paid while the case is pending) under section 144 of the Bharatiya Nagarik Suraksha Sanhita, 2023 should, as far as possible, be decided within 60 days from the date the other side is served with notice. This applies to maintenance claims filed at the Family Court in Haldwani and other courts across Uttarakhand.",
+        "The word used in the law is \"as far as possible\", so 60 days is a target, not a strict deadline a court must meet. Final maintenance, decided after both sides give evidence, usually takes longer than the interim order."
+      ]
+    },
+    {
+      "h": "What proof does the court ask for first?",
+      "p": [
+        "Since a Supreme Court ruling on 4 November 2020, every court hearing a maintenance case in India must ask both the applicant and the person asked to pay to file a sworn affidavit listing their income, property, bank balances and monthly expenses, before any amount is fixed.",
+        "This affidavit requirement exists so that neither side can hide income or assets. Courts decide the maintenance amount by comparing both affidavits against the standard of living the family had."
+      ]
+    }
+  ],
+  "whatToDo": [
+    "Collect salary slips, bank statements, income tax returns and property papers early, since you will need to swear an affidavit of assets and liabilities.",
+    "Ask for interim maintenance in the same petition if you need support during the case, rather than waiting for the final order.",
+    "Track hearing dates and orders on the eCourts portal using your case number.",
+    "If 60 days pass without a decision on interim maintenance, raise this with the court when the case is next listed."
+  ],
+  "hi": {
+    "title": "अब भरण-पोषण के केस में फैसला आने में कितना समय लगता है?",
+    "keyPoints": [
+      "धारा 144 बीएनएसएस के तहत अंतरिम भरण-पोषण के आवेदन पर, जहाँ तक संभव हो, नोटिस तामील होने की तारीख से 60 दिन के भीतर फैसला होना चाहिए।",
+      "कोई भी राशि तय करने से पहले दोनों पक्षों को अपनी आय, संपत्ति और देनदारियों का शपथ-पत्र देना होता है, यह नियम सुप्रीम कोर्ट ने नवंबर 2020 में पूरे देश के लिए अनिवार्य किया था।",
+      "पत्नी (बिना पुनर्विवाह वाली तलाकशुदा पत्नी सहित), नाबालिग या दिव्यांग बच्चा, और असहाय माता-पिता भरण-पोषण का दावा कर सकते हैं।",
+      "60 दिन की समय-सीमा पूर्णतः बाध्यकारी नहीं है, पर यह कानून की मंशा दिखाती है कि देरी न हो।"
+    ]
+  },
+  "sources": [
+    {"title": "Bharatiya Nagarik Suraksha Sanhita, 2023 (India Code)", "url": "https://www.indiacode.nic.in/handle/123456789/20024"},
+    {"title": "Rajnesh v. Neha, Supreme Court of India, judgment dated 4 November 2020 (official PDF)", "url": "https://api.sci.gov.in/supremecourt/2018/37875/37875_2018_39_1501_24602_Judgement_04-Nov-2020.pdf"},
+    {"title": "eCourts services: case status", "url": "https://services.ecourts.gov.in/"}
+  ]
+}
