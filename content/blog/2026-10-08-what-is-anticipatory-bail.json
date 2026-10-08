@@ -1,0 +1,61 @@
+{
+  "title": "What Is Anticipatory Bail, and Who Can Apply?",
+  "slug": "what-is-anticipatory-bail",
+  "published": "2026-10-08",
+  "area": 1,
+  "desc": "Anticipatory bail under BNSS section 482 lets a person apply before arrest. Who can seek it in Haldwani and Nainital, and what the court can order.",
+  "keywords": ["anticipatory bail", "anticipatory bail lawyer haldwani", "section 482 bnss", "agrim jamanat kya hai", "anticipatory bail uttarakhand"],
+  "why": "People often hear about anticipatory bail in the news but not what it actually lets a person do, or that the law section changed in 2024.",
+  "keyPoints": [
+    "Anticipatory bail is a court direction for bail granted before a person is arrested, not after.",
+    "It is now covered by section 482 of the Bharatiya Nagarik Suraksha Sanhita (BNSS), 2023, not the old section 438 CrPC.",
+    "Only the Court of Session or the High Court can grant it, not a Magistrate's court.",
+    "It is not available for two specific serious offences against girls under the Bharatiya Nyaya Sanhita."
+  ],
+  "sections": [
+    {
+      "h": "What does anticipatory bail actually mean?",
+      "p": [
+        "Anticipatory bail is a direction under section 482 of the Bharatiya Nagarik Suraksha Sanhita (BNSS), 2023, which lets a person who fears arrest for a non-bailable offence apply to the Court of Session or the High Court of Uttarakhand before the police act. If the court is satisfied, it orders that the person be released on bail if and when arrested.",
+        "This replaced section 438 of the old Code of Criminal Procedure (CrPC) from 1 July 2024. The core idea is unchanged: it protects a person from being taken into custody while the application is pending, provided the court's conditions are met."
+      ]
+    },
+    {
+      "h": "Which court hears the application in Haldwani or Nainital?",
+      "p": [
+        "A person apprehending arrest in cases arising within Nainital district can apply to the Court of Session at Nainital, which also sits as an Additional District & Sessions Judge's court at Haldwani, or directly to the High Court of Uttarakhand at Nainital.",
+        "Most applicants approach the Sessions Court first. The High Court is usually moved only after the Sessions Court has refused the application, or where the matter is otherwise serious or complex."
+      ]
+    },
+    {
+      "h": "What conditions can the court attach, and when does it not apply?",
+      "p": [
+        "Under section 482(2), the court can require the applicant to stay available for police questioning, not threaten or pressure witnesses, and not leave India without permission, besides any other condition it considers fit.",
+        "Section 482(4) specifically bars anticipatory bail for accusations under section 65 (rape of a girl under sixteen) and section 70(2) (gang rape of a girl under eighteen) of the Bharatiya Nyaya Sanhita, 2023. For every other non-bailable offence, the court decides case by case, weighing the nature of the accusation and the applicant's conduct."
+      ]
+    }
+  ],
+  "whatToDo": [
+    "Note which offence is alleged and check whether it falls under the section 482(4) exclusion before applying.",
+    "Keep any notice, FIR copy or complaint you have received, since the application must state the specific apprehension of arrest.",
+    "Decide whether to approach the Sessions Court or the High Court first, based on how serious or urgent the matter is.",
+    "Take legal advice on your own facts, since the conditions a court imposes vary from case to case."
+  ],
+  "hi": {
+    "title": "अग्रिम जमानत क्या है और कौन आवेदन कर सकता है?",
+    "keyPoints": [
+      "अग्रिम जमानत गिरफ्तारी से पहले दी जाने वाली जमानत है, गिरफ्तारी के बाद नहीं।",
+      "अब यह भारतीय नागरिक सुरक्षा संहिता (BNSS), 2023 की धारा 482 के तहत आती है, पुरानी धारा 438 CrPC के तहत नहीं।",
+      "केवल सत्र न्यायालय या उच्च न्यायालय ही अग्रिम जमानत दे सकते हैं, मजिस्ट्रेट की अदालत नहीं।",
+      "भारतीय न्याय संहिता के दो गंभीर अपराधों में अग्रिम जमानत नहीं मिलती।"
+    ],
+    "p": [
+      "हल्द्वानी और नैनीताल क्षेत्र के मामलों में आवेदन नैनीताल के सत्र न्यायालय, हल्द्वानी स्थित अपर जिला न्यायाधीश की अदालत, या उत्तराखंड उच्च न्यायालय में किया जा सकता है।"
+    ]
+  },
+  "sources": [
+    {"title": "Bharatiya Nagarik Suraksha Sanhita, 2023 — Section 482 (Indian Kanoon)", "url": "https://indiankanoon.org/doc/73182733/"},
+    {"title": "Bharatiya Nyaya Sanhita, 2023 — Section 65 (Indian Kanoon)", "url": "https://indiankanoon.org/doc/191483134/"},
+    {"title": "District Court, Nainital — court structure", "url": "https://nainital.dcourts.gov.in"}
+  ]
+}
