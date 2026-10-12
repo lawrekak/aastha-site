@@ -81,9 +81,12 @@ jobs:
         if: steps.claude.outcome == 'success'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          EXEC: ${{ steps.claude.outputs.execution_file }}
         run: |
           DAY=$(TZ=Asia/Kolkata date +%F)
-          [ -f .seo-pr.md ] || echo "The SEO agent finished without writing a description." > .seo-pr.md
+          if [ ! -f .seo-pr.md ]; then
+            node -e "try{const a=[].concat(JSON.parse(require('fs').readFileSync(process.env.EXEC,'utf8')));const r=a.reverse().find(x=>x&&x.type==='result')||{};const tools={};for(const m of a)for(const c of (m.message&&m.message.content)||[])if(c.type==='tool_use')tools[c.name]=(tools[c.name]||0)+1;console.log('The SEO agent finished without writing .seo-pr.md.\\n\\nTurns: '+r.num_turns+'. Tools used: '+JSON.stringify(tools)+'\\n\\nIts final message:\\n\\n'+String(r.result||'').slice(0,6000))}catch(e){console.log('The SEO agent finished without writing a description (no log: '+e.message+').')}" > .seo-pr.md
+          fi
           { cat .seo-pr.md; echo; echo "Nothing is published until this pull request is merged."; } > pr-body.md
           if git diff --quiet -- content build.mjs src reports .claude/skills && [ -z "$(git ls-files --others --exclude-standard content reports src)" ]; then
             gh label create seo --color 1E3A8A --force >/dev/null || true
