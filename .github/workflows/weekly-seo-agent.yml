@@ -74,6 +74,7 @@ jobs:
           prompt: |
             REPO: ${{ github.repository }}
             Follow the instructions in .github/seo-agent.md exactly.
+            This is an unattended run: it ends the moment you stop. Never run subagents or commands in the background, and never end a turn to "wait". Run every subagent in the foreground and use its result directly. Do not finish until .seo-pr.md is written.
             DRAFT_ARTICLES is "${{ vars.DRAFT_ARTICLES || 'false' }}".
             Today is the run date shown by `date +%F`.
 
