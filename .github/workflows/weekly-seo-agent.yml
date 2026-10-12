@@ -116,6 +116,6 @@ jobs:
           gh label create agent-failure --color B91C1C --force >/dev/null || true
           N=$(gh issue list --label agent-failure --state open --limit 1 --json number --jq '.[0].number // empty')
           RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          printf '**%s** failed on %s: %s\n\nRun: %s\n\nIf this says *usage limits*, raise the spend limit at console.anthropic.com → Settings → Limits, or wait for the reset date shown.\n' "${{ github.workflow }}" "$(TZ=Asia/Kolkata date '+%F %H:%M IST')" "$MSG" "$RUN_URL" > fail.md
+          printf '**%s** failed on %s: %s\n\nRun: %s\n\nIf this says *usage limits*, raise the spend limit at console.anthropic.com → Settings → Limits. If it says *credit balance is too low*, add credits at console.anthropic.com → Settings → Billing.\n' "${{ github.workflow }}" "$(TZ=Asia/Kolkata date '+%F %H:%M IST')" "$MSG" "$RUN_URL" > fail.md
           if [ -z "$N" ]; then gh issue create --label agent-failure --title "Scheduled Claude agents: failed runs" --body-file fail.md; else gh issue comment "$N" --body-file fail.md; fi
           exit 1
