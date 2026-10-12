@@ -1,0 +1,57 @@
+{
+  "title": "What Is a Khatauni, and Where Do You Check It?",
+  "slug": "khatauni-land-record-check-online",
+  "published": "2026-10-12",
+  "area": 5,
+  "desc": "A khatauni is the Revenue Department's record of who holds a plot of land in Uttarakhand, and it can be viewed free on the bhulekh.uk.gov.in portal.",
+  "keywords": ["khatauni uttarakhand", "khatauni kaise dekhe", "bhulekh uttarakhand", "land record check online", "khatauni khasra haldwani"],
+  "why": "Anyone buying land, taking a loan against it, or settling a family share in Haldwani or Nainital is first asked for a khatauni, and most people have never had to read one before.",
+  "keyPoints": [
+    "A khatauni is the official record of rights for a plot, naming the owner, the khata (account) number, and the land's area and type.",
+    "Uttarakhand's Revenue Department maintains a khatauni for every village across all 13 districts.",
+    "The record can be viewed free on the bhulekh.uk.gov.in portal by searching the district, tehsil and village.",
+    "An online printout is only a reference copy; a sale, loan or registration needs a certified copy from the tehsil."
+  ],
+  "sections": [
+    {
+      "h": "What is a khatauni, and why does it matter?",
+      "p": [
+        "A khatauni is the Revenue Department's record of rights (RoR) for a landholding, kept village by village across Uttarakhand's 13 districts. It lists the recorded owner's name, the khata (account) number, and the area and type of land, such as agricultural or abadi (residential).",
+        "A khasra number, by contrast, identifies one specific survey plot within that village. Before any land deal in Haldwani or Nainital, both buyer and lender usually check the khatauni first to see whose name the land stands in."
+      ]
+    },
+    {
+      "h": "How do you check a khatauni online in Uttarakhand?",
+      "p": [
+        "The state runs a free public portal, bhulekh.uk.gov.in, for viewing land records across all districts. You pick the district, tehsil and village, and can then search by khasra or khata number, or by the recorded owner's name.",
+        "The record shown online is a computerised copy meant for quick reference. It does not need a login, but portal menus and formats do change from time to time, so it is worth confirming the current steps on the site itself."
+      ]
+    },
+    {
+      "h": "Is the online copy enough for a sale or loan?",
+      "p": [
+        "No. For registration of a sale deed, a bank loan, or a court case, the online printout is not accepted on its own. A certified copy (satyapit nakal) must be obtained from the patwari or tehsildar at the local tehsil office, for a small fee.",
+        "If the khatauni shows a name other than the seller's, or shows the land as disputed or under litigation, that needs to be resolved through mutation (dakhil kharij) or a civil suit before any money changes hands."
+      ]
+    }
+  ],
+  "whatToDo": [
+    "Before any land deal, check the khatauni online for the exact khasra number, not just the owner's name.",
+    "Match the khatauni against the sale deed, the mutation record and, where available, the site map (sajra naksha).",
+    "For registration or a loan, get a certified copy from the tehsil; do not rely on the online printout alone.",
+    "If the record shows a different owner, a pending mutation, or a dispute, get it resolved before paying any advance."
+  ],
+  "hi": {
+    "title": "खतौनी क्या है, और इसे कहाँ देखें?",
+    "keyPoints": [
+      "खतौनी किसी जमीन के मालिकाना हक का सरकारी रिकॉर्ड है, जिसमें मालिक का नाम, खाता संख्या और भूमि का क्षेत्रफल दर्ज होता है।",
+      "उत्तराखंड के राजस्व विभाग द्वारा हर गांव की खतौनी सभी 13 जिलों में रखी जाती है।",
+      "bhulekh.uk.gov.in पोर्टल पर जिला, तहसील और गांव चुनकर खतौनी मुफ्त में देखी जा सकती है।",
+      "ऑनलाइन प्रिंट केवल संदर्भ के लिए है; बिक्री, लोन या रजिस्ट्री के लिए तहसील से प्रमाणित प्रति लेनी पड़ती है।"
+    ]
+  },
+  "sources": [
+    {"title": "Bhulekh Uttarakhand — official land records portal, Revenue Department", "url": "https://bhulekh.uk.gov.in"},
+    {"title": "What is Khatauni (RoR) in Uttarakhand — document guide", "url": "https://1acre.in/guides/uttarakhand/khatauni-ror-uttarakhand"}
+  ]
+}
