@@ -23,7 +23,7 @@ The site is a factual professional-information website. The build's validator (`
 ## Steps
 
 1. **Audit.** Using the claude-seo skills, run a technical, schema, local and GEO (AI-search) review of https://advaasthavishwakarma.in: the sitemap, a sample of pages, the structured data, hreflang and `llms.txt`. Also read `gsc-report.md` and `audit-report.md`. Local-SEO findings that need a human go in the pull request. These include the Google Business Profile, directory consistency and review requests, and she must not solicit reviews.
-1b. **Monthly GEO audit (first run of each month only: `date +%d` is 07 or less).**
+1b. **Monthly GEO audit (whenever `reports/geo/$(date +%Y-%m).md` does not exist yet, so a missed run catches up).**
    - Run a full GEO (AI-search) audit of https://advaasthavishwakarma.in with the vendored geo-seo-claude skills: the `geo-audit` skill and its `geo-*` subagents in `.claude/agents/`.
    - **Read `.claude/skills/geo/RULE36.md` first. It overrides the GEO skills.** Brand-mention scans are audit-only. Never suggest reviews, outreach, forum posts or calls to action. Never re-add explanatory text to practice-area pages.
    - Save the report as `reports/geo/YYYY-MM.md`, with the composite GEO score, the five category scores and the prioritised actions.
@@ -49,10 +49,9 @@ The site is a factual professional-information website. The build's validator (`
    Practice-area index numbers: 0 service and education law, 1 District Court practice, 2 matrimonial and family, 3 writ, 4 criminal appeals, 5 property and land, 6 IBC, 7 tribunals.
    Then set `contentUpdated` in `content/site.json` to today's date.
 4. **Check.** Run `node build.mjs && node scripts/validate.mjs`. It must report no errors. Fix anything it flags.
-5. **Pull request.** If nothing changed and there is nothing to report, stop without a pull request. Otherwise:
-   - create the branch `seo/weekly-<YYYY-MM-DD>`, commit, and push it with `git push origin <branch>`;
-   - run `gh label create seo --color 1E3A8A --force`;
-   - open the pull request with `gh pr create --base main --label seo --title "Weekly SEO update <YYYY-MM-DD>"`.
+5. **Pull request description.** Do not create branches, commit, push or open the pull request yourself. The workflow does that after you finish, and only it has GitHub access.
+
+   Leave your changes in the working tree. Write the pull request description to `.seo-pr.md`, even if nothing changed, so the findings still reach a person. If there are no file changes, the workflow files `.seo-pr.md` as an issue instead.
 
    The body, in this order:
    - **For Aastha to review:** a checklist of what needs her approval, such as the article (English and Hindi) and any wording changes.
