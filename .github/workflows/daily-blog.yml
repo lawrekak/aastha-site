@@ -70,17 +70,21 @@ jobs:
             Write today's post for ${{ github.repository }}. Today is the date shown by `date +%F` (use IST: TZ=Asia/Kolkata).
 
       - name: Check and open the pull request
-        if: steps.claude.outcome == 'success'
+        if: always() && steps.done.outputs.skip != 'yes' && (steps.claude.outcome == 'success' || steps.claude.outcome == 'failure')
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CLAUDE: ${{ steps.claude.outcome }}
+          EXEC: ${{ steps.claude.outputs.execution_file }}
         run: |
           NEW=$(git status --porcelain content/blog | awk '{print $2}' | grep '\.json$' || true)
           if [ -z "$NEW" ]; then echo "No post written today."; exit 0; fi
           CHECK=ok
+          [ "$CLAUDE" = success ] || { CHECK=failed; echo "ERROR The writing run stopped before finishing (see the agent-failure issue): check every section, the Hindi summary and the sources." > stopped.txt; }
           { node build.mjs && node scripts/validate.mjs; } > check.txt 2>&1 || CHECK=failed
+          [ -f stopped.txt ] && cat stopped.txt >> check.txt
           cat check.txt
           DAY=$(TZ=Asia/Kolkata date +%F)
-          TITLE=$(node -e "console.log(require('./$(echo "$NEW" | head -1)').title)")
+          TITLE=$(node -e "console.log(require('./$(echo "$NEW" | head -1)').title)" 2>/dev/null || echo "Unfinished draft")
           BRANCH="blog/$DAY"
           git config user.name "blog-agent"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -89,6 +93,7 @@ jobs:
           git commit -m "Blog: $TITLE"
           git push origin "$BRANCH"
           [ -f .blog-pr.md ] || echo "Merge to publish. Close without merging to drop it." > .blog-pr.md
+          node -e "try{const a=[].concat(JSON.parse(require('fs').readFileSync(process.env.EXEC,'utf8')));const r=a.reverse().find(x=>x&&x.type==='result')||{};console.log('\nClaude cost for this post: \$'+Number(r.total_cost_usd||0).toFixed(2)+' ('+r.num_turns+' turns)')}catch(e){}" >> .blog-pr.md
           gh label create blog --color 0F766E --force || true
           if [ "$CHECK" = failed ]; then
             { echo "> **The site check failed on this post, so it is a draft.** Fix the errors below (or ask Claude to), then mark it ready."; echo; echo '```'; grep -E "ERROR|Error|error|✗" check.txt | head -40; echo '```'; echo; cat .blog-pr.md; } > pr.md
@@ -103,7 +108,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           EXEC: ${{ steps.claude.outputs.execution_file }}
         run: |
-          MSG=$(node -e "try{const a=JSON.parse(require('fs').readFileSync(process.env.EXEC,'utf8'));const r=[].concat(a).reverse().find(x=>x&&x.type==='result')||{};console.log(String(r.result||r.subtype||'unknown').slice(0,500)+' (turns: '+(r.num_turns??'?')+')')}catch(e){console.log('no execution log: '+e.message)}")
+          MSG=$(node -e "try{const a=JSON.parse(require('fs').readFileSync(process.env.EXEC,'utf8'));const r=[].concat(a).reverse().find(x=>x&&x.type==='result')||{};console.log(String(r.result||r.subtype||'unknown').slice(0,500)+' (turns: '+(r.num_turns??'?')+', cost \$'+Number(r.total_cost_usd||0).toFixed(2)+')')}catch(e){console.log('no execution log: '+e.message)}")
           echo "::error::Claude run failed: $MSG"
           gh label create agent-failure --color B91C1C --force >/dev/null || true
           N=$(gh issue list --label agent-failure --state open --limit 1 --json number --jq '.[0].number // empty')

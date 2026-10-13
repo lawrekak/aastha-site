@@ -2,12 +2,24 @@
 
 You maintain the website of **Aastha Vishwakarma, Advocate** (https://advaasthavishwakarma.in). Your job is to keep the site **discoverable, accurate and technically sound**. It is **not** to generate leads or market her services. Everything you change goes into **one pull request** for Aastha to review. You never merge, never push to `main`, and never publish anything yourself.
 
-## How this run works
+## How this run works (staged, resumable, cost-aware)
 
-This run is unattended and ends as soon as you stop. So:
-- run subagents (the GEO `geo-*` agents) in the **foreground**, never with `run_in_background`;
-- never end a turn to wait for something;
-- your last action is always writing `.seo-pr.md`.
+This run is unattended and ends as soon as you stop. It costs money per step, and a run can be cut off part-way, for example when credit runs out. So you work in **stages**, and you save each stage to `.wip/` the moment it is done. If this run was resumed from an earlier one, `.wip/` and any changed files are already restored.
+
+**Start by running `ls .wip/`. Skip every stage whose file already exists**, and say so in the final description.
+
+| Stage | Saved as | Skip if it exists |
+|---|---|---|
+| 1. Audit | `.wip/stage1-audit.md` | yes |
+| 2. GEO audit (monthly) | `reports/geo/YYYY-MM.md` | yes |
+| 3. Technical fixes | `.wip/stage3-fixes.md`, listing each change and file | yes |
+| 4. Article (only if DRAFT_ARTICLES is "true") | `.wip/stage4-article.md` | yes |
+| 5. Description | `.seo-pr.md` | – (always last) |
+
+To keep the cost down:
+- **Use the data already collected.** `.wip/geo-data/summary.md` (with its per-page JSON), `gsc-report.md` and `audit-report.md` were made without Claude. Read them instead of fetching and scoring pages yourself. Only fetch a page if a finding needs checking.
+- **Don't start subagents** (no Task/Agent tool) and don't run anything in the background. Do the work yourself, in order.
+- Be brief: findings as bullet points, no restating of inputs.
 
 ## Hard rules — Bar Council of India Rule 36
 
@@ -29,14 +41,24 @@ The site is a factual professional-information website. The build's validator (`
 
 ## Steps
 
-1. **Audit.** Using the claude-seo skills, run a technical, schema, local and GEO (AI-search) review of https://advaasthavishwakarma.in: the sitemap, a sample of pages, the structured data, hreflang and `llms.txt`. Also read `gsc-report.md` and `audit-report.md`. Local-SEO findings that need a human go in the pull request. These include the Google Business Profile, directory consistency and review requests, and she must not solicit reviews.
-1b. **Monthly GEO audit (whenever `reports/geo/$(date +%Y-%m).md` does not exist yet, so a missed run catches up).**
-   - Run a full GEO (AI-search) audit of https://advaasthavishwakarma.in with the vendored geo-seo-claude skills: the `geo-audit` skill and its `geo-*` subagents in `.claude/agents/`.
-   - **Read `.claude/skills/geo/RULE36.md` first. It overrides the GEO skills.** Brand-mention scans are audit-only. Never suggest reviews, outreach, forum posts or calls to action. Never re-add explanatory text to practice-area pages.
-   - Save the report as `reports/geo/YYYY-MM.md`, with the composite GEO score, the five category scores and the prioritised actions.
-   - If an earlier `reports/geo/*.md` exists, use the `geo-compare` skill to add a "Change since last month" section.
-   - Fix only the safe technical items, as in step 2. Put the rest in the pull request under "GEO findings (for a person)".
-2. **Technical fixes.** Make only safe, clearly beneficial changes: titles or descriptions that are too long or duplicated, missing or invalid structured data, broken links, accessibility or performance issues, and hreflang or sitemap problems. Change content JSON or `build.mjs`, never the files in `dist/`. Keep each change small and explain it in the pull request.
+1. **Audit (stage 1).**
+   - Review https://advaasthavishwakarma.in for technical, schema, local and hreflang issues, and check `llms.txt`.
+   - Use `.wip/geo-data/summary.md`, `audit-report.md` and `gsc-report.md`. Use the `geo-technical` and `geo-schema` skills' checklists only as a rubric.
+   - Local-SEO findings that need a person go in the description: the Google Business Profile and directory consistency. She must not solicit reviews.
+   - Save the result to `.wip/stage1-audit.md`.
+1b. **Monthly GEO audit (stage 2: only when `reports/geo/$(date +%Y-%m).md` does not exist yet).**
+   - **Read `.claude/skills/geo/RULE36.md` first. It overrides the GEO skills.** Brand mentions are audit-only. No reviews, outreach, forum posts or calls to action. Don't re-add explanatory text to practice pages.
+   - Score the five GEO categories yourself, one after another, from `.wip/geo-data/`:
+     - AI visibility: citability, crawlers, llms.txt;
+     - platform readiness;
+     - technical;
+     - content and E-E-A-T;
+     - schema.
+
+     Use the `geo-audit` skill's weights for the composite score. Don't start the `geo-*` subagents.
+   - Write `reports/geo/YYYY-MM.md`: the composite score, the five category scores and up to 10 prioritised actions.
+   - If an earlier `reports/geo/*.md` exists, add "Change since last time" in the `geo-compare` format.
+2. **Technical fixes (stage 3).** Make only safe, clearly beneficial changes: titles or descriptions that are too long or duplicated, missing or invalid structured data, broken links, accessibility or performance issues, and hreflang or sitemap problems. Change content JSON or `build.mjs`, never the files in `dist/`. Keep each change small and explain it in the pull request.
 3. **Article (only if DRAFT_ARTICLES is "true").** Check the titles already in `content/insights.json` and `content/guide.json` and choose a topic not yet covered, rotating across the practice areas:
    - service and education law
    - District Court practice (Section 138 NI Act, recovery, civil suits, execution, bail)

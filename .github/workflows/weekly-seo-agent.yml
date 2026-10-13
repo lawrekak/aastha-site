@@ -1,9 +1,15 @@
 name: Weekly SEO agent (opens a pull request for review)
 
-# Every Tuesday 10:15 IST, Claude audits the live site with the claude-seo plugin, reads
-# Search Console data, makes safe technical fixes and (optionally) drafts one educational
-# guide. It never publishes: everything arrives as a pull request that Aastha reviews and
-# merges. Merging deploys through Cloudflare.
+# Every Tuesday 10:15 IST, Claude audits the live site, reads Search Console data, makes safe
+# technical fixes, runs the monthly GEO audit when due and (optionally) drafts one guide.
+# It never publishes: everything arrives as a pull request that Aastha reviews and merges.
+#
+# Cost controls:
+#  - page fetching and GEO scoring run first as free scripts (scripts/geo-precompute.mjs);
+#  - the agent works in stages saved to .wip/. If a run stops part-way (credit, limit,
+#    timeout), the stages and file changes are saved to the branch wip/seo-agent and the next
+#    run resumes from there instead of starting again;
+#  - no third-party plugin and no parallel subagents.
 #
 # Needs repository secret ANTHROPIC_API_KEY. Optional: GSC_SERVICE_ACCOUNT_JSON.
 # Repository variable DRAFT_ARTICLES = "true" also drafts one long guide; by default (false) the agent makes technical fixes and a report only, since short posts now come from the daily blog agent.
@@ -31,6 +37,17 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Resume from a previous unfinished run (if any)
+        run: |
+          if git fetch -q origin wip/seo-agent 2>/dev/null; then
+            git checkout origin/wip/seo-agent -- .wip 2>/dev/null || true
+            git reset -q -- .wip   # keep the files, but never stage them into the pull request
+            if [ -s .wip/changes.patch ]; then git apply --3way .wip/changes.patch || echo "::warning::Some saved changes did not apply cleanly; the agent will redo them."; fi
+            echo "Resumed. Saved stages:"; ls .wip
+          else
+            echo "No unfinished run to resume."
+          fi
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -54,6 +71,10 @@ jobs:
         continue-on-error: true
         run: node scripts/audit-live.mjs
 
+      - name: Collect GEO data without Claude (free)
+        continue-on-error: true
+        run: '[ -f .wip/geo-data/summary.md ] || node scripts/geo-precompute.mjs https://advaasthavishwakarma.in'
+
       - name: Skip if today's run already happened
         id: done
         env:
@@ -73,18 +94,14 @@ jobs:
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          plugin_marketplaces: |
-            https://github.com/AgriciDaniel/claude-seo.git
-          plugins: |
-            claude-seo@agricidaniel-claude-seo
           claude_args: |
             --model claude-sonnet-5
             --max-turns 100
-            --allowedTools "Skill,Task,Read,Write,Edit,Glob,Grep,WebFetch,WebSearch,Bash(node:*),Bash(npm:*),Bash(python3:*),Bash(pip:*),Bash(git status:*),Bash(git diff:*),Bash(git log:*),Bash(date:*),Bash(cat:*),Bash(ls:*)"
+            --allowedTools "Skill,Read,Write,Edit,Glob,Grep,WebFetch,WebSearch,Bash(node:*),Bash(npm:*),Bash(python3:*),Bash(pip:*),Bash(git status:*),Bash(git diff:*),Bash(git log:*),Bash(date:*),Bash(cat:*),Bash(ls:*)"
           prompt: |
             REPO: ${{ github.repository }}
             Follow the instructions in .github/seo-agent.md exactly.
-            This is an unattended run: it ends the moment you stop. Never run subagents or commands in the background, and never end a turn to "wait". Run every subagent in the foreground and use its result directly. Do not finish until .seo-pr.md is written.
+            This is an unattended, paid run that may be cut off. Work in the saved stages described there (start with `ls .wip/` and skip finished stages), use the pre-collected data in .wip/geo-data, gsc-report.md and audit-report.md, never start subagents or background work, never end a turn to "wait", and finish by writing .seo-pr.md.
             DRAFT_ARTICLES is "${{ vars.DRAFT_ARTICLES || 'false' }}".
             Today is the run date shown by `date +%F`.
 
@@ -98,10 +115,12 @@ jobs:
           if [ ! -f .seo-pr.md ]; then
             node -e "try{const a=[].concat(JSON.parse(require('fs').readFileSync(process.env.EXEC,'utf8')));const r=a.reverse().find(x=>x&&x.type==='result')||{};const tools={};for(const m of a)for(const c of (m.message&&m.message.content)||[])if(c.type==='tool_use')tools[c.name]=(tools[c.name]||0)+1;console.log('The SEO agent finished without writing .seo-pr.md.\\n\\nTurns: '+r.num_turns+'. Tools used: '+JSON.stringify(tools)+'\\n\\nIts final message:\\n\\n'+String(r.result||'').slice(0,6000))}catch(e){console.log('The SEO agent finished without writing a description (no log: '+e.message+').')}" > .seo-pr.md
           fi
-          { cat .seo-pr.md; echo; echo "Nothing is published until this pull request is merged."; } > pr-body.md
-          if git diff --quiet -- content build.mjs src reports .claude/skills && [ -z "$(git ls-files --others --exclude-standard content reports src)" ]; then
+          COST=$(node -e "try{const a=[].concat(JSON.parse(require('fs').readFileSync(process.env.EXEC,'utf8')));const r=a.reverse().find(x=>x&&x.type==='result')||{};console.log('Claude cost for this run: \$'+Number(r.total_cost_usd||0).toFixed(2)+' ('+r.num_turns+' turns)')}catch(e){console.log('')}")
+          { cat .seo-pr.md; echo; echo "$COST"; echo; echo "Nothing is published until this pull request is merged."; } > pr-body.md
+          if git diff HEAD --quiet -- content build.mjs src reports .claude/skills && [ -z "$(git ls-files --others --exclude-standard content reports src)" ]; then
             gh label create seo --color 1E3A8A --force >/dev/null || true
-            gh issue create --label seo --title "Weekly SEO report $DAY (no file changes)" --body-file .seo-pr.md
+            gh issue create --label seo --title "Weekly SEO report $DAY (no file changes)" --body-file pr-body.md
+            git push origin --delete wip/seo-agent 2>/dev/null || true
             exit 0
           fi
           node build.mjs && node scripts/validate.mjs
@@ -114,6 +133,23 @@ jobs:
           git push origin "$BRANCH"
           gh label create seo --color 1E3A8A --force >/dev/null || true
           gh pr create --base main --head "$BRANCH" --label seo --title "Weekly SEO update $DAY" --body-file pr-body.md
+          git push origin --delete wip/seo-agent 2>/dev/null || true
+
+      - name: Save progress so the next run resumes (run stopped part-way)
+        if: steps.claude.outcome == 'failure'
+        run: |
+          mkdir -p .wip
+          git add -N content reports src build.mjs 2>/dev/null || true
+          git diff -- content reports src build.mjs > .wip/changes.patch || true
+          [ -f .seo-pr.md ] && cp .seo-pr.md .wip/seo-pr-draft.md || true
+          echo "Saved stages:"; ls .wip
+          git config user.name "seo-agent"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -q --orphan wip-save
+          git rm -rqf --cached . >/dev/null
+          git add -f .wip
+          git commit -qm "SEO agent checkpoint $(TZ=Asia/Kolkata date '+%F %H:%M')"
+          git push -f origin HEAD:wip/seo-agent
 
       - name: Report a failed Claude run
         if: steps.claude.outcome == 'failure'
@@ -121,7 +157,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           EXEC: ${{ steps.claude.outputs.execution_file }}
         run: |
-          MSG=$(node -e "try{const a=JSON.parse(require('fs').readFileSync(process.env.EXEC,'utf8'));const r=[].concat(a).reverse().find(x=>x&&x.type==='result')||{};console.log(String(r.result||r.subtype||'unknown').slice(0,500)+' (turns: '+(r.num_turns??'?')+')')}catch(e){console.log('no execution log: '+e.message)}")
+          MSG=$(node -e "try{const a=JSON.parse(require('fs').readFileSync(process.env.EXEC,'utf8'));const r=[].concat(a).reverse().find(x=>x&&x.type==='result')||{};console.log(String(r.result||r.subtype||'unknown').slice(0,500)+' (turns: '+(r.num_turns??'?')+', cost \$'+Number(r.total_cost_usd||0).toFixed(2)+')')}catch(e){console.log('no execution log: '+e.message)}")
           echo "::error::Claude run failed: $MSG"
           gh label create agent-failure --color B91C1C --force >/dev/null || true
           N=$(gh issue list --label agent-failure --state open --limit 1 --json number --jq '.[0].number // empty')

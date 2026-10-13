@@ -32,6 +32,13 @@ Get the facts right:
 - Use the current section numbers. For criminal law, use BNS, BNSS and BSA and give the old IPC, CrPC or Evidence Act number in brackets.
 - If you cannot confirm a point, leave it out.
 
+## Budget (each step costs money)
+
+- At most **6 web searches** and **4 page fetches** in total.
+- Fetch only the primary source you will cite, plus one news item.
+- Don't re-read files you have already read.
+- Write the JSON once, then fix only what the validator flags.
+
 ## Step 1 — choose today's topic
 
 1. Read what already exists, and do not repeat a topic from the last 60 days:
