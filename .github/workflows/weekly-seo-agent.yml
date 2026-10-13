@@ -54,8 +54,18 @@ jobs:
         continue-on-error: true
         run: node scripts/audit-live.mjs
 
+      - name: Skip if today's run already happened
+        id: done
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          DAY=$(TZ=Asia/Kolkata date +%F)
+          N=$(echo $(( $(gh api "repos/${{ github.repository }}/pulls?state=all&head=${{ github.repository_owner }}:seo/weekly-$DAY" --jq length) + $(gh api "repos/${{ github.repository }}/issues?state=all&labels=seo&since=${DAY}T00:00:00Z" --jq "[.[]|select(.title|contains(\"$DAY\"))]|length") )))
+          if [ "${N:-0}" -gt 0 ] && [ "${{ github.event_name }}" = "schedule" ]; then echo "Already done for $DAY; skipping."; echo "skip=yes" >> "$GITHUB_OUTPUT"; else echo "skip=no" >> "$GITHUB_OUTPUT"; fi
+
       - name: Claude SEO agent
         id: claude
+        if: steps.done.outputs.skip != 'yes'
         continue-on-error: true
         uses: anthropics/claude-code-action@v1
         env:
