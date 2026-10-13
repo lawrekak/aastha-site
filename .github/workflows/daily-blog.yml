@@ -76,7 +76,9 @@ jobs:
         run: |
           NEW=$(git status --porcelain content/blog | awk '{print $2}' | grep '\.json$' || true)
           if [ -z "$NEW" ]; then echo "No post written today."; exit 0; fi
-          node build.mjs && node scripts/validate.mjs
+          CHECK=ok
+          { node build.mjs && node scripts/validate.mjs; } > check.txt 2>&1 || CHECK=failed
+          cat check.txt
           DAY=$(TZ=Asia/Kolkata date +%F)
           TITLE=$(node -e "console.log(require('./$(echo "$NEW" | head -1)').title)")
           BRANCH="blog/$DAY"
@@ -88,6 +90,11 @@ jobs:
           git push origin "$BRANCH"
           [ -f .blog-pr.md ] || echo "Merge to publish. Close without merging to drop it." > .blog-pr.md
           gh label create blog --color 0F766E --force || true
+          if [ "$CHECK" = failed ]; then
+            { echo "> **The site check failed on this post, so it is a draft.** Fix the errors below (or ask Claude to), then mark it ready."; echo; echo '```'; grep -E "ERROR|Error|error|✗" check.txt | head -40; echo '```'; echo; cat .blog-pr.md; } > pr.md
+            gh pr create --draft --base main --head "$BRANCH" --label blog --title "Blog $DAY (needs fixes): $TITLE" --body-file pr.md
+            exit 1
+          fi
           gh pr create --base main --head "$BRANCH" --label blog --title "Blog $DAY: $TITLE" --body-file .blog-pr.md
 
       - name: Report a failed Claude run
