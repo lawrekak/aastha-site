@@ -1,0 +1,61 @@
+{
+  "title": "How to Check Your Uttarakhand High Court Case Status Online",
+  "slug": "check-high-court-case-status-online",
+  "published": "2026-10-13",
+  "area": 3,
+  "desc": "You can check a case pending in the Uttarakhand High Court, Nainital, online by CNR number, case number or party name, without visiting the registry.",
+  "keywords": ["uttarakhand high court case status", "nainital high court case status", "cnr number uttarakhand high court", "writ petition high court case status", "high court cause list nainital"],
+  "why": "People with a pending writ petition, appeal or bail matter in the High Court often travel to Nainital just to ask the registry about the next date, when the same information is online.",
+  "keyPoints": [
+    "Case status for the Uttarakhand High Court, Nainital, can be checked on the eCourts High Court Services portal by CNR number, case number or party name.",
+    "A CNR number is a 16-character code unique to each case; entering it alone shows the full case history and current status.",
+    "The portal also shows the daily and weekly cause list, so you can confirm whether a case is actually listed before travelling to Nainital.",
+    "If you don't have the CNR number, a search by party name needs at least 3 letters of the name and the year of filing."
+  ],
+  "sections": [
+    {
+      "h": "How do I check my High Court case status online?",
+      "p": [
+        "The Uttarakhand High Court's case status can be checked free of cost on the eCourts High Court Services portal (hcservices.ecourts.gov.in), after choosing 'Uttarakhand High Court' from the Select High Court list. A search by the 16-character CNR number then shows the case's current stage and its full history in one go.",
+        "Without a CNR number, the same portal allows a search by case number and year, by party name, by advocate name, or by FIR number for a criminal matter. Each search needs a captcha and shows a results list to pick the right case from.",
+        "This is useful before and after every hearing date, to confirm the case has not been adjourned, transferred to another bench, or listed earlier than expected."
+      ]
+    },
+    {
+      "h": "Where do I find the CNR number for my case?",
+      "p": [
+        "The CNR (Case Number Record) number is printed on the case filing receipt and on most orders passed in the case; it does not change even if the case number itself is amended.",
+        "An advocate on record for the case will usually have it on file. Once noted, it is worth keeping with other case papers, since it is the fastest way to track the matter online."
+      ]
+    },
+    {
+      "h": "How do I know when my case is listed for hearing?",
+      "p": [
+        "The High Court publishes a daily and weekly cause list on its website (highcourtofuttarakhand.gov.in) and through the eHCR cause list viewer, searchable by court number or case number.",
+        "Checking the cause list a day before an expected hearing, alongside the case status search, helps confirm the case is actually listed that day and before which bench."
+      ]
+    }
+  ],
+  "whatToDo": [
+    "Ask your advocate for the CNR number of your case and keep it noted with your case file.",
+    "Check the eCourts High Court Services portal a few days before an expected hearing, and again afterward, to read the order passed.",
+    "If you don't have the CNR number, search by party name using at least 3 letters and the correct filing year.",
+    "Before travelling to Nainital for a hearing, confirm the case is listed on that day's cause list."
+  ],
+  "hi": {
+    "title": "उत्तराखंड हाई कोर्ट केस की स्थिति ऑनलाइन कैसे देखें",
+    "keyPoints": [
+      "उत्तराखंड हाई कोर्ट, नैनीताल में लंबित केस की स्थिति eCourts High Court Services पोर्टल पर CNR नंबर, केस नंबर या पक्षकार के नाम से देखी जा सकती है।",
+      "CNR नंबर हर केस के लिए अलग 16 अंकों/अक्षरों का कोड होता है; इसे डालते ही केस का पूरा इतिहास और मौजूदा स्थिति दिख जाती है।",
+      "पोर्टल पर रोज़ाना और साप्ताहिक कॉज़ लिस्ट भी देखी जा सकती है, जिससे नैनीताल जाने से पहले पता चल जाता है कि केस उस दिन लगा है या नहीं।",
+      "अगर CNR नंबर नहीं है, तो पक्षकार के नाम के कम से कम 3 अक्षर और दाखिल करने का साल डालकर खोजा जा सकता है।"
+    ],
+    "p": [
+      "हाई कोर्ट की रजिस्ट्री जाकर पूछने के बजाय, केस की स्थिति अब eCourts पोर्टल पर मुफ्त में ऑनलाइन देखी जा सकती है, जिससे समय और यात्रा दोनों बचते हैं।"
+    ]
+  },
+  "sources": [
+    {"title": "eCourts High Court Services — select Uttarakhand High Court for case status search", "url": "https://hcservices.ecourts.gov.in/hcservices/main.php"},
+    {"title": "High Court of Uttarakhand — Citizen Centric Services (case status, cause list)", "url": "https://highcourtofuttarakhand.gov.in/"}
+  ]
+}
