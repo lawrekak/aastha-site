@@ -1,0 +1,53 @@
+{
+  "title": "How Long Do You Have to Appeal a Criminal Conviction?",
+  "slug": "criminal-appeal-conviction-time-limit",
+  "published": "2026-10-14",
+  "area": 4,
+  "desc": "An appeal against a criminal conviction must usually reach the High Court of Uttarakhand within 60 days, with limited room to excuse a late filing.",
+  "keywords": ["criminal appeal high court limitation", "appeal against conviction time limit", "section 374 crpc appeal", "bnss section 415 appeal", "सज़ा के खिलाफ अपील"],
+  "why": "In August 2026 the Supreme Court told courts to take a liberal view of delay in appeals filed by convicts, since a prisoner's liberty is at stake, a point that applies equally to appeals from Uttarakhand's District Courts.",
+  "keyPoints": [
+    "An appeal against a conviction must usually reach the High Court within 60 days of the sentence or order (Limitation Act 1963, Article 115).",
+    "An appeal against a death sentence has a shorter limit of 30 days.",
+    "A court can excuse (condone) a late appeal only for a 'sufficient cause' under Section 5 of the Limitation Act.",
+    "The Supreme Court has said courts should be liberal about condoning delay when a person's liberty is at stake."
+  ],
+  "sections": [
+    {
+      "h": "How long do you have to file a criminal appeal?",
+      "p": [
+        "An appeal against a conviction, filed under section 415 of the Bharatiya Nagarik Suraksha Sanhita, 2023 (BNSS; formerly section 374 of the CrPC), must usually reach the High Court of Uttarakhand within 60 days of the sentence or order. This limit comes from Article 115 of the Schedule to the Limitation Act, 1963. An appeal against a death sentence has a shorter limit of 30 days, and an appeal from a Magistrate's conviction to the Sessions Court also carries a 30-day limit.",
+        "The clock starts from the date of the sentence or order itself, not from the day the convict learns of it or receives a certified copy. Missing the deadline does not end the right to appeal automatically, but it adds an extra step before the appeal can even be heard."
+      ]
+    },
+    {
+      "h": "Can a late appeal still be filed?",
+      "p": [
+        "Yes. Section 5 of the Limitation Act, 1963 lets a court condone (excuse) delay if the appellant shows 'sufficient cause' for not filing on time. This usually means explaining the delay with facts, such as time spent in custody without legal help, illness, or the time taken to get a certified copy of the judgment.",
+        "In August 2026, the Supreme Court held that constitutional courts should take a liberal and proactive approach when deciding such delay applications in appeals filed by convicts, because procedural delay should not stand in the way of a prisoner challenging a conviction that affects personal liberty. The decision does not make delay automatic to excuse; it still has to be explained, but courts are expected to look at the merits rather than reject an appeal only on the ground of delay."
+      ]
+    }
+  ],
+  "whatToDo": [
+    "Note the date of the sentence or order and count 60 days (30 days for a death sentence) to work out the deadline.",
+    "Apply for a certified copy of the judgment right away; the time taken to get it can sometimes be excluded from the limitation period.",
+    "If the deadline has passed, file the appeal together with a separate application under Section 5 of the Limitation Act, explaining the delay with facts.",
+    "Track the appeal's status online through the High Court of Uttarakhand website or the eCourts portal."
+  ],
+  "hi": {
+    "title": "सज़ा के खिलाफ अपील के लिए कितना समय है?",
+    "keyPoints": [
+      "सज़ा के खिलाफ अपील आमतौर पर सज़ा के आदेश की तारीख़ से 60 दिन के भीतर हाईकोर्ट में दाख़िल करनी होती है (लिमिटेशन एक्ट 1963, अनुच्छेद 115)।",
+      "मृत्युदंड के खिलाफ अपील के लिए समय सीमा सिर्फ़ 30 दिन है।",
+      "देरी को माफ़ करना अदालत के विवेक पर है, और इसके लिए 'पर्याप्त कारण' बताना ज़रूरी है (धारा 5, लिमिटेशन एक्ट)।",
+      "सुप्रीम कोर्ट ने कहा है कि जब किसी क़ैदी की स्वतंत्रता दांव पर हो, तो अदालतों को देरी माफ़ करने में उदार रुख़ अपनाना चाहिए।"
+    ],
+    "p": ["अगर समय सीमा निकल जाए, तो अपील के साथ देरी माफ़ करने की अलग अर्ज़ी (धारा 5) दाख़िल करनी होती है, जिसमें देरी की ठोस वजह बतानी होती है।"]
+  },
+  "sources": [
+    {"title": "Limitation Act, 1963 (Act No. 36 of 1963) — India Code", "url": "https://www.indiacode.nic.in/handle/123456789/1565"},
+    {"title": "The Limitation Act, 1963 — Schedule, Articles 1-125 (Indian Kanoon)", "url": "https://indiankanoon.org/doc/1317393/"},
+    {"title": "Bharatiya Nagarik Suraksha Sanhita, 2023 (India Code)", "url": "https://www.indiacode.nic.in/handle/123456789/20024"},
+    {"title": "Courts Should Adopt Liberal Approach In Condoning Delay In Appeals Filed By Convicts: Supreme Court — LiveLaw", "url": "https://www.livelaw.in/supreme-court/courts-should-adopt-liberal-approach-in-condoning-delay-in-appeals-filed-by-convicts-supreme-court-544386"}
+  ]
+}
