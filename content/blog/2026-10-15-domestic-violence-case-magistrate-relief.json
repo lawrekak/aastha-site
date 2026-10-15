@@ -1,0 +1,56 @@
+{
+  "title": "Domestic Violence Case: What Can a Magistrate Order?",
+  "slug": "domestic-violence-case-magistrate-relief",
+  "published": "2026-10-15",
+  "area": 2,
+  "desc": "A domestic violence complaint in Uttarakhand goes to a Magistrate, who can order protection, residence or money relief, and any appeal has a 30-day limit.",
+  "keywords": ["domestic violence case Haldwani", "protection of women from domestic violence act", "ghrelu hinsa case", "domestic violence complaint procedure", "domestic violence case appeal"],
+  "why": "Domestic violence filings are common in family matters in Haldwani and Nainital, but many people don't know where to file, what relief is possible, or the strict appeal deadline.",
+  "keyPoints": [
+    "A domestic violence case is filed before a Magistrate under the 2005 Act, not directly in the High Court.",
+    "The Magistrate can order protection, let the woman stay in the shared household, and award monthly money relief.",
+    "An appeal against the Magistrate's order must reach the Court of Session within 30 days of being served.",
+    "Keeping evidence and a copy of every order helps later, especially if the order is broken."
+  ],
+  "sections": [
+    {
+      "h": "What Is a Domestic Violence Case, and Where Do You File It?",
+      "p": [
+        "A domestic violence case in Uttarakhand is filed under the Protection of Women from Domestic Violence Act, 2005, before the Judicial Magistrate of the area where the woman lives or works. In Haldwani and Nainital, this goes to the Magistrate's court at the District Court. The Magistrate can pass a protection order, a residence order, or order monthly monetary relief, and the law expects the case to move quickly once filed.",
+        "The person filing need not be married to the other side. The law covers women in a live-in relationship, a marriage, or living with relatives in a shared household. A complaint can be filed by the woman herself, through a Protection Officer, or with help from a registered service provider (a support organisation recognised under the Act)."
+      ]
+    },
+    {
+      "h": "What Relief Can the Magistrate Give You?",
+      "p": [
+        "The Magistrate can pass a protection order stopping the other person from further violence or contact. A residence order can let the woman continue living in the shared household, even if it is not in her name. The Magistrate can also order monthly monetary relief for daily expenses and medical costs, and pass custody arrangements where children are involved.",
+        "In urgent cases, the Magistrate can act on an interim basis after hearing only the woman's side, to give immediate protection while the main case continues. The final order comes only after hearing both sides."
+      ]
+    },
+    {
+      "h": "What If You Disagree With the Magistrate's Order?",
+      "p": [
+        "Either side can appeal to the Court of Session against a Magistrate's order under the Act. The appeal must be filed within 30 days from the date the order is served on the aggrieved person or the other side, whichever is later. Missing this deadline can mean losing the right to challenge the order."
+      ]
+    }
+  ],
+  "whatToDo": [
+    "Keep a record of incidents: dates, messages, medical reports and names of witnesses.",
+    "Contact the Protection Officer in your district, or a registered service provider, for help filing the application.",
+    "Keep a certified copy of any order the Magistrate passes; you may need it later.",
+    "If you want to appeal, count 30 days from the date the order was served, not the date it was passed."
+  ],
+  "hi": {
+    "title": "घरेलू हिंसा का मामला: मजिस्ट्रेट क्या आदेश दे सकता है?",
+    "keyPoints": [
+      "घरेलू हिंसा का मामला 2005 के कानून के तहत मजिस्ट्रेट की अदालत में दाखिल होता है, सीधे हाईकोर्ट में नहीं।",
+      "मजिस्ट्रेट सुरक्षा आदेश, घर में रहने का आदेश और मासिक भरण-पोषण का आदेश दे सकता है।",
+      "मजिस्ट्रेट के आदेश के खिलाफ अपील, आदेश मिलने के 30 दिन के भीतर सेशन कोर्ट में करनी होती है।"
+    ],
+    "p": ["हल्द्वानी और नैनीताल में घरेलू हिंसा की शिकायत जिला अदालत के मजिस्ट्रेट के पास दाखिल की जाती है। पीड़ित महिला खुद, प्रोटेक्शन ऑफिसर के जरिए, या किसी सेवा प्रदाता की मदद से शिकायत दर्ज करा सकती है।"]
+  },
+  "sources": [
+    {"title": "Protection of Women from Domestic Violence Act, 2005 – India Code", "url": "https://www.indiacode.nic.in/handle/123456789/1521"},
+    {"title": "Protection of Women from Domestic Violence Act, 2005 – National Commission for Women", "url": "https://cdn.ncw.gov.in/wp-content/uploads/2022/12/TheProtectionofWomenfromDomesticViolenceAct2005_0.pdf"}
+  ]
+}
