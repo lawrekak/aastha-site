@@ -1,0 +1,54 @@
+{
+  "title": "What Is a Quashing Petition, and When Can You File One?",
+  "slug": "quashing-petition-high-court-uttarakhand",
+  "published": "2026-10-18",
+  "area": 4,
+  "desc": "A quashing petition asks the High Court of Uttarakhand to cancel an FIR or case under BNSS section 528, before the trial begins.",
+  "keywords": ["quashing petition in high court", "quashing FIR Uttarakhand", "section 528 bnss", "482 crpc quashing", "क्वाशिंग पिटीशन क्या है"],
+  "why": "An FIR or criminal case can keep following a person for years even after a dispute is settled, and few people know that a quashing petition can end it early.",
+  "keyPoints": [
+    "A quashing petition asks the High Court to cancel an FIR or case before trial, under BNSS section 528 (earlier CrPC section 482).",
+    "Only a High Court can use this power; a District Court or Magistrate's court cannot.",
+    "Courts usually quash cases where a private dispute has been genuinely settled, or where the FIR discloses no offence at all.",
+    "In Uttarakhand, the petition is filed before the High Court at Nainital."
+  ],
+  "sections": [
+    {
+      "h": "What is a quashing petition?",
+      "p": [
+        "A quashing petition asks a High Court to cancel an FIR or criminal case before trial, using its inherent power under section 528 of the Bharatiya Nagarik Suraksha Sanhita, 2023 (BNSS; earlier section 482 of the CrPC). In Uttarakhand, it is filed before the High Court at Nainital. This power exists to stop misuse of the criminal process and to secure justice, not to re-try the facts of the case.",
+        "Only a High Court can use this power. A trial court, Magistrate or District Court cannot quash a case on its own; at most it can discharge an accused later in the trial, which is a separate remedy with its own procedure.",
+        "Courts have used this power to end cases where the two sides to a private dispute, such as a financial or family matter, have genuinely settled and asked the court to close the case."
+      ]
+    },
+    {
+      "h": "When will the High Court refuse to quash a case?",
+      "p": [
+        "The High Court will usually not quash a case only because the parties have settled it, where the offence is serious enough to affect society at large and not just the two sides involved. It will also not quash a case to re-weigh evidence that should be tested at trial.",
+        "The power is discretionary, meaning the High Court looks at the facts of each case on its own. There is no fixed list of offences that can or cannot be quashed; the nature of the allegation and the stage of the case both matter."
+      ]
+    }
+  ],
+  "whatToDo": [
+    "Keep certified copies of the FIR and any chargesheet already filed in the case.",
+    "If you are settling a private dispute, get a written compromise deed or affidavit signed by both sides before filing.",
+    "File the quashing petition before the High Court of Uttarakhand at Nainital, since only a High Court can use this power.",
+    "Take legal advice on your own facts, since each request is decided on the nature of the offence and how far the case has progressed."
+  ],
+  "hi": {
+    "title": "क्वाशिंग पिटीशन क्या है, और कब दाखिल कर सकते हैं?",
+    "keyPoints": [
+      "क्वाशिंग पिटीशन के ज़रिए हाईकोर्ट मुकदमे की सुनवाई से पहले ही FIR या केस रद्द कर सकता है, BNSS की धारा 528 (पहले CrPC की धारा 482) के तहत।",
+      "यह शक्ति केवल हाईकोर्ट के पास है, जिला अदालत या मजिस्ट्रेट के पास नहीं।",
+      "अदालतें आमतौर पर तभी केस रद्द करती हैं जब निजी विवाद सुलझ गया हो या FIR में कोई अपराध ही न बनता हो।",
+      "उत्तराखंड में यह याचिका नैनीताल स्थित हाईकोर्ट में दाखिल होती है।"
+    ],
+    "p": [
+      "अगर आपका केस किसी निजी विवाद से जुड़ा है और दोनों पक्षों में समझौता हो गया है, तो हाईकोर्ट में क्वाशिंग पिटीशन दाखिल कर केस जल्दी खत्म कराया जा सकता है। गंभीर अपराधों में यह आसान नहीं होता।"
+    ]
+  },
+  "sources": [
+    {"title": "LiveLaw: Uttarakhand High Court Orders Registry To Mask Tech Professional's Name From Digital Records After Criminal Case Was Quashed", "url": "https://www.livelaw.in/high-court/uttarakhand-high-court/uttarakhand-high-court-orders-ecourts-registry-mask-tech-professional-name-digital-records-552928"},
+    {"title": "High Court of Uttarakhand, Nainital — official website", "url": "https://highcourtofuttarakhand.gov.in/"}
+  ]
+}
