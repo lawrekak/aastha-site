@@ -1,0 +1,64 @@
+{
+  "title": "How Does a Court Decide Child Custody in Uttarakhand?",
+  "slug": "how-courts-decide-child-custody-uttarakhand",
+  "published": "2026-10-21",
+  "area": 2,
+  "desc": "In Uttarakhand, courts must treat a child's welfare, not a parent's legal right, as the main test for custody under section 13 of the HMGA, 1956.",
+  "keywords": ["child custody", "child custody lawyer", "बाल अभिरक्षा", "custody case Haldwani", "guardians and wards act", "hindu minority and guardianship act"],
+  "why": "Custody disputes are among the most common family court filings in Haldwani and Nainital, yet many parents assume the law simply favours one parent.",
+  "keyPoints": [
+    "In every custody case, the child's welfare is the main test, overriding either parent's legal right to guardianship.",
+    "Under Hindu law, the father and then the mother are natural guardians, but a child under five usually stays with the mother.",
+    "For other communities, courts use the same welfare test under general guardianship law instead of a fixed rule.",
+    "Interim custody can be requested from the first hearing while a divorce or guardianship case is still pending."
+  ],
+  "sections": [
+    {
+      "h": "What matters most in a child custody case?",
+      "p": [
+        "In a child custody dispute in Uttarakhand, the welfare of the child is the paramount consideration, not a parent's legal right to guardianship. Section 13 of the Hindu Minority and Guardianship Act, 1956 states this for Hindu families, and courts apply a similar test for every community. The Family Court at Haldwani and the District Courts across Nainital district decide these cases on this standard.",
+        "Courts look at the child's age, health, schooling and bond with each parent. They may also ask what the child wants, once the child is old enough to form an independent view.",
+        "A parent's income or remarriage is not decisive by itself. What matters is who can give the child a safe, stable home and keep up their education and routine."
+      ]
+    },
+    {
+      "h": "Does the mother or father get custody first?",
+      "p": [
+        "The Hindu Minority and Guardianship Act, 1956 names the father, and after him the mother, as natural guardian of a boy or unmarried girl. But the same section says a child who has not completed five years should ordinarily stay with the mother.",
+        "This is a starting point, not a fixed rule. A court can give custody to the mother even for an older child, or to the father for a child under five, if that serves the child's welfare better on the facts.",
+        "For Muslim, Christian and Parsi families, there is no separate custody statute; courts apply the same welfare principle under general guardianship law, so the outcome turns on facts, not religion."
+      ]
+    },
+    {
+      "h": "How do you start a custody case, and can it change later?",
+      "p": [
+        "A custody or guardianship application can be filed before the Family Court, or as part of divorce proceedings under section 26 of the Hindu Marriage Act, 1955, which lets a court pass orders on a child's custody, maintenance and education at any stage of the case.",
+        "Custody orders are not final the way a property order is. Either parent can apply again if circumstances change, such as a job change, remarriage, or the child's own wishes as they grow older.",
+        "Courts increasingly ask parents to try mediation first, and may call for a report before deciding a contested custody matter."
+      ]
+    }
+  ],
+  "whatToDo": [
+    "Keep records that show your day-to-day involvement in the child's life, such as school communication, medical visits and photographs.",
+    "Ask for interim custody or visitation rights at the first hearing itself, rather than waiting for the final order.",
+    "If both parents can agree on custody and visitation, say so to the court; agreed terms are usually dealt with faster.",
+    "Track hearing dates and orders on the eCourts portal using the case number."
+  ],
+  "hi": {
+    "title": "अदालत बच्चे की अभिरक्षा (कस्टडी) कैसे तय करती है?",
+    "keyPoints": [
+      "हर अभिरक्षा मामले में बच्चे का कल्याण सबसे बड़ी कसौटी है, न कि किसी माता-पिता का कानूनी अधिकार।",
+      "हिंदू कानून में पिता और उसके बाद माँ प्राकृतिक अभिभावक हैं, पर पाँच साल से कम उम्र का बच्चा आमतौर पर माँ के पास रहता है।",
+      "अन्य समुदायों के लिए भी अदालतें सामान्य अभिभावक कानून के तहत वही कल्याण-परीक्षण अपनाती हैं।",
+      "तलाक या अभिभावकता का मामला लंबित रहते हुए भी पहली सुनवाई से अंतरिम अभिरक्षा मांगी जा सकती है।"
+    ],
+    "p": [
+      "उत्तराखंड में बाल अभिरक्षा के मामलों में अदालत सबसे पहले यह देखती है कि बच्चे को सबसे सुरक्षित और स्थिर घर कौन दे सकता है, न कि माता-पिता में से किसका कानूनी हक ज़्यादा है।"
+    ]
+  },
+  "sources": [
+    {"title": "Hindu Minority and Guardianship Act, 1956 (bare act)", "url": "https://mphc.gov.in/PDF/web_pdf/JJC/LAW%20&%20POLICY/ACT%20&%20RULES/Other%20Child%20related%20Legislations/Hindu%20Minority%20and%20Guardians%20Act%201956.pdf"},
+    {"title": "The Hindu Marriage Act, 1955, section 26 (India Code)", "url": "https://www.indiacode.nic.in/bitstream/123456789/1560/1/A1955-25.pdf"},
+    {"title": "eCourts services: case status", "url": "https://services.ecourts.gov.in/"}
+  ]
+}
