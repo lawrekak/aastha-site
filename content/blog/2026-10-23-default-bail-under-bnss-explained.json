@@ -1,0 +1,57 @@
+{
+  "title": "What Is Default Bail, and When Can You Get It?",
+  "slug": "default-bail-under-bnss-explained",
+  "published": "2026-10-23",
+  "area": 1,
+  "desc": "Under section 187(3) BNSS, an undertrial in Uttarakhand can get default bail if police do not file a charge sheet within 60 or 90 days.",
+  "keywords": ["default bail", "statutory bail India", "section 187 bnss", "charge sheet time limit", "bail after 60 days Haldwani"],
+  "why": "Many people whose relatives are in jail at Haldwani or Nainital do not know that the law itself sets a deadline for the police to finish investigating, after which bail becomes a right, not a favour.",
+  "keyPoints": [
+    "Default (statutory) bail is a right under section 187(3) BNSS if police miss the charge sheet deadline.",
+    "60 days applies to most offences; 90 days applies where the punishment is death, life imprisonment, or ten years or more.",
+    "The clock runs from the first remand order, not from the date of arrest.",
+    "You must apply for bail and be ready to furnish it before the charge sheet is actually filed."
+  ],
+  "sections": [
+    {
+      "h": "What is default bail under the BNSS?",
+      "p": [
+        "Default bail, also called statutory bail, is the right of a person in jail to be released under section 187(3) of the Bharatiya Nagarik Suraksha Sanhita (BNSS), 2023, if the police fail to file a charge sheet within 60 days, or 90 days for more serious offences. Courts in Uttarakhand, including at Haldwani and Nainital, must grant it once the accused applies and offers to furnish bail before the charge sheet is filed.",
+        "This provision replaces section 167(2) of the old Code of Criminal Procedure (CrPC), 1973. The 60-day and 90-day time limits are carried forward unchanged from the CrPC regime."
+      ]
+    },
+    {
+      "h": "How long can police hold someone before filing a charge sheet?",
+      "p": [
+        "Sixty days applies to most offences. Ninety days applies where the offence is punishable with death, life imprisonment, or imprisonment of ten years or more. The period is counted from the date of the first remand order passed by the magistrate, not from the date of arrest.",
+        "The BNSS also changed how police custody works during this period. Police custody is still capped at 15 days in total, but it can now be taken in parts, spread across the first 40 days (for the 60-day track) or the first 60 days (for the 90-day track), instead of only within the first 15 days as under the old CrPC."
+      ]
+    },
+    {
+      "h": "What should you do if the deadline has passed?",
+      "p": [
+        "The right is not automatic. An application for default bail must be filed, and the person must be ready to furnish bail, before the police actually file the charge sheet. If the charge sheet is filed first, even late, the right to default bail usually ends.",
+        "Whether the 60-day or 90-day limit applies can depend on the exact wording of the offence's punishment, and courts have differed on borderline cases. Take legal advice on the specific offence before assuming which period applies."
+      ]
+    }
+  ],
+  "whatToDo": [
+    "Note the exact date of the first remand order — the 60 or 90-day clock starts there, not from the date of arrest.",
+    "If the deadline passes with no charge sheet filed, apply for default bail promptly and be ready to furnish the bail amount at once.",
+    "Check the charge sheet filing date and case status on the District Court's e-Courts portal.",
+    "Take legal advice on your own facts, since the applicable time limit depends on the maximum punishment for the specific offence."
+  ],
+  "hi": {
+    "title": "डिफ़ॉल्ट जमानत क्या है और यह कब मिलती है?",
+    "keyPoints": [
+      "बीएनएसएस की धारा 187(3) के तहत, तय समय में चार्जशीट दाखिल न होने पर डिफ़ॉल्ट (स्टैच्यूटरी) जमानत का अधिकार मिलता है।",
+      "अधिकतर अपराधों में यह सीमा 60 दिन है; मृत्युदंड, आजीवन कारावास या दस वर्ष या उससे अधिक सजा वाले अपराधों में 90 दिन।",
+      "यह समय गिरफ्तारी की तारीख से नहीं, बल्कि पहले रिमांड आदेश की तारीख से गिना जाता है।",
+      "चार्जशीट दाखिल होने से पहले ही जमानत के लिए आवेदन करना और जमानत राशि देने को तैयार रहना जरूरी है।"
+    ]
+  },
+  "sources": [
+    {"title": "Bharatiya Nagarik Suraksha Sanhita, 2023 — Section 187 (Indian Kanoon)", "url": "https://indiankanoon.org/doc/95638309/"},
+    {"title": "Default Bail Under BNSS: Sixty Days or Ninety Days — The Confusion Continues (LiveLaw)", "url": "https://www.livelaw.in/top-stories/bnss-right-to-default-bail-under-bharatiya-nagarik-suraksha-sanhita-282457"}
+  ]
+}
