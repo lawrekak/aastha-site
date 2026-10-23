@@ -1,0 +1,51 @@
+{
+  "title": "Who Is an Operational Creditor Under the IBC?",
+  "slug": "operational-creditor-ibc-demand-notice",
+  "published": "2026-10-22",
+  "area": 6,
+  "desc": "A company owing you Rs 1 crore or more for goods, services or wages can be taken to the NCLT under the IBC, not just sued for recovery.",
+  "keywords": ["operational creditor", "ibc demand notice", "nclt uttarakhand", "section 9 ibc", "insolvency lawyer haldwani"],
+  "why": "Small suppliers and contractors in Haldwani and Nainital often don't know that unpaid company dues above a threshold can go to the NCLT under the Insolvency and Bankruptcy Code, not only to a civil recovery suit.",
+  "keyPoints": [
+    "Anyone owed money by a company for goods, services, wages or government dues is an 'operational creditor' under section 5(20) of the IBC.",
+    "The dues must be at least Rs 1 crore to approach the NCLT; smaller amounts need a civil recovery suit instead.",
+    "Before filing, you must send a written demand notice under section 8; the company gets 10 days to pay or show a real dispute.",
+    "Uttarakhand companies fall under the NCLT's Allahabad Bench, which also covers Uttar Pradesh."
+  ],
+  "sections": [
+    {
+      "h": "Who counts as an operational creditor, and how much must be owed?",
+      "p": [
+        "An operational creditor is anyone owed money by a company for goods supplied, services rendered, wages, or government dues, under section 5(20) of the Insolvency and Bankruptcy Code, 2016. To approach the National Company Law Tribunal (NCLT), the unpaid amount must be at least Rs 1 crore, a threshold raised from Rs 1 lakh by a central government notification dated 24 March 2020. A company registered in Uttarakhand falls under the NCLT's Allahabad Bench, which also handles Uttar Pradesh cases.",
+        "This route is different from a civil recovery suit in a district court. It is meant to push the company into a resolution process, not just to get a money decree, so it is only for genuine, undisputed, larger dues."
+      ]
+    },
+    {
+      "h": "What is the process to recover the money?",
+      "p": [
+        "Before filing anything, section 8 requires the creditor to deliver a demand notice, with a copy of the unpaid invoice, to the company's registered office. The company then has 10 days to either pay the debt or reply showing that a genuine dispute already existed before the notice.",
+        "If the company neither pays nor shows a real dispute within those 10 days, the creditor can file an application under section 9 before the NCLT to start the corporate insolvency resolution process. The Supreme Court held in Mobilox Innovations v. Kirusa Software (2018) that the Tribunal only checks whether a dispute is plausible, not who is right. A claim must generally be filed within three years of the date of default, under Article 137 of the Limitation Act, 1963."
+      ]
+    }
+  ],
+  "whatToDo": [
+    "Keep invoices, purchase orders, delivery proof and payment reminders on record from the start.",
+    "Confirm the registered office address of the debtor company before sending the demand notice.",
+    "Check that the unpaid amount is at least Rs 1 crore; if it is less, consider a recovery suit or a cheque bounce complaint instead.",
+    "Take legal advice on your own facts before sending a demand notice or filing at the NCLT."
+  ],
+  "hi": {
+    "title": "IBC के तहत 'ऑपरेशनल क्रेडिटर' कौन होता है?",
+    "keyPoints": [
+      "जिस किसी को कंपनी से सामान, सेवा, वेतन या सरकारी बकाया नहीं मिला, वह IBC की धारा 5(20) के तहत 'ऑपरेशनल क्रेडिटर' है।",
+      "NCLT जाने के लिए बकाया रकम कम से कम 1 करोड़ रुपये होनी चाहिए, वरना वसूली का दीवानी मुकदमा करना होगा।",
+      "पहले धारा 8 के तहत लिखित नोटिस भेजना ज़रूरी है; कंपनी को भुगतान या विवाद बताने के लिए 10 दिन मिलते हैं।",
+      "उत्तराखंड की कंपनियों का मामला NCLT की इलाहाबाद बेंच में जाता है, जो उत्तर प्रदेश को भी देखती है।"
+    ]
+  },
+  "sources": [
+    {"title": "Insolvency and Bankruptcy Code, 2016 (India Code)", "url": "https://www.indiacode.nic.in/handle/123456789/2154"},
+    {"title": "NCLT — Bench Jurisdiction", "url": "https://nclt.gov.in/Jurisdiction"},
+    {"title": "Mobilox Innovations v. Kirusa Software, Supreme Court of India (2018)", "url": "https://main.sci.gov.in/supremecourt/2017/28860/28860_2017_Judgement_21-Sep-2017.pdf"}
+  ]
+}
