@@ -29,7 +29,7 @@ See the step-by-step guide given earlier. The main points:
 - **Website:** `https://advaasthavishwakarma.in/`
 
 **Description (590 characters):**
-> Office of Aastha Vishwakarma, Advocate, enrolled with the Bar Council of Uttarakhand (UK104/2018). She appears before the High Court of Uttarakhand at Nainital, the Delhi High Court, the District Courts of Nainital and Delhi, the NCLAT, the Central Administrative Tribunal and the Supreme Court. Areas of practice include matrimonial and family disputes (divorce, maintenance, domestic violence, custody and guardianship), service and education law, cheque bounce and recovery, civil and criminal matters, writ petitions, property and land, and insolvency. Office at B-8, Vaishali Colony, Bhotia Parao, Haldwani. Languages: Hindi and English.
+> Office of Aastha Vishwakarma, Advocate, enrolled with the Bar Council of Uttarakhand. She appears before the High Court of Uttarakhand at Nainital, the Delhi High Court, the District Courts of Nainital and Delhi, the NCLAT, the Central Administrative Tribunal and the Supreme Court. Areas of practice include matrimonial and family disputes (divorce, maintenance, domestic violence, custody and guardianship), service and education law, cheque bounce and recovery, civil and criminal matters, writ petitions, property and land, and insolvency. Office at B-8, Vaishali Colony, Bhotia Parao, Haldwani. Languages: Hindi and English.
 
 **Settings:**
 - Messaging off.
@@ -59,14 +59,14 @@ See the step-by-step guide given earlier. The main points:
 - **Headline:**
   > Advocate | High Court of Uttarakhand, Nainital and Delhi High Court | Office in Haldwani
 - **About:**
-  > Advocate enrolled with the Bar Council of Uttarakhand (UK104/2018), practising since 2018 before the High Court of Uttarakhand at Nainital, the Delhi High Court, the District Courts of Delhi and Nainital, the NCLAT and the Central Administrative Tribunal. Areas of practice: service and education law, district court litigation including cheque bounce and recovery, matrimonial and family disputes, writ petitions, criminal appeals, property and land, and insolvency. LL.B., Campus Law Centre, University of Delhi. Office: Vishwakarma, Kumar & Jain Law Offices, Bhotia Parao, Haldwani.
+  > Advocate enrolled with the Bar Council of Uttarakhand, practising since 2018 before the High Court of Uttarakhand at Nainital, the Delhi High Court, the District Courts of Delhi and Nainital, the NCLAT and the Central Administrative Tribunal. Areas of practice: service and education law, district court litigation including cheque bounce and recovery, matrimonial and family disputes, writ petitions, criminal appeals, property and land, and insolvency. LL.B., Campus Law Centre, University of Delhi. Office: Vishwakarma, Kumar & Jain Law Offices, Bhotia Parao, Haldwani.
 - **Contact info → Website:** `https://advaasthavishwakarma.in/`, type "Personal".
 - **Featured:** add the website's guide to the Uttarakhand High Court (`/guides/uttarakhand-high-court-nainital/`). Add blog posts as they are published.
 - **Posting:** she may share her own blog posts as articles. The same Rule 36 limits apply: educational content only, no requests for work.
 
 ## 5. Bar Council of Uttarakhand and the local Bar Association
 
-- Check the enrolment record (UK104/2018) and any directory the Bar Association publishes.
+- Check the enrolment record and any directory the Bar Association publishes.
 - Update the address and phone there if they are old. These are the most trusted citations for an advocate.
 
 ## 6. Articles on legal-knowledge websites (the right way to earn links)
