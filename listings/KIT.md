@@ -9,7 +9,7 @@ Name:     Aastha Vishwakarma, Advocate
 Office:   Vishwakarma, Kumar & Jain Law Offices
 Address:  B-8, Vaishali Colony, Bhotia Parao, Haldwani, Uttarakhand 263139
 Phone:    +91 88020 29468
-Email:    aastha.vishi@gmail.com
+Email:    (not shown publicly; removed Oct 2026)
 Website:  https://advaasthavishwakarma.in/
 Hours:    Monday to Sunday, 9:00 AM – 5:00 PM
 ```

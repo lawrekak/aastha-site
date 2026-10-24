@@ -149,7 +149,7 @@ if (!fs.existsSync(path.join(DIST, site.indexNowKey + ".txt"))) err("indexnow", 
 if (site.ga4 && !/^G-[A-Z0-9]{6,12}$/.test(site.ga4)) err("site.json", `ga4 "${site.ga4}" is not a GA4 measurement ID (G-XXXXXXXXXX)`);
 if (site.ga4PropertyId && !/^\d{6,12}$/.test(String(site.ga4PropertyId))) err("site.json", `ga4PropertyId "${site.ga4PropertyId}" should be the numeric GA4 property ID`);
 if (site.ga4 && !site.ga4PropertyId) warn("site.json", "ga4 is set but ga4PropertyId is empty, so the daily analytics report cannot run");
-for (const [k, v] of [["email", site.email], ["enrolment", site.enrolment.barCouncil], ["qualifications", site.qualifications.length]]) if (!v) warn("site.json", `${k} not filled in yet`);
+for (const [k, v] of [["enrolment", site.enrolment.barCouncil], ["qualifications", site.qualifications.length]]) if (!v) warn("site.json", `${k} not filled in yet`);
 
 console.log(`Checked ${html.length} HTML files, ${locs.length} sitemap URLs.`);
 warnings.forEach((w) => console.log("WARN  " + w));
