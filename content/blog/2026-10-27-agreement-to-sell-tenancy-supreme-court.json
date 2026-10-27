@@ -1,0 +1,61 @@
+{
+  "title": "Does Signing a Sale Agreement End Your Tenancy?",
+  "slug": "agreement-to-sell-tenancy-supreme-court",
+  "published": "2026-10-27",
+  "area": 5,
+  "desc": "The Supreme Court held on 13 August 2026 that an agreement to sell does not by itself end a tenant's rights, a situation common in Haldwani and Nainital.",
+  "keywords": ["agreement to sell tenant rights", "tenancy agreement to sell", "property dispute lawyer uttarakhand", "किरायेदार और बिक्री एग्रीमेंट", "tenant eviction property dispute", "transfer of property act section 53A"],
+  "why": "A Supreme Court ruling settles a dispute common in Haldwani and Nainital, where a landlord and tenant sign an informal sale agreement for the very house the tenant already occupies.",
+  "keyPoints": [
+    "Signing an agreement to sell does not by itself end an existing tenancy, the Supreme Court held on 13 August 2026.",
+    "The tenancy ends only if the agreement's own terms, or the parties' clear conduct, show the lease was surrendered.",
+    "A tenant who merely stays on as before cannot claim 'part performance' protection under section 53A of the Transfer of Property Act, 1882.",
+    "An unregistered agreement to sell made after 24 September 2001 cannot be used to claim that protection at all."
+  ],
+  "sections": [
+    {
+      "h": "Does an agreement to sell end a tenancy?",
+      "p": [
+        "An agreement to sell between a landlord and tenant does not, by itself, end the tenant's existing tenancy. The Supreme Court held this on 13 August 2026 in Nazim Shaikh Hasan v. Nasir Mushtaq Shaikh (2026 INSC 853), while upholding a tenant's eviction. The tenancy continues unless the agreement's own terms, or the parties' unmistakable conduct, show the lease was given up under section 111 of the Transfer of Property Act, 1882.",
+        "In that case, the tenant had paid only Rs 40,000 of a Rs 1,90,000 sale price and missed the three-month deadline for the rest. The Court noted the agreement had no clause ending the rent, so the tenancy carried on exactly as before.",
+        "This comes up often in Haldwani and Nainital, where a tenant and landlord sometimes agree informally to a sale while the tenant keeps living in the house and paying rent. Without a registered sale deed or clear surrender terms, the occupant remains a tenant in law, not an owner."
+      ]
+    },
+    {
+      "h": "Can living in the house after the agreement protect a tenant from eviction?",
+      "p": [
+        "The tenant argued that staying on counted as 'part performance' of the sale agreement under section 53A of the Transfer of Property Act, which can shield a buyer in possession from eviction. The Supreme Court rejected this defence.",
+        "A tenant who was already living in the property as a tenant cannot claim his possession changed character just because of the agreement, unless the agreement itself hands him possession for that reason. The Court also held that an unregistered agreement made after 24 September 2001 cannot support a section 53A claim at all, because of section 17(1A) of the Registration Act, 1908."
+      ]
+    },
+    {
+      "h": "What should a tenant or buyer keep in mind?",
+      "p": [
+        "Anyone buying a house that already has a tenant, or a tenant agreeing to buy the home they live in, should get the sale registered within the agreed time. An agreement to sell alone does not transfer ownership or end a tenancy.",
+        "Keep every payment receipt and the written agreement safe, since courts examine these closely in a dispute. If the balance payment cannot be made on time, ask for a written extension rather than letting the deadline pass silently."
+      ]
+    }
+  ],
+  "whatToDo": [
+    "Complete any sale of immovable property through a registered sale deed, not just an agreement to sell.",
+    "If you are a tenant buying your rented home, keep paying rent until the sale is registered, unless the agreement says otherwise.",
+    "Keep all payment receipts and written correspondence about deadlines and extensions.",
+    "Take legal advice on your own facts before relying on an unregistered agreement to resist an eviction claim."
+  ],
+  "hi": {
+    "title": "क्या बिक्री का एग्रीमेंट साइन करने से किरायेदारी खत्म हो जाती है?",
+    "keyPoints": [
+      "सुप्रीम कोर्ट ने 13 अगस्त 2026 को कहा कि सिर्फ बिक्री का एग्रीमेंट साइन करने से किरायेदारी खत्म नहीं होती।",
+      "किरायेदारी तभी खत्म मानी जाएगी जब एग्रीमेंट की शर्तें या पक्षों का व्यवहार साफ तौर पर दिखाए कि लीज़ छोड़ दी गई है।",
+      "जो किरायेदार पहले से मकान में रह रहा है, वह सिर्फ कब्जे के आधार पर ट्रांसफर ऑफ प्रॉपर्टी एक्ट की धारा 53A का फायदा नहीं ले सकता।",
+      "24 सितंबर 2001 के बाद का अपंजीकृत (unregistered) बिक्री एग्रीमेंट यह संरक्षण नहीं देता।"
+    ],
+    "p": [
+      "हल्द्वानी और नैनीताल में अक्सर मकान मालिक और किरायेदार आपस में बिक्री का एग्रीमेंट कर लेते हैं, पर रजिस्ट्री नहीं कराते। ऐसे मामलों में अदालत रजिस्टर्ड बिक्री और सादी किरायेदारी के फर्क को बारीकी से देखती है।"
+    ]
+  },
+  "sources": [
+    {"title": "LiveLaw: 'Does Tenancy End On Execution Of Agreement To Sell Between Landlord-Tenant? Supreme Court Answers'", "url": "https://www.livelaw.in/supreme-court/does-tenancy-end-on-execution-of-agreement-to-sell-between-landord-tenant-supreme-court-answers-545804"},
+    {"title": "Verdictum: Nazim Shaikh Hasan v. Nasir Mushtaq Shaikh and Others, 2026 INSC 853", "url": "https://www.verdictum.in/app-lite/supreme-court/nazim-shaikh-hasan-v-nasir-mushtaq-shaikh-and-others-2026-insc-853-tpa-1619881"}
+  ]
+}
