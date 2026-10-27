@@ -60,7 +60,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           claude_args: |
             --model claude-sonnet-5
-            --max-turns 30
+            --max-turns 45
             --allowedTools "Skill,Read,Write,Edit,Glob,Grep,Bash(node:*),Bash(date:*),Bash(cat:*),Bash(ls:*)"
           prompt: |
             Use the keyword-refresh skill (.claude/skills/keyword-refresh/SKILL.md) and follow it exactly.
