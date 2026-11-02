@@ -1,0 +1,52 @@
+{
+  "title": "Criminal Appeal or Revision: What Is the Difference?",
+  "slug": "criminal-appeal-revision-difference",
+  "published": "2026-11-02",
+  "area": 4,
+  "desc": "An appeal lets a court re-examine the facts of a conviction; a revision only checks if an order was legal and proper, under the BNSS.",
+  "keywords": ["criminal revision", "criminal appeal high court", "difference between appeal and revision", "bnss section 438 revision", "पुनरीक्षण याचिका क्या है"],
+  "why": "People often file a revision expecting the court to weigh the evidence afresh, as in an appeal, and are surprised when the court only checks whether the order itself was legal and proper.",
+  "keyPoints": [
+    "An appeal is a legal right to challenge a conviction or sentence; a revision is not a right but a discretionary power of the court.",
+    "An appeal, filed under BNSS section 415 (old CrPC section 374), lets a higher court re-examine the facts, evidence and sentence.",
+    "A revision, under BNSS sections 438 and 442 (old CrPC sections 397 and 401), only checks if an order was correct, legal, proper and passed regularly.",
+    "A revisional court generally cannot turn an acquittal into a conviction, and cannot be used against every routine, mid-trial order."
+  ],
+  "sections": [
+    {
+      "h": "What is the difference between an appeal and a revision?",
+      "p": [
+        "A criminal appeal under section 415 of the Bharatiya Nagarik Suraksha Sanhita, 2023 (BNSS; old CrPC section 374) lets the Sessions Court or the High Court of Uttarakhand re-examine the facts, evidence and sentence of a conviction. A revision under BNSS sections 438 and 442 (old CrPC sections 397 and 401) only lets the court check whether the order was correct, legal and proper, without reassessing the evidence.",
+        "An appeal is a statutory right once a person is convicted. A revision is a supervisory power the Sessions Court or High Court uses on its own discretion, mainly to correct a clear illegality or irregularity in a lower court's order."
+      ]
+    },
+    {
+      "h": "When do you file a revision instead of an appeal?",
+      "p": [
+        "A revision is used when no appeal lies against an order, such as some orders passed by a Magistrate before or during trial that do not amount to a conviction. A Magistrate's order can usually be taken in revision to the Sessions Court first; the High Court of Uttarakhand at Nainital is approached after that, or directly where it is a Sessions Court's own order under challenge.",
+        "The law does not allow asking the High Court for a revision on the same order after a Sessions Court has already rejected one. The revisional court also cannot convert an acquittal into a conviction, so it is not a route to a full retrial or a higher sentence."
+      ]
+    }
+  ],
+  "whatToDo": [
+    "Check first whether an appeal is available as of right; file an appeal, not a revision, if it is.",
+    "For a Magistrate's order, apply for revision at the Sessions Court before going to the High Court, unless it is a Sessions Court order itself.",
+    "Keep a certified copy of the order and the lower court's record ready, since the revisional court examines the record, not fresh evidence.",
+    "Take legal advice on your own facts before choosing between an appeal and a revision, since picking the wrong remedy can waste the limited time you have to file either."
+  ],
+  "hi": {
+    "title": "आपराधिक अपील और पुनरीक्षण में क्या फ़र्क़ है?",
+    "keyPoints": [
+      "अपील एक अधिकार है; पुनरीक्षण (रिवीज़न) अदालत के विवेक पर निर्भर करता है, यह अधिकार नहीं है।",
+      "अपील (बीएनएसएस धारा 415, पुरानी सीआरपीसी धारा 374) में अदालत सबूत और सज़ा दोबारा जाँचती है।",
+      "पुनरीक्षण (बीएनएसएस धारा 438 और 442, पुरानी सीआरपीसी धारा 397 और 401) में सिर्फ़ यह देखा जाता है कि आदेश सही, वैध और उचित था या नहीं।",
+      "पुनरीक्षण अदालत आमतौर पर बरी होने के फ़ैसले को सज़ा में नहीं बदल सकती।"
+    ],
+    "p": ["सही रास्ता चुनने से पहले अपने मामले के तथ्यों पर क़ानूनी सलाह लेना बेहतर है, क्योंकि ग़लत रास्ता चुनने से समय सीमा निकल सकती है।"]
+  },
+  "sources": [
+    {"title": "Bharatiya Nagarik Suraksha Sanhita, 2023 — India Code", "url": "https://www.indiacode.nic.in/handle/123456789/20024"},
+    {"title": "Section 438 BNSS — Calling for Records to Exercise Powers of Revision", "url": "https://lexibal.com/?p=45903"},
+    {"title": "Section 442 BNSS — High Court's Powers of Revision", "url": "https://lexibal.com/?p=45910"}
+  ]
+}
