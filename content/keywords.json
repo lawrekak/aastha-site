@@ -1,7 +1,7 @@
 {
   "_about": "Top 50 search keywords for Aastha Vishwakarma's practice areas, from Google India autocomplete (27 Sep 2026), filtered for Rule 36: no 'best', 'fees', 'free consultation' or named lawyers. 'local' = someone looking for a lawyer (used in titles, descriptions and structured data); 'info' = someone asking how the law works (structured data, and topics for the daily blog).",
   "source": "Google autocomplete, hl=en, gl=in, seeds per practice area",
-  "updated": "2026-10-08",
+  "updated": "2026-10-15",
   "keywords": [
     {
       "k": "lawyer in haldwani",
@@ -34,17 +34,17 @@
       "intent": "local"
     },
     {
-      "k": "high court lawyer nainital",
-      "page": "/",
-      "intent": "local"
-    },
-    {
       "k": "advocate nainital",
       "page": "/",
       "intent": "local"
     },
     {
       "k": "divorce lawyer in haldwani",
+      "page": "/practice-areas/matrimonial-and-family-disputes/",
+      "intent": "local"
+    },
+    {
+      "k": "divorce lawyer",
       "page": "/practice-areas/matrimonial-and-family-disputes/",
       "intent": "local"
     },
@@ -214,9 +214,9 @@
       "intent": "local"
     },
     {
-      "k": "property dispute lawyer uttarakhand",
+      "k": "can outsiders buy land in uttarakhand",
       "page": "/practice-areas/property-and-land/",
-      "intent": "local"
+      "intent": "info"
     },
     {
       "k": "dakhil kharij uttarakhand",
@@ -239,9 +239,9 @@
       "intent": "local"
     },
     {
-      "k": "central administrative tribunal advocate",
+      "k": "cat delhi case status",
       "page": "/practice-areas/tribunal-matters/",
-      "intent": "local"
+      "intent": "info"
     },
     {
       "k": "cat case status",
@@ -319,7 +319,8 @@
       "dakhil kharij uttarakhand",
       "khatauni uttarakhand",
       "nazul land haldwani",
-      "दाखिल खारिज"
+      "दाखिल खारिज",
+      "outsider buy land uttarakhand"
     ],
     "/practice-areas/insolvency-ibc/": [
       "nclat appeal",
@@ -411,6 +412,29 @@
         "prevention of corruption act lawyer",
         "property dispute lawyer uttarakhand",
         "central administrative tribunal advocate"
+      ]
+    },
+    {
+      "week": "2026-10-15",
+      "calls": 120,
+      "gscRows": 143,
+      "added": ["divorce lawyer", "can outsiders buy land in uttarakhand", "cat delhi case status"],
+      "removed": ["high court lawyer nainital", "property dispute lawyer uttarakhand", "central administrative tribunal advocate"],
+      "notSeen": [
+        "हल्द्वानी वकील",
+        "family lawyer in haldwani",
+        "divorce lawyer nainital",
+        "mutual divorce in hindi",
+        "domestic violence case lawyer",
+        "child custody lawyer",
+        "talaq ke liye kya karna padega",
+        "138 ni act kya hai",
+        "civil lawyer haldwani",
+        "bail lawyer haldwani",
+        "service law advocate uttarakhand",
+        "article 226 writ petition",
+        "anticipatory bail lawyer haldwani",
+        "prevention of corruption act lawyer"
       ]
     }
   ]
