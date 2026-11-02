@@ -1,0 +1,58 @@
+{
+  "title": "Cash Loan Over Rs 20,000: Can a Cheque Bounce Case Still Work?",
+  "slug": "cash-loan-cheque-bounce-case-20000",
+  "published": "2026-10-25",
+  "area": 1,
+  "desc": "Yes — the Supreme Court has held a cheque bounce case can succeed even if the loan was cash above Rs 20,000, though a separate tax penalty may still apply.",
+  "keywords": ["138 ni act kya hai", "cheque bounce case procedure", "cash loan cheque bounce", "चेक बाउंस नकद उधार"],
+  "why": "The Supreme Court recently confirmed, and sent a Kerala case back for fresh decision, that a cheque bounce complaint does not fail just because the underlying loan was paid in cash above Rs 20,000.",
+  "keyPoints": [
+    "A cash loan over Rs 20,000 breaks section 269SS of the Income Tax Act, but that alone does not make the debt illegal or unenforceable.",
+    "The Supreme Court held this in Sanjabij Tari v. Kishore S. Borcar (2025 INSC 1158), and applied it again in December 2025 to a Kerala case.",
+    "A section 138 cheque bounce complaint can still proceed over such a loan; the lender may separately face a tax penalty under section 271D.",
+    "Once the accused admits signing the cheque, the law presumes a real debt — pointing to the cash-loan breach alone will not rebut that presumption."
+  ],
+  "sections": [
+    {
+      "h": "Can you file a cheque bounce case over a cash loan above Rs 20,000?",
+      "p": [
+        "Yes. A cheque bounce case under section 138 of the Negotiable Instruments Act, 1881 can succeed even if the underlying loan was cash above Rs 20,000. In Sanjabij Tari v. Kishore S. Borcar (2025 INSC 1158), the Supreme Court held that breaking section 269SS of the Income Tax Act, 1961 does not make a loan illegal or void. Courts in Haldwani and Nainital follow this rule when deciding cheque dishonour complaints involving cash transactions."
+      ]
+    },
+    {
+      "h": "What is section 269SS, and why does it come up in cheque cases?",
+      "p": [
+        "Section 269SS says a loan, deposit or specified sum of Rs 20,000 or more must be taken through a bank account, cheque or other banking channel, not cash. The person who accepts cash above this limit can face a penalty under section 271D equal to the amount taken.",
+        "Accused persons in cheque bounce cases sometimes argue that since the loan broke this rule, it cannot be a 'legally enforceable debt' needed for a section 138 case. The Kerala High Court accepted this argument in one case, but the Supreme Court set that ruling aside and sent the case back for a fresh decision in December 2025.",
+        "The Court's reasoning: a tax penalty and a civil debt are different things. Section 269SS does not say a cash loan is void, so the money is still owed and a cheque issued for it can still attract section 138."
+      ]
+    },
+    {
+      "h": "What does this mean for the cheque's presumption of debt?",
+      "p": [
+        "Once a person admits signing a cheque, sections 118 and 139 of the Negotiable Instruments Act presume it was issued for a real debt. The accused must give solid evidence to rebut this — for example, proof the money was never paid, or clear financial incapacity of the lender.",
+        "Simply saying 'the loan was cash and over Rs 20,000' is not, by itself, enough to defeat that presumption, the Supreme Court made clear."
+      ]
+    }
+  ],
+  "whatToDo": [
+    "If you are lending or borrowing Rs 20,000 or more, use a bank transfer or cheque to avoid income tax penalty exposure under section 271D.",
+    "If you already gave or took a cash loan, keep any written acknowledgment, messages, or receipts mentioning it — these help prove or disprove the debt later.",
+    "If you are accused in a cheque bounce case, don't rely only on 'it was a cash loan above Rs 20,000' as a defence; gather evidence on the debt itself.",
+    "Take legal advice on your own facts before filing or defending a section 138 complaint, since each case turns on its own evidence."
+  ],
+  "hi": {
+    "title": "20,000 रुपये से ज्यादा के नकद उधार पर क्या चेक बाउंस केस चलेगा?",
+    "keyPoints": [
+      "20,000 रुपये से ज्यादा का नकद उधार आयकर अधिनियम की धारा 269SS का उल्लंघन करता है, लेकिन इससे कर्ज गैरकानूनी नहीं हो जाता।",
+      "सुप्रीम कोर्ट ने संजाबीज तारी बनाम किशोर एस. बोरकर (2025 INSC 1158) में यही फैसला दिया, और दिसंबर 2025 में केरल के एक मामले में भी यही लागू किया।",
+      "ऐसे उधार पर भी धारा 138 का चेक बाउंस केस चल सकता है; उधार लेने वाले पर धारा 271D के तहत अलग से कर जुर्माना लग सकता है।",
+      "चेक पर दस्तखत स्वीकार करने के बाद कानून यह मानकर चलता है कि असली कर्ज था — सिर्फ नकद उधार की बात कहकर यह धारणा नहीं टूटती।"
+    ]
+  },
+  "sources": [
+    {"title": "Negotiable Instruments Act, 1881 — Section 138 (Indian Kanoon)", "url": "https://indiankanoon.org/doc/1330045/"},
+    {"title": "Income Tax Act, 1961 — Section 271D penalty for cash loans (Income Tax Department)", "url": "https://www.incometaxindia.gov.in/w/section-271d"},
+    {"title": "Supreme Court sets aside Kerala HC ruling on cash loans above Rs 20,000 and cheque bounce cases, discussing Sanjabij Tari v. Kishore S. Borcar and sections 118/139 presumption (LiveLaw)", "url": "https://www.livelaw.in/amp/top-stories/supreme-court-sets-aside-kerala-hc-ruling-cheque-bounce-case-maintainable-for-cash-debt-above-rs20000-legally-enforceable-313025"}
+  ]
+}
