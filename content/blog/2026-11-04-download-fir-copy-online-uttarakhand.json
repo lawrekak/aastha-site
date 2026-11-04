@@ -1,0 +1,51 @@
+{
+  "title": "How to Download Your FIR Copy Online in Uttarakhand",
+  "slug": "download-fir-copy-online-uttarakhand",
+  "published": "2026-11-04",
+  "area": 3,
+  "desc": "You can download most FIR copies free from the Uttarakhand Police Citizen Portal after the Uttarakhand High Court confirmed the app-based system works.",
+  "keywords": ["FIR download online uttarakhand", "uttarakhand police citizen portal", "FIR kaise nikale online", "devbhoomi app FIR copy", "ऑनलाइन एफआईआर कैसे देखें"],
+  "why": "In September 2026 the Uttarakhand High Court disposed of a PIL about citizens being unable to download FIRs online, after police demonstrated that the Citizen Portal and Devbhoomi app work.",
+  "keyPoints": [
+    "Most FIRs in Uttarakhand can be downloaded free from the Police Citizen Portal or Devbhoomi app after one-time registration.",
+    "The Uttarakhand High Court closed a PIL on this on 23 September 2026 after police showed the system working.",
+    "FIRs for sensitive offences, such as sexual offences, POCSO cases and terrorism, are not put online.",
+    "This follows a 2016 Supreme Court rule that FIRs must normally be uploaded within 24 hours of registration."
+  ],
+  "sections": [
+    {
+      "h": "How do you get an FIR copy online in Uttarakhand?",
+      "p": [
+        "A person can download most First Information Reports (FIRs) free of cost from the Uttarakhand Police Citizen Portal (policecitizenportal.uk.gov.in) or the Devbhoomi mobile app, after a one-time registration. The Uttarakhand High Court confirmed this works in an order dated 23 September 2026, in a public interest petition filed by the National Public Service Trust, Writ Petition (PIL) No. 122 of 2026. Police told the court 70 people had downloaded FIRs through the system in a single day during the demonstration.",
+        "The petitioner had complained that the portal kept showing errors and that neither the accused nor the public could get FIR copies online. A Division Bench of Chief Justice Manoj Kumar Gupta and Justice Subhash Upadhyay had a technical team show the system working on 23 September 2026, and closed the case once satisfied."
+      ]
+    },
+    {
+      "h": "Why aren't all FIRs available online?",
+      "p": [
+        "This online-access rule traces back to the Supreme Court's 2016 judgment in Youth Bar Association of India v. Union of India, which required FIRs to be uploaded to the police or state website within 24 hours of registration, with a short extension allowed in remote areas with connectivity problems.",
+        "The Supreme Court carved out exceptions for cases that are sensitive in nature: sexual offences, cases under the POCSO Act (protection of children from sexual offences), and offences linked to insurgency or terrorism. In the Uttarakhand case, police assured the court that the portal would clearly show when an FIR falls in a restricted category, so a person knows why it is unavailable, instead of just showing an error."
+      ]
+    }
+  ],
+  "whatToDo": [
+    "Register once on the Uttarakhand Police Citizen Portal (policecitizenportal.uk.gov.in) or the Devbhoomi app using your mobile number.",
+    "Search for the FIR using the police station name, FIR number and year to download it.",
+    "If the FIR does not appear, check whether it falls in a restricted category such as a sexual offence or POCSO case; these are not published online.",
+    "Keep a copy of the FIR number and date from the police station receipt, since you will need these to search the portal."
+  ],
+  "hi": {
+    "title": "उत्तराखंड में एफआईआर की कॉपी ऑनलाइन कैसे निकालें?",
+    "keyPoints": [
+      "ज्यादातर एफआईआर उत्तराखंड पुलिस सिटीजन पोर्टल या देवभूमि ऐप से एक बार रजिस्ट्रेशन के बाद मुफ्त में डाउनलोड हो सकती हैं।",
+      "23 सितंबर 2026 को उत्तराखंड हाईकोर्ट ने इस बारे में याचिका का निपटारा किया, जब पुलिस ने सिस्टम काम करके दिखाया।",
+      "संवेदनशील मामलों जैसे यौन अपराध, पॉक्सो और आतंकवाद से जुड़ी एफआईआर ऑनलाइन उपलब्ध नहीं होतीं।",
+      "यह व्यवस्था 2016 के सुप्रीम कोर्ट के फैसले पर आधारित है, जिसमें एफआईआर 24 घंटे में अपलोड करने को कहा गया था।"
+    ]
+  },
+  "sources": [
+    {"title": "LiveLaw: Uttarakhand High Court Disposes Plea Over Online Access Of FIRs After Police Demonstrate App-Based Facility", "url": "https://www.livelaw.in/high-court/uttarakhand-high-court/uttarakhand-high-court-disposes-plea-online-access-fir-police-demonstrate-app-based-facility-551711"},
+    {"title": "Uttarakhand Police Citizen Portal", "url": "https://policecitizenportal.uk.gov.in/Citizen/AboutCitizen.aspx"},
+    {"title": "Supreme Court of India: Youth Bar Association of India v. Union of India, (2016) 9 SCC 473", "url": "https://indiankanoon.org/doc/126148035/"}
+  ]
+}
