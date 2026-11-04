@@ -41,9 +41,11 @@ Get the facts right:
 
 ## Step 1 — choose today's topic
 
-1. Read what already exists, and do not repeat a topic from the last 60 days:
-   - `ls content/blog/`;
+1. Read what already exists, and **never answer a question an existing post already answers, however old it is**:
+   - `ls content/blog/` (the file names are the slugs);
    - `gh pr list --label blog --state all --limit 30`.
+
+   Before writing, compare your planned title and first heading with every existing title. If an existing post covers the same question (for example, two posts on whether the section 13B six-month wait can be waived), pick a different question. A new angle on the same law is fine only if it answers a clearly different sub-question, such as "what documents does a 13B petition need?". Two posts answering one question compete with each other in search.
 2. Find what people are asking about **now**. Use WebSearch for news from the last 3 days, in this order:
    - High Court of Uttarakhand orders and news (e.g. "Uttarakhand High Court" with this week's date, LiveLaw or Bar and Bench Uttarakhand pages, highcourtofuttarakhand.gov.in court news);
    - Uttarakhand government legal changes: UCC rules, land and property law (bhu kanoon), service and recruitment rules, notifications;
@@ -68,6 +70,14 @@ Get the facts right:
    - what anticipatory bail means.
 
    Rotate the areas, but favour family law, property and land, and cheque bounce, which people search for most in Haldwani and Nainital.
+
+   **Current focus (from the November GEO report): family law.** The matrimonial practice page gets no search traffic yet, so aim for about two family-law posts a week. Take each one from the first uncovered sub-question in this list:
+   - interim maintenance and maintenance under section 144 BNSS;
+   - Domestic Violence Act protection, residence and monetary orders;
+   - child custody and visitation under the Guardians and Wards Act;
+   - the steps and documents for a section 13B petition at the Family Court, Haldwani;
+   - restitution of conjugal rights;
+   - divorce under the Uttarakhand Uniform Civil Code, and registering a marriage under it.
 
 ## Step 2 — write the post
 

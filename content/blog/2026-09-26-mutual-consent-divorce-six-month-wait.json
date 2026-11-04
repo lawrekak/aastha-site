@@ -4,7 +4,14 @@
   "published": "2026-09-26",
   "area": 2,
   "desc": "Under section 13B of the Hindu Marriage Act, the 6-month wait in a mutual consent divorce can be waived by the court in suitable cases. What it takes.",
-  "keywords": ["mutual consent divorce Haldwani", "13B cooling off period waiver", "mutual divorce Uttarakhand", "family court Haldwani divorce", "aapsi sahmati talaq"],
+  "keywords": [
+    "mutual consent divorce Haldwani",
+    "13B cooling off period waiver",
+    "mutual divorce Uttarakhand",
+    "family court Haldwani divorce",
+    "aapsi sahmati talaq",
+    "mutual divorce process"
+  ],
   "why": "Many couples who have already agreed to part ask whether they must still wait six months after filing. The short answer: not always.",
   "keyPoints": [
     "Both spouses must have lived separately for at least one year before filing a joint petition.",
@@ -54,8 +61,22 @@
     ]
   },
   "sources": [
-    {"title": "The Hindu Marriage Act, 1955 (India Code)", "url": "https://www.indiacode.nic.in/bitstream/123456789/1560/1/A1955-25.pdf"},
-    {"title": "Amardeep Singh v. Harveen Kaur, Supreme Court, 12 September 2017", "url": "https://indiankanoon.org/doc/79830357/"},
-    {"title": "eCourts services: case status", "url": "https://services.ecourts.gov.in/"}
-  ]
+    {
+      "title": "The Hindu Marriage Act, 1955 (India Code)",
+      "url": "https://www.indiacode.nic.in/bitstream/123456789/1560/1/A1955-25.pdf"
+    },
+    {
+      "title": "Amardeep Singh v. Harveen Kaur, Supreme Court, 12 September 2017",
+      "url": "https://indiankanoon.org/doc/79830357/"
+    },
+    {
+      "title": "eCourts services: case status",
+      "url": "https://services.ecourts.gov.in/"
+    },
+    {
+      "title": "Amardeep Singh v Harveen Kaur, (2017) 8 SCC 746 — Supreme Court of India",
+      "url": "https://main.sci.gov.in/"
+    }
+  ],
+  "updated": "2026-11-04"
 }
