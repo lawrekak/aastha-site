@@ -1,0 +1,59 @@
+{
+  "title": "Restitution of Conjugal Rights: Does It Cost Maintenance?",
+  "slug": "restitution-conjugal-rights-maintenance",
+  "published": "2026-11-05",
+  "area": 2,
+  "desc": "A restitution of conjugal rights order under section 9 does not by itself stop maintenance, the Supreme Court held in January 2025.",
+  "keywords": ["restitution of conjugal rights", "section 9 Hindu Marriage Act", "conjugal rights maintenance", "वैवाहिक अधिकारों की पुनर्स्थापना", "family court Haldwani restitution", "wife maintenance refusal to live together"],
+  "why": "A Supreme Court ruling in January 2025 on whether ignoring a restitution of conjugal rights order can cost a wife her maintenance keeps coming up as a question for couples already apart.",
+  "keyPoints": [
+    "Restitution of conjugal rights under section 9 of the Hindu Marriage Act asks a court to order a spouse who left without excuse to come back and live together.",
+    "In January 2025, the Supreme Court held that a wife's non-compliance with such a decree does not automatically disqualify her from maintenance.",
+    "Courts must still check whether she had sufficient reason, such as cruelty, to stay away, under section 144(4) of the Bharatiya Nagarik Suraksha Sanhita, 2023 (BNSS).",
+    "If a restitution decree is not acted on for one year, either spouse can use that as a ground to seek divorce."
+  ],
+  "sections": [
+    {
+      "h": "What is restitution of conjugal rights?",
+      "p": [
+        "Restitution of conjugal rights is an order under section 9 of the Hindu Marriage Act, 1955, directing a husband or wife who has withdrawn from the other's company, without reasonable excuse, to return and resume living together. Either spouse can file this petition at the Family Court in Haldwani or wherever the couple last lived together. It is the only remedy under the 1955 Act that does not end the marriage.",
+        "The person who filed the petition must prove the other left without a reasonable excuse. If the court is satisfied, it passes a decree, but it cannot physically force anyone to return; refusal has other legal consequences instead."
+      ]
+    },
+    {
+      "h": "Does refusing to return cost a spouse their maintenance?",
+      "p": [
+        "Not automatically. In Rina Kumari v. Dinesh Kumar Mahto, decided on 10 January 2025 (2025 INSC 55), the Supreme Court held that a wife's failure to comply with a restitution of conjugal rights decree does not, by itself, disqualify her from maintenance under section 125 of the old Code of Criminal Procedure, now section 144 of the BNSS.",
+        "Section 144(4) BNSS bars maintenance only if a wife refuses to live with her husband 'without sufficient reason'. The Court said there is no hard-and-fast rule; the maintenance court must independently weigh the evidence, including reasons like cruelty, and is not bound by findings made in the restitution case.",
+        "In that case, the Court restored the family court's maintenance order after finding the wife had valid reasons to stay away, even though a restitution decree existed against her."
+      ]
+    },
+    {
+      "h": "Can an unexecuted restitution decree lead to divorce?",
+      "p": [
+        "Yes. Under section 13(1A)(ii) of the Hindu Marriage Act, if there has been no resumption of living together for one year or more after a restitution of conjugal rights decree, either spouse can file for divorce on that ground alone, regardless of who was at fault in the original case."
+      ]
+    }
+  ],
+  "whatToDo": [
+    "If a restitution petition is filed against you, respond within the time given and keep proof of your reasons for living apart, such as medical records or written complaints.",
+    "A restitution decree does not decide your maintenance case; raise your reasons for separation again before the maintenance court.",
+    "If one year passes after a restitution decree with no resumption of cohabitation, take advice on whether to use it as a ground for divorce.",
+    "Track hearing dates and orders on the eCourts portal using your case number."
+  ],
+  "hi": {
+    "title": "वैवाहिक अधिकारों की पुनर्स्थापना: क्या इससे भरण-पोषण रुक जाता है?",
+    "keyPoints": [
+      "हिंदू विवाह अधिनियम, 1955 की धारा 9 के तहत पति-पत्नी में से कोई भी बिना उचित कारण अलग रहने वाले साथी को साथ रहने का आदेश मांग सकता है।",
+      "जनवरी 2025 में सुप्रीम कोर्ट ने कहा कि इस आदेश का पालन न करने मात्र से पत्नी का भरण-पोषण का अधिकार स्वतः समाप्त नहीं होता।",
+      "कोर्ट को यह देखना होगा कि क्या पत्नी के पास अलग रहने का पर्याप्त कारण था, जैसा कि बीएनएसएस की धारा 144(4) कहती है।",
+      "यदि पुनर्स्थापना के आदेश के बाद एक वर्ष तक साथ रहना शुरू न हो, तो कोई भी पक्ष इसे तलाक का आधार बना सकता है।"
+    ]
+  },
+  "sources": [
+    {"title": "The Hindu Marriage Act, 1955 (India Code)", "url": "https://www.indiacode.nic.in/bitstream/123456789/1560/1/A1955-25.pdf"},
+    {"title": "Bharatiya Nagarik Suraksha Sanhita, 2023 (India Code)", "url": "https://www.indiacode.nic.in/handle/123456789/20024"},
+    {"title": "Rina Kumari v. Dinesh Kumar Mahto, Supreme Court of India, judgment dated 10 January 2025 (official PDF)", "url": "https://api.sci.gov.in/supremecourt/2024/7336/7336_2024_1_1501_58403_Judgement_10-Jan-2025.pdf"},
+    {"title": "eCourts services: case status", "url": "https://services.ecourts.gov.in/"}
+  ]
+}
