@@ -1,0 +1,52 @@
+{
+  "title": "Settling a Cheque Bounce Case: What Does It Cost Now?",
+  "slug": "cheque-bounce-case-compounding-cost",
+  "published": "2026-11-07",
+  "area": 1,
+  "desc": "A section 138 cheque bounce case can be settled (compounded) at any stage; the Supreme Court revised the cost for doing so late on 25 September 2025.",
+  "keywords": ["cheque bounce case procedure", "138 ni act kya hai", "compounding cheque bounce case", "cheque bounce settlement cost", "चेक बाउंस", "section 147 ni act"],
+  "why": "On 25 September 2025, the Supreme Court in Sanjabij Tari v. Kishore S. Borkar revised the cost of settling a cheque bounce case after it reaches court, a question many people with pending 138 cases in Haldwani and Nainital still ask.",
+  "keyPoints": [
+    "A cheque bounce case under section 138 of the Negotiable Instruments Act, 1881 can be compounded (settled with the complainant's consent) at any stage, including in appeal.",
+    "On 25 September 2025, the Supreme Court revised the cost scale for compounding a case late, replacing the 2010 Damodar Prabhu guidelines.",
+    "Settling before the accused's evidence is recorded in the trial court costs nothing extra; settling later costs 5% to 10% of the cheque amount.",
+    "The cost is generally paid to a legal services authority, not the complainant, in addition to the settlement amount itself."
+  ],
+  "sections": [
+    {
+      "h": "Can a cheque bounce case be settled after it is filed?",
+      "p": [
+        "A cheque bounce case filed under section 138 of the Negotiable Instruments Act, 1881 can be compounded (closed by agreement between the parties) under section 147 of the same Act, with the court's permission, at any stage of the case, including during an appeal. This applies in the Judicial Magistrate's courts in Haldwani and Nainital, as in the rest of the country.",
+        "Compounding needs the complainant to agree, since it is their consent that closes the case. Once the court records the settlement and satisfaction, the accused is treated as acquitted."
+      ]
+    },
+    {
+      "h": "What does it cost to settle a case now?",
+      "p": [
+        "On 25 September 2025, the Supreme Court, in Sanjabij Tari v. Kishore S. Borkar, revised the cost scale that applies when a case is compounded late, replacing the scale set in Damodar S. Prabhu v. Sayed Babalal H. (2010).",
+        "Under the revised scale, settling before the accused's evidence is recorded in the trial court carries no extra cost. Settling after that, but before the trial court's judgment, can cost 5% of the cheque amount. At the Sessions Court or High Court stage it can rise to 7.5%, and before the Supreme Court to 10%.",
+        "This cost is separate from the settlement amount itself, and courts generally direct it to be paid to a legal services authority rather than to the complainant. The guidelines are meant to encourage early settlement rather than cases dragging on for years."
+      ]
+    }
+  ],
+  "whatToDo": [
+    "If both sides are willing to settle, raise it as early as possible, ideally before the trial court records the accused's evidence, to avoid the extra cost.",
+    "Get the settlement terms, including the amount and payment schedule, recorded before the court, not just in a private agreement.",
+    "Once the full amount is paid, ask the court to record satisfaction and formally close the case rather than leaving it pending.",
+    "Track hearing dates and any compounding application on the eCourts portal using the case number."
+  ],
+  "hi": {
+    "title": "चेक बाउंस केस में अब सुलह (कॉम्पाउंडिंग) का खर्च कितना है?",
+    "keyPoints": [
+      "निगोशिएबल इंस्ट्रूमेंट्स एक्ट, 1881 की धारा 138 का चेक बाउंस केस धारा 147 के तहत किसी भी चरण में, अपील तक में, आपसी सहमति से सुलह करके बंद किया जा सकता है।",
+      "25 सितंबर 2025 को सुप्रीम कोर्ट ने संजाबिज तारी बनाम किशोर एस. बोरकर मामले में देर से सुलह करने की लागत का पैमाना बदल दिया।",
+      "ट्रायल कोर्ट में आरोपी का बयान दर्ज होने से पहले सुलह करने पर कोई अतिरिक्त खर्च नहीं है; बाद में यह चेक राशि का 5% से 10% तक हो सकता है।",
+      "यह खर्च सामान्यतः शिकायतकर्ता को नहीं, बल्कि विधिक सेवा प्राधिकरण को दिया जाता है।"
+    ]
+  },
+  "sources": [
+    {"title": "Negotiable Instruments Act, 1881 (India Code)", "url": "https://www.indiacode.nic.in/handle/123456789/13258"},
+    {"title": "Supreme Court Modifies Guidelines On Compounding Of Cheque Dishonour Cases — LiveLaw report on Sanjabij Tari v. Kishore S. Borkar, 25 September 2025", "url": "https://www.livelaw.in/top-stories/supreme-court-compounding-of-dishonour-cheque-cases-section-138-ni-act-305189"},
+    {"title": "eCourts services: case status", "url": "https://services.ecourts.gov.in/"}
+  ]
+}
