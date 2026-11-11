@@ -1,0 +1,59 @@
+{
+  "title": "You Have a Money Decree — Now How Do You Get Paid?",
+  "slug": "execution-petition-money-decree-uttarakhand",
+  "published": "2026-11-11",
+  "area": 1,
+  "desc": "A civil decree in Uttarakhand doesn't pay the money automatically; the decree-holder must file a separate execution petition within 12 years.",
+  "keywords": ["execution petition", "money decree execution", "decree execution Haldwani", "निष्पादन वाद", "section 51 cpc", "recovery suit judgment execution"],
+  "why": "People who get a decree in a recovery suit are often surprised to learn that the judgment alone does not put money in their hands, and many don't know how long they have to act or what the court can actually do to a debtor who refuses to pay.",
+  "keyPoints": [
+    "Getting a civil decree for money does not mean the court collects it for you; it must be enforced through a separate execution petition.",
+    "This petition must reach the court within 12 years of the decree becoming enforceable, under Article 136 of the Limitation Act, 1963.",
+    "Section 51 of the Code of Civil Procedure, 1908 lets the court attach and sell property, appoint a receiver, or, in limited cases, order arrest.",
+    "Section 56 of the same Code completely bars arrest or civil-prison detention of a woman to enforce a money decree."
+  ],
+  "sections": [
+    {
+      "h": "How do you actually recover money under a civil decree?",
+      "p": [
+        "A civil decree for money passed in Haldwani or Nainital does not pay out by itself. The party in whose favour it is passed (the decree-holder) must file a separate execution petition under Order 21 of the Code of Civil Procedure, 1908, before the same District Court, within 12 years of the decree becoming enforceable, as fixed by Article 136 of the Limitation Act, 1963.",
+        "Section 38 of the Code says a decree may be executed by the court that passed it, or by a court to which it is transferred for execution under section 39, usually because the debtor lives elsewhere or owns property in another district."
+      ]
+    },
+    {
+      "h": "What can the court do if the debtor still won't pay?",
+      "p": [
+        "Section 51 of the Code lists how a decree for money can be enforced: delivery of specific property, attachment and sale of the debtor's property, appointment of a receiver to manage assets, or, in limited cases, arrest and detention in civil prison.",
+        "Arrest is not automatic. The court must first give the debtor a chance to show cause, and can order detention only after recording in writing that the debtor is likely to abscond, has hidden or transferred property to defeat the decree, or has the means to pay but refuses to."
+      ]
+    },
+    {
+      "h": "Can a woman be arrested for not paying a money decree?",
+      "p": [
+        "No. Section 56 of the Code of Civil Procedure bars a court from ordering the arrest or civil-prison detention of a woman to enforce a decree for payment of money, with no exception. The Supreme Court has held this protection is valid under Article 15(3) of the Constitution, which allows special provisions for women.",
+        "This bar covers only civil arrest for a money decree; it does not stop the court from attaching a woman's property, and it does not apply to arrest in a criminal case."
+      ]
+    }
+  ],
+  "whatToDo": [
+    "File the execution petition in the court that passed the decree, with a certified copy of the decree and details of the debtor's property or bank accounts if you have them.",
+    "If the debtor's assets are in another district, ask the court to transfer the decree there for execution under section 39.",
+    "Act well within the 12-year limit; waiting too long can mean losing the right to execute an otherwise valid decree.",
+    "Track hearing dates on the execution petition through the eCourts portal using the case number."
+  ],
+  "hi": {
+    "title": "केस जीतने के बाद पैसा कैसे वसूल करें?",
+    "keyPoints": [
+      "पैसे की डिक्री पाने के बाद भी अदालत खुद पैसा नहीं दिलाती; इसके लिए अलग से निष्पादन (एक्ज़िक्यूशन) याचिका दाखिल करनी होती है।",
+      "यह याचिका डिक्री लागू होने योग्य बनने की तारीख से 12 साल के भीतर दाखिल करनी होती है (लिमिटेशन एक्ट, 1963 की धारा 136)।",
+      "सिविल प्रोसीजर कोड की धारा 51 के तहत अदालत संपत्ति कुर्क कर बेच सकती है, रिसीवर नियुक्त कर सकती है, या सीमित मामलों में गिरफ्तारी का आदेश दे सकती है।",
+      "धारा 56 के तहत पैसे की डिक्री वसूलने के लिए किसी महिला को गिरफ्तार या सिविल जेल में बंद नहीं किया जा सकता।"
+    ]
+  },
+  "sources": [
+    {"title": "Code of Civil Procedure, 1908 — Section 51 (bare act text)", "url": "https://www.apnilaw.com/bare-act/cpc/section-51-code-of-civil-procedure"},
+    {"title": "Code of Civil Procedure, 1908 — Section 38 (bare act text)", "url": "https://www.apnilaw.com/bare-act/cpc/section-38-code-of-civil-procedure"},
+    {"title": "Code of Civil Procedure, 1908 — Section 56, prohibition of arrest of women in execution of a money decree (bare act text)", "url": "https://www.apnilaw.com/bare-act/cpc/section-56-code-of-civil-procedure-prohibition-of-arrest-or-detention-of-women-in-execution-of-decree-for-money"},
+    {"title": "eCourts services: case status", "url": "https://services.ecourts.gov.in/"}
+  ]
+}
