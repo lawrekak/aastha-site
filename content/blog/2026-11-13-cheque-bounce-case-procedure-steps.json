@@ -1,0 +1,57 @@
+{
+  "title": "What Happens After You File a Cheque Bounce Case?",
+  "slug": "cheque-bounce-case-procedure-steps",
+  "published": "2026-11-13",
+  "area": 1,
+  "desc": "A section 138 cheque bounce case moves from summons to trial, and a court can now order interim payment of up to 20% of the cheque amount before it ends.",
+  "keywords": ["cheque bounce case procedure", "138 ni act kya hai", "cheque bounce case in hindi", "interim compensation cheque case", "section 143a ni act", "cheque bounce complaint Haldwani"],
+  "why": "Many people who file or face a cheque bounce complaint know the filing deadline but not what happens in court afterwards, especially a 2018 change that lets a Magistrate order part-payment before the case ends.",
+  "keyPoints": [
+    "Once a cheque bounce complaint under section 138 is admitted, the Judicial Magistrate issues summons, and the accused must appear in court.",
+    "The complainant usually gives evidence through a sworn affidavit under section 145, and the accused can cross-examine before the trial moves ahead.",
+    "Under section 143A, the court can order the accused to pay interim compensation of up to 20% of the cheque amount while the case is still being heard.",
+    "If convicted, the punishment can be up to 2 years in prison, a fine up to twice the cheque amount, or both; the case can still be settled anytime."
+  ],
+  "sections": [
+    {
+      "h": "What happens once a cheque bounce complaint is filed in court?",
+      "p": [
+        "Once a payee files a cheque bounce complaint under section 138 of the Negotiable Instruments Act, 1881, the Judicial Magistrate's court in Haldwani examines it and, if satisfied, issues summons to the accused. The case then largely follows a summary trial under section 143, so the court aims to decide it faster than an ordinary criminal trial.",
+        "After the accused appears and the plea is recorded, the complainant's evidence is usually given through a sworn affidavit under section 145, instead of standing in the witness box for the whole examination. The accused's lawyer can still cross-examine the complainant on that affidavit."
+      ]
+    },
+    {
+      "h": "Can the court order payment before the case ends?",
+      "p": [
+        "Yes. Under section 143A, added to the Act in 2018, a Magistrate can direct the accused to pay interim compensation to the complainant while the case is still pending, usually once the accused pleads not guilty. This amount cannot exceed 20% of the cheque amount, and is normally payable within 60 days, extendable by another 30 days for a sufficient reason.",
+        "This interim amount is not the final outcome. If the accused is later acquitted, the court can direct the complainant to repay it with interest, so it works as temporary relief, not a settled result."
+      ]
+    },
+    {
+      "h": "What happens if the accused is convicted, or wants to settle?",
+      "p": [
+        "If convicted under section 138, the accused can be sentenced to up to 2 years in prison, fined up to twice the cheque amount, or both. The fine, once ordered, is recovered through the usual process for realising fines in criminal cases.",
+        "A cheque bounce case is compoundable under section 147, so the parties can settle it at any stage, even after conviction, on terms they agree, usually by paying the cheque amount."
+      ]
+    }
+  ],
+  "whatToDo": [
+    "Keep the bank's cheque return memo and proof of sending the 15-day demand notice; courts ask for these first.",
+    "Respond to the summons on the date given, since skipping a hearing can lead to a warrant.",
+    "If you are the complainant, consider applying for interim compensation under section 143A once the accused pleads not guilty.",
+    "Track hearing dates and orders on the eCourts portal using your case number."
+  ],
+  "hi": {
+    "title": "चेक बाउंस की शिकायत दर्ज होने के बाद क्या होता है?",
+    "keyPoints": [
+      "धारा 138 की शिकायत स्वीकार होने पर मजिस्ट्रेट आरोपी को समन जारी करते हैं, और आरोपी को अदालत में हाज़िर होना पड़ता है।",
+      "शिकायतकर्ता आमतौर पर धारा 145 के तहत शपथ-पत्र के ज़रिए गवाही देता है, और आरोपी उस पर जिरह कर सकता है।",
+      "धारा 143ए के तहत अदालत मुकदमा चलते समय ही आरोपी को चेक राशि के 20% तक अंतरिम मुआवज़ा देने का आदेश दे सकती है।",
+      "दोषी पाए जाने पर 2 साल तक की सज़ा या चेक राशि की दोगुनी राशि तक जुर्माना, या दोनों हो सकते हैं, पर मामला किसी भी चरण पर समझौते से निपटाया जा सकता है।"
+    ]
+  },
+  "sources": [
+    {"title": "Negotiable Instruments Act, 1881 (India Code)", "url": "https://www.indiacode.nic.in/handle/123456789/13092"},
+    {"title": "eCourts services: case status", "url": "https://services.ecourts.gov.in/"}
+  ]
+}
