@@ -109,3 +109,7 @@ People search for phrases like "matrimonial lawyer Haldwani", "divorce lawyer Na
 
   Name the Family Court at Haldwani and the High Court of Uttarakhand at Nainital only where it is factually relevant.
 - **AI search.** Check that `llms.txt` and the family page state plainly that she handles matrimonial and family matters in Haldwani and Nainital. If Perplexity or ChatGPT describe her practice incorrectly, report it.
+
+## House style
+- No em dashes (—) in any page or post text; the validator rejects them in blog posts. Use a comma, colon or full stop.
+- Avoid stock phrases that read as machine-written: "navigate", "delve", "it is important to note", "in today's world", "landscape", "seamless", "comprehensive guide".

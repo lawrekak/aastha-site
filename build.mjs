@@ -100,7 +100,7 @@ function header(p) {
   const langLink = hi ? `<a class="lang" href="${other}" hreflang="en" lang="en">English</a>` : `<a class="lang deva" href="${other}" hreflang="hi" lang="hi">हिन्दी</a>`;
   return `<a class="skip" href="#main">${hi ? "मुख्य सामग्री पर जाएँ" : "Skip to content"}</a>
 <header class="top"><div class="wrap">
-  <a class="brand" href="${hi ? "/hi/" : "/"}" aria-label="${esc(S.name)}, Advocate — ${hi ? "मुख्य पृष्ठ" : "home"}"><span class="mono-mark" aria-hidden="true">AV</span><span><b>${hi ? HI.name : esc(S.name)}</b><span class="sub">${hi ? "अधिवक्ता · उत्तराखंड उच्च न्यायालय · दिल्ली उच्च न्यायालय" : "Advocate · High Court of Uttarakhand · Delhi High Court"}</span></span></a>
+  <a class="brand" href="${hi ? "/hi/" : "/"}" aria-label="${esc(S.name)}, Advocate, ${hi ? "मुख्य पृष्ठ" : "home"}"><span class="mono-mark" aria-hidden="true">AV</span><span><b>${hi ? HI.name : esc(S.name)}</b><span class="sub">${hi ? "अधिवक्ता · उत्तराखंड उच्च न्यायालय · दिल्ली उच्च न्यायालय" : "Advocate · High Court of Uttarakhand · Delhi High Court"}</span></span></a>
   <nav class="main" aria-label="${hi ? "मुख्य" : "Main"}">${links}${langLink}</nav>
   <div class="row-wrap" style="gap:8px">
     <a href="${hi ? "/hi/contact/" : "/contact/"}" class="btn btn-primary cta-desk">${ico("pin")}${hi ? HI.nav.contact : "Contact details"}</a>
@@ -168,7 +168,7 @@ ${alts.map(([l, h]) => `<link rel="alternate" hreflang="${l}" href="${U(h)}">`).
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM summary">
-<link rel="alternate" type="application/rss+xml" href="/blog/feed.xml" title="${esc(S.name)}, Advocate — Blog">
+<link rel="alternate" type="application/rss+xml" href="/blog/feed.xml" title="${esc(S.name)}, Advocate: Blog">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Tiro+Devanagari+Hindi&display=swap">
@@ -236,10 +236,10 @@ add({
   </div>
 </section>
 <section class="forums" aria-label="Forums appeared before"><span class="lbl">Appears before</span>${S.forums.map((f) => `<span class="f">${ico("court", "i")}${esc(f.replace(" (NCLAT)", ""))}</span>`).join("")}</section>
-<section class="block reveal" aria-labelledby="h-areas"><div class="sec-head"><div class="stack"><span class="eyebrow">Areas of practice</span><h2 id="h-areas">Matters handled</h2></div><a class="link" href="/practice-areas/">All practice areas ${ico("arrow")}</a></div><div class="grid3">${AREAS.map(areaCard).join("")}</div></section>
-<section class="block reveal" aria-labelledby="h-office"><div class="office-band"><div class="stack"><span class="eyebrow">Office</span><h2 id="h-office">Vishwakarma, Kumar &amp; Jain Law Offices, Haldwani</h2><p class="muted">Matters before the High Court of Uttarakhand at Nainital, the District Courts at Haldwani and Nainital, and the Delhi courts and tribunals are handled from the office at Bhotia Parao, Haldwani.</p></div>${officeCard()}</div></section>
-<section class="block reveal" aria-labelledby="h-guide"><div class="card guide-band"><div class="stack"><span class="eyebrow">Guide</span><h2 id="h-guide">${esc(GUIDE.title)}</h2><p class="muted">${esc(GUIDE.desc)}</p></div><a class="btn btn-outline" href="${GUIDE_URL}">Read the guide ${ico("arrow")}</a></div></section>
-<section class="block reveal" aria-labelledby="h-faqs"><div class="sec-head"><div class="stack"><span class="eyebrow">Questions</span><h2 id="h-faqs">Common questions</h2></div><a class="link" href="/faq/">All questions ${ico("arrow")}</a></div><div style="max-width:820px">${faqItems(FAQ.slice(0, 3))}</div></section>`,
+<section class="block" aria-labelledby="h-areas"><div class="sec-head"><div class="stack"><h2 id="h-areas">Matters handled</h2></div><a class="link" href="/practice-areas/">All practice areas ${ico("arrow")}</a></div><div class="grid3">${AREAS.map(areaCard).join("")}</div></section>
+<section class="block" aria-labelledby="h-office"><div class="office-band"><div class="stack"><h2 id="h-office">Vishwakarma, Kumar &amp; Jain Law Offices, Haldwani</h2><p class="muted">Matters before the High Court of Uttarakhand at Nainital, the District Courts at Haldwani and Nainital, and the Delhi courts and tribunals are handled from the office at Bhotia Parao, Haldwani.</p></div>${officeCard()}</div></section>
+<section class="block" aria-labelledby="h-guide"><div class="card guide-band"><div class="stack"><h2 id="h-guide">${esc(GUIDE.title)}</h2><p class="muted">${esc(GUIDE.desc)}</p></div><a class="btn btn-outline" href="${GUIDE_URL}">Read the guide ${ico("arrow")}</a></div></section>
+<section class="block" aria-labelledby="h-faqs"><div class="sec-head"><div class="stack"><h2 id="h-faqs">Common questions</h2></div><a class="link" href="/faq/">All questions ${ico("arrow")}</a></div><div style="max-width:820px">${faqItems(FAQ.slice(0, 3))}</div></section>`,
   extraLd: [faqLd(FAQ.slice(0, 3), "/")]
 });
 
@@ -374,7 +374,7 @@ POSTS.forEach((a) => {
   add({
     path: url, title: fit(a.seoTitle || a.title, " | Aastha Vishwakarma", " | Blog"), ogTitle: a.seoTitle || a.title, ogType: "article", desc: a.desc, priority: "0.6", updated: a.updated || a.published,
     crumbs: [["Blog", "/blog/"], [a.title, url]],
-    extraLd: [{ "@type": "BlogPosting", "@id": U(url) + "#article", headline: a.title, description: a.desc, datePublished: a.published, dateModified: a.updated || a.published, author: { "@id": ID.person }, publisher: { "@id": ID.firm }, mainEntityOfPage: { "@id": U(url) + "#webpage" }, image: U(S.ogImage), inLanguage: "en-IN", articleSection: area.t, wordCount: postWords(a), keywords: (a.keywords || []).join(", "), isPartOf: { "@type": "Blog", "@id": U("/blog/") + "#blog", name: `${S.name}, Advocate — Blog` }, citation: (a.sources || []).map((x) => x.url) }],
+    extraLd: [{ "@type": "BlogPosting", "@id": U(url) + "#article", headline: a.title, description: a.desc, datePublished: a.published, dateModified: a.updated || a.published, author: { "@id": ID.person }, publisher: { "@id": ID.firm }, mainEntityOfPage: { "@id": U(url) + "#webpage" }, image: U(S.ogImage), inLanguage: "en-IN", articleSection: area.t, wordCount: postWords(a), keywords: (a.keywords || []).join(", "), isPartOf: { "@type": "Blog", "@id": U("/blog/") + "#blog", name: `${S.name}, Advocate: Blog` }, citation: (a.sources || []).map((x) => x.url) }],
     body: `<div class="article-grid"><article class="stack prose"><span class="eyebrow">Blog · <a href="${areaUrl(area)}">${esc(area.t)}</a></span><h1>${esc(a.title)}</h1>
 <p class="muted">By <a href="/about/">${esc(S.name)}, Advocate</a> · <time datetime="${a.published}">${fmtDate(a.published)}</time> · ${Math.max(1, Math.round(postWords(a) / 200))} min read</p>
 <p class="lede">${esc(a.why)}</p>
@@ -479,9 +479,9 @@ ${indexable.map((p) => `  <url><loc>${U(p.path)}</loc><lastmod>${p.updated || UP
 `;
 write("sitemap.xml", sm);
 
-// robots.txt — search engines and AI assistants are welcome; nothing private is served.
+// robots.txt: search engines and AI assistants are welcome; nothing private is served.
 const AI_BOTS = ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-SearchBot", "Claude-User", "PerplexityBot", "Perplexity-User", "Google-Extended", "Applebot-Extended", "Bingbot", "Googlebot", "DuckAssistBot", "meta-externalagent", "CCBot"];
-write("robots.txt", `# ${S.name}, Advocate — ${BASE}
+write("robots.txt", `# ${S.name}, Advocate, ${BASE}
 # Search engines and AI assistants may read and cite every public page.
 User-agent: *
 Allow: /
@@ -533,13 +533,13 @@ ${POSTS.length ? `## Recent blog posts\n${POSTS.slice(0, 15).map((a) => `- [${a.
 - [Full text for language models](${U("/llms-full.txt")})
 `);
 const strip = (h) => h.replace(/<script[\s\S]*?<\/script>/g, "").replace(/<svg[\s\S]*?<\/svg>/g, "").replace(/<(br|\/p|\/li|\/h\d|\/dt|\/dd|\/tr|\/summary|\/details)[^>]*>/g, "\n").replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/\(opens in a new tab\)/g, "").replace(/[ \t]+/g, " ").replace(/\n\s*\n+/g, "\n\n").trim();
-write("llms-full.txt", `# ${S.name}, Advocate — full site text\nSource: ${BASE}\nUpdated: ${UPDATED}\n\n` + indexable.filter((p) => p.lang === "en").map((p) => `---\nURL: ${U(p.path)}\nTitle: ${p.title}\n\n${strip(p.body)}`).join("\n\n") + "\n");
+write("llms-full.txt", `# ${S.name}, Advocate: full site text\nSource: ${BASE}\nUpdated: ${UPDATED}\n\n` + indexable.filter((p) => p.lang === "en").map((p) => `---\nURL: ${U(p.path)}\nTitle: ${p.title}\n\n${strip(p.body)}`).join("\n\n") + "\n");
 
 // RSS feed for the blog
 const xml = (t) => String(t).replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
 write("blog/feed.xml", `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>
-<title>${xml(S.name)}, Advocate — Blog</title><link>${U("/blog/")}</link><description>Plain-language posts on legal questions in Uttarakhand.</description><language>en-IN</language>
+<title>${xml(S.name)}, Advocate: Blog</title><link>${U("/blog/")}</link><description>Plain-language posts on legal questions in Uttarakhand.</description><language>en-IN</language>
 <atom:link href="${U("/blog/feed.xml")}" rel="self" type="application/rss+xml"/>
 ${POSTS.slice(0, 30).map((a) => `<item><title>${xml(a.title)}</title><link>${U(postUrl(a))}</link><guid>${U(postUrl(a))}</guid><pubDate>${new Date(a.published + "T06:00:00+05:30").toUTCString()}</pubDate><description>${xml(a.desc)}</description></item>`).join("\n")}
 </channel></rss>
