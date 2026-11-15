@@ -122,3 +122,17 @@
       .then(function () { busy = false; sendBtn.disabled = false; });
   });
 })();
+
+/* Theme: header shadow once scrolled, and fade-in for sections marked .reveal. */
+(function () {
+  var h = document.querySelector("header.top");
+  var onScroll = function () { if (h) h.classList.toggle("scrolled", window.scrollY > 8); };
+  window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+  if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  // Only sections still below the fold are hidden, and only until they scroll into view.
+  var els = [].filter.call(document.querySelectorAll(".reveal"), function (e) { return e.getBoundingClientRect().top > window.innerHeight; });
+  var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.remove("pending"); io.unobserve(e.target); } }); }, { rootMargin: "0px 0px -8% 0px" });
+  els.forEach(function (e) { e.classList.add("pending"); io.observe(e); });
+  // Never leave content hidden (e.g. full-page captures, print).
+  window.addEventListener("beforeprint", function () { els.forEach(function (e) { e.classList.remove("pending"); }); });
+})();

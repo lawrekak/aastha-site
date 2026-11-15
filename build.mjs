@@ -171,7 +171,7 @@ ${alts.map(([l, h]) => `<link rel="alternate" hreflang="${l}" href="${U(h)}">`).
 <link rel="alternate" type="application/rss+xml" href="/blog/feed.xml" title="${esc(S.name)}, Advocate — Blog">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Lato:wght@400;700&family=IBM+Plex+Mono:wght@400;500&family=Tiro+Devanagari+Hindi&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Tiro+Devanagari+Hindi&display=swap">
 <link rel="stylesheet" href="/assets/site.css?v=${V_CSS}">
 <script type="application/ld+json">${graph(p)}</script>
 <script src="/assets/site.js?v=${V_JS}" defer></script>
@@ -234,12 +234,12 @@ add({
       <div class="fact">${ico("lang", "i")}<div><b>Hindi and English</b>Languages</div></div>
     </div>
   </div>
-  ${officeCard()}
 </section>
 <section class="forums" aria-label="Forums appeared before"><span class="lbl">Appears before</span>${S.forums.map((f) => `<span class="f">${ico("court", "i")}${esc(f.replace(" (NCLAT)", ""))}</span>`).join("")}</section>
-<section class="block" aria-labelledby="h-areas"><div class="sec-head"><div class="stack"><span class="eyebrow">Areas of practice</span><h2 id="h-areas">Matters handled</h2></div><a class="link" href="/practice-areas/">All practice areas ${ico("arrow")}</a></div><div class="grid3">${AREAS.map(areaCard).join("")}</div></section>
-<section class="block" aria-labelledby="h-guide"><div class="card guide-band"><div class="stack"><span class="eyebrow">Guide</span><h2 id="h-guide">${esc(GUIDE.title)}</h2><p class="muted">${esc(GUIDE.desc)}</p></div><a class="btn btn-outline" href="${GUIDE_URL}">Read the guide ${ico("arrow")}</a></div></section>
-<section class="block" aria-labelledby="h-faqs"><div class="sec-head"><div class="stack"><span class="eyebrow">Questions</span><h2 id="h-faqs">Common questions</h2></div><a class="link" href="/faq/">All questions ${ico("arrow")}</a></div><div style="max-width:820px">${faqItems(FAQ.slice(0, 3))}</div></section>`,
+<section class="block reveal" aria-labelledby="h-areas"><div class="sec-head"><div class="stack"><span class="eyebrow">Areas of practice</span><h2 id="h-areas">Matters handled</h2></div><a class="link" href="/practice-areas/">All practice areas ${ico("arrow")}</a></div><div class="grid3">${AREAS.map(areaCard).join("")}</div></section>
+<section class="block reveal" aria-labelledby="h-office"><div class="office-band"><div class="stack"><span class="eyebrow">Office</span><h2 id="h-office">Vishwakarma, Kumar &amp; Jain Law Offices, Haldwani</h2><p class="muted">Matters before the High Court of Uttarakhand at Nainital, the District Courts at Haldwani and Nainital, and the Delhi courts and tribunals are handled from the office at Bhotia Parao, Haldwani.</p></div>${officeCard()}</div></section>
+<section class="block reveal" aria-labelledby="h-guide"><div class="card guide-band"><div class="stack"><span class="eyebrow">Guide</span><h2 id="h-guide">${esc(GUIDE.title)}</h2><p class="muted">${esc(GUIDE.desc)}</p></div><a class="btn btn-outline" href="${GUIDE_URL}">Read the guide ${ico("arrow")}</a></div></section>
+<section class="block reveal" aria-labelledby="h-faqs"><div class="sec-head"><div class="stack"><span class="eyebrow">Questions</span><h2 id="h-faqs">Common questions</h2></div><a class="link" href="/faq/">All questions ${ico("arrow")}</a></div><div style="max-width:820px">${faqItems(FAQ.slice(0, 3))}</div></section>`,
   extraLd: [faqLd(FAQ.slice(0, 3), "/")]
 });
 
