@@ -206,7 +206,7 @@ const areaCard = (a) => `<a class="card area-card" href="${areaUrl(a)}"><span cl
 const ctaBand = `<div class="card cta-band"><div class="stack" style="gap:6px"><h2 class="h3">Office contact details</h2><p class="muted">Office contact details are provided for persons seeking information about the Advocate.</p></div><div class="row-wrap"><a class="btn btn-outline" href="/contact/">${ico("pin")}Office and contact details</a></div></div>`;
 // Up to 5 posts for a post's sidebar: same practice area first (newest first), then the newest others.
 const relatedFor = (a) => { const same = POSTS.filter((x) => x !== a && x.area === a.area); const rest = POSTS.filter((x) => x !== a && x.area !== a.area); return [...same, ...rest].slice(0, 5); };
-const relatedPosts = (i) => { const r = POSTS.filter((x) => x.area === i).slice(0, 4); return r.length ? `<div class="card" style="padding:18px"><h2 class="foot-h">Recent blog posts</h2><ul class="plain">${r.map((x) => `<li><a href="${postUrl(x)}">${esc(x.title)}</a></li>`).join("")}</ul></div>` : ""; };
+const relatedPosts = (i) => { const r = POSTS.filter((x) => x.area === i).slice(0, 4); return r.length ? `<div class="card" style="padding:18px"><h2 class="foot-h">Recent blog posts</h2><ul class="plain">${r.map((x) => `<li><a href="${postUrl(x)}">${esc(x.title)}</a></li>`).join("")}</ul>${POSTS.filter((x) => x.area === i).length > r.length ? `<p style="margin-top:10px"><a class="link" href="/blog/?area=${AREAS[i].slug}">All ${POSTS.filter((x) => x.area === i).length} posts on this area</a></p>` : ""}</div>` : ""; };
 const postCard = (a) => `<a class="card j-card" href="${postUrl(a)}"><span class="cite">${fmtDate(a.published)} · ${esc(AREAS[a.area].t)}</span><h2 class="h3">${esc(a.title)}</h2><p class="muted" style="font-size:.92rem">${esc(a.desc)}</p><span class="meta">${Math.max(1, Math.round(postWords(a) / 200))} min read</span></a>`;
 const notice = (t) => `<div class="notice">${ico("shield", "i")}<span>${t}</span></div>`;
 const faqItems = (items) => items.map(([q, a]) => `<details><summary>${esc(q)}${ico("right", "i")}</summary><p>${esc(a)}</p></details>`).join("");
@@ -325,6 +325,34 @@ ${notice(esc(GUIDE.note))}
 <div class="block">${ctaBand}</div>`
 });
 
+// Blog filters: quick topics people search for most (from keywords.json and Search Console).
+// A topic is shown only when at least one post matches it.
+const BLOG_TOPICS = [
+  ["Cheque bounce", /cheque|\b138\b|negotiable instruments/i],
+  ["Divorce", /divorce|13b|talaq|तलाक/i],
+  ["Maintenance", /maintenance|alimony|गुज़ारा|भरण/i],
+  ["Custody", /custody|guardian|visitation/i],
+  ["Uniform Civil Code", /\bucc\b|uniform civil code/i],
+  ["Land and mutation", /\bland\b|mutation|dakhil|bhu kanoon|khatauni|registry/i],
+  ["Case status", /case status|cause list|e-?courts/i],
+  ["Bail", /\bbail\b/i],
+  ["Government jobs and service", /service law|service matter|recruitment|teacher|employee|pension|promotion|government job/i],
+  ["Recovery of money", /recovery|decree|execution|money suit/i],
+];
+const postText = (a) => [a.title, a.seoTitle, a.desc, ...(a.keywords || []), a.hi?.title, ...a.sections.map((x) => x.h)].filter(Boolean).join(" ");
+const TOPICS_LIVE = BLOG_TOPICS.map(([t, re]) => [t, POSTS.filter((a) => re.test(postText(a))).length, re]).filter((x) => x[1] > 0);
+const blogIndex = () => JSON.stringify(POSTS.map((a) => ({ u: postUrl(a), t: a.title, d: a.desc, p: a.published, a: AREAS[a.area].slug, m: Math.max(1, Math.round(postWords(a) / 200)),
+  s: postText(a).toLowerCase(), k: TOPICS_LIVE.filter((x) => x[2].test(postText(a))).map((x) => x[0]) }))).replace(/</g, "\\u003c");
+const blogFilters = () => {
+  const counts = AREAS.map((x, i) => [x, POSTS.filter((a) => a.area === i).length]).filter((x) => x[1] > 0);
+  return `<form class="bf" role="search" aria-label="Filter blog posts" onsubmit="return false">
+  <div class="bf-search">${ico("search")}<label class="sr" for="bf-q">Search posts</label><input id="bf-q" type="search" placeholder="Search posts, e.g. 138 notice, 13B, mutation" autocomplete="off"></div>
+  <div class="bf-row"><span class="bf-lbl" id="bf-area-l">Area of practice</span><div class="chips" role="group" aria-labelledby="bf-area-l"><button type="button" class="chip" data-area="" aria-pressed="true">All <span class="n">${POSTS.length}</span></button>${counts.map(([x, n]) => `<button type="button" class="chip" data-area="${x.slug}" aria-pressed="false">${esc(x.t)} <span class="n">${n}</span></button>`).join("")}</div></div>
+  <div class="bf-row"><span class="bf-lbl" id="bf-topic-l">Common questions</span><div class="chips" role="group" aria-labelledby="bf-topic-l">${TOPICS_LIVE.map(([t, n]) => `<button type="button" class="chip" data-topic="${esc(t)}" aria-pressed="false">${esc(t)} <span class="n">${n}</span></button>`).join("")}</div></div>
+  <div class="bf-bar"><p class="muted" id="bf-count" aria-live="polite">${POSTS.length} posts</p><div class="bf-tools"><label class="sr" for="bf-sort">Sort</label><select id="bf-sort"><option value="new">Newest first</option><option value="old">Oldest first</option></select><button type="button" class="link bf-clear" hidden>Clear filters</button></div></div>
+</form>
+<script type="application/json" id="post-index">${blogIndex()}</script>`;
+};
 // Blog: short daily posts on current legal questions, 12 per listing page
 const PER_PAGE = 12, BLOG_PAGES = Math.max(1, Math.ceil(POSTS.length / PER_PAGE));
 for (let n = 1; n <= BLOG_PAGES; n++) {
@@ -336,8 +364,9 @@ for (let n = 1; n <= BLOG_PAGES; n++) {
     crumbs: n === 1 ? [["Blog", "/blog/"]] : [["Blog", "/blog/"], [`Page ${n}`, url]],
     body: `<span class="eyebrow">Blog</span><h1 style="margin:10px 0 12px">${n === 1 ? "Legal blog" : `Legal blog: page ${n}`}</h1>
 <p class="muted" style="margin-bottom:24px;max-width:62ch">Short posts on legal questions in the news and in everyday life in Uttarakhand, in plain language. Each takes about two minutes to read. General information only, not legal advice.</p>
-${list.length ? `<div class="grid3">${list.map(postCard).join("")}</div>` : `<div class="card" style="padding:22px"><p>The first posts will appear here soon. Meanwhile, see the <a href="/guides/">guides</a>.</p></div>`}
-${BLOG_PAGES > 1 ? `<nav class="row-wrap" aria-label="Blog pages" style="margin-top:24px">${n > 1 ? `<a class="btn btn-outline" href="${n === 2 ? "/blog/" : `/blog/page/${n - 1}/`}">Newer posts</a>` : ""}${n < BLOG_PAGES ? `<a class="btn btn-outline" href="/blog/page/${n + 1}/">Older posts</a>` : ""}</nav>` : ""}`
+${n === 1 && POSTS.length > 1 ? blogFilters() : n > 1 ? `<p style="margin-bottom:20px"><a class="link" href="/blog/">Search and filter all posts</a></p>` : ""}
+${list.length ? `<div class="grid3" id="bf-list">${list.map(postCard).join("")}</div><div class="card bf-empty" hidden style="padding:22px"><p>No posts match these filters. Try another word or <button type="button" class="link bf-clear">clear the filters</button>.</p></div>` : `<div class="card" style="padding:22px"><p>The first posts will appear here soon. Meanwhile, see the <a href="/guides/">guides</a>.</p></div>`}
+${BLOG_PAGES > 1 ? `<nav class="row-wrap" id="bf-pages" aria-label="Blog pages" style="margin-top:24px">${n > 1 ? `<a class="btn btn-outline" href="${n === 2 ? "/blog/" : `/blog/page/${n - 1}/`}">Newer posts</a>` : ""}${n < BLOG_PAGES ? `<a class="btn btn-outline" href="/blog/page/${n + 1}/">Older posts</a>` : ""}</nav>` : ""}`
   });
 }
 POSTS.forEach((a) => {

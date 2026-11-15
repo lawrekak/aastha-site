@@ -136,3 +136,48 @@
   // Never leave content hidden (e.g. full-page captures, print).
   window.addEventListener("beforeprint", function () { els.forEach(function (e) { e.classList.remove("pending"); }); });
 })();
+
+/* Blog filters: search, area of practice, common questions, sort. State is kept in the URL so a filtered view can be shared. */
+(function () {
+  var data = document.getElementById("post-index"), form = document.querySelector(".bf");
+  if (!data || !form) return;
+  var posts = JSON.parse(data.textContent), list = document.getElementById("bf-list"), initial = list.innerHTML;
+  var q = document.getElementById("bf-q"), sort = document.getElementById("bf-sort"), count = document.getElementById("bf-count");
+  var empty = document.querySelector(".bf-empty"), pages = document.getElementById("bf-pages"), clears = document.querySelectorAll(".bf-clear");
+  var areaBtns = form.querySelectorAll("[data-area]"), topicBtns = form.querySelectorAll("[data-topic]");
+  var areaName = {}; areaBtns.forEach(function (b) { if (b.dataset.area) areaName[b.dataset.area] = b.firstChild.textContent.trim(); });
+  var st = { q: "", area: "", topic: "", sort: "new" };
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
+  var fmt = function (iso) { return new Date(iso + "T00:00:00").toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" }); };
+  var terms = function () { return st.q.toLowerCase().split(/\s+/).filter(Boolean); };
+  var hl = function (text) { var t = esc(text); terms().forEach(function (w) { if (w.length > 1) t = t.replace(new RegExp("(" + w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "ig"), "<mark>$1</mark>"); }); return t; };
+  function card(p) { return '<a class="card j-card" href="' + p.u + '"><span class="cite">' + fmt(p.p) + " · " + esc(areaName[p.a] || "") + '</span><h2 class="h3">' + hl(p.t) + '</h2><p class="muted" style="font-size:.92rem">' + hl(p.d) + '</p><span class="meta">' + p.m + " min read</span></a>"; }
+  function render(push) {
+    var active = st.q || st.area || st.topic || st.sort !== "new";
+    areaBtns.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.area === st.area)); });
+    topicBtns.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.topic === st.topic)); });
+    clears.forEach(function (b) { if (b.closest(".bf")) b.hidden = !active; });
+    form.querySelectorAll('.chip[aria-pressed="true"]').forEach(function (b) { var row = b.parentNode; if (row.scrollWidth > row.clientWidth) row.scrollLeft = b.offsetLeft - row.offsetLeft - 16; });
+    var ws = terms();
+    var res = posts.filter(function (p) { return (!st.area || p.a === st.area) && (!st.topic || p.k.indexOf(st.topic) > -1) && ws.every(function (w) { return p.s.indexOf(w) > -1; }); });
+    if (st.sort === "old") res = res.slice().reverse();
+    if (!active) { list.innerHTML = initial; if (pages) pages.hidden = false; }
+    else { list.innerHTML = res.map(card).join(""); if (pages) pages.hidden = true; }
+    list.hidden = active && !res.length; empty.hidden = !(active && !res.length);
+    count.textContent = active ? res.length + (res.length === 1 ? " post" : " posts") + " found" : posts.length + " posts";
+    if (push !== false) {
+      var u = new URLSearchParams(); if (st.q) u.set("q", st.q); if (st.area) u.set("area", st.area); if (st.topic) u.set("topic", st.topic); if (st.sort !== "new") u.set("sort", st.sort);
+      history.replaceState(null, "", location.pathname + (u.toString() ? "?" + u : ""));
+      if (active && window.gtag) { clearTimeout(render.t); render.t = setTimeout(function () { gtag("event", "blog_filter", { search_term: st.q, area: st.area, topic: st.topic }); }, 1200); }
+    }
+  }
+  areaBtns.forEach(function (b) { b.addEventListener("click", function () { st.area = b.dataset.area; render(); }); });
+  topicBtns.forEach(function (b) { b.addEventListener("click", function () { st.topic = st.topic === b.dataset.topic ? "" : b.dataset.topic; render(); }); });
+  q.addEventListener("input", function () { st.q = q.value.trim(); render(); });
+  sort.addEventListener("change", function () { st.sort = sort.value; render(); });
+  clears.forEach(function (b) { b.addEventListener("click", function () { st = { q: "", area: "", topic: "", sort: "new" }; q.value = ""; sort.value = "new"; render(); q.focus(); }); });
+  var u = new URLSearchParams(location.search);
+  st.q = u.get("q") || ""; st.area = areaName[u.get("area")] ? u.get("area") : ""; st.topic = u.get("topic") || ""; st.sort = u.get("sort") === "old" ? "old" : "new";
+  q.value = st.q; sort.value = st.sort;
+  if (st.q || st.area || st.topic || st.sort !== "new") render(false);
+})();
