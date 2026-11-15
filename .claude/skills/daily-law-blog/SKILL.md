@@ -107,6 +107,7 @@ Style:
 - 2–3 sections. Headings are questions a person would type into Google.
 - Short sentences, mostly under 20 words, at about a Class 8 reading level. Explain any legal term in brackets the first time, e.g. "maintenance (monthly support)".
 - Start with the answer, not the background. Numbers and deadlines beat adjectives.
+- No em dashes (—) anywhere, in English or Hindi; the validator rejects them. Use a comma, colon or full stop. Avoid stock phrases such as "navigate", "delve", "it's important to note", "in today's world" or "landscape".
 - **Answer-first passage (so AI search can quote it).** The first paragraph of the first section must answer that section's question on its own, in 40–80 words. AI assistants quote passages like this word for word. It must:
   - repeat the subject by name, with no "it" or "this" that depends on earlier text;
   - name the law and section, the court or authority, and the place (Uttarakhand, Haldwani, Nainital);

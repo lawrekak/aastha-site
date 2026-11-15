@@ -17,7 +17,7 @@
       "h": "How long do you have to file a recovery suit?",
       "p": [
         "A recovery suit for unpaid money in Uttarakhand must usually be filed within three years of the date the debt became due, under Article 113 of the Schedule to the Limitation Act, 1963, which applies when no other article covers the claim. For money lent on demand, Article 21 sets the same three-year period, but it runs from the day the loan was made. Courts at Haldwani and Nainital can dismiss a suit filed after this period under section 3, even if the other side never raises the delay.",
-        "The three years start from when your 'right to sue accrues' — usually the due date on an invoice or cheque, the date fixed for repayment in an agreement, or the day a loan without any fixed date was handed over."
+        "The three years start from when your 'right to sue accrues': usually the due date on an invoice or cheque, the date fixed for repayment in an agreement, or the day a loan without any fixed date was handed over."
       ]
     },
     {
@@ -29,7 +29,7 @@
     }
   ],
   "whatToDo": [
-    "Note the exact date the money became due — an invoice date, cheque date, or the day a loan was handed over — before deciding when to sue.",
+    "Note the exact date the money became due, an invoice date, cheque date, or the day a loan was handed over, before deciding when to sue.",
     "If repayment keeps getting delayed, ask for a signed, dated acknowledgment of the amount owed well before three years pass.",
     "Keep every part-payment receipt or bank entry; it can restart the limitation period under section 19.",
     "File the suit in the civil court at Haldwani or Nainital with jurisdiction over the amount claimed, and take legal advice on your own facts if the three years are close to running out."
@@ -44,7 +44,7 @@
     ]
   },
   "sources": [
-    {"title": "Limitation Act, 1963 (Act No. 36 of 1963) — India Code", "url": "https://www.indiacode.nic.in/handle/123456789/1565"},
-    {"title": "The Limitation Act, 1963 — Schedule, Articles 1-125 (Indian Kanoon)", "url": "https://indiankanoon.org/doc/1317393/"}
+    {"title": "Limitation Act, 1963 (Act No. 36 of 1963): India Code", "url": "https://www.indiacode.nic.in/handle/123456789/1565"},
+    {"title": "The Limitation Act, 1963: Schedule, Articles 1-125 (Indian Kanoon)", "url": "https://indiankanoon.org/doc/1317393/"}
   ]
 }

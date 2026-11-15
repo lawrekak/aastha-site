@@ -95,6 +95,8 @@ const wc = (t) => String(t).split(/\s+/).filter(Boolean).length;
 for (const f of (fs.existsSync(BLOG) ? fs.readdirSync(BLOG) : []).filter((x) => x.endsWith(".json"))) {
   const w = `content/blog/${f}`; let a;
   try { a = JSON.parse(fs.readFileSync(path.join(BLOG, f), "utf8")); } catch (e) { err(w, "is not valid JSON: " + e.message); continue; }
+  // House style: no em dashes (they read as machine-written). Use a comma, colon or full stop.
+  if (fs.readFileSync(path.join(BLOG, f), "utf8").includes("\u2014")) err(w, "contains an em dash (\u2014); use a comma, colon or full stop instead");
   for (const k of ["title", "slug", "published", "area", "desc", "why", "keyPoints", "sections", "sources"]) if (a[k] === undefined || a[k] === "") err(w, `missing "${k}"`);
   if (a.slug && !/^[a-z0-9]+(-[a-z0-9]+)*$/.test(a.slug)) err(w, "slug must be lowercase-hyphenated");
   if (a.published && !/^\d{4}-\d{2}-\d{2}$/.test(a.published)) err(w, "published must be YYYY-MM-DD");
