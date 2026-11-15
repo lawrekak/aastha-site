@@ -220,6 +220,8 @@ const officeCard = (hi = false) => `<div class="card office">
 
 const areaCard = (a) => `<a class="card area-card" href="${areaUrl(a)}"><span class="ic">${ico(a.icon, "i")}</span><h3>${esc(a.t)}</h3><p class="muted" style="font-size:.94rem">${esc(a.d)}</p><span class="link" style="margin-top:auto">Read more ${ico("arrow")}</span></a>`;
 const ctaBand = `<div class="card cta-band"><div class="stack" style="gap:6px"><h2 class="h3">Office contact details</h2><p class="muted">Office contact details are provided for persons seeking information about the Advocate.</p></div><div class="row-wrap"><a class="btn btn-outline" href="/contact/">${ico("pin")}Office and contact details</a></div></div>`;
+// Up to 5 posts for a post's sidebar: same practice area first (newest first), then the newest others.
+const relatedFor = (a) => { const same = POSTS.filter((x) => x !== a && x.area === a.area); const rest = POSTS.filter((x) => x !== a && x.area !== a.area); return [...same, ...rest].slice(0, 5); };
 const relatedPosts = (i) => { const r = POSTS.filter((x) => x.area === i).slice(0, 4); return r.length ? `<div class="card" style="padding:18px"><h2 class="foot-h">Recent blog posts</h2><ul class="plain">${r.map((x) => `<li><a href="${postUrl(x)}">${esc(x.title)}</a></li>`).join("")}</ul></div>` : ""; };
 const postCard = (a) => `<a class="card j-card" href="${postUrl(a)}"><span class="cite">${fmtDate(a.published)} · ${esc(AREAS[a.area].t)}</span><h2 class="h3">${esc(a.title)}</h2><p class="muted" style="font-size:.92rem">${esc(a.desc)}</p><span class="meta">${Math.max(1, Math.round(postWords(a) / 200))} min read</span></a>`;
 const notice = (t) => `<div class="notice">${ico("shield", "i")}<span>${t}</span></div>`;
@@ -357,7 +359,7 @@ ${BLOG_PAGES > 1 ? `<nav class="row-wrap" aria-label="Blog pages" style="margin-
 POSTS.forEach((a) => {
   const url = postUrl(a), area = AREAS[a.area];
   add({
-    path: url, title: fit(a.title, " | Aastha Vishwakarma", " | Blog"), ogTitle: a.title, ogType: "article", desc: a.desc, priority: "0.6", updated: a.updated || a.published,
+    path: url, title: fit(a.seoTitle || a.title, " | Aastha Vishwakarma", " | Blog"), ogTitle: a.seoTitle || a.title, ogType: "article", desc: a.desc, priority: "0.6", updated: a.updated || a.published,
     crumbs: [["Blog", "/blog/"], [a.title, url]],
     extraLd: [{ "@type": "BlogPosting", "@id": U(url) + "#article", headline: a.title, description: a.desc, datePublished: a.published, dateModified: a.updated || a.published, author: { "@id": ID.person }, publisher: { "@id": ID.firm }, mainEntityOfPage: { "@id": U(url) + "#webpage" }, image: U(S.ogImage), inLanguage: "en-IN", articleSection: area.t, wordCount: postWords(a), keywords: (a.keywords || []).join(", "), isPartOf: { "@type": "Blog", "@id": U("/blog/") + "#blog", name: `${S.name}, Advocate — Blog` }, citation: (a.sources || []).map((x) => x.url) }],
     body: `<div class="article-grid"><article class="stack prose"><span class="eyebrow">Blog · <a href="${areaUrl(area)}">${esc(area.t)}</a></span><h1>${esc(a.title)}</h1>
@@ -369,7 +371,7 @@ ${a.whatToDo?.length ? `<h2 class="h3">What you can do</h2><ol>${a.whatToDo.map(
 ${a.hi ? `<section lang="hi" class="stack deva-body" style="gap:12px;margin-top:12px;padding-top:18px;border-top:1px solid var(--line-soft)"><h2 class="h3 deva">${esc(a.hi.title)}</h2><ul>${a.hi.keyPoints.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>${(a.hi.p || []).map((x) => `<p>${esc(x)}</p>`).join("")}</section>` : ""}
 ${a.sources?.length ? `<h2 class="h3">Sources</h2><ul>${a.sources.map((x) => `<li>${ext(x.url, esc(x.title))}</li>`).join("")}</ul>` : ""}
 ${notice("General information only, not legal advice. The law and its interpretation can change, and every matter depends on its own facts.")}
-</article><aside class="stack side-col"><div class="card" style="padding:18px"><h2 class="foot-h">Related practice area</h2><p><a href="${areaUrl(area)}">${esc(area.t)}</a></p></div>${POSTS.filter((x) => x !== a).slice(0, 5).length ? `<div class="card" style="padding:18px"><h2 class="foot-h">More posts</h2><ul class="plain">${POSTS.filter((x) => x !== a).slice(0, 5).map((x) => `<li><a href="${postUrl(x)}">${esc(x.title)}</a></li>`).join("")}</ul></div>` : ""}${officeCard()}</aside></div>`
+</article><aside class="stack side-col"><div class="card" style="padding:18px"><h2 class="foot-h">Related practice area</h2><p><a href="${areaUrl(area)}">${esc(area.t)}</a></p></div>${relatedFor(a).length ? `<div class="card" style="padding:18px"><h2 class="foot-h">Related posts</h2><ul class="plain">${relatedFor(a).map((x) => `<li><a href="${postUrl(x)}">${esc(x.title)}</a></li>`).join("")}</ul></div>` : ""}${officeCard()}</aside></div>`
   });
 });
 

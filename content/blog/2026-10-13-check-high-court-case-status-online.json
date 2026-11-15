@@ -3,8 +3,14 @@
   "slug": "check-high-court-case-status-online",
   "published": "2026-10-13",
   "area": 3,
-  "desc": "You can check a case pending in the Uttarakhand High Court, Nainital, online by CNR number, case number or party name, without visiting the registry.",
-  "keywords": ["uttarakhand high court case status", "nainital high court case status", "cnr number uttarakhand high court", "writ petition high court case status", "high court cause list nainital"],
+  "desc": "Check Nainital High Court case status free online by CNR, case number or party name, and see the daily cause list before travelling to Nainital.",
+  "keywords": [
+    "uttarakhand high court case status",
+    "nainital high court case status",
+    "cnr number uttarakhand high court",
+    "writ petition high court case status",
+    "high court cause list nainital"
+  ],
   "why": "People with a pending writ petition, appeal or bail matter in the High Court often travel to Nainital just to ask the registry about the next date, when the same information is online.",
   "keyPoints": [
     "Case status for the Uttarakhand High Court, Nainital, can be checked on the eCourts High Court Services portal by CNR number, case number or party name.",
@@ -55,7 +61,14 @@
     ]
   },
   "sources": [
-    {"title": "eCourts High Court Services — select Uttarakhand High Court for case status search", "url": "https://hcservices.ecourts.gov.in/hcservices/main.php"},
-    {"title": "High Court of Uttarakhand — Citizen Centric Services (case status, cause list)", "url": "https://highcourtofuttarakhand.gov.in/"}
-  ]
+    {
+      "title": "eCourts High Court Services — select Uttarakhand High Court for case status search",
+      "url": "https://hcservices.ecourts.gov.in/hcservices/main.php"
+    },
+    {
+      "title": "High Court of Uttarakhand — Citizen Centric Services (case status, cause list)",
+      "url": "https://highcourtofuttarakhand.gov.in/"
+    }
+  ],
+  "seoTitle": "Uttarakhand High Court Case Status by Case No. or Party Name"
 }

@@ -3,8 +3,14 @@
   "slug": "cat-case-status-uttarakhand",
   "published": "2026-10-01",
   "area": 7,
-  "desc": "Central government employees in Uttarakhand can track their CAT case status, hearing dates and orders online, without visiting Delhi.",
-  "keywords": ["cat case status", "central administrative tribunal advocate", "cat case kaise dekhe", "CAT Nainital circuit bench", "service matter case status"],
+  "desc": "Check CAT case status by OA number, diary number or party name. Uttarakhand cases go to the Principal Bench, New Delhi, or a Nainital circuit sitting.",
+  "keywords": [
+    "cat case status",
+    "central administrative tribunal advocate",
+    "cat case kaise dekhe",
+    "CAT Nainital circuit bench",
+    "service matter case status"
+  ],
   "why": "Uttarakhand has no permanent CAT bench, so central government employees and pensioners here often lose track of a case heard in Delhi or at an occasional Nainital circuit sitting; the status can be checked online instead of travelling.",
   "keyPoints": [
     "The Central Administrative Tribunal (CAT) handles service disputes of central government employees, under Article 323A of the Constitution.",
@@ -57,9 +63,22 @@
     ]
   },
   "sources": [
-    {"title": "The Administrative Tribunals Act, 1985 (India Code)", "url": "https://www.indiacode.nic.in/handle/123456789/1358"},
-    {"title": "Section 21, Administrative Tribunals Act, 1985 — limitation", "url": "https://indiankanoon.org/doc/1291350/"},
-    {"title": "CAT e-Filing portal — case status and bench calendar", "url": "https://efiling.cgat.gov.in/ecat/case_status.php"},
-    {"title": "CAT circuit bench to sit at Nainital for Uttarakhand cases — ETV Bharat", "url": "https://www.etvbharat.com/hi/!state/circuit-bench-of-central-administrative-tribunal-will-be-held-in-nainital-uttarakhand-news-uts25051503396"}
-  ]
+    {
+      "title": "The Administrative Tribunals Act, 1985 (India Code)",
+      "url": "https://www.indiacode.nic.in/handle/123456789/1358"
+    },
+    {
+      "title": "Section 21, Administrative Tribunals Act, 1985 — limitation",
+      "url": "https://indiankanoon.org/doc/1291350/"
+    },
+    {
+      "title": "CAT e-Filing portal — case status and bench calendar",
+      "url": "https://efiling.cgat.gov.in/ecat/case_status.php"
+    },
+    {
+      "title": "CAT circuit bench to sit at Nainital for Uttarakhand cases — ETV Bharat",
+      "url": "https://www.etvbharat.com/hi/!state/circuit-bench-of-central-administrative-tribunal-will-be-held-in-nainital-uttarakhand-news-uts25051503396"
+    }
+  ],
+  "seoTitle": "CAT Case Status Online: Principal Bench Delhi and Nainital"
 }
