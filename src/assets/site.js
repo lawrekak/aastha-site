@@ -49,7 +49,18 @@
     s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(id);
     document.head.appendChild(s);
   }
-  if (agreed || !gate) loadGA();
+  if (agreed) loadGA();
+  /* Blog and guide pages: a notice bar instead of the full-screen gate. "Got it" counts as
+     accepting the disclaimer (same session flag), hides the bar and starts analytics. */
+  var notice = $("#notice");
+  if (notice && !agreed) {
+    notice.hidden = false;
+    $("#notice-ok").addEventListener("click", function () {
+      notice.hidden = true;
+      try { sessionStorage.setItem("av-agree", "1"); } catch (e) {}
+      loadGA();
+    });
+  }
   /* Count selections of the phone number, email address, map link and WhatsApp as GA4 events. */
   document.addEventListener("click", function (e) {
     var a = e.target.closest && e.target.closest("a[href]");

@@ -338,3 +338,11 @@ nav.main a.lang{border:1px solid var(--line);margin-left:6px}
 @media (max-width:900px){.grid3 > :nth-last-child(1):nth-child(3n+2){grid-column:auto}}
 .keypoints{background:var(--accent-soft);border-left:4px solid var(--accent);border-radius:8px;padding:14px 18px}
 .keypoints ul{margin:8px 0 0;padding-left:20px;display:grid;gap:6px}
+
+/* notice bar (blog and guide pages, instead of the full-screen disclaimer) */
+.notice-bar{background:var(--surface);border-bottom:1px solid var(--line-soft);font-size:.86rem}
+.notice-in{display:flex;align-items:center;gap:12px;justify-content:space-between;padding-top:10px;padding-bottom:10px}
+.notice-in p{margin:0;color:var(--muted);display:flex;gap:8px;align-items:flex-start}
+.notice-in p svg{flex:none;margin-top:2px}
+.notice-in .btn{flex:none;min-height:36px;padding:0 14px}
+@media (max-width:640px){.notice-in{flex-direction:column;align-items:flex-start}}
