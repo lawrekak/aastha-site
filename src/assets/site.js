@@ -13,30 +13,7 @@
   document.addEventListener("click", function (e) { if (sheet && sheet.classList.contains("open") && !e.target.closest("#sheet,#menu-btn")) closeMenu(); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && sheet && sheet.classList.contains("open")) { closeMenu(); menuBtn.focus(); } });
 
-  /* Bar Council disclaimer: shown once per visit, focus kept inside until accepted.
-     Every visitor sees the same page. The content stays in the HTML behind the overlay, and a
-     legally required interstitial is not penalised by Google, so crawlers read pages normally. */
-  var gate = $("#gate"), agreed = false;
-  try { agreed = sessionStorage.getItem("av-agree") === "1"; } catch (e) {}
-  if (gate && !agreed) {
-    gate.hidden = false; document.body.style.overflow = "hidden";
-    setTimeout(function () { $("#agree").focus(); }, 30);
-    gate.addEventListener("keydown", function (e) {
-      if (e.key !== "Tab") return;
-      var f = gate.querySelectorAll("button,a[href]"), first = f[0], last = f[f.length - 1];
-      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-    });
-    $("#agree").addEventListener("click", function () {
-      gate.hidden = true; document.body.style.overflow = "";
-      try { sessionStorage.setItem("av-agree", "1"); } catch (e) {}
-      loadGA();
-      $("#main").focus();
-    });
-  }
-
-  /* Google Analytics 4. Loaded only after the visitor accepts the disclaimer (the disclaimer and
-     the privacy notice say so). Advertising features and Google signals are off. The measurement
+  /* Google Analytics 4. Loaded on every page (the privacy notice says so). Advertising features and Google signals are off. The measurement
      ID comes from content/site.json (ga4) via the data-ga attribute; empty = no analytics. */
   function loadGA() {
     var id = document.documentElement.getAttribute("data-ga");
@@ -49,18 +26,7 @@
     s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(id);
     document.head.appendChild(s);
   }
-  if (agreed) loadGA();
-  /* Blog and guide pages: a notice bar instead of the full-screen gate. "Got it" counts as
-     accepting the disclaimer (same session flag), hides the bar and starts analytics. */
-  var notice = $("#notice");
-  if (notice && !agreed) {
-    notice.hidden = false;
-    $("#notice-ok").addEventListener("click", function () {
-      notice.hidden = true;
-      try { sessionStorage.setItem("av-agree", "1"); } catch (e) {}
-      loadGA();
-    });
-  }
+  loadGA();
   /* Count selections of the phone number, email address, map link and WhatsApp as GA4 events. */
   document.addEventListener("click", function (e) {
     var a = e.target.closest && e.target.closest("a[href]");

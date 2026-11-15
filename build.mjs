@@ -131,32 +131,6 @@ function footer(p) {
 </div></footer>`;
 }
 
-// Information pages (blog, guides, disclaimer, privacy) open without the full-screen gate and show a
-// notice bar instead. Profile pages (home, about, contact, practice areas, FAQ) keep the gate.
-const isInfoPage = (p) => /^\/(blog|guides|disclaimer|privacy)\//.test(p.path || "");
-function noticeBar(p) {
-  if (!isInfoPage(p)) return "";
-  return `<div class="notice-bar" id="notice" role="region" aria-label="Disclaimer" hidden><div class="wrap notice-in">
-  <p>${ico("shield")}<span>General legal information, not advertising or legal advice (Bar Council of India rules). <a href="/disclaimer/">Disclaimer</a>${S.ga4 ? ' · “Got it” also allows visit counting (<a href="/privacy/">Privacy</a>).' : ""}</span></p>
-  <button class="btn btn-primary btn-sm" id="notice-ok" type="button">Got it</button>
-</div></div>`;
-}
-function gate(p) {
-  if (isInfoPage(p)) return "";
-  const hi = p.lang === "hi";
-  const d = hi ? HI.disclaimer : { h: "Before you continue", p: 'The Bar Council of India does not permit advocates to advertise or solicit work. By selecting "I agree" you confirm that:', items: [`you are seeking information about ${S.name}, Advocate, of your own accord;`, "there has been no advertisement, personal communication, solicitation or inducement of any kind;", "the information on this site is not legal advice, and using it does not create an advocate–client relationship."], agree: "I agree" };
-  return `<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-h" aria-describedby="gate-d" hidden>
-  <div class="card box"${hi ? ' lang="hi"' : ""}>
-    <span class="eyebrow">${ico("shield")}${hi ? "अस्वीकरण" : "Disclaimer"}</span>
-    <h2 id="gate-h">${esc(d.h)}</h2>
-    <p id="gate-d" class="muted">${esc(d.p)}</p>
-    <ul>${d.items.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>
-    ${S.ga4 ? `<p class="muted" style="font-size:.85rem">${hi ? 'सहमति के बाद, वेबसाइट पर आने वालों की गिनती Google Analytics से की जाती है (<a href="/privacy/">गोपनीयता सूचना</a>)।' : 'After you agree, visits are counted with Google Analytics (see the <a href="/privacy/">Privacy notice</a>).'}</p>` : ""}
-    <button class="btn btn-primary" id="agree" type="button">${esc(d.agree)}</button>
-    <a href="/disclaimer/" class="muted" style="font-size:.85rem">${hi ? "पूरा अस्वीकरण पढ़ें" : "Read the full disclaimer"}</a>
-  </div></div>`;
-}
-
 function crumbsHtml(p) {
   if (!p.crumbs?.length) return "";
   const all = [["Home", "/"], ...p.crumbs];
@@ -205,13 +179,11 @@ ${alts.map(([l, h]) => `<link rel="alternate" hreflang="${l}" href="${U(h)}">`).
 <body>
 ${ICONS}
 ${header(p)}
-${noticeBar(p)}
 <main id="main" tabindex="-1"><div class="wrap">
 ${crumbsHtml(p)}
 ${p.body}
 </div></main>
 ${footer(p)}
-${gate(p)}
 </body>
 </html>
 `;
@@ -415,10 +387,10 @@ add({
   body: `<article class="prose stack"><h1>Disclaimer</h1><p>The Bar Council of India does not permit advocates to solicit work or advertise. This website provides information about ${esc(S.name)}, Advocate, as permitted under Rule 36 of the Bar Council of India Rules: name, contact details, qualifications, enrolment details and areas of practice.</p><p>By using this website you acknowledge that you are seeking information of your own accord, that there has been no advertisement, personal communication, solicitation or inducement, and that nothing on this website is legal advice.</p><p>Using this website or contacting the office does not create an advocate–client relationship. The website does not publish past cases, their outcomes or client testimonials.</p><p>The information on this website is true and accurate to the best of my knowledge.</p></article>`
 });
 add({
-  path: "/privacy/", title: "Privacy Notice | Aastha Vishwakarma, Advocate", desc: S.ga4 ? "This website has no forms, uses no advertising cookies and does not sell data. Visits are counted with Google Analytics after you accept the disclaimer." : "This website does not collect personal details through forms, does not use tracking or advertising cookies, and does not sell any data.", crumbs: [["Privacy notice", "/privacy/"]], priority: "0.2",
+  path: "/privacy/", title: "Privacy Notice | Aastha Vishwakarma, Advocate", desc: S.ga4 ? "This website has no forms, uses no advertising cookies and does not sell data. Visits are counted with Google Analytics, with advertising features switched off." : "This website does not collect personal details through forms, does not use tracking or advertising cookies, and does not sell any data.", crumbs: [["Privacy notice", "/privacy/"]], priority: "0.2",
   body: `<article class="prose stack"><h1>Privacy notice</h1>
 <h2 class="h3">What is collected</h2><p>This website has no forms and does not collect personal details. If you contact the office by phone or email, the details you share are used only to reply to you and are not sold or shared for marketing. You can ask for them to be deleted by calling ${esc(S.phoneDisplay)}.</p>
-${S.ga4 ? `<h2 class="h3">Visit statistics</h2><p>After you select “I agree” on the disclaimer (or “Got it” on the notice shown on blog and guide pages), this website uses Google Analytics to count visits. It records the pages viewed, your approximate city, the type of device, how you reached the site (for example, from Google Search) and whether you selected the phone number, email address or map link. It does not record your name, and advertising features and Google signals are switched off, so the data is not used for advertising.</p>
+${S.ga4 ? `<h2 class="h3">Visit statistics</h2><p>This website uses Google Analytics to count visits. It records the pages viewed, your approximate city, the type of device, how you reached the site (for example, from Google Search) and whether you selected the phone number, email address or map link. It does not record your name, and advertising features and Google signals are switched off, so the data is not used for advertising.</p>
 <p>Google Analytics sets its own cookies (named <code>_ga</code>) on this website, which expire after 13 months. Google processes the data under its <a href="https://policies.google.com/privacy" rel="noopener">privacy policy</a>. To stop it, block cookies for this website in your browser or install Google’s <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">opt-out add-on</a>.</p>
 <h2 class="h3">Cookies</h2><p>This website does not use advertising cookies. Apart from the Google Analytics cookies described above, your browser remembers only that you accepted the disclaimer, for the current visit.</p>` : `<h2 class="h3">Cookies</h2><p>This website does not use advertising or tracking cookies. Your browser remembers only that you accepted the disclaimer, for the current visit.</p>`}
 <p class="muted">This notice is written with the Digital Personal Data Protection Act, 2023 in mind and will be updated as the rules under it take effect.</p></article>`
