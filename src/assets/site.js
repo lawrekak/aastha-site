@@ -13,30 +13,7 @@
   document.addEventListener("click", function (e) { if (sheet && sheet.classList.contains("open") && !e.target.closest("#sheet,#menu-btn")) closeMenu(); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && sheet && sheet.classList.contains("open")) { closeMenu(); menuBtn.focus(); } });
 
-  /* Bar Council disclaimer: shown once per visit, focus kept inside until accepted.
-     Every visitor sees the same page. The content stays in the HTML behind the overlay, and a
-     legally required interstitial is not penalised by Google, so crawlers read pages normally. */
-  var gate = $("#gate"), agreed = false;
-  try { agreed = sessionStorage.getItem("av-agree") === "1"; } catch (e) {}
-  if (gate && !agreed) {
-    gate.hidden = false; document.body.style.overflow = "hidden";
-    setTimeout(function () { $("#agree").focus(); }, 30);
-    gate.addEventListener("keydown", function (e) {
-      if (e.key !== "Tab") return;
-      var f = gate.querySelectorAll("button,a[href]"), first = f[0], last = f[f.length - 1];
-      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-    });
-    $("#agree").addEventListener("click", function () {
-      gate.hidden = true; document.body.style.overflow = "";
-      try { sessionStorage.setItem("av-agree", "1"); } catch (e) {}
-      loadGA();
-      $("#main").focus();
-    });
-  }
-
-  /* Google Analytics 4. Loaded only after the visitor accepts the disclaimer (the disclaimer and
-     the privacy notice say so). Advertising features and Google signals are off. The measurement
+  /* Google Analytics 4. Loaded on every page (the privacy notice says so). Advertising features and Google signals are off. The measurement
      ID comes from content/site.json (ga4) via the data-ga attribute; empty = no analytics. */
   function loadGA() {
     var id = document.documentElement.getAttribute("data-ga");
@@ -49,7 +26,7 @@
     s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(id);
     document.head.appendChild(s);
   }
-  if (agreed || !gate) loadGA();
+  loadGA();
   /* Count selections of the phone number, email address, map link and WhatsApp as GA4 events. */
   document.addEventListener("click", function (e) {
     var a = e.target.closest && e.target.closest("a[href]");
@@ -144,4 +121,63 @@
       .catch(function () { bubble.textContent = hi ? "सहायक से संपर्क नहीं हो पाया। कृपया परामर्श पृष्ठ से समय चुनें या कार्यालय को फ़ोन करें।" : "The assistant could not be reached. Please use the consultation page or call the office."; turns.pop(); })
       .then(function () { busy = false; sendBtn.disabled = false; });
   });
+})();
+
+/* Theme: header shadow once scrolled, and fade-in for sections marked .reveal. */
+(function () {
+  var h = document.querySelector("header.top");
+  var onScroll = function () { if (h) h.classList.toggle("scrolled", window.scrollY > 8); };
+  window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+  if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  // Only sections still below the fold are hidden, and only until they scroll into view.
+  var els = [].filter.call(document.querySelectorAll(".reveal"), function (e) { return e.getBoundingClientRect().top > window.innerHeight; });
+  var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.remove("pending"); io.unobserve(e.target); } }); }, { rootMargin: "0px 0px -8% 0px" });
+  els.forEach(function (e) { e.classList.add("pending"); io.observe(e); });
+  // Never leave content hidden (e.g. full-page captures, print).
+  window.addEventListener("beforeprint", function () { els.forEach(function (e) { e.classList.remove("pending"); }); });
+})();
+
+/* Blog filters: search, area of practice, common questions, sort. State is kept in the URL so a filtered view can be shared. */
+(function () {
+  var data = document.getElementById("post-index"), form = document.querySelector(".bf");
+  if (!data || !form) return;
+  var posts = JSON.parse(data.textContent), list = document.getElementById("bf-list"), initial = list.innerHTML;
+  var q = document.getElementById("bf-q"), sort = document.getElementById("bf-sort"), count = document.getElementById("bf-count");
+  var empty = document.querySelector(".bf-empty"), pages = document.getElementById("bf-pages"), clears = document.querySelectorAll(".bf-clear");
+  var areaBtns = form.querySelectorAll("[data-area]"), topicBtns = form.querySelectorAll("[data-topic]");
+  var areaName = {}; areaBtns.forEach(function (b) { if (b.dataset.area) areaName[b.dataset.area] = b.firstChild.textContent.trim(); });
+  var st = { q: "", area: "", topic: "", sort: "new" };
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
+  var fmt = function (iso) { return new Date(iso + "T00:00:00").toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" }); };
+  var terms = function () { return st.q.toLowerCase().split(/\s+/).filter(Boolean); };
+  var hl = function (text) { var t = esc(text); terms().forEach(function (w) { if (w.length > 1) t = t.replace(new RegExp("(" + w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "ig"), "<mark>$1</mark>"); }); return t; };
+  function card(p) { return '<a class="card j-card" href="' + p.u + '"><span class="cite">' + fmt(p.p) + " · " + esc(areaName[p.a] || "") + '</span><h2 class="h3">' + hl(p.t) + '</h2><p class="muted" style="font-size:.92rem">' + hl(p.d) + '</p><span class="meta">' + p.m + " min read</span></a>"; }
+  function render(push) {
+    var active = st.q || st.area || st.topic || st.sort !== "new";
+    areaBtns.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.area === st.area)); });
+    topicBtns.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.topic === st.topic)); });
+    clears.forEach(function (b) { if (b.closest(".bf")) b.hidden = !active; });
+    form.querySelectorAll('.chip[aria-pressed="true"]').forEach(function (b) { var row = b.parentNode; if (row.scrollWidth > row.clientWidth) row.scrollLeft = b.offsetLeft - row.offsetLeft - 16; });
+    var ws = terms();
+    var res = posts.filter(function (p) { return (!st.area || p.a === st.area) && (!st.topic || p.k.indexOf(st.topic) > -1) && ws.every(function (w) { return p.s.indexOf(w) > -1; }); });
+    if (st.sort === "old") res = res.slice().reverse();
+    if (!active) { list.innerHTML = initial; if (pages) pages.hidden = false; }
+    else { list.innerHTML = res.map(card).join(""); if (pages) pages.hidden = true; }
+    list.hidden = active && !res.length; empty.hidden = !(active && !res.length);
+    count.textContent = active ? res.length + (res.length === 1 ? " post" : " posts") + " found" : posts.length + " posts";
+    if (push !== false) {
+      var u = new URLSearchParams(); if (st.q) u.set("q", st.q); if (st.area) u.set("area", st.area); if (st.topic) u.set("topic", st.topic); if (st.sort !== "new") u.set("sort", st.sort);
+      history.replaceState(null, "", location.pathname + (u.toString() ? "?" + u : ""));
+      if (active && window.gtag) { clearTimeout(render.t); render.t = setTimeout(function () { gtag("event", "blog_filter", { search_term: st.q, area: st.area, topic: st.topic }); }, 1200); }
+    }
+  }
+  areaBtns.forEach(function (b) { b.addEventListener("click", function () { st.area = b.dataset.area; render(); }); });
+  topicBtns.forEach(function (b) { b.addEventListener("click", function () { st.topic = st.topic === b.dataset.topic ? "" : b.dataset.topic; render(); }); });
+  q.addEventListener("input", function () { st.q = q.value.trim(); render(); });
+  sort.addEventListener("change", function () { st.sort = sort.value; render(); });
+  clears.forEach(function (b) { b.addEventListener("click", function () { st = { q: "", area: "", topic: "", sort: "new" }; q.value = ""; sort.value = "new"; render(); q.focus(); }); });
+  var u = new URLSearchParams(location.search);
+  st.q = u.get("q") || ""; st.area = areaName[u.get("area")] ? u.get("area") : ""; st.topic = u.get("topic") || ""; st.sort = u.get("sort") === "old" ? "old" : "new";
+  q.value = st.q; sort.value = st.sort;
+  if (st.q || st.area || st.topic || st.sort !== "new") render(false);
 })();

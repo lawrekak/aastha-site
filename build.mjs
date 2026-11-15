@@ -131,21 +131,6 @@ function footer(p) {
 </div></footer>`;
 }
 
-function gate(p) {
-  const hi = p.lang === "hi";
-  const d = hi ? HI.disclaimer : { h: "Before you continue", p: 'The Bar Council of India does not permit advocates to advertise or solicit work. By selecting "I agree" you confirm that:', items: [`you are seeking information about ${S.name}, Advocate, of your own accord;`, "there has been no advertisement, personal communication, solicitation or inducement of any kind;", "the information on this site is not legal advice, and using it does not create an advocate–client relationship."], agree: "I agree" };
-  return `<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-h" aria-describedby="gate-d" hidden>
-  <div class="card box"${hi ? ' lang="hi"' : ""}>
-    <span class="eyebrow">${ico("shield")}${hi ? "अस्वीकरण" : "Disclaimer"}</span>
-    <h2 id="gate-h">${esc(d.h)}</h2>
-    <p id="gate-d" class="muted">${esc(d.p)}</p>
-    <ul>${d.items.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>
-    ${S.ga4 ? `<p class="muted" style="font-size:.85rem">${hi ? 'सहमति के बाद, वेबसाइट पर आने वालों की गिनती Google Analytics से की जाती है (<a href="/privacy/">गोपनीयता सूचना</a>)।' : 'After you agree, visits are counted with Google Analytics (see the <a href="/privacy/">Privacy notice</a>).'}</p>` : ""}
-    <button class="btn btn-primary" id="agree" type="button">${esc(d.agree)}</button>
-    <a href="/disclaimer/" class="muted" style="font-size:.85rem">${hi ? "पूरा अस्वीकरण पढ़ें" : "Read the full disclaimer"}</a>
-  </div></div>`;
-}
-
 function crumbsHtml(p) {
   if (!p.crumbs?.length) return "";
   const all = [["Home", "/"], ...p.crumbs];
@@ -186,7 +171,7 @@ ${alts.map(([l, h]) => `<link rel="alternate" hreflang="${l}" href="${U(h)}">`).
 <link rel="alternate" type="application/rss+xml" href="/blog/feed.xml" title="${esc(S.name)}, Advocate — Blog">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Lato:wght@400;700&family=IBM+Plex+Mono:wght@400;500&family=Tiro+Devanagari+Hindi&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Tiro+Devanagari+Hindi&display=swap">
 <link rel="stylesheet" href="/assets/site.css?v=${V_CSS}">
 <script type="application/ld+json">${graph(p)}</script>
 <script src="/assets/site.js?v=${V_JS}" defer></script>
@@ -199,7 +184,6 @@ ${crumbsHtml(p)}
 ${p.body}
 </div></main>
 ${footer(p)}
-${gate(p)}
 </body>
 </html>
 `;
@@ -220,7 +204,9 @@ const officeCard = (hi = false) => `<div class="card office">
 
 const areaCard = (a) => `<a class="card area-card" href="${areaUrl(a)}"><span class="ic">${ico(a.icon, "i")}</span><h3>${esc(a.t)}</h3><p class="muted" style="font-size:.94rem">${esc(a.d)}</p><span class="link" style="margin-top:auto">Read more ${ico("arrow")}</span></a>`;
 const ctaBand = `<div class="card cta-band"><div class="stack" style="gap:6px"><h2 class="h3">Office contact details</h2><p class="muted">Office contact details are provided for persons seeking information about the Advocate.</p></div><div class="row-wrap"><a class="btn btn-outline" href="/contact/">${ico("pin")}Office and contact details</a></div></div>`;
-const relatedPosts = (i) => { const r = POSTS.filter((x) => x.area === i).slice(0, 4); return r.length ? `<div class="card" style="padding:18px"><h2 class="foot-h">Recent blog posts</h2><ul class="plain">${r.map((x) => `<li><a href="${postUrl(x)}">${esc(x.title)}</a></li>`).join("")}</ul></div>` : ""; };
+// Up to 5 posts for a post's sidebar: same practice area first (newest first), then the newest others.
+const relatedFor = (a) => { const same = POSTS.filter((x) => x !== a && x.area === a.area); const rest = POSTS.filter((x) => x !== a && x.area !== a.area); return [...same, ...rest].slice(0, 5); };
+const relatedPosts = (i) => { const r = POSTS.filter((x) => x.area === i).slice(0, 4); return r.length ? `<div class="card" style="padding:18px"><h2 class="foot-h">Recent blog posts</h2><ul class="plain">${r.map((x) => `<li><a href="${postUrl(x)}">${esc(x.title)}</a></li>`).join("")}</ul>${POSTS.filter((x) => x.area === i).length > r.length ? `<p style="margin-top:10px"><a class="link" href="/blog/?area=${AREAS[i].slug}">All ${POSTS.filter((x) => x.area === i).length} posts on this area</a></p>` : ""}</div>` : ""; };
 const postCard = (a) => `<a class="card j-card" href="${postUrl(a)}"><span class="cite">${fmtDate(a.published)} · ${esc(AREAS[a.area].t)}</span><h2 class="h3">${esc(a.title)}</h2><p class="muted" style="font-size:.92rem">${esc(a.desc)}</p><span class="meta">${Math.max(1, Math.round(postWords(a) / 200))} min read</span></a>`;
 const notice = (t) => `<div class="notice">${ico("shield", "i")}<span>${t}</span></div>`;
 const faqItems = (items) => items.map(([q, a]) => `<details><summary>${esc(q)}${ico("right", "i")}</summary><p>${esc(a)}</p></details>`).join("");
@@ -248,12 +234,12 @@ add({
       <div class="fact">${ico("lang", "i")}<div><b>Hindi and English</b>Languages</div></div>
     </div>
   </div>
-  ${officeCard()}
 </section>
 <section class="forums" aria-label="Forums appeared before"><span class="lbl">Appears before</span>${S.forums.map((f) => `<span class="f">${ico("court", "i")}${esc(f.replace(" (NCLAT)", ""))}</span>`).join("")}</section>
-<section class="block" aria-labelledby="h-areas"><div class="sec-head"><div class="stack"><span class="eyebrow">Areas of practice</span><h2 id="h-areas">Matters handled</h2></div><a class="link" href="/practice-areas/">All practice areas ${ico("arrow")}</a></div><div class="grid3">${AREAS.map(areaCard).join("")}</div></section>
-<section class="block" aria-labelledby="h-guide"><div class="card guide-band"><div class="stack"><span class="eyebrow">Guide</span><h2 id="h-guide">${esc(GUIDE.title)}</h2><p class="muted">${esc(GUIDE.desc)}</p></div><a class="btn btn-outline" href="${GUIDE_URL}">Read the guide ${ico("arrow")}</a></div></section>
-<section class="block" aria-labelledby="h-faqs"><div class="sec-head"><div class="stack"><span class="eyebrow">Questions</span><h2 id="h-faqs">Common questions</h2></div><a class="link" href="/faq/">All questions ${ico("arrow")}</a></div><div style="max-width:820px">${faqItems(FAQ.slice(0, 3))}</div></section>`,
+<section class="block reveal" aria-labelledby="h-areas"><div class="sec-head"><div class="stack"><span class="eyebrow">Areas of practice</span><h2 id="h-areas">Matters handled</h2></div><a class="link" href="/practice-areas/">All practice areas ${ico("arrow")}</a></div><div class="grid3">${AREAS.map(areaCard).join("")}</div></section>
+<section class="block reveal" aria-labelledby="h-office"><div class="office-band"><div class="stack"><span class="eyebrow">Office</span><h2 id="h-office">Vishwakarma, Kumar &amp; Jain Law Offices, Haldwani</h2><p class="muted">Matters before the High Court of Uttarakhand at Nainital, the District Courts at Haldwani and Nainital, and the Delhi courts and tribunals are handled from the office at Bhotia Parao, Haldwani.</p></div>${officeCard()}</div></section>
+<section class="block reveal" aria-labelledby="h-guide"><div class="card guide-band"><div class="stack"><span class="eyebrow">Guide</span><h2 id="h-guide">${esc(GUIDE.title)}</h2><p class="muted">${esc(GUIDE.desc)}</p></div><a class="btn btn-outline" href="${GUIDE_URL}">Read the guide ${ico("arrow")}</a></div></section>
+<section class="block reveal" aria-labelledby="h-faqs"><div class="sec-head"><div class="stack"><span class="eyebrow">Questions</span><h2 id="h-faqs">Common questions</h2></div><a class="link" href="/faq/">All questions ${ico("arrow")}</a></div><div style="max-width:820px">${faqItems(FAQ.slice(0, 3))}</div></section>`,
   extraLd: [faqLd(FAQ.slice(0, 3), "/")]
 });
 
@@ -339,6 +325,34 @@ ${notice(esc(GUIDE.note))}
 <div class="block">${ctaBand}</div>`
 });
 
+// Blog filters: quick topics people search for most (from keywords.json and Search Console).
+// A topic is shown only when at least one post matches it.
+const BLOG_TOPICS = [
+  ["Cheque bounce", /cheque|\b138\b|negotiable instruments/i],
+  ["Divorce", /divorce|13b|talaq|तलाक/i],
+  ["Maintenance", /maintenance|alimony|गुज़ारा|भरण/i],
+  ["Custody", /custody|guardian|visitation/i],
+  ["Uniform Civil Code", /\bucc\b|uniform civil code/i],
+  ["Land and mutation", /\bland\b|mutation|dakhil|bhu kanoon|khatauni|registry/i],
+  ["Case status", /case status|cause list|e-?courts/i],
+  ["Bail", /\bbail\b/i],
+  ["Government jobs and service", /service law|service matter|recruitment|teacher|employee|pension|promotion|government job/i],
+  ["Recovery of money", /recovery|decree|execution|money suit/i],
+];
+const postText = (a) => [a.title, a.seoTitle, a.desc, ...(a.keywords || []), a.hi?.title, ...a.sections.map((x) => x.h)].filter(Boolean).join(" ");
+const TOPICS_LIVE = BLOG_TOPICS.map(([t, re]) => [t, POSTS.filter((a) => re.test(postText(a))).length, re]).filter((x) => x[1] > 0);
+const blogIndex = () => JSON.stringify(POSTS.map((a) => ({ u: postUrl(a), t: a.title, d: a.desc, p: a.published, a: AREAS[a.area].slug, m: Math.max(1, Math.round(postWords(a) / 200)),
+  s: postText(a).toLowerCase(), k: TOPICS_LIVE.filter((x) => x[2].test(postText(a))).map((x) => x[0]) }))).replace(/</g, "\\u003c");
+const blogFilters = () => {
+  const counts = AREAS.map((x, i) => [x, POSTS.filter((a) => a.area === i).length]).filter((x) => x[1] > 0);
+  return `<form class="bf" role="search" aria-label="Filter blog posts" onsubmit="return false">
+  <div class="bf-search">${ico("search")}<label class="sr" for="bf-q">Search posts</label><input id="bf-q" type="search" placeholder="Search posts, e.g. 138 notice, 13B, mutation" autocomplete="off"></div>
+  <div class="bf-row"><span class="bf-lbl" id="bf-area-l">Area of practice</span><div class="chips" role="group" aria-labelledby="bf-area-l"><button type="button" class="chip" data-area="" aria-pressed="true">All <span class="n">${POSTS.length}</span></button>${counts.map(([x, n]) => `<button type="button" class="chip" data-area="${x.slug}" aria-pressed="false">${esc(x.t)} <span class="n">${n}</span></button>`).join("")}</div></div>
+  <div class="bf-row"><span class="bf-lbl" id="bf-topic-l">Common questions</span><div class="chips" role="group" aria-labelledby="bf-topic-l">${TOPICS_LIVE.map(([t, n]) => `<button type="button" class="chip" data-topic="${esc(t)}" aria-pressed="false">${esc(t)} <span class="n">${n}</span></button>`).join("")}</div></div>
+  <div class="bf-bar"><p class="muted" id="bf-count" aria-live="polite">${POSTS.length} posts</p><div class="bf-tools"><label class="sr" for="bf-sort">Sort</label><select id="bf-sort"><option value="new">Newest first</option><option value="old">Oldest first</option></select><button type="button" class="link bf-clear" hidden>Clear filters</button></div></div>
+</form>
+<script type="application/json" id="post-index">${blogIndex()}</script>`;
+};
 // Blog: short daily posts on current legal questions, 12 per listing page
 const PER_PAGE = 12, BLOG_PAGES = Math.max(1, Math.ceil(POSTS.length / PER_PAGE));
 for (let n = 1; n <= BLOG_PAGES; n++) {
@@ -350,14 +364,15 @@ for (let n = 1; n <= BLOG_PAGES; n++) {
     crumbs: n === 1 ? [["Blog", "/blog/"]] : [["Blog", "/blog/"], [`Page ${n}`, url]],
     body: `<span class="eyebrow">Blog</span><h1 style="margin:10px 0 12px">${n === 1 ? "Legal blog" : `Legal blog: page ${n}`}</h1>
 <p class="muted" style="margin-bottom:24px;max-width:62ch">Short posts on legal questions in the news and in everyday life in Uttarakhand, in plain language. Each takes about two minutes to read. General information only, not legal advice.</p>
-${list.length ? `<div class="grid3">${list.map(postCard).join("")}</div>` : `<div class="card" style="padding:22px"><p>The first posts will appear here soon. Meanwhile, see the <a href="/guides/">guides</a>.</p></div>`}
-${BLOG_PAGES > 1 ? `<nav class="row-wrap" aria-label="Blog pages" style="margin-top:24px">${n > 1 ? `<a class="btn btn-outline" href="${n === 2 ? "/blog/" : `/blog/page/${n - 1}/`}">Newer posts</a>` : ""}${n < BLOG_PAGES ? `<a class="btn btn-outline" href="/blog/page/${n + 1}/">Older posts</a>` : ""}</nav>` : ""}`
+${n === 1 && POSTS.length > 1 ? blogFilters() : n > 1 ? `<p style="margin-bottom:20px"><a class="link" href="/blog/">Search and filter all posts</a></p>` : ""}
+${list.length ? `<div class="grid3" id="bf-list">${list.map(postCard).join("")}</div><div class="card bf-empty" hidden style="padding:22px"><p>No posts match these filters. Try another word or <button type="button" class="link bf-clear">clear the filters</button>.</p></div>` : `<div class="card" style="padding:22px"><p>The first posts will appear here soon. Meanwhile, see the <a href="/guides/">guides</a>.</p></div>`}
+${BLOG_PAGES > 1 ? `<nav class="row-wrap" id="bf-pages" aria-label="Blog pages" style="margin-top:24px">${n > 1 ? `<a class="btn btn-outline" href="${n === 2 ? "/blog/" : `/blog/page/${n - 1}/`}">Newer posts</a>` : ""}${n < BLOG_PAGES ? `<a class="btn btn-outline" href="/blog/page/${n + 1}/">Older posts</a>` : ""}</nav>` : ""}`
   });
 }
 POSTS.forEach((a) => {
   const url = postUrl(a), area = AREAS[a.area];
   add({
-    path: url, title: fit(a.title, " | Aastha Vishwakarma", " | Blog"), ogTitle: a.title, ogType: "article", desc: a.desc, priority: "0.6", updated: a.updated || a.published,
+    path: url, title: fit(a.seoTitle || a.title, " | Aastha Vishwakarma", " | Blog"), ogTitle: a.seoTitle || a.title, ogType: "article", desc: a.desc, priority: "0.6", updated: a.updated || a.published,
     crumbs: [["Blog", "/blog/"], [a.title, url]],
     extraLd: [{ "@type": "BlogPosting", "@id": U(url) + "#article", headline: a.title, description: a.desc, datePublished: a.published, dateModified: a.updated || a.published, author: { "@id": ID.person }, publisher: { "@id": ID.firm }, mainEntityOfPage: { "@id": U(url) + "#webpage" }, image: U(S.ogImage), inLanguage: "en-IN", articleSection: area.t, wordCount: postWords(a), keywords: (a.keywords || []).join(", "), isPartOf: { "@type": "Blog", "@id": U("/blog/") + "#blog", name: `${S.name}, Advocate — Blog` }, citation: (a.sources || []).map((x) => x.url) }],
     body: `<div class="article-grid"><article class="stack prose"><span class="eyebrow">Blog · <a href="${areaUrl(area)}">${esc(area.t)}</a></span><h1>${esc(a.title)}</h1>
@@ -369,7 +384,7 @@ ${a.whatToDo?.length ? `<h2 class="h3">What you can do</h2><ol>${a.whatToDo.map(
 ${a.hi ? `<section lang="hi" class="stack deva-body" style="gap:12px;margin-top:12px;padding-top:18px;border-top:1px solid var(--line-soft)"><h2 class="h3 deva">${esc(a.hi.title)}</h2><ul>${a.hi.keyPoints.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>${(a.hi.p || []).map((x) => `<p>${esc(x)}</p>`).join("")}</section>` : ""}
 ${a.sources?.length ? `<h2 class="h3">Sources</h2><ul>${a.sources.map((x) => `<li>${ext(x.url, esc(x.title))}</li>`).join("")}</ul>` : ""}
 ${notice("General information only, not legal advice. The law and its interpretation can change, and every matter depends on its own facts.")}
-</article><aside class="stack side-col"><div class="card" style="padding:18px"><h2 class="foot-h">Related practice area</h2><p><a href="${areaUrl(area)}">${esc(area.t)}</a></p></div>${POSTS.filter((x) => x !== a).slice(0, 5).length ? `<div class="card" style="padding:18px"><h2 class="foot-h">More posts</h2><ul class="plain">${POSTS.filter((x) => x !== a).slice(0, 5).map((x) => `<li><a href="${postUrl(x)}">${esc(x.title)}</a></li>`).join("")}</ul></div>` : ""}${officeCard()}</aside></div>`
+</article><aside class="stack side-col"><div class="card" style="padding:18px"><h2 class="foot-h">Related practice area</h2><p><a href="${areaUrl(area)}">${esc(area.t)}</a></p></div>${relatedFor(a).length ? `<div class="card" style="padding:18px"><h2 class="foot-h">Related posts</h2><ul class="plain">${relatedFor(a).map((x) => `<li><a href="${postUrl(x)}">${esc(x.title)}</a></li>`).join("")}</ul></div>` : ""}${officeCard()}</aside></div>`
   });
 });
 
@@ -401,10 +416,10 @@ add({
   body: `<article class="prose stack"><h1>Disclaimer</h1><p>The Bar Council of India does not permit advocates to solicit work or advertise. This website provides information about ${esc(S.name)}, Advocate, as permitted under Rule 36 of the Bar Council of India Rules: name, contact details, qualifications, enrolment details and areas of practice.</p><p>By using this website you acknowledge that you are seeking information of your own accord, that there has been no advertisement, personal communication, solicitation or inducement, and that nothing on this website is legal advice.</p><p>Using this website or contacting the office does not create an advocate–client relationship. The website does not publish past cases, their outcomes or client testimonials.</p><p>The information on this website is true and accurate to the best of my knowledge.</p></article>`
 });
 add({
-  path: "/privacy/", title: "Privacy Notice | Aastha Vishwakarma, Advocate", desc: S.ga4 ? "This website has no forms, uses no advertising cookies and does not sell data. Visits are counted with Google Analytics after you accept the disclaimer." : "This website does not collect personal details through forms, does not use tracking or advertising cookies, and does not sell any data.", crumbs: [["Privacy notice", "/privacy/"]], priority: "0.2",
+  path: "/privacy/", title: "Privacy Notice | Aastha Vishwakarma, Advocate", desc: S.ga4 ? "This website has no forms, uses no advertising cookies and does not sell data. Visits are counted with Google Analytics, with advertising features switched off." : "This website does not collect personal details through forms, does not use tracking or advertising cookies, and does not sell any data.", crumbs: [["Privacy notice", "/privacy/"]], priority: "0.2",
   body: `<article class="prose stack"><h1>Privacy notice</h1>
 <h2 class="h3">What is collected</h2><p>This website has no forms and does not collect personal details. If you contact the office by phone or email, the details you share are used only to reply to you and are not sold or shared for marketing. You can ask for them to be deleted by calling ${esc(S.phoneDisplay)}.</p>
-${S.ga4 ? `<h2 class="h3">Visit statistics</h2><p>After you select “I agree” on the disclaimer, this website uses Google Analytics to count visits. It records the pages viewed, your approximate city, the type of device, how you reached the site (for example, from Google Search) and whether you selected the phone number, email address or map link. It does not record your name, and advertising features and Google signals are switched off, so the data is not used for advertising.</p>
+${S.ga4 ? `<h2 class="h3">Visit statistics</h2><p>This website uses Google Analytics to count visits. It records the pages viewed, your approximate city, the type of device, how you reached the site (for example, from Google Search) and whether you selected the phone number, email address or map link. It does not record your name, and advertising features and Google signals are switched off, so the data is not used for advertising.</p>
 <p>Google Analytics sets its own cookies (named <code>_ga</code>) on this website, which expire after 13 months. Google processes the data under its <a href="https://policies.google.com/privacy" rel="noopener">privacy policy</a>. To stop it, block cookies for this website in your browser or install Google’s <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">opt-out add-on</a>.</p>
 <h2 class="h3">Cookies</h2><p>This website does not use advertising cookies. Apart from the Google Analytics cookies described above, your browser remembers only that you accepted the disclaimer, for the current visit.</p>` : `<h2 class="h3">Cookies</h2><p>This website does not use advertising or tracking cookies. Your browser remembers only that you accepted the disclaimer, for the current visit.</p>`}
 <p class="muted">This notice is written with the Digital Personal Data Protection Act, 2023 in mind and will be updated as the rules under it take effect.</p></article>`
