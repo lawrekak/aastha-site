@@ -1,0 +1,57 @@
+{
+  "title": "Cheque Bounce Case: Is Just Denying the Debt Enough?",
+  "slug": "cheque-bounce-case-denial-not-enough",
+  "published": "2026-11-18",
+  "area": 1,
+  "desc": "No. The Supreme Court held in August 2026 that merely denying the debt does not rebut a cheque bounce case's presumption under the NI Act.",
+  "keywords": ["cheque bounce case defence", "138 ni act kya hai", "cheque bounce case in hindi", "presumption of debt cheque bounce", "cheque bounce case Haldwani"],
+  "why": "The Supreme Court restored a cheque bounce conviction in August 2026, a reminder that denying a debt in court, without more, will not defeat a section 138 complaint.",
+  "keyPoints": [
+    "A cheque bounce case under section 138 presumes the cheque was for a real debt once the accused admits the signature on it.",
+    "The Supreme Court held on 4 August 2026, in Kuntegowda v. Thurubaiah, that a bare denial does not rebut this presumption.",
+    "The accused must show, through facts or evidence, that it is probable no real debt existed, not just say so.",
+    "A new defence raised only after the complainant's evidence is over is treated as an afterthought and usually rejected."
+  ],
+  "sections": [
+    {
+      "h": "What happens once you admit signing the cheque?",
+      "p": [
+        "In a cheque bounce case under section 138 of the Negotiable Instruments Act, 1881, once the accused admits signing the cheque, sections 118 and 139 of the Act presume it was issued for a real debt. The Supreme Court confirmed this again on 4 August 2026 in Kuntegowda v. Thurubaiah. In courts across Uttarakhand, including Haldwani, this presumption shifts the burden onto the accused, not onto the person who filed the complaint.",
+        "This means the complainant does not have to prove the debt from the start. Once the cheque and the signature on it are not disputed, the court already works on the assumption that a real debt or liability existed, unless the accused shows otherwise."
+      ]
+    },
+    {
+      "h": "Can you win just by denying the debt?",
+      "p": [
+        "No. The Supreme Court held that a bare denial of the debt, without anything more, cannot rebut the presumption under sections 118 and 139. The accused must point to facts or evidence that make it probable that no real debt existed, such as documents, witnesses, or a consistent version of events given early.",
+        "In the Kuntegowda case, the accused claimed the cheque was a blank security cheque for a separate, smaller loan that was later misused. The Court rejected this because it was unsupported by any document and was raised for the first time through a notice sent over a year after the complaint, after the complainant's evidence had already closed."
+      ]
+    },
+    {
+      "h": "What did the Supreme Court finally decide?",
+      "p": [
+        "The Karnataka High Court had earlier acquitted the accused in revision, reasoning that the complainant had not explained where the loan money came from. The Supreme Court held this was an improper re-appreciation of evidence, since a High Court in revision cannot reweigh evidence the trial court and sessions court had already accepted together.",
+        "It restored the conviction under section 138, as modified by the sessions court on appeal. Two independent witnesses had supported the complainant's account of giving the loan, which the Court treated as sufficient corroboration."
+      ]
+    }
+  ],
+  "whatToDo": [
+    "Keep every document connected to the loan or transaction, such as receipts, bank transfer records, or witnesses, from the time you lend or borrow money.",
+    "If you intend to deny the debt, say exactly why, with whatever proof you have, in your reply to the 15-day demand notice itself, not months later.",
+    "Do not wait until after the complainant's evidence is recorded in court to raise a new version of events; courts treat late defences with suspicion.",
+    "Track your case's hearing dates and orders on the eCourts portal using the case number."
+  ],
+  "hi": {
+    "title": "चेक बाउंस केस में सिर्फ कर्ज से इनकार करना काफी है?",
+    "keyPoints": [
+      "धारा 138 के तहत चेक बाउंस केस में आरोपी के हस्ताक्षर स्वीकार होते ही यह मान लिया जाता है कि चेक असली कर्ज के लिए दिया गया था।",
+      "सुप्रीम कोर्ट ने 4 अगस्त 2026 को कुंटेगौड़ा बनाम तुरुबैया मामले में कहा कि सिर्फ इनकार करने से यह अनुमान खत्म नहीं होता।",
+      "आरोपी को तथ्यों या सबूतों से यह दिखाना होगा कि असली कर्ज न होना संभावित है, सिर्फ इनकार काफी नहीं है।",
+      "शिकायतकर्ता की गवाही पूरी होने के बाद देर से रखा गया नया बचाव अदालत आमतौर पर बाद का बनाया हुआ मानकर खारिज कर देती है।"
+    ]
+  },
+  "sources": [
+    {"title": "Negotiable Instruments Act, 1881: Section 138 (Indian Kanoon)", "url": "https://indiankanoon.org/doc/1330045/"},
+    {"title": "Kuntegowda v. Thurubaiah, 2026 INSC 790: case report (Verdictum)", "url": "https://www.verdictum.in/supreme-court/kuntegowda-v-thurubaiah-2026-insc-790-conviction-us-138-ni-act-exceeded-revisional-jurisdiction-1619253"}
+  ]
+}
