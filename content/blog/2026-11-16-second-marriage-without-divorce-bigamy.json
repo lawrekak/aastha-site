@@ -1,0 +1,51 @@
+{
+  "title": "Is a Second Marriage Without Divorce Legal?",
+  "slug": "second-marriage-without-divorce-bigamy",
+  "published": "2026-11-16",
+  "area": 2,
+  "desc": "Marrying again before a divorce is final is void under section 17 of the Hindu Marriage Act and bigamy under section 82 BNS, with up to 10 years in jail.",
+  "keywords": ["second marriage without divorce", "bigamy law india", "is second marriage valid without divorce", "section 82 bns bigamy", "धारा 82 बीएनएस बहुविवाह", "void marriage hindu law"],
+  "why": "Over four lakh marriages are now registered under Uttarakhand's Uniform Civil Code, and that record makes it far easier to show in court that a person already had a spouse living when they married again.",
+  "keyPoints": [
+    "A second marriage during the subsistence of the first is void under section 17 of the Hindu Marriage Act, 1955.",
+    "It is also bigamy under section 82 of the Bharatiya Nyaya Sanhita (BNS), 2023, punishable with up to 7 years in jail.",
+    "Hiding the first marriage from the new spouse is a separate, harsher offence under section 82(2) BNS, with up to 10 years in jail.",
+    "The law excuses remarriage only if the earlier marriage was legally dissolved or declared void, or the first spouse has not been heard of as alive for 7 years."
+  ],
+  "sections": [
+    {
+      "h": "Is a second marriage valid if the first one is not dissolved?",
+      "p": [
+        "A second marriage is void under section 17 of the Hindu Marriage Act, 1955, if either party already has a living spouse and that first marriage has not ended in a valid divorce or annulment. It also counts as bigamy under section 82 of the Bharatiya Nyaya Sanhita (BNS), 2023, punishable with up to 7 years in jail and a fine. Courts in Uttarakhand, including the Family Court at Haldwani, treat such a second marriage as having no legal existence from the start.",
+        "This rule applies to Hindus, Buddhists, Sikhs and Jains under section 5(i) read with section 11 of the Hindu Marriage Act, which lists a living spouse at the time of marriage as a ground that makes the marriage void. The second marriage does not need a court order to be treated as void, though parties often still get a formal declaration for clarity on property or inheritance."
+      ]
+    },
+    {
+      "h": "What if the new spouse did not know about the first marriage?",
+      "p": [
+        "Concealing the earlier marriage from the person being married is a separate, more serious offence under section 82(2) BNS, carrying up to 10 years in jail, compared to 7 years for bigamy alone. This protects a spouse who was deceived into an invalid marriage.",
+        "The law makes two exceptions. Remarriage is not an offence if the earlier marriage has been declared void by a court of competent jurisdiction, or if the first spouse has been continuously absent for 7 years and not heard of as alive by people who would naturally have known, provided the facts are disclosed to the person being married."
+      ]
+    }
+  ],
+  "whatToDo": [
+    "Get a decree of divorce, annulment or judicial separation finalised before registering or solemnising a second marriage.",
+    "Keep the decree, its registration details, and any UCC marriage registration number, since these are the first documents a court will ask for.",
+    "If you are the deceived spouse, you can file a criminal complaint for bigamy and separately seek a declaration that the second marriage is void.",
+    "Before relying on the 7-year absence exception, get legal advice on your own facts, since the burden of proving genuine belief in the spouse's death falls on the person who remarried."
+  ],
+  "hi": {
+    "title": "क्या बिना तलाक के दूसरी शादी मान्य है?",
+    "keyPoints": [
+      "पहली शादी के रहते दूसरी शादी हिंदू विवाह अधिनियम, 1955 की धारा 17 के तहत शून्य (void) मानी जाती है।",
+      "यह भारतीय न्याय संहिता (बीएनएस), 2023 की धारा 82 के तहत बहुविवाह का अपराध भी है, जिसमें 7 साल तक की सजा हो सकती है।",
+      "नए जीवनसाथी से पहली शादी छिपाने पर धारा 82(2) के तहत अलग और सख्त सजा है, जो 10 साल तक हो सकती है।",
+      "छूट तभी मिलती है जब पहली शादी कानूनी रूप से समाप्त या शून्य घोषित हो चुकी हो, या जीवनसाथी 7 साल से लापता हो।"
+    ]
+  },
+  "sources": [
+    {"title": "Hindu Marriage Act, 1955 (India Code)", "url": "https://www.indiacode.nic.in/handle/123456789/1560"},
+    {"title": "Bharatiya Nyaya Sanhita, 2023: Act No. 45 of 2023 (India Code)", "url": "https://www.indiacode.nic.in/handle/123456789/20062"},
+    {"title": "UCC Uttarakhand official portal: marriage registration services", "url": "https://ucc.uk.gov.in/faqs"}
+  ]
+}
