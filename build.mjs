@@ -46,7 +46,7 @@ const fmtDate = (iso) => new Date(iso + "T00:00:00").toLocaleDateString("en-IN",
 const ID = { site: U("/#website"), firm: U("/#firm"), person: U("/#aastha") };
 const postal = { "@type": "PostalAddress", streetAddress: S.address.street, addressLocality: S.address.locality, addressRegion: S.address.region, postalCode: S.address.postalCode, addressCountry: S.address.country };
 const firmNode = {
-  "@type": ["LegalService", "LocalBusiness"], "@id": ID.firm, name: S.firm, url: U("/"), telephone: S.phone, ...(S.email ? { email: S.email } : {}),
+  "@type": ["LegalService", "LocalBusiness"], "@id": ID.firm, name: S.firm, url: U("/"), telephone: S.phone,
   address: postal, ...(S.geo ? { geo: { "@type": "GeoCoordinates", latitude: S.geo.lat, longitude: S.geo.lng } } : {}),
   hasMap: S.mapsUrl, image: U(S.ogImage), logo: U("/assets/icon-512.png"),
   openingHoursSpecification: [{ "@type": "OpeningHoursSpecification", dayOfWeek: S.hours.days, opens: S.hours.opens, closes: S.hours.closes }],
@@ -54,7 +54,7 @@ const firmNode = {
 };
 const personNode = {
   "@type": "Person", "@id": ID.person, name: S.name, alternateName: HI.name, jobTitle: "Advocate", url: U("/about/"), image: U("/assets/og.png"),
-  worksFor: { "@id": ID.firm }, telephone: S.phone, ...(S.email ? { email: S.email } : {}), address: postal, knowsLanguage: ["hi", "en"],
+  worksFor: { "@id": ID.firm }, telephone: S.phone, address: postal, knowsLanguage: ["hi", "en"],
   knowsAbout: AREAS.map((a) => a.t).concat(["Divorce and matrimonial law", "Maintenance", "Child custody and guardianship", "Domestic violence law", "Article 226 writ petitions", "Prevention of Corruption Act", "Insolvency and Bankruptcy Code", "High Court of Uttarakhand practice"]),
   ...(SAME_AS.length ? { sameAs: SAME_AS } : {}),
   // Credentials: degree(s) and the Bar Council enrolment (a licence), for AI and search entity understanding.
@@ -119,7 +119,6 @@ function footer(p) {
       <div class="brand"><span class="mono-mark" aria-hidden="true">AV</span><span><b>${hi ? HI.name : esc(S.name)}</b><span class="sub">${hi ? "अधिवक्ता" : "Advocate"}</span></span></div>
       <address style="font-style:normal">${hi ? HI.firm : esc(S.firm)}<br>${hi ? HI.address : esc(fullAddress)}</address>
       <p>${hi ? "फ़ोन" : "Phone"}: <a href="${TEL}" class="mono" style="display:inline;min-height:0;color:var(--ink)">${esc(S.phoneDisplay)}</a></p>
-      ${S.email ? `<p>${hi ? "ईमेल" : "Email"}: <a href="mailto:${esc(S.email)}" style="display:inline;min-height:0;color:var(--ink)">${esc(S.email)}</a></p>` : ""}
       <p>${hi ? HI.hours : esc(S.hours.display)} · ${ext(S.mapsUrl, hi ? "रास्ता" : "Directions")}</p>
       <p class="muted" style="font-size:.82rem">${enrol}</p>
     </div>
@@ -195,7 +194,6 @@ const officeCard = (hi = false) => `<div class="card office">
   <h2 class="h3">${hi ? HI.firm : esc(S.firm)}</h2>
   <address style="font-style:normal">${hi ? HI.address : esc(S.address.street) + "<br>" + esc(`${S.address.locality}, ${S.address.region} ${S.address.postalCode}`)}</address>
   <table class="hours"><caption class="sr">${hi ? "समय" : "Office hours"}</caption><tr><th scope="row">${hi ? "प्रतिदिन" : "Monday – Sunday"}</th><td>${hi ? "सुबह 9 – शाम 5" : "9:00 AM – 5:00 PM"}</td></tr><tr><th scope="row">${hi ? "राजपत्रित अवकाश" : "Gazetted holidays"}</th><td class="muted">${hi ? "समय भिन्न हो सकता है" : "Hours may differ"}</td></tr></table>
-  ${S.email ? `<p style="display:flex;gap:10px;align-items:center">${ico("msg", "i")}<span>${hi ? "ईमेल" : "Email"}: <a href="mailto:${esc(S.email)}" style="overflow-wrap:anywhere">${esc(S.email)}</a></span></p>` : ""}
   <div class="row-wrap">
     <a class="btn btn-primary" href="${TEL}">${ico("phone")}${esc(S.phoneDisplay)}</a>
     ${ext(S.mapsUrl, hi ? HI.contact.directions : "Get directions", "btn btn-outline")}
@@ -397,7 +395,7 @@ add({
 <div class="cols2">${officeCard()}
 <div class="stack"><div class="card" style="padding:22px"><p>Office contact details are provided for persons seeking information about the Advocate.</p></div>
 <div class="card" style="padding:22px"><h2 class="h3" style="margin-bottom:8px">Professional information</h2><dl class="facts-dl"><dt>Enrolment</dt><dd>${S.enrolment.barCouncil ? `${esc(S.enrolment.barCouncil)}${S.enrolment.number ? `, enrolment no. <span class="mono">${esc(S.enrolment.number)}</span>` : ""}` : "To be added"}</dd>${S.qualifications.length ? `<dt>Qualifications</dt><dd>${S.qualifications.map(esc).join("; ")}</dd>` : ""}<dt>Courts</dt><dd>${S.forums.map(esc).join(" · ")}</dd></dl></div>
-${notice("Please do not send confidential documents or case papers through this website or by email.")}</div></div>`
+${notice("Please do not send confidential documents or case papers through this website.")}</div></div>`
 });
 
 // FAQ
@@ -418,8 +416,8 @@ add({
 add({
   path: "/privacy/", title: "Privacy Notice | Aastha Vishwakarma, Advocate", desc: S.ga4 ? "This website has no forms, uses no advertising cookies and does not sell data. Visits are counted with Google Analytics, with advertising features switched off." : "This website does not collect personal details through forms, does not use tracking or advertising cookies, and does not sell any data.", crumbs: [["Privacy notice", "/privacy/"]], priority: "0.2",
   body: `<article class="prose stack"><h1>Privacy notice</h1>
-<h2 class="h3">What is collected</h2><p>This website has no forms and does not collect personal details. If you contact the office by phone or email, the details you share are used only to reply to you and are not sold or shared for marketing. You can ask for them to be deleted by calling ${esc(S.phoneDisplay)}.</p>
-${S.ga4 ? `<h2 class="h3">Visit statistics</h2><p>This website uses Google Analytics to count visits. It records the pages viewed, your approximate city, the type of device, how you reached the site (for example, from Google Search) and whether you selected the phone number, email address or map link. It does not record your name, and advertising features and Google signals are switched off, so the data is not used for advertising.</p>
+<h2 class="h3">What is collected</h2><p>This website has no forms and does not collect personal details. If you contact the office by phone, the details you share are used only to reply to you and are not sold or shared for marketing. You can ask for them to be deleted by calling ${esc(S.phoneDisplay)}.</p>
+${S.ga4 ? `<h2 class="h3">Visit statistics</h2><p>This website uses Google Analytics to count visits. It records the pages viewed, your approximate city, the type of device, how you reached the site (for example, from Google Search) and whether you selected the phone number or map link. It does not record your name, and advertising features and Google signals are switched off, so the data is not used for advertising.</p>
 <p>Google Analytics sets its own cookies (named <code>_ga</code>) on this website, which expire after 13 months. Google processes the data under its <a href="https://policies.google.com/privacy" rel="noopener">privacy policy</a>. To stop it, block cookies for this website in your browser or install Google’s <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">opt-out add-on</a>.</p>
 <h2 class="h3">Cookies</h2><p>This website does not use advertising cookies. Apart from the Google Analytics cookies described above, your browser remembers only that you accepted the disclaimer, for the current visit.</p>` : `<h2 class="h3">Cookies</h2><p>This website does not use advertising or tracking cookies. Your browser remembers only that you accepted the disclaimer, for the current visit.</p>`}
 <p class="muted">This notice is written with the Digital Personal Data Protection Act, 2023 in mind and will be updated as the rules under it take effect.</p></article>`
@@ -497,7 +495,6 @@ const facts = [
   `Name: ${S.name}, Advocate (${HI.name})`,
   `Office: ${S.firm}, ${fullAddress}, India`,
   `Phone: ${S.phoneDisplay}`,
-  ...(S.email ? [`Email: ${S.email}`] : []),
   ...(S.qualifications.length ? [`Qualifications: ${S.qualifications.join('; ')}`] : []),
   `Office hours: ${S.hours.display} (IST)`,
   `Appears before: ${S.forums.join("; ")}`,

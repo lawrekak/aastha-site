@@ -27,48 +27,17 @@
     document.head.appendChild(s);
   }
   loadGA();
-  /* Count selections of the phone number, email address, map link and WhatsApp as GA4 events. */
+  /* Count selections of the phone number, map link and WhatsApp as GA4 events. */
   document.addEventListener("click", function (e) {
     var a = e.target.closest && e.target.closest("a[href]");
     if (!a || !window.gtag) return;
     var h = a.getAttribute("href") || "";
-    var n = /^tel:/.test(h) ? "contact_phone" : /^mailto:/.test(h) ? "contact_email"
+    var n = /^tel:/.test(h) ? "contact_phone"
       : /google\.[a-z.]+\/maps|maps\.app\.goo\.gl|maps\.google\./.test(h) ? "contact_map"
       : /wa\.me|whatsapp\.com/.test(h) ? "contact_whatsapp" : "";
     if (n) window.gtag("event", n, { page_path: location.pathname });
   }, true);
 
-  /* Consultation request form */
-  var form = $("#consult-form");
-  if (form) {
-    var V = {
-      name: function () { return $("#f-name").value.trim() ? "" : "Enter your full name."; },
-      phone: function () { return $("#f-phone").value.replace(/\D/g, "").replace(/^91(?=\d{10}$)/, "").length === 10 ? "" : "Enter a 10-digit mobile number."; },
-      email: function () { var v = $("#f-email").value.trim(); return !v || /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v) ? "" : "Enter an email address like name@example.com, or leave it blank."; },
-      consent: function () { return $("#f-consent").checked ? "" : "Tick the consent box to continue."; }
-    };
-    var show = function (k) { var m = V[k](), el = $("#e-" + k); el.hidden = !m; el.textContent = m; $("#f-" + k).setAttribute("aria-invalid", m ? "true" : "false"); return m; };
-    ["name", "phone", "email"].forEach(function (k) { $("#f-" + k).addEventListener("blur", function () { if (this.value) show(k); }); });
-    $("#f-consent").addEventListener("change", function () { show("consent"); });
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var errs = [];
-      ["name", "phone", "email", "consent"].forEach(function (k) { var m = show(k); if (m) errs.push([k, m]); });
-      var box = $("#err-summary"), status = $("#form-status");
-      if (errs.length) {
-        box.hidden = false;
-        $("#err-list").innerHTML = errs.map(function (x) { return '<li><a href="#f-' + x[0] + '">' + x[1] + "</a></li>"; }).join("");
-        box.focus(); return;
-      }
-      box.hidden = true;
-      var endpoint = form.getAttribute("data-endpoint");
-      if (!endpoint) { status.textContent = "Online requests open soon. Please call the office during office hours to book a time."; return; }
-      status.textContent = "Sending…";
-      fetch(endpoint, { method: "POST", headers: { Accept: "application/json" }, body: new FormData(form) })
-        .then(function (r) { if (!r.ok) throw new Error(); form.reset(); status.textContent = "Request received. The office will call you to confirm a time."; })
-        .catch(function () { status.textContent = "The request could not be sent. Please call the office instead."; });
-    });
-  }
 })();
 
 /* ---- Cal.com inline booking (only on the consultation page, only when configured) ---- */
