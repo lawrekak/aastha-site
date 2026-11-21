@@ -37,10 +37,10 @@ const { access_token } = await tokRes.json();
 
 const ymd = (d) => d.toISOString().slice(0, 10);
 const end = new Date(Date.now() - 2 * 864e5), start = new Date(end.getTime() - (days - 1) * 864e5);
-async function query(dimensions, rowLimit = 25) {
+async function query(dimensions, rowLimit = 25, from = start) {
   const r = await fetch(`https://searchconsole.googleapis.com/webmasters/v3/sites/${encodeURIComponent(property)}/searchAnalytics/query`, {
     method: "POST", headers: { Authorization: `Bearer ${access_token}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ startDate: ymd(start), endDate: ymd(end), dimensions, rowLimit })
+    body: JSON.stringify({ startDate: ymd(from), endDate: ymd(end), dimensions, rowLimit })
   });
   if (!r.ok) throw new Error(`Search Console API ${r.status}: ${await r.text()}`);
   return (await r.json()).rows || [];
@@ -57,8 +57,19 @@ try {
   // Query-by-page rows for the weekly keyword refresh (scripts/keyword-research.mjs)
   const qp = await query(["query", "page"], 250).catch(() => []);
   fs.writeFileSync(path.join(path.dirname(out), "gsc-queries.json"), JSON.stringify(qp.map((r) => ({ query: r.keys[0], page: r.keys[1], clicks: r.clicks, impressions: r.impressions, position: r.position })), null, 1));
+  // Week-by-week trend for the last 12 weeks (weeks end on the latest day with data).
+  const daily = await query(["date"], 200, new Date(end.getTime() - 83 * 864e5)).catch(() => []);
+  const weeks = [];
+  for (let w = 0; w < 12; w++) {
+    const hi = new Date(end.getTime() - w * 7 * 864e5), lo = new Date(hi.getTime() - 6 * 864e5);
+    const rs = daily.filter((r) => r.keys[0] >= ymd(lo) && r.keys[0] <= ymd(hi));
+    const imp = rs.reduce((a, r) => a + r.impressions, 0), clk = rs.reduce((a, r) => a + r.clicks, 0);
+    const pos = imp ? rs.reduce((a, r) => a + r.position * r.impressions, 0) / imp : 0;
+    weeks.push(`| ${ymd(lo).slice(5)} to ${ymd(hi).slice(5)} | ${clk} | ${imp} | ${imp ? fmt((clk / imp) * 100, 1) : "0.0"}% | ${imp ? fmt(pos, 1) : "–"} |`);
+  }
+  const trend = daily.length ? `| Week | Clicks | Impressions | CTR | Avg. position |\n|---|---:|---:|---:|---:|\n${weeks.join("\n")}` : "_No daily data._";
   const t = total || { clicks: 0, impressions: 0, ctr: 0, position: 0 };
-  fs.writeFileSync(out, `# Search Console — last ${days} days (${ymd(start)} to ${ymd(end)})\n\nProperty: ${property}\n\n**Totals:** ${t.clicks} clicks · ${t.impressions} impressions · ${fmt(t.ctr * 100, 1)}% CTR · average position ${fmt(t.position, 1)}\n\n## Top queries\n\n${table(queries, "Query")}\n\n## Top pages\n\n${table(pages, "Page")}\n`);
+  fs.writeFileSync(out, `# Search Console — last ${days} days (${ymd(start)} to ${ymd(end)})\n\nProperty: ${property}\n\n**Totals:** ${t.clicks} clicks · ${t.impressions} impressions · ${fmt(t.ctr * 100, 1)}% CTR · average position ${fmt(t.position, 1)}\n\n## Week by week (newest first)\n\n${trend}\n\n## Top queries\n\n${table(queries, "Query")}\n\n## Top pages\n\n${table(pages, "Page")}\n`);
   console.log(`Wrote ${out}`);
 } catch (e) {
   fs.writeFileSync(out, `# Search Console\n\nQuery failed: ${e.message}\n`);
