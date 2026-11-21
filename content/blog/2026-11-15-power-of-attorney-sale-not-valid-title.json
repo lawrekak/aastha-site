@@ -1,0 +1,61 @@
+{
+  "title": "Can You Buy or Sell Land With Just a Power of Attorney?",
+  "slug": "power-of-attorney-sale-not-valid-title",
+  "published": "2026-11-15",
+  "area": 5,
+  "desc": "A General Power of Attorney or agreement to sell does not transfer land ownership in Uttarakhand; only a registered sale deed does, the Supreme Court has held.",
+  "keywords": ["power of attorney property sale", "GPA sale valid or not", "registered sale deed Uttarakhand", "property lawyer in haldwani", "land dispute lawyer", "पावर ऑफ अटॉर्नी से जमीन"],
+  "why": "GPA-based land deals are still common in Kumaon when a family's land is held by relatives who live outside the state, so it helps to know these deals do not by themselves make the buyer the owner.",
+  "keyPoints": [
+    "A General Power of Attorney (GPA), agreement to sell, or will does not transfer ownership of land or a house.",
+    "The Supreme Court settled this in Suraj Lamp & Industries v. State of Haryana (2011), reiterating that only a registered sale deed conveys title.",
+    "Land bought only through a GPA cannot be mutated in revenue records such as khatauni in the buyer's name.",
+    "A power of attorney used only to let someone else sign and register a sale deed on the owner's behalf remains valid."
+  ],
+  "sections": [
+    {
+      "h": "Can a power of attorney or agreement to sell make you the owner of land?",
+      "p": [
+        "No. A General Power of Attorney (GPA), an agreement to sell, or a will does not transfer ownership of immovable property in Uttarakhand or anywhere else in India. The Supreme Court held this in Suraj Lamp & Industries (P) Ltd. v. State of Haryana, (2012) 1 SCC 656, decided in October 2011, stating that such documents 'neither convey title nor create any interest in an immovable property'.",
+        "The Court held that immovable property can be legally transferred only by a registered deed of conveyance, that is, a registered sale deed. This follows from section 54 of the Transfer of Property Act, 1882, and section 17 of the Registration Act, 1908, which require any sale of property worth more than Rs 100 to be made by a registered instrument."
+      ]
+    },
+    {
+      "h": "Why do GPA-based deals still happen in Haldwani and Nainital?",
+      "p": [
+        "In Kumaon, ancestral land is often owned jointly by family members, some of whom have moved away from the hills for work. Instead of every co-owner travelling back to register a sale deed, families sometimes rely on a GPA plus an agreement to sell, treating it as if the sale were complete.",
+        "This can also happen to avoid paying stamp duty on a full sale deed straightaway. But the buyer in such a deal does not become the legal owner. Revenue authorities cannot enter the buyer's name in the khatauni (land record) on the strength of a GPA and agreement alone, and the original owner's legal heirs can later contest the transaction."
+      ]
+    },
+    {
+      "h": "Is every power of attorney for property invalid, then?",
+      "p": [
+        "No. The judgment does not stop an owner from giving someone else a power of attorney to manage property, or to sign and register a sale deed on the owner's behalf, for example where the owner lives outside Uttarakhand. What it stops is treating the GPA and an agreement to sell as a substitute for a registered sale deed.",
+        "The Court also made clear that transactions already completed, and documents already used for mutation before its ruling, were not automatically undone. The safer course going forward is always a registered sale deed in the buyer's name."
+      ]
+    }
+  ],
+  "whatToDo": [
+    "Insist on a registered sale deed before paying the full price for any land or house.",
+    "Check the seller's khatauni and encumbrance record at the sub-registrar's office before buying.",
+    "If a seller lives outside Uttarakhand, use a power of attorney only to authorise someone to execute and register the sale deed, not as the sale itself.",
+    "Take legal advice on your own facts before relying on an old GPA-based land deal."
+  ],
+  "hi": {
+    "title": "क्या सिर्फ पावर ऑफ अटॉर्नी से जमीन खरीदी या बेची जा सकती है?",
+    "keyPoints": [
+      "जनरल पावर ऑफ अटॉर्नी (GPA), बिक्री एग्रीमेंट या वसीयत से जमीन या मकान का मालिकाना हक नहीं मिलता।",
+      "सुप्रीम कोर्ट ने सूरज लैंप एंड इंडस्ट्रीज बनाम हरियाणा राज्य (2011) में कहा कि केवल रजिस्टर्ड बिक्री विलेख (सेल डीड) से ही स्वामित्व मिलता है।",
+      "सिर्फ GPA के आधार पर खरीदी गई जमीन की खतौनी में खरीदार का नाम दर्ज नहीं हो सकता।",
+      "अगर पावर ऑफ अटॉर्नी सिर्फ रजिस्ट्री कराने के लिए दी गई है, तो वह मान्य रहती है।"
+    ],
+    "p": [
+      "कुमाऊं में पुश्तैनी जमीन के कई मालिक पहाड़ों से बाहर रहते हैं, इसलिए परिवार कभी-कभी पूरी रजिस्ट्री के बजाय GPA और एग्रीमेंट पर भरोसा कर लेते हैं। इससे खरीदार कानूनी मालिक नहीं बनता, और बाद में असली मालिक के वारिस दावा कर सकते हैं।"
+    ]
+  },
+  "sources": [
+    {"title": "Suraj Lamp & Industries (P) Ltd. v. State of Haryana, (2012) 1 SCC 656: Supreme Court Digital Reports", "url": "https://digiscr.sci.gov.in/admin/judgement_file/judgement_pdf/2011/volume%2011/Part%20I/2011_11_848-869_1703325783.pdf"},
+    {"title": "Transfer of Property Act, 1882: Section 54 (bare act)", "url": "https://www.advocatekhoj.com/library/bareacts/transferofproperty/54.php"},
+    {"title": "Registration Act, 1908: Section 17 (bare act)", "url": "https://www.advocatekhoj.com/library/bareacts/registration/17.php"}
+  ]
+}
