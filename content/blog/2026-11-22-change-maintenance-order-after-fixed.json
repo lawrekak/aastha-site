@@ -1,0 +1,56 @@
+{
+  "title": "Can a Fixed Maintenance Order Be Changed Later?",
+  "slug": "change-maintenance-order-after-fixed",
+  "published": "2026-11-22",
+  "area": 2,
+  "desc": "Yes, under section 146 of the BNSS a Magistrate in Uttarakhand can raise, lower or cancel maintenance later if circumstances genuinely change.",
+  "keywords": ["maintenance order modification", "increase maintenance amount court", "section 146 bnss alteration allowance", "भरण पोषण राशि बदलना", "maintenance case Haldwani"],
+  "why": "A recent Uttarakhand High Court order more than tripled a daughter's monthly maintenance years after it was first fixed, a reminder that maintenance figures are not frozen forever.",
+  "keyPoints": [
+    "A Family Court's maintenance order is not final forever; either side can later ask for it to be increased, decreased or cancelled.",
+    "Section 146 of the BNSS lets a Magistrate alter maintenance on proof of a genuine change in circumstances since the earlier order.",
+    "A husband's maintenance liability ends if the wife remarries, receives a full settlement on divorce, or gives up her claim voluntarily.",
+    "Challenging the amount itself through an appeal or revision is different, and must be done within the normal appeal period."
+  ],
+  "sections": [
+    {
+      "h": "Can a maintenance order be changed after it is fixed?",
+      "p": [
+        "Yes. Under section 146 of the Bharatiya Nagarik Suraksha Sanhita (BNSS), 2023, which replaces section 127 of the old Code of Criminal Procedure, a Magistrate in Uttarakhand can raise, lower or cancel an order passed under section 144 BNSS, if the party applying proves a genuine change in circumstances since the earlier order.",
+        "This is different from an appeal or revision, which challenges the original order itself, normally within a set time after it is passed. An application to alter the amount under section 146 can be filed years later, once income, health or living arrangements have genuinely changed."
+      ]
+    },
+    {
+      "h": "What counts as a change in circumstances?",
+      "p": [
+        "Courts have treated a sharp fall or rise in either party's income, job loss, serious illness, or a child finishing education as grounds to revisit the figure. A later decision of a civil court affecting the same parties' rights can also require the Magistrate to vary or cancel the order.",
+        "The law also specifically ends a wife's right to maintenance if she remarries, receives the full amount due to her under personal or customary law on divorce, or voluntarily gives up her maintenance rights after divorce."
+      ]
+    },
+    {
+      "h": "Where do you apply to change maintenance in Uttarakhand?",
+      "p": [
+        "The application goes to the same court that passed the original order, such as the Family Court at Haldwani or the court at Nainital. There is no fixed waiting period before filing, but the change relied on must be real and provable, not just a disagreement with the earlier figure."
+      ]
+    }
+  ],
+  "whatToDo": [
+    "Keep proof of any change in circumstances ready: salary slips, medical records, termination letters or a child's school-leaving certificate.",
+    "If you receive maintenance, note down any remarriage, lump sum settlement or written waiver carefully, since these can end the right to maintenance.",
+    "File an appeal or revision against the maintenance amount itself promptly if you disagree with the original order; don't wait for the alteration route, which needs proof of a later change.",
+    "Take legal advice on your own facts before filing an application to alter maintenance, since courts expect real evidence of change."
+  ],
+  "hi": {
+    "title": "क्या पहले से तय भरण-पोषण की राशि बाद में बदली जा सकती है?",
+    "keyPoints": [
+      "फैमिली कोर्ट का भरण-पोषण आदेश हमेशा के लिए अंतिम नहीं होता; दोनों पक्ष बाद में इसे बढ़ाने, घटाने या रद्द करने के लिए अदालत जा सकते हैं।",
+      "बीएनएसएस की धारा 146 के तहत मजिस्ट्रेट परिस्थितियों में वास्तविक बदलाव साबित होने पर भरण-पोषण की राशि बदल सकते हैं।",
+      "पत्नी के दोबारा विवाह करने, तलाक पर पूरी राशि मिलने या स्वेच्छा से अधिकार छोड़ने पर पति का दायित्व समाप्त हो जाता है।",
+      "आदेश पारित होने की तय अवधि के भीतर अपील या पुनरीक्षण के जरिए भी राशि को चुनौती दी जा सकती है।"
+    ]
+  },
+  "sources": [
+    {"title": "Bharatiya Nagarik Suraksha Sanhita, 2023: Act No. 46 of 2023 (India Code)", "url": "https://indiacode.nic.in/bitstream/123456789/20099/3/a2023-46.pdf"},
+    {"title": "Verdictum: Man Who Accepted Wife's Son Into Matrimonial Home Cannot Later Disown Maintenance Responsibility: Uttarakhand High Court", "url": "https://www.verdictum.in/uttarakhand-high-court/rapti-v-state-of-uttarakhand-2026uhc7531-wifes-son-maintenance-1620407"}
+  ]
+}
