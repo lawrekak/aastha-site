@@ -1,0 +1,52 @@
+{
+  "title": "Does a Cheque Bounce Notice Count If a Relative Signs?",
+  "slug": "cheque-bounce-notice-relative-signs",
+  "published": "2026-11-24",
+  "area": 1,
+  "desc": "Yes. The Supreme Court held in September 2026 that a cheque bounce notice is validly served even if a family member signs for it.",
+  "keywords": ["cheque bounce notice family member", "section 138 ni act notice service", "cheque bounce case Haldwani", "138 notice kya hota hai", "cheque bounce notice valid hai ya nahi"],
+  "why": "The Supreme Court ruled on 30 September 2026 that a cheque bounce notice delivered to a relative at the drawer's correct address is still valid service, a question many accused persons raise in court.",
+  "keyPoints": [
+    "A section 138 notice sent to your correct address counts as delivered even if your mother, spouse or another relative signs for it.",
+    "The Supreme Court held this in Sainaba v. State of Kerala (2026), overruling a 2009 decision that had treated notice to a wife as insufficient.",
+    "To escape the case on this ground, the drawer must show the address was wrong or that he genuinely never learned of the notice.",
+    "Courts in Haldwani and Nainital will apply this presumption in pending and new cheque bounce complaints."
+  ],
+  "sections": [
+    {
+      "h": "Is a cheque bounce notice valid if a family member signs for it?",
+      "p": [
+        "A cheque bounce notice under section 138 of the Negotiable Instruments Act, 1881, is validly served once it is sent by registered post to the drawer's correct address, even if a family member signs for it instead of the drawer. The Supreme Court held this on 30 September 2026 in Sainaba v. State of Kerala. Courts in Haldwani and Nainital must now presume such notices are served, unless the drawer proves otherwise.",
+        "In that case, a notice sent to the drawer's address was received and signed for by his mother. The Kerala High Court had acquitted him because there was no direct proof he personally read it. The Supreme Court restored his conviction, holding that the complainant does not have to prove actual, personal receipt."
+      ]
+    },
+    {
+      "h": "How can the drawer still defend the case?",
+      "p": [
+        "Section 27 of the General Clauses Act, 1897, already lets a court presume a properly addressed, pre-paid registered letter was delivered, unless the contrary is shown. The same kind of presumption exists for facts a court may presume once the usual course of events is proved. The Supreme Court held this principle applies equally here, and that its own 2009 ruling in M.D. Thomas v. P.S. Jaleel, which had gone the other way, was decided without considering binding precedent and is no longer good law.",
+        "A drawer can still rebut the presumption, but only with specifics: that the address on the notice was wrong, that he did not actually live there, that the letter was never tendered at all, or that he had no knowledge of it for a real reason, such as an estranged relationship with the person who signed. A bare claim that he 'did not receive it' is not enough once the address is correct."
+      ]
+    }
+  ],
+  "whatToDo": [
+    "If you move house, update your address on bank records and tell anyone likely to send you a legal notice.",
+    "If a notice reaches your home through a family member, reply with your defence within the 15-day period, do not assume it does not count.",
+    "If you genuinely never learned of a notice, say so with specific reasons and proof, such as an estranged address or a wrong pin code, as early as possible in the case.",
+    "Check your case status and hearing dates on the eCourts portal for the Judicial Magistrate's court handling your complaint."
+  ],
+  "hi": {
+    "title": "क्या घर के किसी सदस्य के साइन करने पर चेक बाउंस नोटिस मान्य है?",
+    "keyPoints": [
+      "अगर नोटिस आपके सही पते पर भेजा गया है, तो माँ, पत्नी या किसी अन्य रिश्तेदार के साइन करने पर भी यह वैध माना जाएगा।",
+      "सुप्रीम कोर्ट ने सैनाबा बनाम केरल राज्य (2026) में यह फैसला दिया, और 2009 के पुराने फैसले को गलत बताया।",
+      "बचने के लिए आरोपी को साबित करना होगा कि पता गलत था या उसे नोटिस की जानकारी ही नहीं थी।",
+      "हल्द्वानी और नैनीताल की अदालतें अब इसी सिद्धांत को लागू करेंगी।"
+    ],
+    "p": ["अगर नोटिस आपके घर किसी परिजन के हाथ आया है, तो उसे नजरअंदाज न करें, क्योंकि कानून की नजर में वह आप तक पहुंच चुका माना जाता है।"]
+  },
+  "sources": [
+    {"title": "Supreme Court Observer: Service of Notice under the Negotiable Instruments Act (Sainaba v. State of Kerala, 2026 INSC 1069)", "url": "https://www.scobserver.in/supreme-court-observer-law-reports-scolr/service-of-notice-under-negotiable-instruments-act-sainaba-v-state-of-kerala/"},
+    {"title": "Negotiable Instruments Act, 1881 (India Code)", "url": "https://www.indiacode.nic.in/handle/123456789/13572"},
+    {"title": "General Clauses Act, 1897 (India Code)", "url": "https://www.indiacode.nic.in/handle/123456789/1521"}
+  ]
+}
